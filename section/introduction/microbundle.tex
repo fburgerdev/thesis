@@ -1,0 +1,14 @@
+\definition{(microbundle)}
+\\ A microbundle $\mathfrak{b}$ is a tuple $\mathfrak{b} := (B, E, i, j)$ satisfying the following properties:
+\begin{itemize}
+    \item $B$ is a topological space called the \textdef{base space}
+    \item $E$ is a topological space called the \textdef{total space}
+    \item $i: B \to E$ and $j: E \to B$ are continous maps with $id_B = j \circ i$
+    \item Every $b \in B$ is \textdef{locally trivializable}, i.e there exist neighborhoods $U \subseteq B$ of $b$ and $V \subseteq E$ of $i(b)$ such that the following diagram commutes:
+    \[\begin{tikzcd}[column sep=tiny]
+        & V \ar[dr, "i"] \ar[dd, "\psi"] & \\
+        U \ar[ur, "i"] \ar[dr, "{(id, 0)}"'] & & U \\
+        & U \times\R^n \ar[ur, "\pi_1"'] &
+    \end{tikzcd}\]
+\end{itemize}
+We call $n$ the \textdef{fibre dimension} of $\mathfrak{b}$.

@@ -1,0 +1,14 @@
+\example{(tangent microbundle)}
+\\ Let $M$ be a topological manifold:
+\\ We can derive the \textdef{tangent microbundle} $t_M: \bundle{M}{M \times M}{\Delta}{\pi_1}$, where
+$\Delta$ is the diagonal map and $\pi_1$ ist the projection map on the first component.
+
+\begin{proof}
+    Let $p \in M$ and $(U, \phi)$ a chart over $p$:
+    \[\begin{tikzcd}
+        & U \times U \ar[dr, "i"] \ar[dd, "{(id, \phi)}"] & \\
+        U \ar[ur, "i"] \ar[dr, "{(0, id)}"'] & & U \\
+        & U \times \R^d \ar[ur, "\pi_1"'] &
+    \end{tikzcd}\]
+    $(id, \phi)$ is a homeomorphism since $\phi: U \isomto \R^n$ is homeomorphic.
+\end{proof}
