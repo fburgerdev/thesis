@@ -3,8 +3,8 @@
 \begin{itemize}
     \item $B$ is a topological space called the \textdef{base space}
     \item $E$ is a topological space called the \textdef{total space}
-    \item $i: B \to E$ and $j: E \to B$ are continous maps with $id_B = j \circ i$
-    \item Every $b \in B$ is \textdef{locally trivializable}, i.e there exist neighborhoods $U \subseteq B$ of $b$ and $V \subseteq E$ of $i(b)$ such that the following diagram commutes:
+    \item $i: B \to E$ and $j: E \to B$ are continuous maps with $id_B = j \circ i$
+    \item Every $b \in B$ is \textdef{locally trivializable}, i.e there exist open neighborhoods $U \subseteq B$ of $b$ and $V \subseteq E$ of $i(U)$ such that the following diagram commutes:
     \[\begin{tikzcd}[column sep=tiny]
         & V \ar[dr, "i"] \ar[dd, "\psi"] & \\
         U \ar[ur, "i"] \ar[dr, "{(id, 0)}"'] & & U \\

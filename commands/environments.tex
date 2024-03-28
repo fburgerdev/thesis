@@ -1,12 +1,17 @@
-% Definition
+% Environment
+% Environment :: Definition
 \newtheorem{definition}{Definition}
-% Theorem
-\newtheorem{theorem}{Theorem}
-% Proposition
-\newtheorem{proposition}{Proposition}
-% Corollary
-\newtheorem{corollary}{Corollary}
-% Lemma
-\newtheorem{lemma}{Lemma}
-% Example
-\newtheorem{example}{Example}
+% Environment :: Theorem
+\newtheorem{theorem}[definition]{Theorem}
+% Environment :: Proposition
+\newtheorem{proposition}[definition]{Proposition}
+% Environment :: Corollary
+\newtheorem{corollary}[definition]{Corollary}
+% Environment :: Lemma
+\newtheorem{lemma}[definition]{Lemma}
+% Environment :: Remark
+\newtheorem{remark}[definition]{Remark}
+% Environment :: Example
+\newtheorem{example}[definition]{Example}
+% Numbering
+\numberwithin{definition}{section}
