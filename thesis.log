@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.3.23)  28 MAR 2024 19:00
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.3.23)  17 APR 2024 15:42
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -524,33 +524,38 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 4.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )) [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./section/smooth.tex (./section/smooth/vectorbundle.tex) (./section/smooth/tangentvb.tex)) (./section/introduction.tex (./section/introduction/microbundle.tex
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./section/smooth.tex (./section/smooth/vectorbundle.tex) (./section/smooth/tangent.tex)) (./section/introduction.tex (./section/introduction/microbundle.tex
 LaTeX Font Info:    Trying to load font information for U+euf on input line 2.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
-)) (./section/introduction/isomorphic.tex [2]) (./section/introduction/trivialmb.tex) (./section/introduction/underlyingmb.tex) (./section/introduction/tangentmb.tex)) (./section/inducedmb.tex (./section/inducedmb/definition.tex [3]) (./section/inducedmb/restrictedmb.tex) (./section/inducedmb/composition.tex)) (./section/whitneysum.tex (./section/whitneysum/definition.tex)) (./section/normalmb.tex [4] (./section/normalmb/definition.tex)) [5] (./thesis.aux)
+)) (./section/introduction/isomorphic.tex [2]) (./section/introduction/trivial.tex) (./section/introduction/underlying.tex) (./section/introduction/tangent.tex)) (./section/induced.tex (./section/induced/definition.tex [3]) (./section/induced/restricted.tex) (./section/induced/trivial.tex) (./section/induced/composition.tex) (./section/induced/cone.tex [4] [5]) (./section/induced/simplex.tex
+Overfull \hbox (2.94418pt too wide) in paragraph at lines 7--11
+\OT1/cmr/m/n/10 We ex-plic-itly con-struct $\OML/cmm/m/it/10 ^^^\OT1/cmr/m/n/10 ((\OML/cmm/m/it/10 t[]; [] ; t[]\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; ^^U\OT1/cmr/m/n/10 ) := (1 \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 ^^U\OT1/cmr/m/n/10 )(\OML/cmm/m/it/10 t[]; [] ; t[]\OT1/cmr/m/n/10 ) + [](1\OML/cmm/m/it/10 ; [] ; \OT1/cmr/m/n/10 1)$. 
+ []
+
+)) (./section/whitneysum.tex (./section/whitneysum/definition.tex) (./section/whitneysum/compatibility.tex [6]) (./section/whitneysum/theorem.tex)) (./section/normal.tex (./section/normal/definition.tex) (./section/normal/trivial.tex)) (./section/homotopy.tex) [7] [8] (./thesis.aux)
 
 Package rerunfilecheck Warning: File `thesis.out' has changed.
 (rerunfilecheck)                Rerun to get outlines right
 (rerunfilecheck)                or use package `bookmark'.
 
 Package rerunfilecheck Info: Checksums for `thesis.out':
-(rerunfilecheck)             Before: 81CA974BE9F002C6BCD5DCE40E99482B;787
-(rerunfilecheck)             After:  FDE4D140E0EA08BC9DB70B12E6F9FEE9;817.
+(rerunfilecheck)             Before: D41D8CD98F00B204E9800998ECF8427E;0
+(rerunfilecheck)             After:  95CFD6F14B7FB0B714D4422853CD2A97;973.
  ) 
 Here is how much of TeX's memory you used:
- 21791 strings out of 480247
- 420653 string characters out of 5896151
- 681949 words of memory out of 5000000
- 39279 multiletter control sequences out of 15000+600000
+ 21830 strings out of 480247
+ 421527 string characters out of 5896151
+ 682979 words of memory out of 5000000
+ 39289 multiletter control sequences out of 15000+600000
  478204 words of font info for 63 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  114i,15n,118p,483b,1042s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/flo/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on thesis.pdf (5 pages, 175233 bytes).
+Output written on thesis.pdf (8 pages, 197317 bytes).
 PDF statistics:
- 151 PDF objects out of 1000 (max. 8388607)
- 111 compressed objects within 2 object streams
- 24 named destinations out of 1000 (max. 500000)
- 53 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 160 PDF objects out of 1000 (max. 8388607)
+ 117 compressed objects within 2 object streams
+ 36 named destinations out of 1000 (max. 500000)
+ 13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
