@@ -1,8 +1,19 @@
-We can easily construct the product of two microbundles $\mathfrak{b}_1$ and $\mathfrak{b}_2$ over $B$:
-\[\mathfrak{b}_1 \times \mathfrak{b}_2: \bundle{B \times B}{E_1 \times E_2}{i_1 \times i_2}{j_1 \times j_2}\]
-However, we end up with a microbundle over $B \times B$ instead of $B$.
-
 \definition{(whitney sum)}
-\\ Let $\mathfrak{b}_1$ and $\mathfrak{b}_1$ be two microbundles over a topological space $B$.
-\\ We define the \textdef{whitney sum} $\mathfrak{b}_1 \oplus \mathfrak{b}_2$ as the induced microbundle over the diagonal map $\Delta$
-of the product microbundle $\mathfrak{b}_1 \times \mathfrak{b}_2: B \times B \to E(\mathfrak{b}_1) \times E(\mathfrak{b}_2) \to B \times B$.
+\\ Let $\bundleb_1$ and $\bundleb_1$ be two microbundles over a topological space $B$.
+\\ We define the \textdef{whitney sum} $\bundleb_1 \oplus \bundleb_2$ as follows:
+\begin{itemize}
+    \item $E := \{ (e_1, e_2) \in E(\bundleb_1) \times E(\bundleb_2) \mid j_1(e_1) = j_2(e_2)\}$
+    \item $i(b) := (i_1(b), i_2(b))$
+    \item $j(e_1, e_2) := j_1(e_1) = j_2(e_2)$
+\end{itemize}
+\begin{proof}
+    Let $b \in B$.
+    \\ Choose $U_1, V_1, \phi_1$ and $U_2, V_2, \phi_2$ accordingly from the local trivialization of $b$ over $\bundleb_1$ and $\bundleb_2$:
+    \begin{itemize}
+        \item $U := U_1 \cap U_2$
+        \item $V := (V_1 \times V_2) \cap E$
+        \item $\phi: V \to U \times \R^{n_1 + n_2}; \phi(e_1, e_2) := (\phi_1^{(1)}(e_1), \phi_1^{(2)}(e_1) \times  \phi_2^{(2)}(e_2))$
+    \end{itemize}
+    Note that $\phi_1^{(1)}(e_1) = \phi_2^{(1)}(e_2)$.
+    \\ Local triviality follows directly from it's components.
+\end{proof}
