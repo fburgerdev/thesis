@@ -1,8 +1,13 @@
 \proposition{(composition)}
 \\ Let $A \xto{f} B \xto{g} C$ be topological spaces and $\mathfrak{c}: \bundle{C}{E}{i}{j}$ be a microbundle:
-\[(g \circ f)^*\mathfrak{c} = f^*(g^*\mathfrak{c})\]
+\[(g \circ f)^*\mathfrak{c} \cong f^*(g^*\mathfrak{c})\]
 \begin{proof}
-    
+We'll compare the two total spaces and conclude that they are homeomorphic.
+\begin{enumerate}
+    \item $E((g \circ f)^*\mathfrak{c}) = \{ (a, e) \in A \times E(\mathfrak{c}) \mid g(f(a)) = j(e)\}$ 
+    \item $E(f^*(g^*\mathfrak{c})) = \{ (a, (b, e)) \in A \times (B \times E(\mathfrak{c})) \mid f(a) = b$ and $ g(b) = j(e) \}$.
+\end{enumerate}
+We have the bijection $\phi: E((g \circ f)^*\mathfrak{c}) \isomto E(f^*(g^*\mathfrak{c}))$ with $\phi(a, e) := (a, (f(a), e))$ and $\phi^{-1}(a, (b, e)) = (a, e)$.
+Additionally, $\phi$ is a homeomorphism because $\phi$ and $\phi^{-1}$ are componentwise continuous.
+It's easy to see that $\phi$ respects both injection and projection, which concludes the proof.
 \end{proof}
-\remark{(functor)}
-\\ The induced microbundle yields a functor $f \mapsto f^*$ between topological spaces and microbundles.
