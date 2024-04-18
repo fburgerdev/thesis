@@ -1,0 +1,17 @@
+
+% statement
+\proposition{(restricting the total space)} \\
+Let $\bundleb: \bundle{B}{E}{i}{j}$ be a microbundle and $E'$ an arbitray neighborhood of $i(B)$.
+The restriction $\bundleb':\bundle{B}{E'}{i}{j\restrict{E'}}$ is a microbundle isomorphic to $\bundleb$.
+% proof
+\begin{proof}
+Let $b \in B$. \\
+Choose an arbitray trivialization $(U, V, \phi)$ over $\bundleb$ of $b$.
+We restrict $\phi: V \to U \times R^n$ to $V \cap E'$.
+Since $i(b) \in V$ is open and $E'$ is a neighborhood of $i(B)$, it follows that $\phi(V \cap E')$ is a neighborhood of $(b, 0)$.
+\\ $\implies \exists (b, 0) \in U' \times X \subseteq \phi(V \cap E')$, where $U' \subseteq U$ and $X \subseteq R^n$ are open
+\\ $\implies \exists \varepsilon > 0: U' \times B_\varepsilon(0) \subseteq \phi(V \cap E')$ \\
+Since $B_\varepsilon(0) \cong R^n$, it follows that $U' \times R^n \cong U' \times B_\varepsilon(0) \cong \phi^{-1}(U' \times B_\varepsilon(0))$.
+Choosing $V' := \phi^{-1}(U' \times B_\varepsilon(0)) \subseteq V$, we see that $\bundleb'$ is a microbundle.
+\\ We easily see, that $\bundleb$ is isomorphic to $\bundleb'$ via the identity.
+\end{proof}
