@@ -1,4 +1,3 @@
-
 % statement
 \proposition{(restricting the total space)} \\
 Let $\bb: \bundle{B}{E}{i}{j}$ be a microbundle and $E'$ an arbitray neighborhood of $i(B)$.
@@ -9,9 +8,9 @@ Let $b \in B$. \\
 Choose an arbitray trivialization $(U, V, \phi)$ over $\bb$ of $b$.
 We restrict $\phi: V \to U \times R^n$ to $V \cap E'$.
 Since $i(b) \in V$ is open and $E'$ is a neighborhood of $i(B)$, it follows that $\phi(V \cap E')$ is a neighborhood of $(b, 0)$.
-\\ $\implies \exists (b, 0) \in U' \times X \subseteq \phi(V \cap E')$, where $U' \subseteq U$ and $X \subseteq R^n$ are open
-\\ $\implies \exists \varepsilon > 0: U' \times B_\varepsilon(0) \subseteq \phi(V \cap E')$ \\
+\\ $\implies \exists (b, 0) \in U' \times X \sub \phi(V \cap E')$, where $U' \sub U$ and $X \sub R^n$ are open
+\\ $\implies \exists \varepsilon > 0: U' \times B_\varepsilon(0) \sub \phi(V \cap E')$ \\
 Since $B_\varepsilon(0) \cong R^n$, it follows that $U' \times R^n \cong U' \times B_\varepsilon(0) \cong \phi^{-1}(U' \times B_\varepsilon(0))$.
-Choosing $V' := \phi^{-1}(U' \times B_\varepsilon(0)) \subseteq V$, we see that $\bb'$ is a microbundle.
-\\ We easily see, that $\bb$ is isomorphic to $\bb'$ via the identity.
+Choosing $V' := \phi^{-1}(U' \times B_\varepsilon(0)) \sub V$, we see that $\bb'$ is a microbundle.
+We easily see, that $\bb$ is isomorphic to $\bb'$ via the identity.
 \end{proof}

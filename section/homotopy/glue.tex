@@ -1,0 +1,27 @@
+% statement
+\lemma{(glueing together bundle map-germs)} \\
+Let $\bb$ be a microbundle over $B$ and $\{B_\alpha\}$ a locally finite collection of closed sets covering $B$.
+Additionally, we are given $\bgerm{F_\alpha}{\bb\restrict{B_\alpha}}{\bb'}$, a collection of bundle map-germs with
+$F_\alpha = F_\beta$ on $\bb\restrict{B_\alpha \cap B_\beta}$
+Then there exists a bundle map-germ $\bgerm{F}{\bb}{\bb'}$ extending $F_\alpha$.
+% proof
+\begin{proof}
+Choose representative maps $f_\alpha: U_\alpha \to E'$ for $F_\alpha$ with $U_\alpha$ open.
+Since $F_\alpha = F_\beta$ on $\bb\restrict{B_\alpha \cap B_\beta}$, $f_\alpha = f_\beta$ for an open neighborhood $U_{\alpha\beta}$ of $B_\alpha \cap B_\beta$.
+We define
+\[ U := \{ e \in E \mid j(e) \in B_\alpha \cap B_\beta \implies e \in U_{\alpha\beta} \}\]
+\begin{enumerate}
+    \item $U$ is open: \\
+    Let $e \in U$ and $j(e) \in B_\alpha \cap B_\beta$.
+    From local finiteness there exists an open neighborhood $V \sub B$ of $j(e)$ with $V \sub B_{\alpha_1} \cap \ldots \cap B_{\alpha_n}$.
+    W.l.o.g. $V \sub B_\alpha \cap B_\beta$ by exluding a finite number of closed sets if necessary.
+    Now $V_{\alpha\beta} := j^{-1}(V) \cap U_{\alpha\beta}$ is an open neighborhood of $e$.
+    Since $j(e)$ can only be contained in finitely many $B_\alpha$ we can form the intersection of all these $V_{\alpha'\beta'}$
+    which, by construction, is contained in $U$ and is open.
+    \item $B \sub U$ considering the cases $U_{\alpha\alpha}$.
+\end{enumerate}
+
+Now we can define $f: U \to E'$ in the obvious way
+\[ f(u \in U_{\alpha\beta}) := f_\alpha(u) = f_\beta(u) \]
+which is a representative map for our desired $F$.
+\end{proof}

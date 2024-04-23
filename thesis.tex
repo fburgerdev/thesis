@@ -4,9 +4,11 @@
 \usepackage{amssymb}
 \usepackage{amsthm}
 \usepackage{mathtools}
-\usepackage{hyperref}
-\usepackage{tikz-cd}
+\usepackage{hyperref} % Links
+\usepackage{tikz-cd} % Diagrams
 \usepackage{parskip} % No Paragraph Indentation
+\usepackage{xparse} % Multiple Optional Arguments
+\usepackage{ifthen} % If-Else Statements
 % Commands
 \input{commands.tex}
 % Document
@@ -14,7 +16,7 @@
 % Document :: Title
 \input{section/title.tex}
 % Document :: Smooth
-\input{section/smooth.tex}
+% \input{section/smooth.tex}
 % Document :: Introduction
 \input{section/introduction.tex}
 % Document :: Induced Microbundle

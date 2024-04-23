@@ -1,0 +1,26 @@
+\begin{file}
+% local
+\newcommand{\bbleft} {
+    \bb\restrict{B \times{} [0, \half]}
+}
+\newcommand{\bbright} {
+    \bb\restrict{B \times{} [\half, 1]}
+}
+\newcommand{\bbhalf} {
+    \bb\restrict{B \times{} \{ \half \}}
+}
+
+% statement
+\lemma{(piecewise triviality)} \\
+Let $\bb$ be a microbundle over $B \times [0, 1]$ such that both $\bbleft$ and $\bbright$ are trivial.
+Then $\bb$ itself is already trivial.
+% proof
+\begin{proof}
+Since $\bbright$ is trivial, we can extend the identity bundle map-germ on $\bbhalf$ to $\bbright \double \bbhalf$.
+Using the previous lemma, we can piece this together with the identity bundle map-germ on $\bbleft$ to
+\[ \bb \double \bbleft \]
+
+From the corollary it follows that $\bb \cong \bbleft$.
+\end{proof}
+
+\end{file}

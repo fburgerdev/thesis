@@ -1,19 +1,21 @@
-\definition{(whitney sum)}
-\\ Let $\bb_1$ and $\bb_1$ be two microbundles over a topological space $B$.
-\\ We define the \textdef{whitney sum} $\bb_1 \oplus \bb_2$ as follows:
+% definition
+\definition{(whitney sum)} \\
+Let $\bb_1$ and $\bb_1$ be two microbundles over a topological space $B$.
+We define the \textdef{whitney sum} $\bb_1 \oplus \bb_2$ as follows:
 \begin{itemize}
     \item $E := \{ (e_1, e_2) \in E(\bb_1) \times E(\bb_2) \mid j_1(e_1) = j_2(e_2)\}$
     \item $i(b) := (i_1(b), i_2(b))$
     \item $j(e_1, e_2) := j_1(e_1) = j_2(e_2)$
 \end{itemize}
+% proof
 \begin{proof}
-    Let $b \in B$.
-    \\ Choose $U_1, V_1, \phi_1$ and $U_2, V_2, \phi_2$ accordingly from the local trivialization of $b$ over $\bb_1$ and $\bb_2$:
-    \begin{itemize}
-        \item $U := U_1 \cap U_2$
-        \item $V := (V_1 \times V_2) \cap E$
-        \item $\phi: V \to U \times \R^{n_1 + n_2}; \phi(e_1, e_2) := (\phi_1^{(1)}(e_1), \phi_1^{(2)}(e_1) \times  \phi_2^{(2)}(e_2))$
-    \end{itemize}
-    Note that $\phi_1^{(1)}(e_1) = \phi_2^{(1)}(e_2)$.
-    \\ Local triviality follows directly from it's components.
+Let $b \in B$. \\
+Choose $U_1, V_1, \phi_1$ and $U_2, V_2, \phi_2$ accordingly from the local trivialization of $b$ over $\bb_1$ and $\bb_2$:
+\begin{itemize}
+    \item $U := U_1 \cap U_2$
+    \item $V := (V_1 \times V_2) \cap E$
+    \item $\phi: V \to U \times \R^{n_1 + n_2}; \phi(e_1, e_2) := (\phi_1^{(1)}(e_1), \phi_1^{(2)}(e_1) \times  \phi_2^{(2)}(e_2))$
+\end{itemize}
+Note that $\phi_1^{(1)}(e_1) = \phi_2^{(1)}(e_2)$.
+Local triviality follows directly from it's components.
 \end{proof}

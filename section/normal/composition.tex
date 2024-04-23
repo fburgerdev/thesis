@@ -1,16 +1,17 @@
-% definition (+ implicit statement)
-\definition{(composition microbundle)}
-\\ Let $\bundledef{\bb}{B}{E}{i_\bb}{j_\bb}$ and $\bundledef{\bc}{E}{E'}{i_\bc}{j_\bc}$ be two microbundles.
-We define the \textdef{composition microbundle} $\bundledef{\bb \circ \bc}{B}{E'}{i}{j}$ with $i(b) := (i_\bc \circ i_\bb)(b)$ and $j(e') := (j_\bb \circ j_\bc)(e')$
+% statement
+\definition{(composition microbundle)} \\
+Let $\bundledef{\bb}{B}{E}{i_\bb}{j_\bb}$ and $\bundledef{\bc}{E}{E'}{i_\bc}{j_\bc}$ be two microbundles.
+We define the \textdef{composition microbundle} $\bundledef{\bb \circ \bc}{B}{E'}{i}{j}$ with
+$i(b) := (i_\bc \circ i_\bb)(b)$ and $j(e') := (j_\bb \circ j_\bc)(e')$
 % proof
 \begin{proof}
 Let $b \in B$. \\
 Choose local trivializations $(U_\bb, V_\bb, \phi_\bb)$ of $b$ and $(U_\bc, V_\bc, \phi_\bc)$ of $j_\bb(b)$.
 From this, we construct our local trivialization over $\bb \circ \bc$.
 Consider $\phi_\bb(V_\bb \cap U_\bc)$, which is a neighborhood of $(b, 0)$.
-Therefore, there exist open neighborhoods $b \in U \subseteq U_\bb$ and $0 \in X \subseteq R^n$ such that $U \times X \subseteq \phi_\bb(V_\bb \cap U_\bc)$.
+Therefore, there exist open neighborhoods $b \in U \sub U_\bb$ and $0 \in X \sub R^n$ such that $U \times X \sub \phi_\bb(V_\bb \cap U_\bc)$.
 Analoguous to the proof of restricting the total space in Chapter 1, it follows that
-\[ \exists \varepsilon > 0: U \times B_\varepsilon(0) \subseteq \phi_\bb(V_\bb \cap U_\bc) \]
+\[ \exists \varepsilon > 0: U \times B_\varepsilon(0) \sub \phi_\bb(V_\bb \cap U_\bc) \]
 \[ \implies U \times \R^n \cong U \times B_\varepsilon(0) \cong \phi_\bb^{-1}(U \times B_\varepsilon(0)) \cong \phi_\bc^{-1}(\phi_\bb^{-1}(U \times B_\varepsilon(0))) \]
 which is an open neighborhood of $i(U)$ and therefore a valid candidate for $V$.
 This concludes local triviality and the proof.
