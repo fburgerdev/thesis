@@ -40,6 +40,10 @@
 \newcommand{\bundledef}[5] {
     #1: #2 \xto{#4} #3 \xto{#5} #2{}
 }
+% Set Theory
+\newcommand{\sub} {
+    \subseteq
+}
 % Restrict
 \newcommand{\restrict}[1] {
     \vert_{#1}
@@ -48,7 +52,35 @@
 \newcommand{\N} {
     \mathbb{N}
 }
+% Analysis
+\newcommand{\abs}[1] {
+    \vert{} #1 \vert{}
+}
+\NewDocumentCommand{\ball} { 
+    O{1} O{0}
+} {
+    \ifthenelse{\equal{#2}{0}} {
+        B_{#1}
+    } {
+        B_{#1}(#2)
+    }
+}
+\NewDocumentCommand{\clball} { 
+    O{1} O{0}
+} {
+    \overline{\ball[#1][#2]}
+}
 % Reals
 \newcommand{\R} {
     \mathbb{R}
+}
+% Homotopy
+\newcommand{\bgerm}[3] {
+    #1: #2 \Rightarrow #3
+}
+\newcommand{\double} {
+    \Rightarrow
+}
+\newcommand{\half} {
+    \frac{1}{2}
 }
