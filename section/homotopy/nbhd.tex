@@ -1,0 +1,12 @@
+% statement
+\lemma{()} \\
+Let $\bb$ be a microbundle over $B \times [0, 1]$.
+Every $b \in B$ has a neighborhood $V$ where $\bb\restrict{V \times [0, 1]}$ is trivial.
+%proof
+\begin{proof}
+Let $b \in B$.
+For every $t \in [0, 1]$, choose a neighborhood $U_t := V_t \times (t - \varepsilon_t, t + \varepsilon_t)$ of $(b, t)$ such that $\bb\restrict{U_t}$ is trivial.
+Since $\{b\} \times [0, 1]$ is compact, we can choose a finite covering of the $U_t$ and define $V$ to be the intersection of the corresponding $V_t$.
+Then there exists a subdivision $0 = t_0 < \cdots < t_k = 1$ where the $\bb\restrict{V \times [t_{i}, t_{i + 1}]}$ are trivial.
+Iteratively applying the previous lemma, it follows that $\bb\restrict{V \times [0, 1]}$ is trivial.
+\end{proof}
