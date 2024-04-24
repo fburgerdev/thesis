@@ -1,0 +1,15 @@
+% definition
+\definition{(microbundle)} \\
+A \defterm{microbundle} $\bb$ is \emph{hallo} a tuple $\bb := (B, E, i, j)$ satisfying the following properties:
+\begin{itemize}
+    \item $B$ is a topological space called the \defterm{base space}
+    \item $E$ is a topological space called the \defterm{total space}
+    \item $i: B \to E$ (\defterm{injection}) and $j: E \to B$ (\defterm{projection}) are continuous maps with $id_B = j \circ i$
+    \item Every $b \in B$ is \defterm{locally trivializable}, i.e there exist open neighborhoods $U \sub B$ of $b$ and $V \sub E$ of $i(U)$ such that the following diagram commutes:
+    \[\begin{tikzcd}[column sep=tiny]
+        & V \ar[dr, "j"] \ar[dd, "\psi"] & \\
+        U \ar[ur, "i"] \ar[dr, "{(id, 0)}"'] & & U \\
+        & U \times\R^n \ar[ur, "\pi_1"'] &
+    \end{tikzcd}\]
+\end{itemize}
+We call $n$ the \defterm{fibre dimension} of $\bb$.

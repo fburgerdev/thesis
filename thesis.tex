@@ -1,30 +1,20 @@
 \documentclass{article}
 % Packages
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{amsthm}
-\usepackage{mathtools}
-\usepackage{hyperref} % Links
-\usepackage{tikz-cd} % Diagrams
-\usepackage{parskip} % No Paragraph Indentation
-\usepackage{xparse} % Multiple Optional Arguments
-\usepackage{ifthen} % If-Else Statements
-% Commands
-\input{commands.tex}
+\input{src/packages.tex}
+% Global Definitions
+\input{src/definitions/global.tex}
 % Document
 \begin{document}
 % Document :: Title
-\input{section/title.tex}
-% Document :: Smooth
-% \input{section/smooth.tex}
-% Document :: Introduction
-\input{section/introduction.tex}
-% Document :: Induced Microbundle
-\input{section/induced.tex}
-% Document :: Whitney Sum
-\input{section/whitneysum.tex}
-% Document :: Normal Microbundle
-\input{section/normal.tex}
+\input{src/title.tex}
+% Document :: Microbundle
+\input{src/sections/microbundle/section.tex}
+% Document :: Induced
+\input{src/sections/induced/section.tex}
+% Document :: Whitney
+\input{src/sections/whitney/section.tex}
 % Document :: Homotopy
-\input{section/homotopy.tex}
+\input{src/sections/homotopy/section.tex}
+% Document :: Normal
+\input{src/sections/normal/section.tex}
 \end{document}

@@ -1,0 +1,58 @@
+% foreword
+\lemma{(closed balls under homeomorphism)} \\
+For a homeomorphism $\phi: \R^n \isomto R^n$ applies:
+\[ \abs{\phi(x) - x} < 1, \forall x \in \clball[2] \implies \clball[1] \sub \phi(\clball[2]) \]
+% proof
+\begin{proof}
+Consider the two points $x_0 := 0$ and $x_1 := 3e_1$.
+Obviously, there is no path between $x_0$ and $x_1$ in $\R^n - S^n$.
+Therefore, since $\phi$ is a homeomorphism, there is no path between $\phi(x_0)$ and $\phi(x_1)$ in $\R^n - \phi(S^n)$.
+Since $1 < \abs{x}$ for every $x \in\phi(S^n)$, there is a path between every $x \in \clball[1]$ and $\phi(x_1)$ in $\R^n - \phi(S^n)$ (e.g a straight line).
+It follows that there is also no path between any $x \in \clball[1]$ and $x_1$ in $\R^n - \phi(S^n)$.
+Since $R^n - \clball[2]$ is path-connected, $R^n - \phi(\clball[2])$ is as well. From $x_1 \in R^n - \phi(\clball[2])$, we know that $\clball[1] \sub \phi(\clball[2])$.
+\end{proof}
+
+% statement
+\lemma{(Williamson)} \\
+A bundle map-germ $\bgerm{F}{\bb}{\bb'}$ on the same base space $B$ covering the identity map is an isomorphism-germ.
+% proof
+\begin{proof}
+We prove the statement locally, then glue the function together for the prove.
+\begin{enumerate}
+    \item
+    First, we consider the case that $\bb$ and $\bb'$ are trivial.
+    This means, that $F: B \times \R^n \to B \times \R^n$ is of the form
+    \[ F(b, x) = (b, g_b(x)) \]
+    where $g_b: \R^n \to \R^n$ are individual maps.
+    In particular, the $g_b$ are even homeomorphisms due to the domain invariance theorem.
+    Now we show that $F$ is a homeomorphism.
+    Let $(b_0, x_0) \in B \times \R^n$ and $\varepsilon > 0$.
+    Since $g_{b_0}$ is a homeomorphism, there exists a $\delta > 0$ so that
+    $\clball[2\delta][x_1] \sub g_{b_0}(\clball[\varepsilon][x_0])$ where $x_1 := g_{b_0}(x_0)$.
+
+    There exists a neighborhood $V \sub B$ of $b_0$, such that
+    \[ \abs{g_b(x) - g_{b_0}(x)} < \delta, \forall x \in \clball[\varepsilon][x_0] \]
+    To show that, consider $\phi_b(b, x) := g_b(x) - g_{b_0}(x)$.
+    The closed set $\phi^{-1}(\clball[\varepsilon][x_0])$ is a neighborhood of $\{b_0\} \times \R^n$ since
+    $\phi(b_0, x) = 0, \forall x \in \R^n$.
+    Therefore, for every $x \in \clball[\delta][x_1]$ exist $V_x \sub B$ and $U_x \sub \R^n$ open with $x \in U_x$ and $V_x \times U_x \sub \phi^{-1}(\clball[\varepsilon][x_0])$.
+    Obviously, $\bigcup_{x \in \clball[\delta][x_1]} U_x$ is an open covering of $\clball[\delta][x_1]$ and because of compactness of $\clball[\delta][x_1]$, there
+    exist $x_1, \dots, x_n \in \clball[\delta][x_1]$ with $\clball[\delta][x_1] \sub \bigcup_{i = 1}^{n} U_{x_i}$.
+    The claim follows via $V := V_{x_1} \cap \dots \cap V_{x_n}$.
+
+    From
+    \[ V \times \clball[\delta][x_1] \sub g(V \times \clball[\varepsilon][x_0]) \]
+    it follows that $g$ is open.
+    \item
+    Since $\bb$ and $\bb'$ are locally trivial, $F\restr{U_b}$ are homeomorphisms on their image for every trivialization $b \in U_b$.
+    It follows that also $F$ is a homeomorphism on its image which completes the proof.
+\end{enumerate}
+\end{proof}
+
+% corollary
+\corollary{(induced microbundles)} \\
+If a map $g: B \to B'$ is covered by a bundle germ $\bb \double \bb'$ then $\bb$ is isomorphic to the induced bundle $g^*\bb'$.
+% proof
+\begin{proof}
+% TODO
+\end{proof}

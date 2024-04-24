@@ -1,0 +1,41 @@
+% foreword
+For a topological space $X$, we define the \defterm{cone} of $X$ as 
+\[ CX := X \times [0, 1] / X \times \{1\} \]
+and for a map $f: A \to B$ the \defterm{mapping cone} of $f$ as
+\[ B \sqcup_f CA := B \sqcup CA / \sim \]
+where $(a, 0) \sim b :\iff f(a) = b$.
+% statement
+\lemma{(extending over a mapping cone)} \\
+A microbundle $\bb$ over $B$ can be extended to a microbundle over the mapping cone $B \sqcup_f CA$ if and only if $f^*\bb$ is trivial.
+% proof
+\begin{proof}
+We show both implications. \\
+$\implies$: \\
+Let $\bb'$ be an extension of $\bb$ over $B \sqcup_f CA$.
+Considering $A \xto{f} B \incl B \sqcup_f CA$, the composition $\iota \circ f$ is null-homotopic with homotopy
+\[ H_t(a) := [(a, t)] \]
+Note that $H_0(a) = [(a, 0)] = [f(a)] = (\iota \circ f)(a)$ and $H_1(a) = [(a, 1)] = [(\tilde{a}, 1)] = H_1(\tilde{a})$.
+\\ $\ximplies{Hom. Thm.} (\iota \circ f)^*\bb'$ is trivial \\
+Since $(\iota \circ f)^*\bb' = f^*(\iota^*\bb') = f^*\bb$, it follows that $f^*\bb$ is trivial.
+$\impliedby$: \\
+Let $f^*\bb$ be trivial.
+Analogous to the cone, we define the \defterm{cylinder} of $X$ as
+\[ MX := X \times [0, 1] \]
+and for a map $f: A \to B$ the mapping \defterm{cylinder} of $f$ as
+\[ B \sqcup_f MA := B \sqcup MA / \sim \]
+where $(a, 0) \sim b :\iff f(a) = b$.
+In contrast to the mapping cone, there exists a natural retraction from the mapping cylinder to the attached space
+\[ \pi: B \sqcup_f MA \to B; \pi([(a, t)]) := f(a) \]
+and therefore the induced microbundle $\pi^*\bb$ over $B \sqcup_f MA$.
+Considering $A \times \{1\} \incl B \sqcup_f MA \xto{\pi} B$, we see that $\pi \circ \iota \cong f$ and therefore
+\[ \pi^*\bb\restr{A \times \{1\}} = (\pi \circ \iota)^*\bb \cong f^*\bb = \mathfrak{e}^n_A\]
+is trivial. From the lemma of induced trivial microbundles and $(a, t) \mapsto (a, 1)$ it follows that $\pi^*\bb\restr{A \times [\frac{1}{2}, 1]}$ is trivial.
+\\ $\implies \exists \phi: E(\bb\restr{A \times [\frac{1}{2}, 1]}) \isomto A \times [\frac{1}{2}, 1] \times \R^n$ \\
+Now we explicitly construct the desired extended microbundle $\bundledef{\bb'}{B \sqcup_f CA}{E'}{i'}{j'}$
+\begin{itemize}
+    \item $E' := E(\bb\restr{A \times [\frac{1}{2}, 1]}) / \phi^{-1}(A \times [\frac{1}{2}, 1] \times \{x\})$ (for every $x \in \R^n$)
+    \item $i' := \pi \circ i$ the projection $i$ to $E'$
+    \item $j'([e]) := [j(e)]$ is well defined, because $[e] = [\tilde{e}] \implies [j(e)] = [j(e')]$
+\end{itemize}
+Now that we have constructed $\bb'$, this proves the claim.
+\end{proof}

@@ -1,0 +1,112 @@
+% Number Systems
+\newcommand{\N} {
+    \mathbb{N}
+}
+\newcommand{\Z} {
+    \mathbb{Z}
+}
+\newcommand{\Q} {
+    \mathbb{Q}
+}
+\newcommand{\R} {
+    \mathbb{R}
+}
+\newcommand{\C} {
+    \mathbb{C}
+}
+
+% Arrows
+\newcommand{\xto}[1] {
+    \xrightarrow{#1}
+}
+\newcommand{\isomto} {
+    \xto{\sim}
+}
+\newcommand{\incl} {
+    \hookrightarrow{}
+}
+\newcommand{\subm} {
+    \twoheadrightarrow{}
+}
+
+% Logic
+\newcommand{\ximplies}[1] {
+    \underset{#1}{\implies}
+}
+\newcommand{\ximpliedby}[1] {
+    \underset{#1}{\impliedby}
+}
+
+% Bundle
+\newcommand{\bundledef}[5] {
+    #1: #2 \xto{#4} #3 \xto{#5} #2{}
+}
+\newcommand{\bundle}[4] {
+    #1 \xto{#3} #2 \xto{#4} #1{}
+}
+% Bundle :: Generic
+\newcommand{\ba} {
+    \mathfrak{a}
+}
+\newcommand{\bb} {
+    \mathfrak{b}
+}
+\newcommand{\bc} {
+    \mathfrak{c}
+}
+\newcommand{\bd} {
+    \mathfrak{d}
+}
+% Bundle :: Tangent
+\newcommand{\bt} {
+    \mathfrak{t}
+}
+% Bundle :: Normal
+\newcommand{\bn} {
+    \mathfrak{n}
+}
+
+% Set Theory
+\newcommand{\sub} {
+    \subseteq{}
+}
+\newcommand{\bus} {
+    \supseteq{}
+}
+
+% Restrict
+\newcommand{\restr}[1] {
+    \vert_{#1}
+}
+
+% Analysis
+% Analysis :: Absolute
+\newcommand{\abs}[1] {
+    \vert{} #1 \vert{}
+}
+% Analysis :: Ball
+\NewDocumentCommand{\ball} { 
+    O{1} O{0}
+} {
+    \ifthenelse{\equal{#2}{0}} {
+        B_{#1}
+    } {
+        B_{#1}(#2)
+    }
+}
+\NewDocumentCommand{\clball} { 
+    O{1} O{0}
+} {
+    \overline{\ball[#1][#2]}
+}
+
+% Homotopy
+\newcommand{\bgerm}[3] {
+    #1: #2 \Rightarrow #3
+}
+\newcommand{\double} {
+    \Rightarrow
+}
+\newcommand{\half} {
+    \frac{1}{2}
+}

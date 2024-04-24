@@ -1,0 +1,87 @@
+\begin{file}
+% local
+\newcommand{\A}[1][] {
+    A_\alpha#1
+}
+
+% local
+\newcommand{\bbleft} {
+    \bb\restr{B \times{} [0, \half]}
+}
+\newcommand{\bbright} {
+    \bb\restr{B \times{} [\half, 1]}
+}
+\newcommand{\bbhalf} {
+    \bb\restr{B \times{} \{ \half \}}
+}
+
+% statement
+\lemma{(piecewise triviality)} \\
+Let $\bb$ be a microbundle over $B \times [0, 1]$ such that both $\bbleft$ and $\bbright$ are trivial.
+Then $\bb$ itself is already trivial.
+% proof
+\begin{proof}
+Since $\bbright$ is trivial, we can extend the identity bundle map-germ on $\bbhalf$ to $\bbright \double \bbhalf$.
+Using the previous lemma, we can piece this together with the identity bundle map-germ on $\bbleft$ to
+\[ \bb \double \bbleft \]
+
+From the corollary it follows that $\bb \cong \bbleft$.
+\end{proof}
+
+% statement
+\lemma{()} \\
+Let $\bb$ be a microbundle over $B \times [0, 1]$.
+Every $b \in B$ has a neighborhood $V$ where $\bb\restr{V \times [0, 1]}$ is trivial.
+%proof
+\begin{proof}
+Let $b \in B$.
+For every $t \in [0, 1]$, choose a neighborhood $U_t := V_t \times (t - \varepsilon_t, t + \varepsilon_t)$ of $(b, t)$ such that $\bb\restr{U_t}$ is trivial.
+Since $\{b\} \times [0, 1]$ is compact, we can choose a finite covering of the $U_t$ and define $V$ to be the intersection of the corresponding $V_t$.
+Then there exists a subdivision $0 = t_0 < \cdots < t_k = 1$ where the $\bb\restr{V \times [t_{i}, t_{i + 1}]}$ are trivial.
+Iteratively applying the previous lemma, it follows that $\bb\restr{V \times [0, 1]}$ is trivial.
+\end{proof}
+
+% lemma
+\lemma{()} \\
+Let $\bb$ be a microbundle over $B \times [0, 1]$ where $B$ is paracompact.
+Then there exists a bundle map-germ $F: \bb \to \bb\restr{B \times \{1\}}$
+covering the standard retraction $r: B \times [0, 1] \to B \times \{1\}$ .
+% proof
+\begin{proof}
+First, we assume a locally finite covering $\{V_\alpha\}$ of closed sets where $\bb\restr{V_\alpha \times [0, 1]}$ is trivial.
+The existence of such a covering is justified by the previous lemmas.
+Since $B$ is paracompact, we can choose bump functions 
+\[ \lambda_\alpha: B \to [0, 1] \]
+with $\text{supp}(\lambda_\alpha) \sub V_\alpha$.
+Additionally, we assume that 
+\[ \max_{\alpha}(\lambda_\alpha(b)) = 1, \forall b \in B \]
+Now we define a retraction $r_\alpha: B \times [0, 1] \to B \times [0, 1]$ with
+\[ r_\alpha(b, t) := (b, \max(t, \lambda_\alpha(b))) \]
+
+We construct bundle map-germs $R_\alpha: \bb \to \bb$ covering $r_\alpha$.
+We can divide $B \times [0, 1]$ into $A_\alpha := \text{supp}(\lambda_\alpha) \times [0, 1]$ and $A'_\alpha := \{(b, t) \mid t \ge \lambda_\alpha(b)\}$.
+Since $A_\alpha \sub V_\alpha \times [0, 1]$, $\bb\restr{A_\alpha}$ is trivial.
+It follow that the identity bundle germ on $\bb\restr{\A \cap \A[']}$ can be extended to a bundle germ $\bb\restr{\A} \double \bb\restr{\A \cap \A[']}$.
+Piecing this together with the identity bundle germ $\bb\restr{\A[']}$, we obtain the desired bundle germ $R_\alpha$.
+
+Applying the well-ordering theorem, which is equivalent to the axiom of choice, we can assume an ordering of $\{ V_\alpha \}$.
+Let $\{B_\beta\}$ be a locally finite covering of $B$ with closed sets where $B_\beta$ intersects only $V_{\alpha_1} < \cdots < V_{\alpha_k}$ a finite collection.
+Now the composition $R_{\alpha_1} \circ \ldots \circ R_{\alpha_k}$ restricts to a bundle germ $R(\beta): \bb\restr{B_\beta} \times [0, 1] \double \bb\restr{B_\beta} \times [1]$.
+Pieced together with the previous lemma, we obtain $R: \bb \times [0, 1]\to \bb \times [1]$ which concludes the proof.
+\end{proof}
+
+% theorem
+\theorem{(Homotopy Theorem)} \\
+Let $\bb$ be a microbundle of $B$ and $f, g: A \to B$ be two maps.
+\[ f \simeq g \implies f^*\bb \cong g^*\bb \]
+% proof
+\begin{proof}
+Let $H: A \times [0, 1] \to B$ be a homtopy between $f$ and $g$.
+By the previous lemma, there exists a bundle germ $R: H^*\bb \double H^*\bb\restr{B \times [1]}$ covering the standard retraction $B \times [0, 1] \to B \times [1]$.
+From the composition
+\[ f^*\bb \sub H^*\bb \double_R H^*\bb\restr{B \times [1]} = g^*\bb \]
+we obtain an isomorphism germ $f^*\bb \double g^*\bb$.
+It follow that $f^*\bb \cong g^*\bb$.
+\end{proof}
+
+\end{file}
