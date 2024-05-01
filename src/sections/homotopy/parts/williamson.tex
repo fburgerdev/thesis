@@ -3,20 +3,20 @@
 For a homeomorphism $\phi: \R^n \isomto R^n$ applies:
 \[ \abs{\phi(x) - x} < 1, \forall x \in \clball[2] \implies \clball[1] \sub \phi(\clball[2]) \]
 % proof
-\begin{proof}
+\begin{myproof}
 Consider the two points $x_0 := 0$ and $x_1 := 3e_1$.
 Obviously, there is no path between $x_0$ and $x_1$ in $\R^n - S^n$.
 Therefore, since $\phi$ is a homeomorphism, there is no path between $\phi(x_0)$ and $\phi(x_1)$ in $\R^n - \phi(S^n)$.
 Since $1 < \abs{x}$ for every $x \in\phi(S^n)$, there is a path between every $x \in \clball[1]$ and $\phi(x_1)$ in $\R^n - \phi(S^n)$ (e.g a straight line).
 It follows that there is also no path between any $x \in \clball[1]$ and $x_1$ in $\R^n - \phi(S^n)$.
 Since $R^n - \clball[2]$ is path-connected, $R^n - \phi(\clball[2])$ is as well. From $x_1 \in R^n - \phi(\clball[2])$, we know that $\clball[1] \sub \phi(\clball[2])$.
-\end{proof}
+\end{myproof}
 
 % statement
 \lemma{\parttitle{Williamson}} \\
 A bundle map-germ $\bgerm{F}{\bb}{\bb'}$ on the same base space $B$ covering the identity map is an isomorphism-germ.
 % proof
-\begin{proof}
+\begin{myproof}
 We prove the statement locally, then glue the function together for the prove.
 \begin{enumerate}
     \item
@@ -43,16 +43,25 @@ We prove the statement locally, then glue the function together for the prove.
     From
     \[ V \times \clball[\delta][x_1] \sub g(V \times \clball[\varepsilon][x_0]) \]
     it follows that $g$ is open.
-    \item
-    Since $\bb$ and $\bb'$ are locally trivial, $F\restr{U_b}$ are homeomorphisms on their image for every trivialization $b \in U_b$.
-    It follows that also $F$ is a homeomorphism on its image which completes the proof.
+    \item  % TODO
+    Now we restrict ourselves to the above situation.
+
+    Assume a local trivialization $(U, V, \phi)$ over $b \in B$.
+    First, we restrict $f$ to $f^{-1}(V)$.
+    Since $f^{-1}(V)$ is a neighborhood of $i(b)$, we can choose an open neighborhood $V' \sub f^{-1}(V) \cap V$ of $i(b)$ of the form $U' \times \ball[\varepsilon]$.
+    Now we have
+    \[ U' \times \R^n \cong U' \times \ball[\varepsilon] \xto{f} U' \times \R^n \sub U \times \R^n \]
+    a map $U' \times \R^n \to U' \times \R^n$ that is bijective and fibre-preserving and therefore a homeomorphism.
+    \[ U' \times \R^n \cong U' \times \ball[\varepsilon] \cong V' \xto{\phi \circ f} \]
+    By glueing all the $U' \times \R^n$, which are neighborhoods of $b$, together we see that $f$ is a homeomorphism on it's image.
+    This concludes the proof.
 \end{enumerate}
-\end{proof}
+\end{myproof}
 
 % corollary
 \corollary{\parttitle{induced microbundles}} \\
 If a map $g: B \to B'$ is covered by a bundle germ $\bb \double \bb'$ then $\bb$ is isomorphic to the induced bundle $g^*\bb'$.
 % proof
-\begin{proof}
+\begin{myproof}
 % TODO
-\end{proof}
+\end{myproof}

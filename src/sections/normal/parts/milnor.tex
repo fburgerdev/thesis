@@ -1,9 +1,35 @@
 % foreword
 Finally, we gathered all the tools to prove Milnor's theorem.
+
+\newcommand{\whitney} {
+    r^*\bt_N \oplus{} r^*\bt'
+}
+\newcommand{\rtn} {
+    r^*\bt_N
+}
+
 % statement
 \theorem{(Milnor)}
 For a sufficently large $q \in \N$, $N = N \times \{0\}$ has a normal microbundle in $M \times \R^q$.
 % proof
-\begin{proof}
-% TODO
-\end{proof}
+\begin{myproof}
+    \begin{enumerate}
+        % statement
+        \item There exists a microbundle $\bt'$ over $N$ such that $\bt_N \oplus \bt' \cong \be^q_n$:
+        
+        % proof
+        From the \extref{Whitney Embedding Thereom} it follows that we can embed $N$ in euclidean space $\R^{2m + 1}$.
+        Additionally, from previous conseriderations we can extend $\bt_N$ to a microbundle over an open neighborhood $V \sub \R^{2m + 1}$.
+        Now we can apply the \intref{Whitney trivialization Theorem} from Chapter 4.
+
+        % statement
+        \item $E(\rtn) \sub E(\whitney)$ has a normal microbundle:
+
+        %proof
+        Consider $\bundledef{j^*(\whitney)}{E(\rtn)}{E(\whitney)}{i'}{j'}$ where $j$ is the projection map for $\rtn$.
+        Since $i'$ is injective, we can consider $E(\rtn) \sub E(\whitney)$.
+        Since total spaces of microbundles over manifolds are manifolds as well, it follows that $j^*(\whitney)$ is a normal microbundle.
+    \end{enumerate}
+    Since $N \sub M \sub E(\rtn)$ has a normal microbundle (\intref{previous lemma}) it follows from \intref{transitivity} that $N \sub E(r^*\bt_N \oplus r^*\bt')$ has a normal microbundle.
+    But $r^*\bt_N \oplus r^*\bt'$ is trivial and therefore w.l.o.g. $E(\whitney) \cong N \times \R^q$
+\end{myproof}

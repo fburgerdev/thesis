@@ -4,7 +4,7 @@ Let $\bundledef{\bb}{B}{E}{i_\bb}{j_\bb}$ and $\bundledef{\bc}{E}{E'}{i_\bc}{j_\
 We define the \defterm{composition microbundle} $\bundledef{\bb \circ \bc}{B}{E'}{i}{j}$ with
 $i(b) := (i_\bc \circ i_\bb)(b)$ and $j(e') := (j_\bb \circ j_\bc)(e')$
 % proof
-\begin{proof}
+\begin{myproof}
 Let $b \in B$. \\
 Choose local trivializations $(U_\bb, V_\bb, \phi_\bb)$ of $b$ and $(U_\bc, V_\bc, \phi_\bc)$ of $j_\bb(b)$.
 From this, we construct our local trivialization over $\bb \circ \bc$.
@@ -15,4 +15,4 @@ Analoguous to the proof of restricting the total space in Chapter 1, it follows 
 \[ \implies U \times \R^n \cong U \times B_\varepsilon(0) \cong \phi_\bb^{-1}(U \times B_\varepsilon(0)) \cong \phi_\bc^{-1}(\phi_\bb^{-1}(U \times B_\varepsilon(0))) \]
 which is an open neighborhood of $i(U)$ and therefore a valid candidate for $V$.
 This concludes local triviality and the proof.
-\end{proof}
+\end{myproof}

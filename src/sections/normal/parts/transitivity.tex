@@ -1,10 +1,13 @@
+\begin{lemma}
+% Title
+\parttitle{transitivity of normal microbundles} \\
 % statement
-\lemma{\parttitle{transitivity of normal microbundles}} \\
 Let $M, N$ and $P$ be topological manifolds with $P \sub N \sub M$.
 There exists a normal microbundle $\bn$ of $P$ in $M$, if
 there exist normal microbundles $\bn_p: \bundle{P}{U_N}{i_P}{j_P}$ in $N$ and $\bn_n: \bundle{N}{U_M}{i_N}{j_N}$ in $M$.
+\end{lemma}
 % proof
-\begin{proof}
+\begin{myproof}
 We simply form the composition $\bn_p \circ \bn_n\restr{U_N}: \bundle{P}{U_M}{i_N \circ i_P}{j_P \circ j_N}$.
 Since $i_N \circ i_P$ is just the inclusion of $P \incl U_M \sub M$, we found a normal microbundle $\bn$ of $P$ in $M$.
-\end{proof}
+\end{myproof}

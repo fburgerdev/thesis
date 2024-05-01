@@ -1,15 +1,22 @@
-% definition
-\definition{\parttitle{microbundle}} \\
-A \defterm{microbundle} $\bb$ is \emph{hallo} a tuple $\bb := (B, E, i, j)$ satisfying the following properties:
-\begin{itemize}
-    \item $B$ is a topological space called the \defterm{base space}
-    \item $E$ is a topological space called the \defterm{total space}
-    \item $i: B \to E$ (\defterm{injection}) and $j: E \to B$ (\defterm{projection}) are continuous maps with $id_B = j \circ i$
-    \item Every $b \in B$ is \defterm{locally trivializable}, i.e there exist open neighborhoods $U \sub B$ of $b$ and $V \sub E$ of $i(U)$ such that the following diagram commutes:
-    \[\begin{tikzcd}[column sep=tiny]
-        & V \ar[dr, "j"] \ar[dd, "\psi"] & \\
-        U \ar[ur, "i"] \ar[dr, "{(id, 0)}"'] & & U \\
-        & U \times\R^n \ar[ur, "\pi_1"'] &
-    \end{tikzcd}\]
-\end{itemize}
-We call $n$ the \defterm{fibre dimension} of $\bb$.
+% def: microbundle
+\begin{mydefinition}[microbundle]
+    A \defterm{microbundle} $\bb$ over $B$ (with \defterm{fibre-dimension} $n$) is a diagram $\bundle{B}{E}{i}{j}$ satisfying the following:
+    \begin{itemize}
+        \item $B$ is a topological space (\defterm{base space})
+        \item $E$ is a topological space (\defterm{total space})
+        \item $i: B \to E$ (\defterm{injection}) and $j: E \to B$ (\defterm{projection}) are continuous maps such that $id_B = j \circ i$
+        \item Every $b \in B$ is \defterm{locally trivializable}, that is there exist open neighborhoods $U \sub B$ of $b$ and $V \sub E$ of $i(U)$ with a homeomorphism $\phi: V \isomto U \times \R^n$ such that the following diagram commutes:
+        \[
+            \begin{tikzcd}[column sep=tiny]
+                & V \ar[dr, "j\vert_V"] \ar[dd, "\psi"] & \\
+                U \ar[ur, "i"] \ar[dr, "{(id, 0)}"'] & & U \\
+                & U \times\R^n \ar[ur, "\pi_1"'] &
+            \end{tikzcd}
+        \]
+    \end{itemize}
+\end{mydefinition}
+
+% rmk: omit fibre dimension
+\begin{myremark}
+    In the following, unless explicitly stated otherwise we assume the fiber dimension of any given microbundle to be $n$.
+\end{myremark}

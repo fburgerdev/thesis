@@ -3,7 +3,7 @@
 Let $A \xto{f} B \xto{g} C$ be topological spaces and $\mathfrak{c}: \bundle{C}{E}{i}{j}$ be a microbundle:
 \[ (g \circ f)^*\mathfrak{c} \cong f^*(g^*\mathfrak{c}) \]
 % proof
-\begin{proof}
+\begin{myproof}
 We'll compare the two total spaces and conclude that they are homeomorphic.
 \begin{enumerate}
     \item $E((g \circ f)^*\mathfrak{c}) = \{ (a, e) \in A \times E(\mathfrak{c}) \mid g(f(a)) = j(e)\}$ 
@@ -12,4 +12,4 @@ We'll compare the two total spaces and conclude that they are homeomorphic.
 We have the bijection $\phi: E((g \circ f)^*\mathfrak{c}) \isomto E(f^*(g^*\mathfrak{c}))$ with $\phi(a, e) := (a, (f(a), e))$ and $\phi^{-1}(a, (b, e)) = (a, e)$.
 Additionally, $\phi$ is a homeomorphism because $\phi$ and $\phi^{-1}$ are componentwise continuous.
 It's easy to see that $\phi$ respects both injection and projection, which concludes the proof.
-\end{proof}
+\end{myproof}

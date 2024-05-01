@@ -1,13 +1,20 @@
-% definition
-\example{\parttitle{trivial microbundle}} \\
-Let $B$ be a topological space and $n \in \N$.
-The diagram $\mathfrak{e}^n_B: \bundle{B}{B \times \R^n}{\iota}{\pi}$ constitutes a microbundle, where
-$\iota(b) := (b, 0)$ and $\pi(b, x) := b$.
-We call $\mathfrak{e}^n_B$ the \defterm{standard microbundle} and every microbundle isomorphic to $\bb^n_B$ \defterm{trival}.
-% stattement
-\lemma{\parttitle{criteria for triviality}} \\
-A microbundle $\bb$ of $B$ is trivial if and only if there exists a open subset $B \sub U$ with $U \cong B \times \R^n$.
-% proof
-\begin{proof}
- % TODO
-\end{proof}
+% foreword
+The most obvious example for a microbundle is the standard microbundle.
+
+% trivial microbundle
+\begin{myexample}[trivial microbundle]
+    % def: trivial microbundle
+    For a topological space $B$, the \defterm{standard microbundle} $\be^n_B$ over $B$ is a diagram
+    \[ \bundle{B}{B \times \R^n}{\iota}{\pi} \]
+    where $\iota(b) := (b, 0)$ and $\pi(b, x) := b$.
+    
+    Additionally, a microbundle $\bb$ over $B$ is \defterm{trivial} if it is isomorphic to $\be^n_B$.
+    % lemma: criteria for triviality
+    \begin{mylemma}[criteria for triviality]
+        A microbundle $\bb$ over $B$ is trivial if and only if there exists an open neighborhood $U$ of $i(B)$ such that $U \cong B \times \R^n$.
+    \end{mylemma}
+    % proof
+    \begin{myproof}
+        TODO
+    \end{myproof}
+\end{myexample}

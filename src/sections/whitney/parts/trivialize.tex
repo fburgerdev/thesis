@@ -1,14 +1,69 @@
+TODO --- BOUQET LEMMA
+
 % statement
 \theorem{(inverse microbundles)}
 \\ Let $\bb$ be a microbundle over a $d$-dimensional simplicial complex $B$.
-\\ Then there exists a microbundle $\mathfrak{n}$ over $B$ so that the Whitney sum $\bb \oplus \mathfrak{n}$ is trivial.
+\\ Then there exists a microbundle $\bn$ over $B$ so that the Whitney sum $\bb \oplus \bn$ is trivial.
 % proof
-\begin{proof}
+\begin{myproof}
 We prove this theorem by induction over $d$.
-\\ (Start of induction) \\
+
+% Start if Induction
+(Start of induction)
+
 A $1$-dimensional simplicial complex is just a bouquet of circles, therefore
-the start of induction follows directly from the bouquet lemma.   
-\\ (Inductive Step) \\
-Let $B'$ be the $(d - 1)$-skeleton of $B$ and $\mathfrak{n}'$ it's corresponding microbundle
-so that $\bb \restr{B'} \oplus \mathfrak{n}'$ is trivial.
-\end{proof}
+the start of induction follows directly from the \intref{bouquet lemma}.   
+
+% Start if Induction
+(Inductive Step)
+
+Let $B'$ be the $(d - 1)$-skeleton of $B$ and $\bn'$ it's corresponding microbundle
+so that $\bb\restr{B'} \oplus \bn'$ is trivial.
+
+\begin{enumerate}
+    % statement
+    \item $\bn' \oplus \be^n_{B'}$ can be extended over every $d$-simplex $\sigma$:
+
+    % proof
+    Consider the following:
+    \[
+        (\bn' \oplus \be^n_{B'})\restr{\partial\sigma}
+        = \bn'\restr{\partial\sigma} \oplus \be^n_{B'}\restr{\partial\sigma}
+        = \bn'\restr{\partial\sigma} \oplus \bb\restr{\partial\sigma}
+        = (\bn' \oplus \bb\restr{B'})\restr{\partial\sigma}
+    \]
+    Since $(\bn' \oplus \bb\restr{B'})\restr{\partial\sigma}$ is trivial, the claim follows from \intref{extending simplex lemma}.
+
+    % statement
+    \item $\bn' \oplus \be^n_{B'}$ can be extended over $B$:
+
+    % proof
+    The difficulty is that the individual $d$-simplices are not well-seperated.
+    Let $B''$ denote $B$ with small open $d$-cells cut out from every $d$-simplex.
+    Since $B'$ is a retract of $B''$ we can extend $\bn' \oplus \be^n_{B'}$ over $B''$ and now apply the first statement.
+    We denote the resulting microbundle by $\eta$.
+
+    % finish
+    \item
+    Consider the mapping-cone $B \sqcup CB'$ over the inclusion $B' \incl B$.
+    Since
+    \[
+        (\bb \oplus \eta)\restr{B'}
+        = \bb\restr{B'} \oplus \eta\restr{B'}
+        = \bb\restr{B'} \oplus (\bn' \oplus \be^n_{B'})
+        = (\bb\restr{B'} \oplus \bn') \oplus \be^n_{B'}
+        = \be^n_{B'} \oplus \be^n_{B'}
+    \]
+    which is trivial, by \intref{extending mapping-cone lemma} we can extend $\bb \oplus \eta$ over $B \sqcup CB'$ denoted by $\xi$.
+    However, $B \sqcup CB'$ has the homotopy type of a bouquet of spheres and by the \intref{bouquet lemma} there exists a microbundle $\bn$ such that $(\xi \oplus \bn)\restr{B}$ is trivial.
+    \[ 
+        \be^n_{B}
+        = (\xi \oplus \bn)\restr{B}
+        = \xi\restr{B} \oplus \bn\restr{B}
+        = (\bb \oplus \eta) \oplus \bn\restr{B}
+        = \bb \oplus (\eta \oplus \bn\restr{B})
+    \]
+    This conlcudes the proof.
+\end{enumerate}
+
+\end{myproof}

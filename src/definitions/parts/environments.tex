@@ -1,26 +1,78 @@
-% Environment
-% Environment :: Definition
-\theoremstyle{definition}
-\newtheorem{definition}{Definition}
-% Environment :: Theorem
-\theoremstyle{plain}
-\newtheorem{theorem}[definition]{Theorem}
-% Environment :: Proposition
-\theoremstyle{plain}
-\newtheorem{proposition}[definition]{Proposition}
-% Environment :: Corollary
-\theoremstyle{plain}
-\newtheorem{corollary}[definition]{Corollary}
-% Environment :: Lemma
-\theoremstyle{plain}
-\newtheorem{lemma}[definition]{Lemma}
-% Environment :: Remark
-\theoremstyle{remark}
-\newtheorem{remark}[definition]{Remark}
-% Environment :: Example
-\theoremstyle{definition}
-\newtheorem{example}[definition]{Example}
-% Numbering
-\numberwithin{definition}{section}
+% Break
+\newcommand{\blankbreak} {%
+  $ $\\
+}
 
+% File
 \newenvironment{file} {}{}
+
+% Statement
+\newtheorem{statement}{}
+\numberwithin{statement}{section}
+% Statement :: Definition
+\theoremstyle{definition}
+\newtheorem{definition}[statement]{Definition}
+\newenvironment{mydefinition}[1][]{%
+  \begin{definition}[#1]\blankbreak{}
+} {
+  \end{definition}
+}
+% Statement :: Theorem
+\theoremstyle{plain}
+\newtheorem{theorem}[statement]{Theorem}
+\newenvironment{mytheorem}[1][]{%
+  \begin{theorem}[#1]\blankbreak{}
+} {
+  \end{theorem}
+}
+% Statement :: Proposition
+\theoremstyle{plain}
+\newtheorem{proposition}[statement]{Proposition}
+\newenvironment{myproposition}[1][]{%
+  \begin{proposition}[#1]\blankbreak{}
+} {
+  \end{proposition}
+}
+% Statement :: Corollary
+\theoremstyle{plain}
+\newtheorem{corollary}[statement]{Corollary}
+\newenvironment{mycorollary}[1][]{%
+  \begin{corollary}[#1]\blankbreak{}
+} {
+  \end{corollary}
+}
+% Statement :: Lemma
+\theoremstyle{plain}
+\newtheorem{lemma}[statement]{Lemma}
+\newenvironment{mylemma}[1][]{%
+  \begin{lemma}[#1]\blankbreak{}
+} {
+  \end{lemma}
+}
+% Statement :: Remark
+\theoremstyle{remark}
+\newtheorem{remark}[statement]{Remark}
+\newenvironment{myremark}[1][]{%
+  \begin{remark}[#1]\blankbreak{}
+} {
+  \end{remark}
+}
+% Statement :: Example
+\theoremstyle{definition}
+\newtheorem{example}[statement]{Example}
+\newenvironment{myexample}[1][]{%
+  \begin{example}[#1]\blankbreak{}
+} {
+  \end{example}
+}
+
+% Proof
+\newenvironment{myproof}[1][]{%
+  \ifthenelse{\equal{#1}{}} {
+    \begin{proof}\blankbreak{}
+  } {
+    \begin{proof}[Proof that #1.]\blankbreak{}
+  }
+} {
+  \end{proof}
+}
