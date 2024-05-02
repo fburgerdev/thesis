@@ -1,0 +1,5 @@
+\contentsline {section}{\numberline {1}Introduction to Microbundles}{3}{section.1}%
+\contentsline {section}{\numberline {2}Induced Microbundles}{5}{section.2}%
+\contentsline {section}{\numberline {3}Whitney sums}{8}{section.3}%
+\contentsline {section}{\numberline {4}Homotopy and Microbundles}{10}{section.4}%
+\contentsline {section}{\numberline {5}Normal Microbundles}{14}{section.5}%

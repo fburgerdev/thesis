@@ -1,4 +1,4 @@
-% NOTE: Check proof
+% NOTE: Check proof clarity and notation
 
 % foreword
 For a topological space $X$, we define the \defterm{cone} of $X$ to be 
@@ -28,7 +28,7 @@ Let $\bb'$ be an extension of $\bb$ over $B \sqcup_f CA$.
 Considering $A \xto{f} B \incl B \sqcup_f CA$, the composition $\iota \circ f$ is null-homotopic with homotopy
 \[ H_t(a) := [(a, t)] \]
 Note that $H_0(a) = [(a, 0)] = [f(a)] = (\iota \circ f)(a)$ and $H_1(a) = [(a, 1)] = [(\tilde{a}, 1)] = H_1(\tilde{a})$.
-From the Homotopy Theorem~\ref{homotopy::theorem} follows that $(\iota \circ f)^*\bb'$ is trivial. 
+From the Homotopy \intref{homotopy::theorem} follows that $(\iota \circ f)^*\bb'$ is trivial. 
 
 Since $(\iota \circ f)^*\bb' = f^*(\iota^*\bb') = f^*\bb$, it follows that $f^*\bb$ is trivial.
 
@@ -38,21 +38,25 @@ Since $(\iota \circ f)^*\bb' = f^*(\iota^*\bb') = f^*\bb$, it follows that $f^*\
 Let $f^*\bb$ be trivial.
 
 In contrast to the mapping cone, there exists a natural retraction from the mapping cylinder to the attached space
-\[ \pi: B \sqcup_f MA \to B, \pi([(a, t)]) := f(a) \]
+\[ r: B \sqcup_f MA \to B, r([(a, t)]) := f(a) \]
 The diagram
-\[ A \times \{1\} \incl B \sqcup_f MA \xto{\pi} B \]
+\[ A \times \{1\} \incl B \sqcup_f MA \xto{r} B \]
 equals $f$ if we consider $A = A \times \{1\}$.
 It follows that
-\[ \pi^*\bb\restr{A \times \{1\}} = (\pi \circ \iota)^*\bb \cong f^*\bb = \mathfrak{e}^n_A\]
+\[ r^*\bb\restr{A \times \{1\}} = (r \circ \iota)^*\bb \cong f^*\bb = \mathfrak{e}^n_A\]
 is trivial.
-From \cref{induced::trivial} and $(a, t) \mapsto (a, 1)$ it follows that $\pi^*\bb\restr{A \times [\frac{1}{2}, 1]}$ is trivial, so
-\[ \exists \phi: E(\bb\restr{A \times [\frac{1}{2}, 1]}) \isomto A \times [\frac{1}{2}, 1] \times \R^n \]
+From \intref{induced::trivial} and $(a, t) \mapsto (a, 1)$ it follows that $r^*\bb\restr{A \times [\frac{1}{2}, 1]}$ is trivial,
+so there exists a
+\[ \phi: E(r^*\bb\restr{A \times [\frac{1}{2}, 1]}) \isomto A \times [\frac{1}{2}, 1] \times \R^n \]
 Now we explicitly construct our desired extended microbundle $\bundledef{\bb'}{B \sqcup_f CA}{E'}{i'}{j'}$
 \begin{itemize}
-    \item $E' := E(\bb\restr{A \times [\frac{1}{2}, 1]}) / \phi^{-1}(A \times [\frac{1}{2}, 1] \times \{x\})$ (for every $x \in \R^n$)
-    \item $i' := \pi \circ i$ the projection map.
-    \item $j'([e]) := [j(e)]$ is well-defined since $[e] = [\tilde{e}] \implies [j(e)] = [j(e')]$
+    \item $E' := E(r^*\bb) / \phi^{-1}(A \times \{1\} \times \{x\})$ (for every $x \in \R^n$).
+    \item $i'([a, t]) := [i_r(a, t)]$ where $i_r$ is the injection map for $r^*\bb$.
+    \item $j'([e]) := [j_r(e)]$ where $j_r$ is the projection map for $r^*\bb$.
 \end{itemize}
-We derive the microbundle conditions from 
-Now that we have constructed $\bb'$, the prove is complete.
+The injection $i'$ is well-defined because $i_r$ maps every representative $[a, 1]$ to the same equivalence class of $E'$.
+Similarly, the projection $j'$ is well-defined since $[e] = [\tilde{e}] \implies [j_r(e)] = [j_r(e')]$
+We easily derive the microbundle conditions from $r^*\bb$.
+
+This proves the claim.
 \end{myproof}

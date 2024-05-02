@@ -1,12 +1,16 @@
-% statement
-\corollary{\parttitle{extending over a d-simplex}} \\
-Let $B$ be a $(d + 1)$-simplicial complex, $B'$ it's $d$-skeleton and $\Delta^{d + 1} \cong \sigma \sub B$.
-A microbundle $\bb$ over $B'$ can be extended to a microbundle over $B' \cup \sigma$ if and only if $\bb \restr{\partial \sigma}$ is trivial.
+% cor: extending over a d-simplex
+\begin{mycorollary}
+Let $B$ be a $(d + 1)$-simplicial complex, $B'$ it's $d$-skeleton and $\sigma \sub B$ a $(d + 1)$-simplex.
+A microbundle $\bb$ over $B'$ can be extended to a microbundle over $B' \cup \sigma$ if and only if its restriction to the boundary $\bb \restr{\partial \sigma}$ is trivial.
+\end{mycorollary}
 % proof
 \begin{myproof}
-The statement follows from the last lemma: \\
-There exists a $\phi: C\partial \sigma \isomto \sigma$ such that $\phi(\partial \sigma \times \{0\}) = \partial \sigma$.
-We explicitly construct $\phi((t_1, \dots, t_{d + 1}), \lambda) := (1 - \lambda) (t_1, \dots, t_{d + 1}) + \frac{\lambda}{d + 1} (1, \dots, 1)$.
-It's easy to see that $\phi$ suffices all our requirements.
-By choosing $f: \partial \sigma \incl B'$ and applying the last lemma, the statement is proven.
+    By choosing $f: \partial \sigma \incl B'$ and applying the previous lemma,
+    we see that there exists a microbundle $\bb'$ over $B' \cup_f C\sigma$ extending $\bb$.
+
+    Now, consider the homeomorphism $\phi: C\partial \sigma \isomto \sigma$ with
+    \[ \phi((t_1, \dots, t_{d + 1}), \lambda) := (1 - \lambda) (t_1, \dots, t_{d + 1}) + \frac{\lambda}{d + 1} (1, \dots, 1) \]
+    In particular, $\phi(\partial \sigma \times \{0\}) = \partial \sigma$.
+
+    It follows that $B' \cup_f C\sigma \cong B' \cup \sigma$ which concludes the proof.
 \end{myproof}
