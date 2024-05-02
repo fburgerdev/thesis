@@ -1,15 +1,22 @@
-% statement
-\proposition{\parttitle{composition}} \\
-Let $A \xto{f} B \xto{g} C$ be topological spaces and $\mathfrak{c}: \bundle{C}{E}{i}{j}$ be a microbundle:
-\[ (g \circ f)^*\mathfrak{c} \cong f^*(g^*\mathfrak{c}) \]
+% foreword
+
+% lemma: composition
+\begin{mylemma}\label{induced::composition}
+    For a diagram $A \xto{f} B \xto{g} C$ and a microbundle $\mathfrak{c}: \bundle{C}{E}{i}{j}$ applies:
+    \[ (g \circ f)^*\mathfrak{c} \cong f^*(g^*\mathfrak{c}) \]
+\end{mylemma}
 % proof
 \begin{myproof}
-We'll compare the two total spaces and conclude that they are homeomorphic.
-\begin{enumerate}
-    \item $E((g \circ f)^*\mathfrak{c}) = \{ (a, e) \in A \times E(\mathfrak{c}) \mid g(f(a)) = j(e)\}$ 
-    \item $E(f^*(g^*\mathfrak{c})) = \{ (a, (b, e)) \in A \times (B \times E(\mathfrak{c})) \mid f(a) = b$ and $ g(b) = j(e) \}$.
-\end{enumerate}
-We have the bijection $\phi: E((g \circ f)^*\mathfrak{c}) \isomto E(f^*(g^*\mathfrak{c}))$ with $\phi(a, e) := (a, (f(a), e))$ and $\phi^{-1}(a, (b, e)) = (a, e)$.
-Additionally, $\phi$ is a homeomorphism because $\phi$ and $\phi^{-1}$ are componentwise continuous.
-It's easy to see that $\phi$ respects both injection and projection, which concludes the proof.
+    To prove isomorphy, we need to show that the two total spaces are homeomorphic and that the injection and projection maps commute with
+    such a homeomorphism.
+    
+    First, compare the two total spaces:
+    \begin{enumerate}
+        \item $E((g \circ f)^*\mathfrak{c}) = \{ (a, e) \in A \times E(\mathfrak{c}) \mid g(f(a)) = j(e)\}$ 
+        \item $E(f^*(g^*\mathfrak{c})) = \{ (a, (b, e)) \in A \times (B \times E(\mathfrak{c})) \mid f(a) = b$ and $ g(b) = j(e) \}$.
+    \end{enumerate}
+    We have the bijection $\phi: E((g \circ f)^*\mathfrak{c}) \isomto E(f^*(g^*\mathfrak{c}))$ with $\phi(a, e) := (a, (f(a), e))$ and $\phi^{-1}(a, (b, e)) = (a, e)$.
+    Since $\phi$ and $\phi^{-1}$ are component-wise continuous, it follows that $\phi$ is a homeomorphism.
+    
+    It's easy to see that $\phi$ commutes with injection and projection maps, which concludes the proof.
 \end{myproof}

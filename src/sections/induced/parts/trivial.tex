@@ -1,9 +1,15 @@
-% statement
-\lemma{\parttitle{induced trivial microbundle}} \\
-The induced microbundle $f^*\bb$ is trivial for every map $f: A \to B$, if $\bb$ is already trivial.
+% lemma: induced trival microbundle
+\begin{mylemma}\label{induced::trivial}
+    Let $\bb$ be a microbundle over $B$ and $f: A \to B$ be a map.
+    The induced microbundle $f^*\bb$ is trivial if $\bb$ is already trivial.
+\end{mylemma}
 % proof
 \begin{myproof}
-Let $(V, \phi)$ be a global trivialization of $\bb$, i.e $V \cong_\phi B \times \R^n$.
-Now define $V' := (A \times V) \cap E'$ and $\phi'(a, e) := (a, \phi^{(2)}(e))$.
-Obviously, $V'$ is a neighborhood of $i'(A)$ and also $\phi'$ is a homeomorphism with inverse $\phi'^{(-1)}(a, x) = (a, \phi^{-1}(f(a), x))$.
+Let $(V, \phi)$ be a global trivialization, that is $\phi: V \isomto B \times \R^n$.
+\begin{itemize}
+    \item $V' := (A \times V) \cap E(f^*\bb)$ a neighborhood of $i'(A)$.
+    \item $\phi': V' \isomto B \times \R^n, \phi'(a, e) := (a, \pi_2(\phi(e)))$.
+\end{itemize}
+The existence of an inverse $\phi'^{(-1)}(a, x) = (a, \phi^{-1}(f(a), x))$ and component-wise continuity show that $\phi'$ is a homeomorphism.
+This proves that $(V', \phi')$ is a global trivialization for $f^*\bb$. 
 \end{myproof}
