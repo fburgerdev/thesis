@@ -1,5 +1,6 @@
-\contentsline {section}{\numberline {1}Introduction to Microbundles}{3}{section.1}%
-\contentsline {section}{\numberline {2}Induced Microbundles}{5}{section.2}%
-\contentsline {section}{\numberline {3}Whitney sums}{8}{section.3}%
-\contentsline {section}{\numberline {4}Homotopy and Microbundles}{10}{section.4}%
-\contentsline {section}{\numberline {5}Normal Microbundles}{14}{section.5}%
+\contentsline {chapter}{\numberline {1}Introduction to Microbundles}{1}{chapter.1}%
+\contentsline {chapter}{\numberline {2}Induced Microbundles}{5}{chapter.2}%
+\contentsline {chapter}{\numberline {3}Whitney sums}{9}{chapter.3}%
+\contentsline {chapter}{\numberline {4}Homotopy and Microbundles}{12}{chapter.4}%
+\contentsline {chapter}{\numberline {5}Microbundles over a Suspension}{17}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Normal Microbundles}{18}{chapter.6}%

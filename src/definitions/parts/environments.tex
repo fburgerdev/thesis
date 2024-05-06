@@ -8,7 +8,7 @@
 
 % Statement
 \newtheorem{statement}{}
-\numberwithin{statement}{section}
+\numberwithin{statement}{chapter}
 % Statement :: Definition
 \theoremstyle{definition}
 \newtheorem{definition}[statement]{Definition}
@@ -75,4 +75,11 @@
   }
 } {
   \end{proof}
+}
+
+% Paragraph
+\newenvironment{myparagraph}{
+  \hspace{\parindent}
+} {
+
 }

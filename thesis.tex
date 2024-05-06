@@ -1,22 +1,27 @@
-\documentclass{article}
+\documentclass{report}
 % Packages
-\input{src/packages.tex}
+\input{src/packages}
 % Global Definitions
-\input{src/definitions/global.tex}
+\input{src/definitions/global}
 % Document
 \begin{document}
-% Document :: Title
-\input{src/title.tex}
+% Document :: Titlepage
+\input{src/titlepage}
+% Document :: Table of Contents
 \tableofcontents
 \clearpage
+% Document :: Abstract
+\input{src/abstract}
 % Document :: Microbundle
-\input{src/sections/microbundle/section.tex}
+\input{src/chapters/microbundle/section}
 % Document :: Induced
-\input{src/sections/induced/section.tex}
+\input{src/chapters/induced/section}
 % Document :: Whitney
-\input{src/sections/whitney/section.tex}
+\input{src/chapters/whitney/section}
 % Document :: Homotopy
-\input{src/sections/homotopy/section.tex}
+\input{src/chapters/homotopy/section}
+% Docuemnt :: Suspension
+\input{src/chapters/suspension/section}
 % Document :: Normal
-\input{src/sections/normal/section.tex}
+\input{src/chapters/normal/section}
 \end{document}

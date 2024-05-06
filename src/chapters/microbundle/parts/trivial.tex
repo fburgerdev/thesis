@@ -1,0 +1,32 @@
+% foreword example
+\begin{myparagraph}
+    The most obvious example for a microbundle is the standard microbundle.
+\end{myparagraph}
+
+% ex: trivial microbundle
+\begin{myexample}[trivial microbundle]
+    For a topological space $B$, the \defterm{standard microbundle} $\be^n_B$ over $B$ is a diagram
+    \[ \bundle{B}{B \times \R^n}{\iota}{\pi} \]
+    where $\iota(b) := (b, 0)$ and $\pi(b, x) := b$.
+    Additionally, a microbundle $\bb$ over $B$ is \defterm{trivial} if it is isomorphic to $\be^n_B$.
+\end{myexample}
+
+% foreword lemma
+\begin{myparagraph}
+    In order to make it easier classifying microbundles as trivial,
+    we provide a sharper description of what it means for a microbundle to be trival. 
+\end{myparagraph}
+
+% lemma: sharper description for triviality
+\begin{mylemma}
+    A microbundle $\bb$ over a paracompact space $B$ is trivial if and only if there exists an open neighborhood $U$ of $i(B)$ such that $U \cong B \times \R^n$.
+\end{mylemma}
+% proof
+\begin{myproof}
+    By applying \intref{microbundle::totalspace}, we may assume that $E(\bb)$ is an open subset of $B \times \R^n$.
+    Since $B$ is paracompact, there exists a map $\lambda: B \to (0, 1]$ such that every $(b, x) \in B \times \R^n$ with $\abs{x} < \lambda(b)$ lies in $E(\bb)$.
+    Now, the function
+    \[ (b, x) \mapsto (b, \frac{x}{\abs{x} - \lambda(b)}) \]
+    maps the open set $\{(b, x) \mid \abs{x} < \lambda(b)\}$ homeomorphically to $B \times \R^n$.
+    By considering $\{(b, x) \mid \abs{x} < \lambda(b)\} \sub E(\bb)$, this completes the proof.
+\end{myproof}

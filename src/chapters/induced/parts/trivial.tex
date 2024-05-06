@@ -1,0 +1,16 @@
+% lemma: induced trival microbundle
+\begin{mylemma}\label{induced::trivial}
+    Let $\bb$ be a microbundle over $B$ and $f: A \to B$ be a map.
+    The induced microbundle $f^*\bb$ is trivial if $\bb$ is already trivial.
+\end{mylemma}
+% proof
+\begin{myproof}
+Let $(V, \phi)$ be a global trivialization, so $\phi: V \isomto B \times \R^n$.
+We define
+\begin{itemize}
+    \item $V' := (A \times V) \cap E(f^*\bb)$ a neighborhood of $i'(A)$.
+    \item $\phi': V' \isomto B \times \R^n, (a, e) \mapsto (a, \pi_2(\phi(e)))$.
+\end{itemize}
+The existence of an inverse $\phi'^{(-1)}(a, x) = (a, \phi^{-1}(f(a), x))$ and component-wise continuity show that $\phi'$ is a homeomorphism.
+This proves that $(V', \phi')$ is a global trivialization for $f^*\bb$. 
+\end{myproof}
