@@ -1,27 +1,34 @@
 % statement
-\lemma{\parttitle{glueing together bundle map-germs}} \\
-Let $\bb$ be a microbundle over $B$ and $\{B_\alpha\}$ a locally finite collection of closed sets covering $B$.
-Additionally, we are given $\bgerm{F_\alpha}{\bb\restr{B_\alpha}}{\bb'}$, a collection of bundle map-germs with
-$F_\alpha = F_\beta$ on $\bb\restr{B_\alpha \cap B_\beta}$
-Then there exists a bundle map-germ $\bgerm{F}{\bb}{\bb'}$ extending $F_\alpha$.
+\begin{mylemma}
+    Let $\bb$ be a microbundle over $B$ and $\{B_\alpha\}$ a locally finite collection of closed sets covering $B$.
+    Additionally, we are given a collection of bundle map-germs $\bgerm{F_\alpha}{\bb\restr{B_\alpha}}{\bb'}$
+    such that $F_\alpha = F_\beta$ on $\bb\restr{B_\alpha \cap B_\beta}$.
+    Then there exists a bundle map-germ $\bgerm{F}{\bb}{\bb'}$ extending $F_\alpha$.
+\end{mylemma}
 % proof
 \begin{myproof}
-Choose representative maps $f_\alpha: U_\alpha \to E'$ for $F_\alpha$ with $U_\alpha$ open.
-Since $F_\alpha = F_\beta$ on $\bb\restr{B_\alpha \cap B_\beta}$, $f_\alpha = f_\beta$ for an open neighborhood $U_{\alpha\beta}$ of $B_\alpha \cap B_\beta$.
-We define
-\[ U := \{ e \in E \mid j(e) \in B_\alpha \cap B_\beta \implies e \in U_{\alpha\beta} \}\]
-\begin{enumerate}
-    \item $U$ is open: \\
-    Let $e \in U$ and $j(e) \in B_\alpha \cap B_\beta$.
-    From local finiteness there exists an open neighborhood $V \sub B$ of $j(e)$ with $V \sub B_{\alpha_1} \cap \ldots \cap B_{\alpha_n}$.
-    W.l.o.g. $V \sub B_\alpha \cap B_\beta$ by exluding a finite number of closed sets if necessary.
-    Now $V_{\alpha\beta} := j^{-1}(V) \cap U_{\alpha\beta}$ is an open neighborhood of $e$.
-    Since $j(e)$ can only be contained in finitely many $B_\alpha$ we can form the intersection of all these $V_{\alpha'\beta'}$
-    which, by construction, is contained in $U$ and is open.
-    \item $B \sub U$ considering the cases $U_{\alpha\alpha}$.
-\end{enumerate}
+    Choose representative maps $f_\alpha: U_\alpha \to E'$ for $F_\alpha$ such that the $U_\alpha$ are open.
+    For every $\alpha$ and $\beta$, choose a neighborhood $U_{\alpha\beta}$ of $i(B_\alpha \cap B_\beta)$ on which the representative maps $f_\alpha$ and $f_\beta$ agree.
+    Now consider
+    \[ U := \{ e \in E \mid j(e) \in B_\alpha \cap B_\beta \implies e \in U_{\alpha\beta} \}\]
+    which satisfies the following:
+    \begin{enumerate}
+        % open
+        \item $U$ is open
 
-Now we can define $f: U \to E'$ in the obvious way
-\[ f(u \in U_{\alpha\beta}) := f_\alpha(u) = f_\beta(u) \]
-which is a representative map for our desired $F$.
+        We can express $U$ like this:
+        \[ E - \bigcup_{\alpha\beta} \{ j^{-1}(B_\alpha \cap B_\beta) \cap U_{\alpha\beta}^c \} \]
+        
+        Since $j^{-1}(B_\alpha \cap B_\beta)$ and $U_{\alpha\beta}^c$ are closed sets, $U$ must be open.
+        That is because an open set remains open after removing arbitrary closed sets.
+        % subset
+        \item $i(B) \sub U$
+        
+        This follows from
+        \[ b \in B_\alpha \cap B_\beta \implies i(b) \in i(B_\alpha \cap B_\beta) \sub U_{\alpha\beta} \]
+        and $j(i(b)) = b$.
+    \end{enumerate}
+    With the construction of $U$, we can define $f: U \to E'$ in the obvious way
+    \[ f(u \in U_{\alpha\beta}) := f_\alpha(u) = f_\beta(u) \]
+    which is a representative map for our desired $F$.
 \end{myproof}

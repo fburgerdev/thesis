@@ -1,68 +1,109 @@
-% foreword
+% foreword williamson
+\begin{myparagraph}
+    The bundle-germ is indeed a generalization of the isomorphism germ, as the following proposition shows.
+\end{myparagraph}
+
+% williamson
+\begin{myproposition}[Williamson]
+    Let $\bb$ and $\bb'$ be two microbundles over $B$.
+    A bundle-germ $\bgerm{F}{\bb}{\bb'}$ covering the identity map is an isomorphism-germ.
+\end{myproposition}
+
+% foreword lemma
+\begin{myparagraph}
+    First we show a lemma, which we will use to prove the proposition.
+\end{myparagraph}
+
+% lemma
 \begin{mylemma}
-    For every homeomorphism $\phi: \R^n \isomto \R^n$ holds:
-    \[ \abs{\phi(x) - x} < 1, \forall x \in \clball[2] \implies \clball[1] \sub \phi(\clball[2]) \]
+    If a map $\phi: \R^n \isomto \phi(\R^n) \sub \R^n$ is a homeomorphism such that 
+    \[ \abs{\phi(x) - x} < 1, \forall x \in \clball[2] \]
+    then $\clball[1] \sub \phi(\clball[2])$.
 \end{mylemma}
-% proof
-\begin{myproof}
-Consider the two points $x_0 := 0$ and $x_1 := 3e_1$.
-Obviously, there is no path between $x_0$ and $x_1$ in $\R^n - S^n$.
-Therefore, since $\phi$ is a homeomorphism, there is no path between $\phi(x_0)$ and $\phi(x_1)$ in $\R^n - \phi(S^n)$.
-Since $1 < \abs{x}$ for every $x \in\phi(S^n)$, there is a path between every $x \in \clball[1]$ and $\phi(x_1)$ in $\R^n - \phi(S^n)$ (e.g a straight line).
-It follows that there is also no path between any $x \in \clball[1]$ and $x_1$ in $\R^n - \phi(S^n)$.
-Since $R^n - \clball[2]$ is path-connected, $R^n - \phi(\clball[2])$ is as well. From $x_1 \in R^n - \phi(\clball[2])$, we know that $\clball[1] \sub \phi(\clball[2])$.
+
+% proof of lemma
+\begin{myproof}[of the lemma]
+    Consider the subspace $\R^n - 2S^n$, which consists of the two path-components $\ball[2]$ and $\R^n - \clball[2]$.
+    Since homeomorphism preserve path-components it follows that $\phi(\R^n - 2S^n)$ consists of the two path-components $\phi(\ball[2])$ and $\phi(\R^n - \clball[2])$.
+
+    Now, applying the requirement yields $\abs{\phi(0)} < 1$ and $1 < \abs{\phi(s)}$ for every $s \in 2S^n$.
+    Hence, there exists a path between $\phi(0)$ and any $x \in \clball[1]$ in $\phi(\R^n - 2S^n)$, for example a straight line.
+    Therefore, every $x \in \clball[1]$ is contained within the same path-component of $\phi(\R^n - 2S^n)$.
+    The statement follows from $\phi(0) \in \phi(\clball[2])$.
 \end{myproof}
 
-% statement
-\lemma{\parttitle{Williamson}} \\
-A bundle map-germ $\bgerm{F}{\bb}{\bb'}$ on the same base space $B$ covering the identity map is an isomorphism-germ.
-% proof
-\begin{myproof}
-We prove the statement locally, then glue the function together for the prove.
-\begin{enumerate}
-    \item
-    First, we consider the case that $\bb$ and $\bb'$ are trivial.
-    This means, that $F: B \times \R^n \to B \times \R^n$ is of the form
-    \[ F(b, x) = (b, g_b(x)) \]
-    where $g_b: \R^n \to \R^n$ are individual maps.
-    In particular, the $g_b$ are even homeomorphisms due to the domain invariance theorem.
-    Now we show that $F$ is a homeomorphism.
-    Let $(b_0, x_0) \in B \times \R^n$ and $\varepsilon > 0$.
-    Since $g_{b_0}$ is a homeomorphism, there exists a $\delta > 0$ so that
-    $\clball[2\delta][x_1] \sub g_{b_0}(\clball[\varepsilon][x_0])$ where $x_1 := g_{b_0}(x_0)$.
+% proof of williamson
+\begin{myproof}[of the proposition]
+    Let $f$ be a representative map for $F$.
+    We show the proposition in two steps.
+    \begin{enumerate}
+        % special case
+        \item
+        Assume $\bb$ and $\bb'$ to be trivial.
 
-    There exists a neighborhood $V \sub B$ of $b_0$, such that
-    \[ \abs{g_b(x) - g_{b_0}(x)} < \delta, \forall x \in \clball[\varepsilon][x_0] \]
-    To show that, consider $\phi_b(b, x) := g_b(x) - g_{b_0}(x)$.
-    The closed set $\phi^{-1}(\clball[\varepsilon][x_0])$ is a neighborhood of $\{b_0\} \times \R^n$ since
-    $\phi(b_0, x) = 0, \forall x \in \R^n$.
-    Therefore, for every $x \in \clball[\delta][x_1]$ exist $V_x \sub B$ and $U_x \sub \R^n$ open with $x \in U_x$ and $V_x \times U_x \sub \phi^{-1}(\clball[\varepsilon][x_0])$.
-    Obviously, $\bigcup_{x \in \clball[\delta][x_1]} U_x$ is an open covering of $\clball[\delta][x_1]$ and because of compactness of $\clball[\delta][x_1]$, there
-    exist $x_1, \dots, x_n \in \clball[\delta][x_1]$ with $\clball[\delta][x_1] \sub \bigcup_{i = 1}^{n} U_{x_i}$.
-    The claim follows via $V := V_{x_1} \cap \dots \cap V_{x_n}$.
+        This means that $f: B \times \R^n \to B \times \R^n$ is of the form
+        \[ f(b, x) = (b, g_b(x)) \]
+        where $g_b: \R^n \to \R^n$ are individual mappings.
+        From the \extref{domain invariance theorem} it follows that $g_b$ are open mappings.
+        Let $(b_0, x_0) \in B \times \R^n$ and $\varepsilon > 0$.
+        Since $g_{b_0}$ is an open mapping, there exists a $\delta > 0$ such that
+        $\clball[2\delta][x_1] \sub g_{b_0}(\clball[\varepsilon][x_0])$ where $x_1 := g_{b_0}(x_0)$.
 
-    From
-    \[ V \times \clball[\delta][x_1] \sub g(V \times \clball[\varepsilon][x_0]) \]
-    it follows that $g$ is open.
-    \item  % TODO
-    Now we restrict ourselves to the above situation.
+        % estimation
+        There exists a neighborhood $V \sub B$ of $b_0$ such that
+        \[ \abs{g_b(x) - g_{b_0}(x)} < \delta \]
+        for every $b \in V$ and $x \in \clball[\varepsilon][x_0]$.
+        To show that, consider $\phi(b, x) := g_b(x) - g_{b_0}(x)$.
+        The closed set $\phi^{-1}(\clball[\delta])$ is a neighborhood of $\{b_0\} \times \R^n$ since $\phi(b_0, x) = 0$.
+        Therefore, for every $x \in \clball[\delta]$ exist $V_x \sub B$ and $U_x \sub \R^n$ open with $x \in U_x$ and $V_x \times U_x \sub \phi^{-1}(\clball[\varepsilon][x_0])$.
+        Obviously, $\bigcup_{x \in \clball[\delta][x_1]} U_x$ is an open covering of $\clball[\delta][x_1]$ and since $\clball[\delta][x_1]$ is compact,
+        there exist $x_1, \dots, x_n \in \clball[\delta][x_1]$ with $\clball[\delta][x_1] \sub \bigcup_{i = 1}^{n} U_{x_i}$.
+        The claim follows via $V := V_{x_1} \cap \dots \cap V_{x_n}$.
 
-    Assume a local trivialization $(U, V, \phi)$ over $b \in B$.
-    First, we restrict $f$ to $f^{-1}(V)$.
-    Since $f^{-1}(V)$ is a neighborhood of $i(b)$, we can choose an open neighborhood $V' \sub f^{-1}(V) \cap V$ of $i(b)$ of the form $U' \times \ball[\varepsilon]$.
-    Now we have
-    \[ U' \times \R^n \cong U' \times \ball[\varepsilon] \xto{f} U' \times \R^n \sub U \times \R^n \]
-    a map $U' \times \R^n \to U' \times \R^n$ that is bijective and fibre-preserving and therefore a homeomorphism.
-    \[ U' \times \R^n \cong U' \times \ball[\varepsilon] \cong V' \xto{\phi \circ f} \]
-    By glueing all the $U' \times \R^n$, which are neighborhoods of $b$, together we see that $f$ is a homeomorphism on it's image.
-    This concludes the proof.
-\end{enumerate}
+        % apply lemma
+        Now we want to apply the previous lemma:
+
+        Consider the homeomorphism $g_b \circ g_{b_0}^{-1}$ for an arbitrary $b \in V$.
+        Since
+        \[ \clball[2\delta][x_1] \sub g_{b_0}(\clball[\varepsilon][x_0]) \implies g_{b_0}^{-1}(\clball[2\delta][x_1]) \sub \clball[\varepsilon][x_0] \]
+        we conclude from the above that
+        \[ \abs{(g_b \circ g_{b_0}^{-1})(x) - x} < \delta \]
+        It follows that, by translation and scaling, $g_b \circ g_{b_0}^{-1}$ satisfies the requirements of the lemma.
+        Therefore, $\clball[\delta][x_1] \sub (g_b \circ g_{b_0}^{-1})(\clball[2\delta][x_0])$ and so $\clball[\delta][x_1] \sub g_b(\clball[\varepsilon][x_0])$.
+
+        % conclusion
+        From
+        \[ V \times \clball[\delta][x_1] \sub g(V \times \clball[\varepsilon][x_0]) \]
+        it follows that $f$ is an open mapping.
+
+        % general case
+        \item
+        Glue together $f$ from its local trivializations
+
+        Choose a local trivialization $(U, V, \phi)$ over $b \in B$.
+        First, we restrict $f$ to $f^{-1}(V)$.
+        Since $f^{-1}(V)$ is a neighborhood of $i(b)$, we can choose an open neighborhood $V' \sub f^{-1}(V) \cap V$ of $i(b)$ of the form $U' \times \ball[\varepsilon]$.
+        Now we have
+        \[ U' \times \R^n \cong U' \times \ball[\varepsilon] \xto{f} U' \times \R^n \sub U \times \R^n \]
+        a map $U' \times \R^n \to U' \times \R^n$ that is injective and fibre-preserving and therefore an open mapping (apply 1.).
+        It follows that $f: V' \to V$ must have been injective and fibre-preserving as well.
+
+        By glueing the $V'$ over all $b \in B$ together, we see that $f$ is an open mapping.
+        This concludes the proof.
+    \end{enumerate}
 \end{myproof}
 
 % corollary
-\corollary{\parttitle{induced microbundles}} \\
-If a map $g: B \to B'$ is covered by a bundle germ $\bb \double \bb'$ then $\bb$ is isomorphic to the induced bundle $g^*\bb'$.
+\begin{mycorollary}
+    If a map $g: B \to B'$ is covered by a bundle germ $F: \bb \double \bb'$ then $\bb$ is isomorphic to the induced bundle $g^*\bb'$.
+\end{mycorollary}
 % proof
 \begin{myproof}
-% TODO
+    Let $f: U_f \to E'$ be a representative map for $F$.
+    We define $F': \bb \to g^*\bb'$ with a representative map $f'$ as follows:
+    \[ f': U_f \to E(g^*\bb'), f'(e) := (j(e), f(e)) \]
+    The element $f'(e)$ actually lies in $E(g^*\bb')$ because
+    \[ g(j(e)) = f(g(j(e))) = f(j'(e)) = j'(f(e)) \]
+    We use the fact that $f$ and $j'$ commute.
+    Applying the previous proposition concludes the proof.
 \end{myproof}

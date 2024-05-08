@@ -1,7 +1,26 @@
+% foreword
+\begin{myparagraph}
+    We can take this even further by dropping the assumption that the base spaces of the considered microbundles are the same.
+    Note that in this case no comparison to isomorphy can be drawn,
+    since we have not defined isomorphy between microbundles over different base spaces.
+\end{myparagraph}
+
 % definition
 \begin{mydefinition}[bundle-germ]
-    Let $\bb$ and $\bb'$ be two microbundles over $B$ (with the same fibre-dimension).
+    Let $\bb$ and $\bb'$ be two microbundles with the same fibre-dimension.
     A \defterm{bundle-germ} $F: \bb \double \bb'$ is a map-germ
-    \[ F: (E, B) \double (E', B) \]
-    such that it's representatives $f: U_f \to E'$ map each fibre $j^{-1}(b)$ injectively into a fibre $j'^{-1}(b')$.
+    \[ F: (E, B) \double (E', B') \]
+    such that there exists a representative $f: U_f \to E'$ that maps each fibre $j^{-1}(b)$ injectively to a fibre $j'^{-1}(b')$.
 \end{mydefinition}
+
+% afterword
+\begin{myparagraph}
+    For a bundle-germ $F: \bb \double \bb'$, the following diagram commutes:
+    \begin{center}
+        \begin{tikzcd}
+            (E, B) \arrow[r, Rightarrow, "F"] \ar[d, "i"] & (E', B') \ar[d, "i'"] \\
+            B \ar[r, "F\vert_B"] & B' \\
+        \end{tikzcd}
+    \end{center}
+    We say $F$ \defterm{is covered by} $F\restr{B}$.
+\end{myparagraph}
