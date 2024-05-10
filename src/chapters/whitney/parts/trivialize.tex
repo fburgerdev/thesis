@@ -1,9 +1,10 @@
 TODO --- BOUQET LEMMA
 
 % statement
-\theorem{(inverse microbundles)}
-\\ Let $\bb$ be a microbundle over a $d$-dimensional simplicial complex $B$.
-\\ Then there exists a microbundle $\bn$ over $B$ so that the Whitney sum $\bb \oplus \bn$ is trivial.
+\begin{mytheorem}
+    Let $\bb$ be a microbundle over a $d$-dimensional simplicial complex $B$.
+    Then there exists a microbundle $\bn$ over $B$ so that the Whitney sum $\bb \oplus \bn$ is trivial.
+\end{mytheorem}
 % proof
 \begin{myproof}
 We prove this theorem by induction over $d$.
@@ -45,7 +46,7 @@ so that $\bb\restr{B'} \oplus \bn'$ is trivial.
 
     % finish
     \item
-    Consider the mapping-cone $B \sqcup CB'$ over the inclusion $B' \incl B$.
+    Consider the map-cone $B \sqcup CB'$ over the inclusion $B' \incl B$.
     Since
     \[
         (\bb \oplus \eta)\restr{B'}
@@ -54,7 +55,7 @@ so that $\bb\restr{B'} \oplus \bn'$ is trivial.
         = (\bb\restr{B'} \oplus \bn') \oplus \be^n_{B'}
         = \be^n_{B'} \oplus \be^n_{B'}
     \]
-    which is trivial, by \intref{extending mapping-cone lemma} we can extend $\bb \oplus \eta$ over $B \sqcup CB'$ denoted by $\xi$.
+    which is trivial, by \intref{extending map-cone lemma} we can extend $\bb \oplus \eta$ over $B \sqcup CB'$ denoted by $\xi$.
     However, $B \sqcup CB'$ has the homotopy type of a bouquet of spheres and by the \intref{bouquet lemma} there exists a microbundle $\bn$ such that $(\xi \oplus \bn)\restr{B}$ is trivial.
     \[ 
         \be^n_{B}

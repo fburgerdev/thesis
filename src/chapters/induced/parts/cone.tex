@@ -3,19 +3,19 @@
 % foreword
 For a topological space $X$, we define the \defterm{cone} of $X$ to be 
 \[ CX := X \times [0, 1] / X \times \{1\} \]
-and for a map $f: A \to B$ the \defterm{mapping cone} of $f$ to be
+and for a map $f: A \to B$ the \defterm{map cone} of $f$ to be
 \[ B \sqcup_f CA := B \sqcup CA / \sim \]
 where $(a, 0) \sim b :\iff f(a) = b$.
 
 Similarly, we define the \defterm{cylinder} of $X$ to be
 \[ MX := X \times [0, 1] \]
-and for a map $f: A \to B$ the \defterm{mapping cylinder} of $f$ to be
+and for a map $f: A \to B$ the \defterm{map cylinder} of $f$ to be
 \[ B \sqcup_f MA := B \sqcup CA / \sim \]
 where $(a, 0) \sim b :\iff f(a) = b$.
 
-% lemma: extending over a mapping cone
+% lemma: extending over a map cone
 \begin{mylemma}
-A microbundle $\bb$ over $B$ can be extended to a microbundle over the mapping cone $B \sqcup_f CA$ if and only if $f^*\bb$ is trivial.
+A microbundle $\bb$ over $B$ can be extended to a microbundle over the map cone $B \sqcup_f CA$ if and only if $f^*\bb$ is trivial.
 \end{mylemma}
 % proof
 \begin{myproof}
@@ -37,7 +37,7 @@ Since $(\iota \circ f)^*\bb' = f^*(\iota^*\bb') = f^*\bb$, it follows that $f^*\
 
 Let $f^*\bb$ be trivial.
 
-In contrast to the mapping cone, there exists a natural retraction from the mapping cylinder to the attached space
+In contrast to the map cone, there exists a natural retraction from the map cylinder to the attached space
 \[ r: B \sqcup_f MA \to B, r([(a, t)]) := f(a) \]
 The diagram
 \[ A \times \{1\} \incl B \sqcup_f MA \xto{r} B \]

@@ -1,6 +1,6 @@
 % foreword williamson
 \begin{myparagraph}
-    The bundle-germ is indeed a generalization of the isomorphism germ, as the following proposition shows.
+    The bundle-germ is indeed a generalization of the isomorphism germ, as the following proposition illustrates.
 \end{myparagraph}
 
 % williamson
@@ -11,42 +11,49 @@
 
 % foreword lemma
 \begin{myparagraph}
-    First we show a lemma, which we will use to prove the proposition.
+    First, however, we show a lemma that helps us to prove the proposition.
 \end{myparagraph}
 
 % lemma
 \begin{mylemma}
-    If a map $\phi: \R^n \isomto \phi(\R^n) \sub \R^n$ is a homeomorphism such that 
+    If a homeomorphism $\phi: \R^n \isomto \phi(\R^n) \sub \R^n$ satisfies
     \[ \abs{\phi(x) - x} < 1, \forall x \in \clball[2] \]
     then $\clball[1] \sub \phi(\clball[2])$.
 \end{mylemma}
 
 % proof of lemma
 \begin{myproof}[of the lemma]
-    Consider the subspace $\R^n - 2S^n$, which consists of the two path-components $\ball[2]$ and $\R^n - \clball[2]$.
-    Since homeomorphism preserve path-components it follows that $\phi(\R^n - 2S^n)$ consists of the two path-components $\phi(\ball[2])$ and $\phi(\R^n - \clball[2])$.
+    % TODO: Check proof
+    Consider $\phi(2S^n)$ where $2S^n$ denotes the $n$-sphere of radius $2$.
+    The condition for $\phi$ yields $1 < \abs{\phi(s)}, \forall s \in 2S^n$.
+    Since $\clball[2]$ has trivial homology groups which are preserved under homeomorphisms,
+    $\phi(\clball[2])$ must have trivial homology groups as well.
 
-    Now, applying the requirement yields $\abs{\phi(0)} < 1$ and $1 < \abs{\phi(s)}$ for every $s \in 2S^n$.
-    Hence, there exists a path between $\phi(0)$ and any $x \in \clball[1]$ in $\phi(\R^n - 2S^n)$, for example a straight line.
-    Therefore, every $x \in \clball[1]$ is contained within the same path-component of $\phi(\R^n - 2S^n)$.
-    The statement follows from $\phi(0) \in \phi(\clball[2])$.
+    From this we can conclude that $\clball[1]$ must be contained in $\phi(\clball[2])$,
+    because otherwise ``holes'' would form which would result in non-trivial homology groups of $\phi(\clball[2])$.
+    % Consider the subspace $\R^n - 2S^n$ where $2S^n$ denotes the $n$-sphere of radius $2$.
+    % This subspace consists of the two path-components $\ball[2]$ and $\R^n - \clball[2]$.
+    % Since homeomorphisms preserve path-components, we know that $\phi(\R^n - 2S^n)$ consists of the two path-components $\phi(\ball[2])$ and $\phi(\R^n - \clball[2])$.
+    % Now, applying the requirement yields $\abs{\phi(0)} < 1$ and $1 < \abs{\phi(s)}$ for every $s \in 2S^n$.
+    % Hence, there exists a path between $\phi(0)$ and any $x \in \clball[1]$ in $\phi(\R^n - 2S^n)$, e.g. a straight line.
+    % Therefore, every $x \in \clball[1]$ is contained in the same path-component of $\phi(\R^n - 2S^n)$.
+    % The statement follows from $\phi(0) \in \phi(\clball[2])$.
 \end{myproof}
 
 % proof of williamson
 \begin{myproof}[of the proposition]
-    Let $f$ be a representative map for $F$.
+    Let $f$ be a representative for $F$.
     We show the proposition in two steps.
     \begin{enumerate}
         % special case
-        \item
-        Assume $\bb$ and $\bb'$ to be trivial.
-
-        This means that $f: B \times \R^n \to B \times \R^n$ is of the form
+        \item Assume $f$ to map from $B \times \R^n$ to $B \times \R^n$.
+        
+        Hence $f$ is of the form
         \[ f(b, x) = (b, g_b(x)) \]
-        where $g_b: \R^n \to \R^n$ are individual mappings.
-        From the \extref{domain invariance theorem} it follows that $g_b$ are open mappings.
+        where $g_b: \R^n \to \R^n$ are individual maps.
+        Since the $g_b$ are continuous and injective, it follows from the \extref{domain invariance theorem} that the $g_b$ are open maps.
         Let $(b_0, x_0) \in B \times \R^n$ and $\varepsilon > 0$.
-        Since $g_{b_0}$ is an open mapping, there exists a $\delta > 0$ such that
+        Since $g_{b_0}$ is an open map, there exists a $\delta > 0$ such that
         $\clball[2\delta][x_1] \sub g_{b_0}(\clball[\varepsilon][x_0])$ where $x_1 := g_{b_0}(x_0)$.
 
         % estimation
@@ -74,36 +81,34 @@
         % conclusion
         From
         \[ V \times \clball[\delta][x_1] \sub g(V \times \clball[\varepsilon][x_0]) \]
-        it follows that $f$ is an open mapping.
+        it follows that $f$ is an open map.
 
         % general case
-        \item
-        Glue together $f$ from its local trivializations
+        \item Glue together $f$ from its local trivializations.
 
         Choose a local trivialization $(U, V, \phi)$ over $b \in B$.
         First, we restrict $f$ to $f^{-1}(V)$.
         Since $f^{-1}(V)$ is a neighborhood of $i(b)$, we can choose an open neighborhood $V' \sub f^{-1}(V) \cap V$ of $i(b)$ of the form $U' \times \ball[\varepsilon]$.
         Now we have
         \[ U' \times \R^n \cong U' \times \ball[\varepsilon] \xto{f} U' \times \R^n \sub U \times \R^n \]
-        a map $U' \times \R^n \to U' \times \R^n$ that is injective and fibre-preserving and therefore an open mapping (apply 1.).
-        It follows that $f: V' \to V$ must have been injective and fibre-preserving as well.
+        a map $U' \times \R^n \to U' \times \R^n$ that is injective and fibre-preserving and therefore an open map (apply 1.).
+        It follows that $f: V' \to V$ must be an open map as well.
 
-        By glueing the $V'$ over all $b \in B$ together, we see that $f$ is an open mapping.
-        This concludes the proof.
+        By glueing the $V'$ over all $b \in B$ together, we see that $f$ is an open map which concludes the proof.
     \end{enumerate}
 \end{myproof}
 
 % corollary
 \begin{mycorollary}
-    If a map $g: B \to B'$ is covered by a bundle germ $F: \bb \double \bb'$ then $\bb$ is isomorphic to the induced bundle $g^*\bb'$.
+    If a map $g: B \to B'$ is covered by a bundle germ $F: \bb \double \bb'$, then $\bb$ is isomorphic to the induced bundle $g^*\bb'$.
 \end{mycorollary}
 % proof
 \begin{myproof}
     Let $f: U_f \to E'$ be a representative map for $F$.
-    We define $F': \bb \to g^*\bb'$ with a representative map $f'$ as follows:
+    We define $F': \bb \double g^*\bb'$ with a representative $f'$ as follows:
     \[ f': U_f \to E(g^*\bb'), f'(e) := (j(e), f(e)) \]
     The element $f'(e)$ actually lies in $E(g^*\bb')$ because
-    \[ g(j(e)) = f(g(j(e))) = f(j'(e)) = j'(f(e)) \]
-    We use the fact that $f$ and $j'$ commute.
-    Applying the previous proposition concludes the proof.
+    \[ g(j(e)) = j'(f(e)) \]
+    as we can see from the commutative diagram for bundle-germs.
+    Applying the previous proposition proves the claim.
 \end{myproof}

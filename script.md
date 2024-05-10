@@ -1,6 +1,6 @@
 # Introduction
 In differential geometry, studying the tangent space of a given smooth manifolds
-is essential for understanding its geometry and behaviour under smooth mappings.
+is essential for understanding its geometry and behaviour under smooth maps.
 We can think of the tangent bundle as the collection of every direction one can move away from a point on a manifold.
 Looking only at the directions one can take from a particular point,
 an algebraic structure is revealed.
@@ -21,7 +21,7 @@ In this thesis, we will focus on a specific result of microbundles.
 # Induced Microbundles
 One of the fundamental constructions that carry over to microbundles are the induced microbundles or often better known as pullback bundles.
 The induced microbundle allows us to pull back the base space of a microbundle
-to the domain of a function mapping into the base space.
+to the domain of a function map into the base space.
 
 Induced microbundles are a crucual tool for proving milnors theorem.
 They allow us to examine a given microbundle on a base space with better properties.

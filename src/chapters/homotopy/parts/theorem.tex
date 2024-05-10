@@ -92,16 +92,16 @@
 
 % foreword theorem
 \begin{myparagraph}
-    The homotopy theorem now follows easily.
+    Finally, we gathered all the tools to proof the homotopy theorem.
 \end{myparagraph}
 % theorem
-\begin{mytheorem}[Homotopy Theorem]\label{homotopy::theorem} \\
-    Let $\bb$ be a microbundle of $B$ and $f, g: A \to B$ be two maps.
-    \[ f \simeq g \implies f^*\bb \cong g^*\bb \]
-\end{mytheorem}
+% \begin{mytheorem}[Homotopy Theorem]\label{homotopy::theorem} \\
+%     Let $\bb$ be a microbundle of $B$ and $f, g: A \to B$ be two maps.
+%     \[ f \simeq g \implies f^*\bb \cong g^*\bb \]
+% \end{mytheorem}
 % proof
-\begin{myproof}
-Let $H: A \times [0, 1] \to B$ be a homtopy between $f$ and $g$.
+\begin{myproof}[of the homotopy theorem]
+Let $H: A \times [0, 1] \to B$ be a homotopy between $f$ and $g$.
 The previous lemma states that there exists a bundle germ $R: H^*\bb \double H^*\bb\restr{B \times [1]}$ covering the standard retraction $B \times [0, 1] \to B \times [1]$.
 From the composition
 \[ f^*\bb \sub H^*\bb \double_R H^*\bb\restr{B \times [1]} = g^*\bb \]
