@@ -28,7 +28,7 @@
     via the representative
     \[ B \times [\half, 1] \times \R^n \to B \times \{\half\} \times \R^n, (b, t, x) \mapsto (b, \half, x) \]
     Using the previous lemma, we can piece this together with the identity bundle-germ on $\bbleft$ resulting in a bundle-germ
-    \[ \bb \double \bbleft \]
+    \[ \bb \double \bbleft. \]
 
     The previous corollary infers that $\bb$ is isomorphic to $\bbleft$.
 \end{myproof}
@@ -61,11 +61,11 @@
     Now choose a partition of unity
     \[ \lambda_\alpha: B \to [0, 1] \]
     with $\text{supp}(\lambda_\alpha) \sub V_\alpha$ that is rescaled so that
-    \[ \max_{\alpha}(\lambda_\alpha(b)) = 1, \forall b \in B \]
+    \[ \max_{\alpha}(\lambda_\alpha(b)) = 1, \forall b \in B. \]
     
     % construction
     Now we define a retraction $r_\alpha: B \times [0, 1] \to B \times [0, 1]$ with
-    \[ r_\alpha(b, t) := (b, \max(t, \lambda_\alpha(b))) \]
+    \[ r_\alpha(b, t) := (b, \max(t, \lambda_\alpha(b))). \]
 
     In the following, we will construct bundle-germs $R_\alpha: \bb \double \bb$ covering $r_\alpha$
     and piece them together to obtain the desired bundle-germ.
@@ -74,7 +74,8 @@
         \item 
         We can divide $B \times [0, 1]$ into two subsets
         \[ A_\alpha := \text{supp}(\lambda_\alpha) \times [0, 1] \]
-        \[ A'_\alpha := \{(b, t) \mid t \ge \lambda_\alpha(b)\} \]
+        and
+        \[ A'_\alpha := \{(b, t) \mid t \ge \lambda_\alpha(b)\}. \]
         Since $A_\alpha \sub V_\alpha \times [0, 1]$, we already know that $\bb\restr{A_\alpha}$ is trivial.
         Similar to \intref{homotopy::lemma2}, we can extend the identity bundle-germ on $\bb\restr{\A \cap \A[']}$ to a bundle-germ
         \[ \bb\restr{\A} \double \bb\restr{\A \cap \A[']} \]

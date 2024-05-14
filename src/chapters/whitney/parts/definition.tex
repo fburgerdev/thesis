@@ -10,14 +10,21 @@
     with fibre-dimension $n_1 + n_2$.
 \end{mydefinition}
 % proof
-\begin{myproof}
-Let $b \in B$. \\
-Choose $U_1, V_1, \phi_1$ and $U_2, V_2, \phi_2$ accordingly from the local trivialization of $b$ over $\bb_1$ and $\bb_2$:
-\begin{itemize}
-    \item $U := U_1 \cap U_2$
-    \item $V := (V_1 \times V_2) \cap E$
-    \item $\phi: V \to U \times \R^{n_1 + n_2}; \phi(e_1, e_2) := (\phi_1^{(1)}(e_1), \phi_1^{(2)}(e_1) \times  \phi_2^{(2)}(e_2))$
-\end{itemize}
-Note that $\phi_1^{(1)}(e_1) = \phi_2^{(1)}(e_2)$.
-Local triviality follows directly from it's components.
+\begin{myproof}[that $\bb_1 \oplus \bb_2$ is a microbundle]
+    Let $b \in B$.
+    Choose local trivializations $(U_1, V_1, \phi_1)$ and $(U_2, V_2, \phi_2)$ in $b$ of $\bb_1$ and $\bb_2$.
+    Based on this, we can construct a local trivialization in $b$ of $\bb_1 \oplus \bb_2$:
+    \begin{itemize}
+        \item $U := U_1 \cap U_2$
+        \item $V := (V_1 \times V_2) \cap E$
+        \item $\phi: V \to U \times \R^{n_1 + n_2}; \phi(e_1, e_2) := (\phi_1^{(1)}(e_1), \phi_1^{(2)}(e_1) \times  \phi_2^{(2)}(e_2))$
+    \end{itemize}
+    Note that $\phi_1^{(1)}(e_1) = \phi_2^{(1)}(e_2)$.
+    Openness of $U$ and $V$ as well as homeomorphy of $\phi$ is inherited from the local triviality properties of $(U_1, V_1, \phi_1)$ and $(U_2, V_2, \phi_2)$.
 \end{myproof}
+
+% equivalent definitions
+\begin{myremark}
+    Alternatively, we could define the whitney sum between $\bb_1$ and $\bb_2$ to be the induced microbundle $\Delta^*(\bb_1 \times \bb_2)$
+    where $\Delta$ denotes the diagonal map and $\bb_1 \times \bb_2$ denotes the literal cross-product between the two microbundles.
+\end{myremark}
