@@ -1,0 +1,52 @@
+Let $\bb'_*$ be a rooted microbundle over $B'$.
+\begin{mytheorem}\label{suspension::homotopy}%
+    Let $f, g: B \to B'$ be two homotopic maps together with a homotopy $H: B \times [0, 1] \to B'$
+    that leaves base points fixed.
+    Then the rooted microbundles $f^*\bb'_*$ and $g^*\bb'_*$ are isomorphic.
+\end{mytheorem}
+
+% foreword lemma
+\begin{myparagraph}
+    Let $\bb'_*$ be a rooted microbundle over $B'$ and $f: B \times [0, 1] \to B'$ a map. 
+    First, note that the total space
+    \[ E(f^*\bb_*\restr{b_0 \times [0, 1]}) \]
+    is just
+    \[ \{ e \in E(f^*\bb_*) \mid j(e) \in b_0 \times [0, 1] \} \]
+    \[ = \{ (b, t, e) \in B \times [0, 1] \times E(\bb_*) \mid b = b_0, f(b, t) = j(e) \} \]
+    \[ = b_0 \times [0, 1] \times E(\bb_*\restr{b_0'}). \]
+    Based on this, we can define an isomorphism-germ
+    \[ \bar{R}: f^*\bb_*\restr{b_0 \times [0, 1]} \double \be^n_{b_0 \times [0, 1]} \]
+    via a representative
+    \[ \bar{r}: b_0 \times [0, 1] \times V \to b_0 \times [0, 1] \times \R^n \]
+    with
+    \[ \bar{r}(b_0, t, v) = (b_0, t, r(v) )\]
+    where $r: V \to E(\be^n_{b_0})$ is a representative for $R$.
+    The representative $\bar{r}$ is a homoemorphism on its image
+    because its a product of the identity and $r$, which are both homoemorphisms on their image. 
+\end{myparagraph}
+% lemma
+\begin{mylemma}
+    Let $\bb'_*$ be a rooted microbundle over $B'$ and $f: B \times [0, 1] \to B'$ be a map.
+    Then there exists a neighborhood $V$ of $b_0$ with an isomorphism-germ
+    \[ f^*\bb_*\restr{V \times [0, 1]} \double \be^n_{V \times [0, 1]} \]
+    extending $\bar{R}$, defined like above.
+\end{mylemma}
+\begin{myproof}
+    By applying \intref{homotopy::lemma2}, it follows that there exists an isomorphism-germ
+    \[ Q: f^*\bb_*\restr{V \times [0, 1]} \double \be^n_{V \times [0, 1]} \]
+    for a sufficiently small neighborhood $V$ of $b_0$.
+
+    Now consider
+    \[ Q \circ \bar{R}^{-1}: \be^n_{b_0 \times [0, 1]} \double \be^n_{b_0 \times [0, 1]}. \]
+    Similarly to the construction of $\bar{R}$ we can define an isomorphism-germ
+    \[ P: \be^n_{V \times [0, 1]} \double \be^n_{V \times [0, 1]} \]
+    extending $Q \circ \bar{R}^{-1}$ via
+    \[ p(v, t, x) = (v, q(b_0, t, x)) \]
+    where $q$ is a representative for $Q \circ \bar{R}^{-1}$.
+
+    Restricted to $b_0 \times [0, 1]$, $P$ agrees with $Q \times \bar{R}^{-1}$ and thus
+    \[ P^{-1} \circ Q = (\bar{R} \circ Q^{-1}) \circ Q = \bar{R} \]
+    Since $P$ and $Q$ are both isomorphism-germs, $P^{-1} \circ Q$ is an isomorphism-germ as well.
+    Therefore, $P^{-1} \circ Q$ suffices our requirements which concludes the proof.
+\end{myproof}
+TODO: Rest of Homotopy-Theorem

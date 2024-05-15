@@ -1,0 +1,31 @@
+% definition wedge sum
+\begin{mydefinition}
+    Let $\bb_*$ and $\bc_*$ be two rooted microbundles over $B$ and $C$.
+    The \defterm{wedge sum} $\bb_* \vee \bc_*$ is a rooted microbundle
+    \[ \bundle{B \vee C}{(E(\bb_*) \sqcup E(\bc_*)) / \sim}{i}{j} \]
+    where $e_b \sim e_c \iff j_b(e_b) = j_c(e_c)$
+    \[ \bb_*\restr{b_0} \double \be^n_{b_0} = \be^n_{c_0} \Leftarrow \bc_*\restr{c_0} \]
+    \[
+        \begin{tikzcd}[column sep=tiny]
+            & V_1 \vee V_2 \ar[dr, "j_1 \vee j_2"] \ar[dd, "\psi_1 \vee \psi_2"] & \\
+            U_1 \vee U_2 \ar[ur, "i_1 \vee i_2"] \ar[dr, "{(id, 0)}"'] & & U_1 \vee U_2 \\
+            & (U_1 \vee U_2) \times\R^n \ar[ur, "\pi_1"'] &
+        \end{tikzcd}
+    \]
+    is well-defined because
+    \begin{itemize}
+        \item $v \in E(\bb_*), E(\bc_*) \implies j_1(v)  = b_0 = c_0 = j_2(v)$
+    \end{itemize}
+\end{mydefinition}
+
+% foreword suspension
+\begin{myparagraph}
+    In the following, let $B$ be a \defterm{reduced suspension}
+    \[ SX = (X \times [0, 1]) / (X \times \{ 0, 1 \} \cup x_0 \times [0, 1])\]
+    over $X$.
+\end{myparagraph}
+
+% lemma commutatitivity
+\begin{mylemma}\label{suspension::lemma1}
+    
+\end{mylemma}
