@@ -4,7 +4,7 @@
 \begin{myparagraph}
     For a topological space $X$, we define the \defterm{cone} of $X$ to be 
     \[ CX := X \times [0, 1] / X \times \{1\} \]
-    and for a map $f: A \to B$ the \defterm{map cone} of $f$ to be
+    and for a map $f: A \to B$ the \defterm{mapping cone} of $f$ to be
     \[ B \sqcup_f CA := B \sqcup CA / \sim \]
     where $(a, 0) \sim b :\iff f(a) = b$.
     
@@ -15,9 +15,9 @@
     where $(a, 0) \sim b :\iff f(a) = b$.
 \end{myparagraph}
 
-% lemma: extending over a map cone
+% lemma: extending over a mapping cone
 \begin{mylemma}
-    A microbundle $\bb$ over $B$ can be extended to a microbundle over the map cone $B \sqcup_f CA$ if and only if $f^*\bb$ is trivial.
+    A microbundle $\bb$ over $B$ can be extended to a microbundle over the mapping cone $B \sqcup_f CA$ if and only if $f^*\bb$ is trivial.
 \end{mylemma}
 % proof
 \begin{myproof}
@@ -39,7 +39,7 @@
 
     Let $f^*\bb$ be trivial.
 
-    In contrast to the map cone, there exists a natural retraction from the map cylinder to the attached space
+    In contrast to the mapping cone, there exists a natural retraction from the map cylinder to the attached space
     \[ r: B \sqcup_f MA \to B, r([(a, t)]) := f(a) \]
     The diagram
     \[ A \times \{1\} \incl B \sqcup_f MA \xto{r} B \]
