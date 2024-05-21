@@ -13,12 +13,12 @@
     represented by any representative for $R_a$ (or $R_b$).
 \end{mydefinition}
 % proof wedge sum
-\begin{myproof}[that $\ba \vee \bb$ is a rooted microbundle]
-    We show that $\ba \vee \bb$ is a rooted microbundle and afterwards show
+\begin{myproof}[that $\ba \vee \bb$ is a microbundle]
+    We show that $\ba \vee \bb$ is a microbundle and afterwards show
     that the definition of $\ba \vee \bb$ is independant of the choice of the representative $f$ for $R_b^{-1} \circ R_a$.
     \begin{enumerate}
-        % rooted microbundle
-        \item $\ba \vee \bb$ is a rooted microbundle:
+        % microbundle
+        \item $\ba \vee \bb$ is a microbundle:
         \begin{itemize}
             % injection
             \item The injection map $i_\ba \vee i_\bb$ is well-defined because 
@@ -66,6 +66,10 @@
         \end{itemize}
         % well-defined
         \item $\ba \vee \bb$ is independant of the choice of $f$:
+        Let $f'$ be another representative for $R_b^{-1} \circ R_a$ and $(\ba \vee \bb)'$ the resulting wedge sum.
+        Choose an open neighborhood $V \sub E(\ba\restr{a_0})$ of $i_\ba(a)$ where $f$ and $f'$ agree.
+        By subtracting $j_\ba^{-1}(a_0) - V$ from $E(\ba \vee \bb)$ and $E(\ba \vee \bb)'$ the microbundles remain unchanged.
+        However, now the total spaces are equal and injection and projection are the same.
         % TODO
     \end{enumerate}
 \end{myproof}
