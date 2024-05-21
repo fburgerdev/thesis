@@ -1,0 +1,79 @@
+% foreword suspension
+\begin{myparagraph}
+    In the following, let $B$ be a \defterm{reduced suspension}
+    \[ SX = (X \times [0, 1]) / (X \times \{ 0, 1 \} \cup x_0 \times [0, 1])\]
+    over $X$.
+
+    Let $\phi: B \to B \vee B$ denote the map that sends
+    $X \times [0, \half]$ to the first $B$ via
+    \[ \phi(x, t) = [(x, 2t)] \]
+    and $X \times [\half, 1]$ to the second $B$ via
+    \[ \phi(x, t) = [(x, 2t - 1)]. \]
+
+    Let $c_1: B \vee B \to B$ denote the map that is the identity on the first summand
+    and the constant mapt to $b_0$ on the second summand (symmetrically define $c_2$).
+\end{myparagraph}
+
+% lemma triviality
+\begin{mylemma}\label{suspension::triviality}
+    \[ \phi^*(\bb \oplus \be^n_B) \cong \bb \cong \phi^*(\be^n_B \oplus \bb) \]
+\end{mylemma}
+\begin{myproof}
+    \begin{itemize}
+        \item First, note that $c_1^*\bb \cong \bb \vee \be^n$:
+        \[ E(c_1^*\bb) = \set{(b, e) \in (B \vee B) \times E(\bb)}{c_1(b) = j(e)} \]
+        \[ = (\set{(b, e) \in B \times E(\bb)}{b = j(e)} \sqcup B \times E(\bb\restr{b_0})) / \sim \]
+        \[ = (E(\bb) \sqcup (B \times E(\bb\restr{b_0}))) / \sim\]
+        where $e \sim (b, e') \iff b = b_0 \land e = e'$.
+        
+        On the other side, consider
+        \[ E(\bb \vee \be^n_B) = (E(\bb) \sqcup (B \times \R^n)) / e \sim f(e) \]
+        with some representative $f: E(\bb\restr{b_0}) \bus V \to b_0 \times \R^n$ for $R_e^{-1} \circ R_b$.
+        
+        Now, we have the mapping $g: (E(\bb) \sqcup (B \times V)) / \sim \isomto (E(\bb) \sqcup (B \times f(V))) / \sim$ via
+        \[ g(e) = e \tand g(b, e) = (b, f^{(2)}(e)). \]
+        This map is well-defined because $\forall e = (b, e): g(e) = e = f(e) = (b, f^{(2)}(e)) = g(b, e)$.
+        Bijectivity is clear and continuity follows from continuity of it's composing components.
+        It's clear that injection and projection commute.
+        % TODO: refine
+        \item Now, from $c_1 \circ \phi = id$ we can conclude that
+        \[ \phi^*(\bb \oplus \be^n_B) = \phi^*c_1^*\bb = (c_1 \circ \phi)^*\bb = \bb. \]
+        The equality $\bb = \phi^*(\be^n_B \oplus \bb)$ follows by symmetry, which concludes the proof.
+    \end{itemize}
+\end{myproof}
+
+% lemma distributivity
+\begin{mylemma}\label{suspension::distributivity}%
+    Let $\ba$ and $\bb$ be rooted microbundles over $A$ and $B$.
+    For maps $f: A' \to A$ and $g: B' \to B$ the following applies:
+    \[ (f \vee g)^*(\ba \vee \bb) = f^*\ba \vee g^*\bb \]
+\end{mylemma}
+\begin{myproof}
+    TODO   
+\end{myproof}
+
+% foreword reflection
+\begin{myparagraph}
+    Let $r: B \isomto B$ denote the homeomorphism that corresponds to the ``reflection''
+    \[ (x, t) \mapsto (x, 1 - t)\]
+    and let $c: B \vee B \to B$ be the identity on the first summand and $r$ on the second summand.
+\end{myparagraph}
+% lemma reflection
+\begin{mylemma}\label{suspension::reflection}
+    The induced microbundle $\phi^*(\bb \vee r^*\bb)$ is trivial.
+\end{mylemma}
+\begin{myproof}
+    The composition $f \circ \phi$ is null-homotopic via $H: B \times [0, 1] \to B$ with
+    \[ H([x, t], s) = f(\phi(x, t * s)) \]
+    and therefore $\phi^*f^*\bb = (f \circ \phi)^*\bb = const_{b_0}^*\bb = \be^n$ (see \intref{homotopy::theorem}).
+    With distributivity, we conclude $\phi^*(\bb \vee c^*\bb) = \phi^*f^*\bb$ and hence that $\phi^*(\bb \vee c^*\bb)$ is trivial.
+\end{myproof}
+
+% lemma compatability wedge ~ whitney
+\begin{mylemma}\label{suspension::compatability}   
+    The following applies for rooted microbundles $\ba, \ba'$ over $A$ and $\bb, \bb'$ over $B$: 
+    \[ (\ba \vee \bb) \oplus (\ba' \vee \bb') \cong (\ba \oplus \ba') \vee (\bb \oplus \bb') \]
+\end{mylemma}
+\begin{myproof}
+    TODO
+\end{myproof}
