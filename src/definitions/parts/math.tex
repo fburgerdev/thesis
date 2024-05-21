@@ -26,7 +26,7 @@
     \hookrightarrow{}
 }
 \newcommand{\xincl}[1] {
-    \overset{\iota}{\hookrightarrow}
+    \overset{#1}{\hookrightarrow}
 }
 \newcommand{\subm} {
     \twoheadrightarrow{}
@@ -109,11 +109,19 @@
 
 % Homotopy
 \newcommand{\bgerm}[3] {
-    #1: #2 \Rightarrow #3
+    #1: #2 \Rightarrow{} #3
 }
 \newcommand{\double} {
-    \Rightarrow
+    \Rightarrow{}
 }
-\newcommand{\half} {
-    \frac{1}{2}
+\newcommand{\half} {%
+    \frac{1}{2}%
 }
+
+% WLOG
+\newcommand{\Wlog} {%
+    W.l.o.g.{}%
+}
+% \newcommand{\wlog} {
+%     w.l.o.g.\
+% }

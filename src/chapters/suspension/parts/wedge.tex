@@ -1,39 +1,107 @@
 % definition wedge sum
 \begin{mydefinition}
-    Let $\ba_*$ and $\bb_*$ be two rooted microbundles over $A$ and $B$.
-    The \defterm{wedge sum} $\ba_* \vee \bb_*$ is a rooted microbundle over $A \vee B$ defined as follows:
-
-    For the rootings $R_\ba: \ba\restr{a_0} \double \be^n_{a_0}$ and $R_\bb: \bb\restr{b_0} \double \be^n_{b_0}$,
-    choose representatives $r_\ba: V_\ba \isomto a_0 \times \R^n$ and $r_\bb: V_\bb \isomto b_0 \times \R^n$.
-    Denote $r := r_\bb^{-1} \circ r_\ba: V_\ba \isomto V_\bb$.
-    \begin{itemize}
-        \item $E(\ba \vee \bb) := (E(\ba_*) \sqcup E(\bb_*)) / (\forall e \in V_\ba: e \sim r(e))$
-        \item $i := i_\ba \vee i_\bb$ is well-defined, because $i(a_0) = i_\ba(a_0) = r(i_1(a_0)) = i_\bb(b_0) = i(b_0)$
-        \item $j := j_\ba \vee j_\bb$ is well-defined, because $\forall e \in V_\ba: j(e) = j_\ba(e) = a_0 = b_0 = j_\bb(r(e)) = j(r(e))$
-    \end{itemize}
+    Let $\ba$ and $\bb$ be two rooted microbundles over $A$ and $B$.
+    % microbundle
+    The \defterm{wedge sum} $\ba \vee \bb$ of $\ba$ and $\bb$ is microbundle over $A \vee B$
+    \[ \ba \vee \bb \xto{i_\ba \vee i_\bb} E(\ba \vee \bb) \xto{j_\ba \vee j_\bb} A \vee B \]
+    where the total space is
+    \[ (E(\ba) \sqcup E(\bb)) / (f(e_a) \sim e_b) \]
+    and $f: E(\ba\restr{a_0}) \bus W_a \isomto W_b \sub E(\bb\restr{b_0})$ is some representative for $R_b^{-1} \circ R_a$.
+    % rooting
+    We equip $\ba \vee \bb$ with a rooting
+    \[ R: E((\ba \vee \bb)\restr{a_0}) \double \be^n_{a_0} \]
+    represented by any representative for $R_a$ (or $R_b$).
+    % \begin{itemize}
+    %     \item $E(\ba \vee \bb) := (E(\ba) \sqcup E(\bb)) / (f(e_a) \sim e_b)$
+    %     \item $i := i_\ba \vee i_\bb$ is well-defined, because $i(a_0) = i_\ba(a_0) = f(i_\ba(a_0)) = i_\bb(b_0) = i(b_0)$
+    %     \item $j := j_\ba \vee j_\bb$ is well-defined, because $\forall e \in V_\ba: j(e) = j_\ba(e) = a_0 = b_0 = j_\bb(r(e)) = j(r(e))$
+    % \end{itemize}
+    % For the rootings $R_\ba: \ba\restr{a_0} \double \be^n_{a_0}$ and $R_\bb: \bb\restr{b_0} \double \be^n_{b_0}$,
+    % choose representatives $r_\ba: V_\ba \isomto a_0 \times \R^n$ and $r_\bb: V_\bb \isomto b_0 \times \R^n$.
+    % Denote $r := r_\bb^{-1} \circ r_\ba: V_\ba \isomto V_\bb$.
+    % \begin{itemize}
+    %     \item $E(\ba \vee \bb) := (E(\ba_*) \sqcup E(\bb_*)) / (\forall e \in V_\ba: e \sim r(e))$
+    %     \item $i := i_\ba \vee i_\bb$ is well-defined, because $i(a_0) = i_\ba(a_0) = r(i_1(a_0)) = i_\bb(b_0) = i(b_0)$
+    %     \item $j := j_\ba \vee j_\bb$ is well-defined, because $\forall e \in V_\ba: j(e) = j_\ba(e) = a_0 = b_0 = j_\bb(r(e)) = j(r(e))$
+    % \end{itemize}
 \end{mydefinition}
-\begin{proof}[that $\ba_* \vee \bb_*$ is a microbundle]
-    Continuity of $i$ and $j$ follows directly from the quotient topology and from the continuity of $i_a, i_b$ and $j_a, j_b$.
-    Additionally, $\forall a \in A: j(i(a)) = j(i_\ba(a)) = j_\ba(i_\ba(a)) = a$ (symmetric for $B$) and therefore $j \circ i = id$.
-    It remains to be shown that the diagram is locally trivializable:
+% proof wedge sum
+\begin{myproof}[that $\ba \vee \bb$ is a rooted microbundle]
+    We show that $\ba \vee \bb$ is a rooted microbundle and afterwards show
+    that the definition of $\ba \vee \bb$ is independant of the choice of the representative $f$ for $R_b^{-1} \circ R_a$.
+    \begin{enumerate}
+        % rooted microbundle
+        \item $\ba \vee \bb$ is a rooted microbundle:
+        \begin{itemize}
+            % injection
+            \item The injection map $i_\ba \vee i_\bb$ is well-defined because 
+            \[ i(a_0) = i_\ba(a_0) = f(i_\ba(a_0)) = i_\bb(b_0) = i(b_0) \]
+            and continuous since $i_\ba$ and $i_\bb$ are continuous.
+            % projection
+            \item The projection map $j_\ba \vee j_\bb$ is well-defined because
+            \[ \forall e \in V_a: j(e) = j_\ba(e) = a_0 = b_0 = j_\bb(f(e)) = j(f(e)) \]
+            and continuous since $j_\ba$ and $j_\bb$ are continuous.
+            % compatibility
+            \item The composition $j \circ i = id_{A \vee B}$ because for every $a \in A$
+            \[ j(i(a)) = j(i_\ba(a)) = j_\ba(i_\ba(a)) = a \]
+            since $j_\ba \circ i_\ba = id_A$ (analogous for $B$).
+        \end{itemize}
+        % local triviality
+        It remains to show local triviality.
 
-    Let $(U_a, V_a, \phi_a)$ and $(U_b, V_b, \phi_b)$ be local trivializations for $\ba$ in $a_0$ and $\bb$ in $b_0$.
-    We can construct a local trivialization for $\ba \vee \bb$ in $a_0 = b_0$ as follows:
-    \begin{itemize}
-        \item $U := U_a \vee U_b$
-        \item $V := V_a \vee V_b$
-        \item $\phi\restr{V_a}(e) := (j_a(e), r_a(\phi_a^{-1}(a_0, \phi_a^{(2)}(e))))$ and symmetrically over $V_b$
-    \end{itemize}
-    Openness of $U$ and $V$ follows from the topology of quotients.
-    The map $\phi$ is well-defined, because $\forall e_a = e_b \in V_\ba$:
-    \[ \phi(e_a) = (j_a(e_a), r_a(\phi_a^{-1}(a_0, \phi_a^{(2)}(e_a)))) \]
-    \[ = (a_0, r_a(e_a)) = (b_0, e_b) \]
-    \[ = (j_b(e_b), r_b(\phi_b^{-1}(b_0, \phi_b^{(2)}(e_b)))) = \phi(e_b) \]
-    Homeomorphy of $\phi$ follows from the homeomorphy of the components it's composed of.
+        The subspace topology of $E(\ba\restr{a_0})$ yields an open subset $W_a' \sub E(\ba)$ with $W_a = W_a' \cap E(\ba\restr{a_0})$.
+        Symmetrically, let $W_b' \sub E(\bb)$ with $W_b = W_b' \cap E(\bb\restr{b_0})$.
 
-    One can see that regardless of the choices we made for this definition, the resulting microbundle remains the same up to isomorphy.
-    TODO: PROOF
-\end{proof}
+        Let $x \in A \vee B$, w.l.o.g. $x \in A$ for symmetry reasons.
+        \begin{itemize}
+            % trivial case
+            \item $x \neq a_0$:
+            
+            Choose a local trivialization $(U, V, \phi)$ for $x$ in $\ba$.
+            We can assume $U \cap B = \emptyset$ by subtracting $U$ by $\{a_0\}$ which is closed since $A$ is hausdorff.
+            Now we can simply use this trivialization for $\ba \vee \bb$ since $U$ is open in $A \vee B$, $V$ is open in $E(\ba \vee \bb)$ and $V \cong U \times \R^n$.
+            % special case
+            \item $x = a_0$:
+            
+            Choose local trivializations $(U_a, V_a, \phi_a)$ for $a_0$ in $\ba$ and $(U_b, V_b, \phi_b)$ for $b_0$ in $\bb$.
+            \begin{itemize}
+                \item We can assume $V_b \cap j^{-1}(b_0) \sub W_b$ by choosing a local trivialization for $b_0$ in
+                the microbundle over the restricted total space $(E(\bb) - j_\bb^{-1}(b_0)) \cup W_a$ (\intref{microbundle::totalspace}).
+                \item We can assume $V_a \cap j^{-1}(a_0) \sub V_b \cap j^{-1}(b_0)$ by choosing a local trivialization for $a_0$ in
+                the microbundle over the restricted total space $(E(\ba) - j_\ba^{-1}(b_0)) \cup (V_b \cap j^{-1}(b_0))$.
+            \end{itemize}
+            The subset $X_b := \phi_b^{(2)}f(V_a \cap j^{-1}(a_0))$ is homeomorphic to $\R^n$ via
+            \[ a_0 \times \R^n \xto{\phi^{-1}} V_a \cap j^{-1}(a_0) \xto{f} X_b \]
+            and open since $f$ and $\phi$ are homeomorphisms.
+            By choosing $V_b' := \phi_b^{-1}(B \times X_b)$ and $\phi_b'(e) := (j(e), \phi_a^{(2)}(f^{-1}(\phi_b^{(2)}(e))))$,
+            we have local trivializations $(U_a, V_a, \phi_a)$ and $(U_b, V_b', \phi_b')$ that agree on $W_a = W_b$.
+            This yields a local trivialization for $\ba \vee \bb$.
+        \end{itemize}
+        % well-defined
+        \item $\ba \vee \bb$ is independant of the choice of $f$:
+        % TODO
+    \end{enumerate}
+    % Continuity of $i$ and $j$ follows directly from the quotient topology and from the continuity of $i_a, i_b$ and $j_a, j_b$.
+    % Additionally, $\forall a \in A: j(i(a)) = j(i_\ba(a)) = j_\ba(i_\ba(a)) = a$ (symmetric for $B$) and therefore $j \circ i = id$.
+    % It remains to be shown that the diagram is locally trivializable:
+
+    % Let $(U_a, V_a, \phi_a)$ and $(U_b, V_b, \phi_b)$ be local trivializations for $\ba$ in $a_0$ and $\bb$ in $b_0$.
+    % We can construct a local trivialization for $\ba \vee \bb$ in $a_0 = b_0$ as follows:
+    % \begin{itemize}
+    %     \item $U := U_a \vee U_b$
+    %     \item $V := V_a \vee V_b$
+    %     \item $\phi\restr{V_a}(e) := (j_a(e), r_a(\phi_a^{-1}(a_0, \phi_a^{(2)}(e))))$ and symmetrically over $V_b$
+    % \end{itemize}
+    % Openness of $U$ and $V$ follows from the topology of quotients.
+    % The map $\phi$ is well-defined, because $\forall e_a = e_b \in V_\ba$:
+    % \[ \phi(e_a) = (j_a(e_a), r_a(\phi_a^{-1}(a_0, \phi_a^{(2)}(e_a)))) \]
+    % \[ = (a_0, r_a(e_a)) = (b_0, e_b) \]
+    % \[ = (j_b(e_b), r_b(\phi_b^{-1}(b_0, \phi_b^{(2)}(e_b)))) = \phi(e_b) \]
+    % Homeomorphy of $\phi$ follows from the homeomorphy of the components it's composed of.
+
+    % One can see that regardless of the choices we made for this definition, the resulting microbundle remains the same up to isomorphy.
+    % TODO: PROOF
+\end{myproof}
 
 % foreword suspension
 \begin{myparagraph}
@@ -48,10 +116,13 @@
     \[ \phi(x, t) = [(x, 2t - 1)]. \]
 
     Let $c_1: B \vee B \to B$ denote the map that is the identity on the first summand
-    and the constant mapt to $b_0$ on the second summand.
+    and the constant mapt to $b_0$ on the second summand (symmetrically define $c_2$).
 \end{myparagraph}
 
 % lemma commutatitivity
 \begin{mylemma}\label{suspension::lemma1}
     \[ \phi^*(\bb \oplus \be^n_B) \cong \bb \cong \phi^*(\be^n_B \oplus \bb) \]
 \end{mylemma}
+\begin{proof}
+    First, note that $c_1^\bb \cong \bb \vee \be^n$.
+\end{proof}
