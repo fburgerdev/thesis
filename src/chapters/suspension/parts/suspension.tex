@@ -42,14 +42,29 @@
     \end{itemize}
 \end{myproof}
 
+% definition induced
+\begin{mydefinition}
+    Let $\bb$ be a rooted microbundle over $B$ and $f: A \to B$ a base point preserving map.
+    The \defterm{induced microbundle} of $f$ over $\bb$ is the initial induced microbundle $f^*\bb$ together with the rooting
+    \[ f^*R: E(f^*\bb\restr{a_0}) = a_0 \times E(\bb\restr{b_0}) \double e^n_{a_0} \]
+    that coincides with $R$ if we consider $a_0 \times E(\bb\restr{b_0}) = E(\bb\restr{b_0})$ and $e^n_{a_0} = e^n_{b_0}$.
+\end{mydefinition}
+
 % lemma distributivity
 \begin{mylemma}\label{suspension::distributivity}%
     Let $\ba$ and $\bb$ be rooted microbundles over $A$ and $B$.
     For maps $f: A' \to A$ and $g: B' \to B$ the following applies:
-    \[ (f \vee g)^*(\ba \vee \bb) = f^*\ba \vee g^*\bb \]
+    \[ (f \vee g)^*(\ba \vee \bb) \cong f^*\ba \vee g^*\bb \]
 \end{mylemma}
 \begin{myproof}
-    TODO   
+    Consider the equation
+    \[ E((f \vee g)^*(\ba \vee \bb)) = \set{(x, e) \in (A' \vee B') \times E(\ba \vee \bb)}{(f \vee g)(x) = j(e)} \]
+    \[ = \set{(x, e) \in ((A' \times E(\ba)) \sqcup (B' \times E(\bb))) / \sim}{(f \vee g)(x) = j(e)} \]
+    \[ = (\set{(x, e) \in A' \times E(\ba)}{f(x) = j_\ba(e)} \sqcup \set{(x, e) \in B' \times E(\bb)}{g(x) = j_\bb(e)}) / \sim \]
+    \[ = (E(f^*\ba) \sqcup E(g^*\bb)) / \sim = E(f^*\ba \vee g^*\bb)\]
+    where $(a, e_a) \sim (b, e_b) \iff a = a_0 = b_0 = b \land e_a = e_b$ in $E(\ba \vee \bb)$.
+    So the total spaces are equal and also the injection and projection map agree, which concludes the proof.
+    % TODO: refine 
 \end{myproof}
 
 % foreword reflection
@@ -69,11 +84,25 @@
     With distributivity, we conclude $\phi^*(\bb \vee c^*\bb) = \phi^*f^*\bb$ and hence that $\phi^*(\bb \vee c^*\bb)$ is trivial.
 \end{myproof}
 
+% definition whitney
+\begin{mydefinition}
+    The \defterm{whitney sum} of two rooted microbundles $\bb$ and $\bb'$ over $B$
+    is the initial whitney sum $\bb \oplus \bb'$ together with the rooting
+    \[ R \oplus R': (\bb \oplus \bb')\restr{b_0} \double \be^{n_1}_{b_0} \oplus \be^{n_2}_{b_0} = \be^{n_1 + n_1}_{b_0}. \]
+\end{mydefinition}
+
 % lemma compatability wedge ~ whitney
 \begin{mylemma}\label{suspension::compatability}   
     The following applies for rooted microbundles $\ba, \ba'$ over $A$ and $\bb, \bb'$ over $B$: 
     \[ (\ba \vee \bb) \oplus (\ba' \vee \bb') \cong (\ba \oplus \ba') \vee (\bb \oplus \bb') \]
 \end{mylemma}
 \begin{myproof}
-    TODO
+    Consider the equation
+    \[ E((\ba \vee \bb) \oplus (\ba' \vee \bb')) = \set{(e, e') \in E(\ba \vee \bb) \times E(\ba' \vee \bb')}{j(e) = j'(e')} \]
+    \[ = \set{(e, e') \in (E(\ba) \sqcup E(\bb)) / \sim \times (E(\ba') \sqcup E(\bb')) / \sim'}{j(e) = j'(e')} \]
+    \[ = (\set{(e, e') \in E(\ba) \times E(\ba')}{j_\ba(e) = j_{\ba'}(e')} \sqcup \set{(e, e') \in E(\bb) \times E(\bb')}{j_\bb(e) = j_{\bb'}(e')}) / \approx \]
+    \[ = (E(\ba \oplus \ba') \sqcup E(\bb \oplus \bb')) / \approx = E((\ba \oplus \ba') \vee (\bb \oplus \bb'))\]
+    where $(e_a, e_a') \approx (e_b, e_b') \iff e_a \sim e_b \land e_a' \sim' e_b'$.
+    So the total spaces are equal and also the injection and projection map agree, which concludes the proof.
+    % TODO: refine
 \end{myproof}
