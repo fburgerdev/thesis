@@ -1,10 +1,10 @@
 % Break
-\newcommand{\blankbreak} {%
+\newcommand{\blankbreak}{%
   $ $\\
 }
 
 % Scope
-\newenvironment{scope} {}{}
+\newenvironment{scope}{}{}
 
 % Statement
 \newtheorem{statement}{}
@@ -12,74 +12,80 @@
 % Statement :: Definition
 \theoremstyle{definition}
 \newtheorem{definition}[statement]{Definition}
-\newenvironment{mydefinition}[1][]{%
-  \begin{definition}[#1]\blankbreak{}
-} {
-  \end{definition}
-}
 % Statement :: Theorem
 \theoremstyle{plain}
 \newtheorem{theorem}[statement]{Theorem}
-\newenvironment{mytheorem}[1][]{%
-  \begin{theorem}[#1]\blankbreak{}
-} {
-  \end{theorem}
-}
 % Statement :: Proposition
 \theoremstyle{plain}
 \newtheorem{proposition}[statement]{Proposition}
-\newenvironment{myproposition}[1][]{%
-  \begin{proposition}[#1]\blankbreak{}
-} {
-  \end{proposition}
-}
 % Statement :: Corollary
 \theoremstyle{plain}
 \newtheorem{corollary}[statement]{Corollary}
-\newenvironment{mycorollary}[1][]{%
-  \begin{corollary}[#1]\blankbreak{}
-} {
-  \end{corollary}
-}
 % Statement :: Lemma
 \theoremstyle{plain}
 \newtheorem{lemma}[statement]{Lemma}
-\newenvironment{mylemma}[1][]{%
-  \begin{lemma}[#1]\blankbreak{}
-} {
-  \end{lemma}
-}
 % Statement :: Remark
 \theoremstyle{remark}
 \newtheorem{remark}[statement]{Remark}
-\newenvironment{myremark}[1][]{%
-  \begin{remark}[#1]\blankbreak{}
-} {
-  \end{remark}
-}
 % Statement :: Example
 \theoremstyle{definition}
 \newtheorem{example}[statement]{Example}
-\newenvironment{myexample}[1][]{%
-  \begin{example}[#1]\blankbreak{}
-} {
-  \end{example}
-}
 
-% Proof
+% MyParagraph
+\newenvironment{myparagraph}{%
+  \hspace{\parindent}%
+} {%
+  % Empty
+}
+% MyDefinition
+\newenvironment{mydefinition}[2][]{%
+  \begin{definition}[#1]\label{#2}\blankbreak{}
+} {
+  \end{definition}
+}
+% MyTheorem
+\newenvironment{mytheorem}[2][]{%
+  \begin{theorem}[#1]\label{#2}\blankbreak{}%
+} {%
+  \end{theorem}%
+}
+% MyProposition
+\newenvironment{myproposition}[2][]{%
+  \begin{proposition}[#1]\label{#2}\blankbreak{}%
+} {%
+  \end{proposition}%
+}
+% MyCorollary
+\newenvironment{mycorollary}[2][]{%
+  \begin{corollary}[#1]\label{#2}\blankbreak{}%
+} {%
+  \end{corollary}%
+}
+% MyLemma
+\newenvironment{mylemma}[2][]{%
+  \begin{lemma}[#1]\label{#2}\blankbreak{}%
+} {%
+  \end{lemma}%
+}
+% MyRemark
+\newenvironment{myremark}[2][]{%
+  \begin{remark}[#1]\label{#2}\blankbreak{}%
+} {%
+  \end{remark}%
+}
+% MyExample
+\newenvironment{myexample}[2][]{%
+  \begin{example}[#1]\label{#2}\blankbreak{}%
+} {%
+  \end{example}%
+}
+% MyProof
 \newenvironment{myproof}[1][]{%
-  \ifthenelse{\equal{#1}{}} {
-    \begin{proof}\blankbreak{}
-  } {
-    \begin{proof}[Proof #1.]\blankbreak{}
+  \ifthenelse{\equal{#1}{}} {%
+    \begin{proof}\blankbreak{}%
+  } {%
+    \begin{proof}[Proof #1.]\blankbreak{}%
   }
-} {
-  \end{proof}
-}
-
-% Paragraph
-\newenvironment{myparagraph}{
-  \hspace{\parindent}
-} {
-
+} {%
+  \end{proof}%
 }

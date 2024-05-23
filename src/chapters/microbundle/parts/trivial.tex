@@ -4,7 +4,7 @@
 \end{myparagraph}
 
 % ex: trivial microbundle
-\begin{myexample}[trivial microbundle]
+\begin{myexample}[trivial microbundle]{microbundle::trivial}
     For a topological space $B$, the \defterm{standard microbundle} $\be_B$ over $B$ is a diagram
     \[ \bundle{B}{B \times \R^n}{\iota}{\pi} \]
     where $\iota(b) := (b, 0)$ and $\pi(b, x) := b$.
@@ -18,12 +18,12 @@
 \end{myparagraph}
 
 % lemma: sharper description for triviality
-\begin{mylemma}
+\begin{mylemma}{microbundle::triviallemma}
     A microbundle $\bb$ over a paracompact space $B$ is trivial if and only if there exists an open neighborhood $U$ of $i(B)$ such that $U \cong B \times \R^n$.
 \end{mylemma}
 % proof
 \begin{myproof}
-    By applying \intref{microbundle::totalspace}, we may assume that $E(\bb)$ is an open subset of $B \times \R^n$.
+    By applying \intref{microbundle::total}, we may assume that $E(\bb)$ is an open subset of $B \times \R^n$.
     Since $B$ is paracompact, there exists a map $\lambda: B \to (0, 1]$ such that every $(b, x) \in B \times \R^n$ with $\abs{x} < \lambda(b)$ lies in $E(\bb)$.
     Now, the function
     \[ (b, x) \mapsto (b, \frac{x}{\abs{x} - \lambda(b)}) \]

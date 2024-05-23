@@ -15,7 +15,7 @@
 \end{myparagraph}
 
 % lemma triviality
-\begin{mylemma}\label{suspension::triviality}
+\begin{mylemma}{suspension::triviality}
     \[ \phi^*(\bb \oplus \be_B) \cong \bb \cong \phi^*(\be_B \oplus \bb) \]
 \end{mylemma}
 \begin{myproof}
@@ -43,7 +43,7 @@
 \end{myproof}
 
 % definition induced
-\begin{mydefinition}
+\begin{mydefinition}{suspension::induced}
     Let $\bb$ be a rooted microbundle over $B$ and $f: A \to B$ a base point preserving map.
     The \defterm{induced microbundle} of $f$ over $\bb$ is the initial induced microbundle $f^*\bb$ together with the rooting
     \[ f^*R: E(f^*\bb\restr{a_0}) = a_0 \times E(\bb\restr{b_0}) \double e^n_{a_0} \]
@@ -51,7 +51,7 @@
 \end{mydefinition}
 
 % lemma distributivity
-\begin{mylemma}\label{suspension::distributivity}%
+\begin{mylemma}{suspension::distributivity}
     Let $\ba$ and $\bb$ be rooted microbundles over $A$ and $B$.
     For maps $f: A' \to A$ and $g: B' \to B$ the following applies:
     \[ (f \vee g)^*(\ba \vee \bb) \cong f^*\ba \vee g^*\bb \]
@@ -74,7 +74,7 @@
     and let $c: B \vee B \to B$ be the identity on the first summand and $r$ on the second summand.
 \end{myparagraph}
 % lemma reflection
-\begin{mylemma}\label{suspension::reflection}
+\begin{mylemma}{suspension::reflection}
     The induced microbundle $\phi^*(\bb \vee r^*\bb)$ is trivial.
 \end{mylemma}
 \begin{myproof}
@@ -85,14 +85,14 @@
 \end{myproof}
 
 % definition whitney
-\begin{mydefinition}
+\begin{mydefinition}{suspension::whitney}
     The \defterm{whitney sum} of two rooted microbundles $\bb$ and $\bb'$ over $B$
     is the initial whitney sum $\bb \oplus \bb'$ together with the rooting
     \[ R \oplus R': (\bb \oplus \bb')\restr{b_0} \double \be[n_1]_{b_0} \oplus \be[n_2]_{b_0} = \be[n_1 + n_1]_{b_0}. \]
 \end{mydefinition}
 
 % lemma compatability wedge ~ whitney
-\begin{mylemma}\label{suspension::compatability}   
+\begin{mylemma}{suspension::compatability}   
     The following applies for rooted microbundles $\ba, \ba'$ over $A$ and $\bb, \bb'$ over $B$: 
     \[ (\ba \vee \bb) \oplus (\ba' \vee \bb') \cong (\ba \oplus \ba') \vee (\bb \oplus \bb') \]
 \end{mylemma}
