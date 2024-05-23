@@ -61,8 +61,8 @@
     \mathfrak{d}
 }
 % Bundle :: Trivial
-\newcommand{\be} {
-    \mathfrak{e}
+\newcommand{\be}[1][n] {
+    \mathfrak{e}^{#1}
 }
 % Bundle :: Tangent
 \newcommand{\bt} {
@@ -96,9 +96,9 @@
     O{1} O{0}
 } {
     \ifthenelse{\equal{#2}{0}} {
-        B_{#1}(0)
+        B_{#1} (0)
     } {
-        B_{#1}(#2)
+        B_{#1} (#2)
     }
 }
 \NewDocumentCommand{\clball} { 
@@ -136,4 +136,19 @@
 
 \newcommand{\tand} {%
     \text{ and }%
+}
+
+\newcommand{\germdef}[3] {
+    #1: #2 \double{} #3
+}
+\newcommand{\germ}[2] {
+    #1 \double{} #2
+}
+
+\newcommand{\inv}[1] {
+    #1^{-1}
+}
+
+\newcommand{\I} {
+    [0, 1]
 }

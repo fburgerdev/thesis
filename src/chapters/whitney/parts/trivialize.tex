@@ -33,25 +33,25 @@
 
     \begin{enumerate}
         % statement
-        \item $\bn' \oplus \be^n_{B'}$ can be extended over any $d$-simplex $\sigma$:
+        \item $\bn' \oplus \be_{B'}$ can be extended over any $d$-simplex $\sigma$:
 
         % proof
         Consider the following:
         \[
-            (\bn' \oplus \be^n_{B'})\restr{\partial\sigma}
-            = \bn'\restr{\partial\sigma} \oplus \be^n_{B'}\restr{\partial\sigma}
+            (\bn' \oplus \be_{B'})\restr{\partial\sigma}
+            = \bn'\restr{\partial\sigma} \oplus \be_{B'}\restr{\partial\sigma}
             = \bn'\restr{\partial\sigma} \oplus \bb\restr{\partial\sigma}
             = (\bn' \oplus \bb\restr{B'})\restr{\partial\sigma}
         \]
         Since $(\bn' \oplus \bb\restr{B'})\restr{\partial\sigma}$ is trivial, the claim follows from \intref{induced::simplex}.
 
         % statement
-        \item $\bn' \oplus \be^n_{B'}$ can be extended over $B$:
+        \item $\bn' \oplus \be_{B'}$ can be extended over $B$:
 
         % proof
         The difficulty is that the individual $d$-simplices are not well-seperated.
         Let $B''$ denote $B$ with small open $d$-cells removed from every $d$-simplex.
-        Since $B'$ is a retract of $B''$ we can extend $\bn' \oplus \be^n_{B'}$ over $B''$ and now apply the first statement.
+        Since $B'$ is a retract of $B''$ we can extend $\bn' \oplus \be_{B'}$ over $B''$ and now apply the first statement.
         We denote the resulting microbundle by $\eta$.
 
         % finish
@@ -61,15 +61,15 @@
         \[
             (\bb \oplus \eta)\restr{B'}
             = \bb\restr{B'} \oplus \eta\restr{B'}
-            = \bb\restr{B'} \oplus (\bn' \oplus \be^n_{B'})
-            = (\bb\restr{B'} \oplus \bn') \oplus \be^n_{B'}
-            = \be^n_{B'} \oplus \be^n_{B'}
+            = \bb\restr{B'} \oplus (\bn' \oplus \be_{B'})
+            = (\bb\restr{B'} \oplus \bn') \oplus \be_{B'}
+            = \be_{B'} \oplus \be_{B'}
         \]
         which is trivial, by \intref{induced::simplex} we can extend $\bb \oplus \eta$ over $B \sqcup CB'$ denoted by $\xi$.
         However, $B \sqcup CB'$ has the homotopy type of a bouquet of spheres and by \intref{homotopy::theorem} and \intref{whitney::bouqet} there exists a microbundle $\bn$ such that $(\xi \oplus \bn)\restr{B}$ is trivial.
         The formula
         \[
-            \be^n_{B}
+            \be_{B}
             = (\xi \oplus \bn)\restr{B}
             = \xi\restr{B} \oplus \bn\restr{B}
             = (\bb \oplus \eta) \oplus \bn\restr{B}

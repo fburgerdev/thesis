@@ -1,9 +1,9 @@
 % lemma commutativity
 \begin{mylemma}\label{suspension::commutativity}%
-    The rooted microbundles $\bb \oplus \be^n_B$ and $\be^n_B \oplus \bb$ are isomorphic. 
+    The rooted microbundles $\bb \oplus \be_B$ and $\be_B \oplus \bb$ are isomorphic. 
 \end{mylemma}
 \begin{myproof}
-    We need to find an isomorphism germ $\bb \oplus \be^n_B \double \be^n_B \oplus \bb$ that extends
+    We need to find an isomorphism germ $\bb \oplus \be_B \double \be_B \oplus \bb$ that extends
     \[ (I \oplus R) \circ (R \oplus I)^{-1} = R \oplus R^{-1} \]
     where $I$ denotes the identity germ.
 
@@ -11,7 +11,7 @@
     The idea is to change to $f$ near $b_0$ so that it extends the rooting.
 
     For this, choose a sufficiently small closed neighborhood $U$ of $b_0$
-    such that there exists an extension $Q: (\bb \oplus \be^n)\restr{U} \double (\be^n \oplus \bb)\restr{U}$ for the rooting.
+    such that there exists an extension $Q: (\bb \oplus \be)\restr{U} \double (\be \oplus \bb)\restr{U}$ for the rooting.
 
     Since $B$ is Tychonoff, there exists a map
     \[ \lambda: B \to [0, \frac{\pi}{2}] \]
@@ -22,24 +22,24 @@
     \[ g(b, x, y) = (b, x \sin(\lambda(b)) - y \cos(\lambda(b)), x \cos(\lambda(b)) - y \sin(\lambda(b))). \]
 
     Now, we can consider
-    \[ (\bb \oplus \be^n)\restr{U} \double (\bb \oplus \be^n)\restr{U} \xto{g} (\bb \oplus \be^n)\restr{U} \double (\be^n \oplus \bb)\restr{U}\]
+    \[ (\bb \oplus \be)\restr{U} \double (\bb \oplus \be)\restr{U} \xto{g} (\bb \oplus \be)\restr{U} \double (\be \oplus \bb)\restr{U}\]
     which coincides with $R \oplus R^{-1}$ over $b_0$ since $g(b_0, x, y) = (b_0, x, y)$ and with $F$ over $U \cap \lambda^{-1}(0)$.
-    Pieced together with $F\restr{\lambda^{-1}(b)}$, we have an isomorphism germ $\bb \oplus \be^n_B \double \be^n_B \oplus \bb$ that extends the rooting, which completes the proof.
+    Pieced together with $F\restr{\lambda^{-1}(b)}$, we have an isomorphism germ $\bb \oplus \be_B \double \be_B \oplus \bb$ that extends the rooting, which completes the proof.
 \end{myproof}
 
 % theorem
 \begin{mytheorem}
     If $\ba$ and $\bb$ are rooted microbundles over a completly regular space $B$, then
-    \[ \phi^*(\ba \vee \bb) \oplus \be^n_B = \ba \oplus \bb. \]
+    \[ \phi^*(\ba \vee \bb) \oplus \be_B = \ba \oplus \bb. \]
 \end{mytheorem}
 \begin{myproof}
-    The previous lemma yields $\bb \oplus \be^n \cong \be^n \oplus \bb$.
+    The previous lemma yields $\bb \oplus \be \cong \be \oplus \bb$.
     Hence
-    \[ \phi^*((\ba \oplus \be^n) \vee (\bb \oplus \be^n)) \cong \phi^*((\ba \oplus \be^n) \vee (\be^n \oplus \bb)). \]
+    \[ \phi^*((\ba \oplus \be) \vee (\bb \oplus \be)) \cong \phi^*((\ba \oplus \be) \vee (\be \oplus \bb)). \]
     Additionally we have
-    \[ \phi^*((\ba \vee \bb) \oplus (\be^n \vee \be^n)) \cong \phi^*(\ba \vee \bb) \oplus \be^n \]
+    \[ \phi^*((\ba \vee \bb) \oplus (\be \vee \be)) \cong \phi^*(\ba \vee \bb) \oplus \be \]
     for the left side of the isomorphy and
-    \[ \phi^*((\ba \vee \be^n) \oplus (\be^n \vee \bb)) \cong \ba \oplus \bb\]
+    \[ \phi^*((\ba \vee \be) \oplus (\be \vee \bb)) \cong \ba \oplus \bb\]
     for the right side of the isomorphy which concludes the proof.
 \end{myproof}
 

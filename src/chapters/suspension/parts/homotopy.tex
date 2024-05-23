@@ -1,50 +1,50 @@
-Let $\bb'_*$ be a rooted microbundle over $B'$.
+% rooted homotopy theorem
 \begin{mytheorem}\label{suspension::homotopy}%
-    Let $f, g: B \to B'$ be two homotopic maps together with a homotopy $H: B \times [0, 1] \to B'$
-    that leaves base points fixed.
-    Then the rooted microbundles $f^*\bb'_*$ and $g^*\bb'_*$ are isomorphic.
+    Let $\bb$ be a rooted microbundle over $B$ and $f, g: A \to B$ be two based maps.
+    If there exists a homotopy $H: A \times \I \to B$ between $f$ and $g$ that leaves the base point fixed,
+    then the two rooted microbundles $f^*\bb$ and $g^*\bb$ are isomorphic.
 \end{mytheorem}
 
 % foreword lemma
 \begin{myparagraph}
-    Let $\bb'_*$ be a rooted microbundle over $B'$ and $f: B \times [0, 1] \to B'$ a map. 
-    First, note that the total space
-    \[ E(f^*\bb_*\restr{b_0 \times [0, 1]}) \]
+    We need to show a rooted version of \intref{homotopy::lemma2}.
+    Before we prove the lemma, note that 
+    \[ E(H^*\bb\restr{a_0 \times \I}) \]
     is just
-    \[ \{ e \in E(f^*\bb_*) \mid j(e) \in b_0 \times [0, 1] \} \]
-    \[ = \{ (b, t, e) \in B \times [0, 1] \times E(\bb_*) \mid b = b_0, f(b, t) = j(e) \} \]
-    \[ = b_0 \times [0, 1] \times E(\bb_*\restr{b_0'}). \]
+    \[ \{ e \in E(H^*\bb) \mid j(e) \in a_0 \times \I \} \]
+    \[ = \{ (a, t, e) \in A \times \I \times E(\bb) \mid a = a_0 \land H(a, t) = j(e) \} \]
+    \[ = a_0 \times \I \times E(\bbb). \]
     Based on this, we can define an isomorphism-germ
-    \[ \bar{R}: f^*\bb_*\restr{b_0 \times [0, 1]} \double \be^n_{b_0 \times [0, 1]} \]
+    \[ \germdef{\bar{R}}{H^*\bb\restr{a_0 \times \I}}{\be_{a_0 \times \I}} \]
     via a representative
-    \[ \bar{r}: b_0 \times [0, 1] \times V \to b_0 \times [0, 1] \times \R^n \]
+    \[ \bar{r}: a_0 \times \I \times V \to a_0 \times \I \times \R^n \]
     with
-    \[ \bar{r}(b_0, t, v) = (b_0, t, r(v) )\]
-    where $r: V \to E(\be^n_{b_0})$ is a representative for $R$.
+    \[ \bar{r}(a_0, t, v) = (a_0, t, r(v) )\]
+    where $r: V \to E(\be_{b_0})$ is a representative for $R$.
     The representative $\bar{r}$ is a homoemorphism on its image
-    because its a product of the identity and $r$, which are both homoemorphisms on their image. 
+    because it is a product of the identity and $r$, which are both homoemorphisms on their image. 
 \end{myparagraph}
 % lemma
 \begin{mylemma}
-    Let $\bb'_*$ be a rooted microbundle over $B'$ and $f: B \times [0, 1] \to B'$ be a map.
-    Then there exists a neighborhood $V$ of $b_0$ with an isomorphism-germ
-    \[ f^*\bb_*\restr{V \times [0, 1]} \double \be^n_{V \times [0, 1]} \]
-    extending $\bar{R}$, defined like above.
+    Let $\bb$ be a rooted microbundle over $B$ and let $H: A \times \I \to B$ be a map that leaves the base point fixed.
+    There exists a neighborhood $V$ of $a_0$ with an isomorphism-germ
+    \[ \germ{H^*\bb\restr{V \times \I}}{\be_{V \times \I}} \]
+    extending $\bar{R}$ (as defined above).
 \end{mylemma}
 \begin{myproof}
     By applying \intref{homotopy::lemma2}, it follows that there exists an isomorphism-germ
-    \[ Q: f^*\bb_*\restr{V \times [0, 1]} \double \be^n_{V \times [0, 1]} \]
+    \[ \germdef{Q}{H^*\bb\restr{V \times \I}}{\be_{V \times \I}} \]
     for a sufficiently small neighborhood $V$ of $b_0$.
 
     Now consider
-    \[ Q \circ \bar{R}^{-1}: \be^n_{b_0 \times [0, 1]} \double \be^n_{b_0 \times [0, 1]}. \]
+    \[ \germdef{Q \circ \bar{R}^{-1}}{\be_{b_0 \times \I}}{\double \be_{b_0 \times \I}}. \]
     Similarly to the construction of $\bar{R}$ we can define an isomorphism-germ
-    \[ P: \be^n_{V \times [0, 1]} \double \be^n_{V \times [0, 1]} \]
+    \[ \germdef{P}{\be_{V \times \I}}{\be_{V \times \I}} \]
     extending $Q \circ \bar{R}^{-1}$ via
     \[ p(v, t, x) = (v, q(b_0, t, x)) \]
     where $q$ is a representative for $Q \circ \bar{R}^{-1}$.
 
-    Restricted to $b_0 \times [0, 1]$, $P$ agrees with $Q \times \bar{R}^{-1}$ and thus
+    Restricted to $b_0 \times \I$, $P$ agrees with $Q \times \bar{R}^{-1}$ and thus
     \[ P^{-1} \circ Q = (\bar{R} \circ Q^{-1}) \circ Q = \bar{R} \]
     Since $P$ and $Q$ are both isomorphism-germs, $P^{-1} \circ Q$ is an isomorphism-germ as well.
     Therefore, $P^{-1} \circ Q$ suffices our requirements which concludes the proof.

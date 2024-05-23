@@ -1,4 +1,4 @@
-\begin{file}
+\begin{scope}
 % local
 \newcommand{\A}[1][] {
     A_\alpha#1
@@ -17,7 +17,7 @@
 
 % statement
 \begin{mylemma}\label{homotopy::lemma1}
-    Let $\bb$ be a microbundle over $B \times [0, 1]$. If $\bbleft$ and $\bbright$ are both trivial,
+    Let $\bb$ be a microbundle over $B \times \I$. If $\bbleft$ and $\bbright$ are both trivial,
     then $\bb$ itself is trivial.
 \end{mylemma}
 % proof
@@ -35,36 +35,36 @@
 
 % statement
 \begin{mylemma}\label{homotopy::lemma2}
-    Let $\bb$ be a microbundle over $B \times [0, 1]$.
-    Every $b \in B$ has a neighborhood $V$ where $\bb\restr{V \times [0, 1]}$ is trivial.
+    Let $\bb$ be a microbundle over $B \times \I$.
+    Every $b \in B$ has a neighborhood $V$ where $\bb\restr{V \times \I}$ is trivial.
 \end{mylemma}
 %proof
 \begin{myproof}
     Let $b \in B$.
-    For every $t \in [0, 1]$, choose a neighborhood $U_t := V_t \times (t - \varepsilon_t, t + \varepsilon_t)$ of $(b, t)$ such that $\bb\restr{U_t}$ is trivial.
-    Since $\{b\} \times [0, 1]$ is compact, we can choose a finite subcover of $\{b\} \times [0, 1]$ and define $V$ to be the intersection of the corresponding $V_t$.
+    For every $t \in \I$, choose a neighborhood $U_t := V_t \times (t - \varepsilon_t, t + \varepsilon_t)$ of $(b, t)$ such that $\bb\restr{U_t}$ is trivial.
+    Since $\{b\} \times \I$ is compact, we can choose a finite subcover of $\{b\} \times \I$ and define $V$ to be the intersection of the corresponding $V_t$.
     Now there exists a subdivision $0 = t_0 < \cdots < t_k = 1$ where the $\bb\restr{V \times [t_{i}, t_{i + 1}]}$ are trivial.
-    By iteratively applying the previous lemma, it follows that $\bb\restr{V \times [0, 1]}$ is trivial.
+    By iteratively applying the previous lemma, it follows that $\bb\restr{V \times \I}$ is trivial.
 \end{myproof}
 
 % lemma
 \begin{mylemma}\label{homotopy::lemma3}
-    Let $\bb$ be a microbundle over $B \times [0, 1]$ where $B$ is paracompact.
+    Let $\bb$ be a microbundle over $B \times \I$ where $B$ is paracompact.
     Then there exists a bundle map-germ $F: \bb \to \bb\restr{B \times \{1\}}$
-    covering the standard retraction $r: B \times [0, 1] \to B \times \{1\}$ .
+    covering the standard retraction $r: B \times \I \to B \times \{1\}$ .
 \end{mylemma}
 % proof
 \begin{myproof}
     % partition of unity
-    First, assume a locally finite covering $\{V_\alpha\}$ of closed sets where $\bb\restr{V_\alpha \times [0, 1]}$ is trivial.
+    First, assume a locally finite covering $\{V_\alpha\}$ of closed sets where $\bb\restr{V_\alpha \times \I}$ is trivial.
     The existence of such a covering is justified by paracompactness of $B$ and the previous lemmas.
     Now choose a partition of unity
-    \[ \lambda_\alpha: B \to [0, 1] \]
+    \[ \lambda_\alpha: B \to \I \]
     with $\text{supp}(\lambda_\alpha) \sub V_\alpha$ that is rescaled so that
     \[ \max_{\alpha}(\lambda_\alpha(b)) = 1, \forall b \in B. \]
     
     % construction
-    Now we define a retraction $r_\alpha: B \times [0, 1] \to B \times [0, 1]$ with
+    Now we define a retraction $r_\alpha: B \times \I \to B \times \I$ with
     \[ r_\alpha(b, t) := (b, \max(t, \lambda_\alpha(b))). \]
 
     In the following, we will construct bundle-germs $R_\alpha: \bb \double \bb$ covering $r_\alpha$
@@ -72,11 +72,11 @@
     \begin{enumerate}
         % local bundle-germ
         \item 
-        We can divide $B \times [0, 1]$ into two subsets
-        \[ A_\alpha := \text{supp}(\lambda_\alpha) \times [0, 1] \]
+        We can divide $B \times \I$ into two subsets
+        \[ A_\alpha := \text{supp}(\lambda_\alpha) \times \I \]
         and
         \[ A'_\alpha := \{(b, t) \mid t \ge \lambda_\alpha(b)\}. \]
-        Since $A_\alpha \sub V_\alpha \times [0, 1]$, we already know that $\bb\restr{A_\alpha}$ is trivial.
+        Since $A_\alpha \sub V_\alpha \times \I$, we already know that $\bb\restr{A_\alpha}$ is trivial.
         Similar to \intref{homotopy::lemma2}, we can extend the identity bundle-germ on $\bb\restr{\A \cap \A[']}$ to a bundle-germ
         \[ \bb\restr{\A} \double \bb\restr{\A \cap \A[']} \]
         Piecing this together with the identity bundle germ $\bb\restr{\A[']}$, we obtain our desired bundle germ $R_\alpha$.
@@ -86,8 +86,8 @@
         Applying the well-ordering theorem, which is equivalent to the axiom of choice, we can assume an ordering of $\{ V_\alpha \}$.
         Let $\{B_\beta\}$ be a locally finite covering of $B$ with closed sets where $B_\beta$ intersects only $V_{\alpha_1} < \cdots < V_{\alpha_k}$, a finite collection.
         Again, the existence of such a collection is guaranteed by the paracompactness of $B$. 
-        Now the composition $R_{\alpha_1} \circ \ldots \circ R_{\alpha_k}$ restricts to a bundle germ $R(\beta): \bb\restr{B_\beta} \times [0, 1] \double \bb\restr{B_\beta} \times [1]$.
-        Pieced together using \intref{homotopy::lemma1}, we obtain $R: \bb \times [0, 1]\to \bb \times [1]$ which concludes the proof.
+        Now the composition $R_{\alpha_1} \circ \ldots \circ R_{\alpha_k}$ restricts to a bundle germ $R(\beta): \bb\restr{B_\beta} \times \I \double \bb\restr{B_\beta} \times [1]$.
+        Pieced together using \intref{homotopy::lemma1}, we obtain $R: \bb \times \I\to \bb \times [1]$ which concludes the proof.
     \end{enumerate}    
 \end{myproof}
 
@@ -102,12 +102,12 @@
 % \end{mytheorem}
 % proof
 \begin{myproof}[of the homotopy theorem]
-Let $H: A \times [0, 1] \to B$ be a homotopy between $f$ and $g$.
-The previous lemma states that there exists a bundle germ $R: H^*\bb \double H^*\bb\restr{B \times [1]}$ covering the standard retraction $B \times [0, 1] \to B \times [1]$.
+Let $H: A \times \I \to B$ be a homotopy between $f$ and $g$.
+The previous lemma states that there exists a bundle germ $R: H^*\bb \double H^*\bb\restr{B \times [1]}$ covering the standard retraction $B \times \I \to B \times [1]$.
 From the composition
 \[ f^*\bb \sub H^*\bb \double_R H^*\bb\restr{B \times [1]} = g^*\bb \]
 we obtain an isomorphism germ $f^*\bb \double g^*\bb$.
 It follows that $f^*\bb \cong g^*\bb$.
 \end{myproof}
 
-\end{file}
+\end{scope}
