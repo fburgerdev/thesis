@@ -1,6 +1,33 @@
+% lemma paracompact
+\begin{mylemma}{suspension::paracompact}
+    Let $\bb$ be a rooted microbundle over a paracompact space $B$ with rooting $R$.
+    Then there exists a closed neighborhood $W$ of $b_0$ and an isomorphism-germ
+    \[ \germ{\bb\restr{W}}{\be_W} \]
+    extending $R$ together with a map $\lambda: B \to [0, 1]$ with
+    \[ \supp\lambda \sub W \tand \lambda(b_0) = 1. \]
+\end{mylemma}
+
+% proof paracompact
+\begin{myproof}
+    Let $r: W_r \to b_0 \times \R^n$ be a representative map for $R$.
+    Consider a local trivialization $(U, V, \phi)$ for $b_0$ such that $V \cap E(\bbb) \sub W_r$. % Why does such a trivialization exist?
+    With
+    \[ \psi: V \isomto \psi(V) \sub U \times \R^n \]
+    \[ \psi(e) = (j(e), r(\inv{\phi}(b_0, \phi^{(2)}(e)))) \]
+    we have a representative for an isomorphism-germ $\germ{\bb\restr{U}}{\be_U}$ extending $R$.
+    Consider the open covering of $B$ with $U$ and $B$ itself.
+    Since $B$ is paracompact, we can apply the concept of partition of unity and have therefore a map
+    \[ \lambda: B \to [0, 1] \]
+    with 
+    \[ \supp\lambda \sub U \tand \lambda(b_0) = 1. \]
+    Now we can choose $W := \supp\lambda$, which is closed by definition of $\supp$.
+    By restricting the constructed isomorphism-germ over $U$ to $W$, we have an isomorphism-germ $\germ{\bb\restr{W}}{\be_W}$.
+    Together with $\lambda$, this concludes our proof.
+\end{myproof}
+
 % lemma commutativity
-\begin{mylemma}{suspension::commutativity}%
-    The rooted microbundles $\bb \oplus \be_B$ and $\be_B \oplus \bb$ are isomorphic. 
+\begin{mylemma}{suspension::commutativity}
+    The rooted microbundles $\bb \oplus \be_B$ and $\be_B \oplus \bb$ are rooted-isomorphic. 
 \end{mylemma}
 \begin{myproof}
     We need to find an isomorphism germ $\bb \oplus \be_B \double \be_B \oplus \bb$ that extends
@@ -10,12 +37,12 @@
     Ignoring the rooting, we have an isomorphism-germ $f: E(\bb) \times \R^n \isomto \R^n \times E(\bb)$ with $f(e, x) = (-x, e)$.
     The idea is to change to $f$ near $b_0$ so that it extends the rooting.
 
-    For this, choose a sufficiently small closed neighborhood $U$ of $b_0$
-    such that there exists an extension $Q: (\bb \oplus \be)\restr{U} \double (\be \oplus \bb)\restr{U}$ for the rooting.
+    Using the previous lemma, choose a sufficiently small closed neighborhood $U$ of $b_0$
+    such that there exists an extension $\germdef{Q}{(\bb \oplus \be)\restr{U}}{(\be \oplus \bb)\restr{U}}$ for the rooting.
 
     Since $B$ is Tychonoff, there exists a map
     \[ \lambda: B \to [0, \frac{\pi}{2}] \]
-    with $supp \lambda \sub U$ and $\lambda(b_0) = \frac{\pi}{2}$.
+    with $\supp \lambda \sub U$ and $\lambda(b_0) = \frac{\pi}{2}$.
     With this map, we can define a homeomorphism
     \[ g: U \times \R^n \times \R^n \isomto U \times \R^n \times \R^n \]
     by
