@@ -1,11 +1,18 @@
+% hausdorff
+\begin{myparagraph}
+    The following definition requires the base spaces to be hausdorff.
+    This is useful because this implies that the singleton containing only the base point is closed,
+    and can therefore be removed from any open set without losing openness.  
+\end{myparagraph}
+
 % definition wedge sum
 \begin{mydefinition}{suspension::wedge}
     Let $\ba$ and $\bb$ be two rooted microbundles over $A$ and $B$.
     % microbundle
-    The \defterm{wedge sum} $\ba \vee \bb$ of $\ba$ and $\bb$ is microbundle over $A \vee B$
+    The \defterm{wedge sum} $\ba \vee \bb$ of $\ba$ and $\bb$ is a microbundle over $A \vee B$
     \[ \ba \vee \bb \xto{i_\ba \vee i_\bb} E(\ba \vee \bb) \xto{j_\ba \vee j_\bb} A \vee B \]
     where the total space is
-    \[ (E(\ba) \sqcup E(\bb)) / (f(e_a) \sim e_b) \]
+    \[ (E(\ba) \sqcup E(\bb)) / (f(e_a) \sim e_a) \]
     and $f: E(\ba\restr{a_0}) \bus W_a \isomto W_b \sub E(\bb\restr{b_0})$ is some representative for $R_b^{-1} \circ R_a$.
     % rooting
     We equip $\ba \vee \bb$ with a rooting
@@ -26,7 +33,7 @@
             and continuous since $i_\ba$ and $i_\bb$ are continuous.
             % projection
             \item The projection map $j_\ba \vee j_\bb$ is well-defined because
-            \[ \forall e \in V_a: j(e) = j_\ba(e) = a_0 = b_0 = j_\bb(f(e)) = j(f(e)) \]
+            \[ \forall e \in W_a: j(e) = j_\ba(e) = a_0 = b_0 = j_\bb(f(e)) = j(f(e)) \]
             and continuous since $j_\ba$ and $j_\bb$ are continuous.
             % compatibility
             \item The composition $j \circ i = id_{A \vee B}$ because for every $a \in A$
@@ -52,24 +59,28 @@
             
             Choose local trivializations $(U_a, V_a, \phi_a)$ for $a_0$ in $\ba$ and $(U_b, V_b, \phi_b)$ for $b_0$ in $\bb$.
             \begin{itemize}
-                \item We can assume $V_b \cap j^{-1}(b_0) \sub W_b$ by choosing a local trivialization for $b_0$ in
-                the microbundle over the restricted total space $(E(\bb) - j_\bb^{-1}(b_0)) \cup W_a$ (\intref{microbundle::totalspace}).
-                \item We can assume $V_a \cap j^{-1}(a_0) \sub V_b \cap j^{-1}(b_0)$ by choosing a local trivialization for $a_0$ in
-                the microbundle over the restricted total space $(E(\ba) - j_\ba^{-1}(b_0)) \cup (V_b \cap j^{-1}(b_0))$.
+                \item We can assume $V_b \cap E(\bbb) \sub W_b$ by choosing a local trivialization for $b_0$ in
+                the microbundle over the restricted total space $(E(\bb) - E(\bbb)) \cup W_a$ (the existence is justified by \intref{microbundle::total}).
+                \item We can assume $V_a \cap E(\bab) \sub W_b \cap E(\bbb)$ by choosing a local trivialization for $a_0$ in
+                the microbundle over the restricted total space $(E(\ba) - E(\bbb)) \cup (V_b \cap E(\bbb))$.
             \end{itemize}
-            The subset $X_b := \phi_b^{(2)}f(V_a \cap j^{-1}(a_0))$ is homeomorphic to $\R^n$ via
-            \[ a_0 \times \R^n \xto{\phi^{-1}} V_a \cap j^{-1}(a_0) \xto{f} X_b \]
+            The subset $X_b := \phi_b^{(2)}f(V_a \cap E(\bab)) \sub W_b \cap E(\bbb)$ is homeomorphic to $\R^n$ via
+            \[ a_0 \times \R^n \xto{\inv{\phi}} V_a \cap E(\bab) \xto{f} X_b \]
             and open since $f$ and $\phi$ are homeomorphisms.
-            By choosing $V_b' := \phi_b^{-1}(B \times X_b)$ and $\phi_b'(e) := (j(e), \phi_a^{(2)}(f^{-1}(\phi_b^{(2)}(e))))$,
+            By choosing $V_b' := \inv{\phi_b}(B \times X_b)$ and $\phi_b'(e) := (j(e), \phi_a^{(2)}(\inv{f}(\phi_b^{(2)}(e))))$,
             we have local trivializations $(U_a, V_a, \phi_a)$ and $(U_b, V_b', \phi_b')$ that agree on $W_a = W_b$.
             This yields a local trivialization for $\ba \vee \bb$.
         \end{itemize}
         % well-defined
-        \item $\ba \vee \bb$ is independant of the choice of $f$:
-        Let $f'$ be another representative for $R_b^{-1} \circ R_a$ and $(\ba \vee \bb)'$ the resulting wedge sum.
+        \item The wedge sum $\ba \vee \bb$ is independant of the choice of $f$:
+
+        Let $f'$ be another representative for $\inv{R_b} \circ R_a$ and $(\ba \vee \bb)'$ the resulting wedge sum.
+        We need to find an isomorphism germ that extends $\inv{R'} \circ R = \inv{R} \circ R = id$.
         Choose an open neighborhood $V \sub E(\ba\restr{a_0})$ of $i_\ba(a)$ where $f$ and $f'$ agree.
-        By subtracting $j_\ba^{-1}(a_0) - V$ from $E(\ba \vee \bb)$ and $E(\ba \vee \bb)'$ the microbundles remain unchanged.
-        However, now the total spaces are equal and injection and projection are the same.
-        % TODO
+        By subtracting $\inv{j_\ba}(a_0) - V$ from $E(\ba \vee \bb)$ and $E(\ba \vee \bb)'$ the microbundles remain unchanged.
+        This is because the resulting subspaces are open since $j_\ba^{-1}(a_0)$ is closed (hausdorff) and $V$ is open.
+        So the total spaces are equal and injection and projection maps are defined the same.
+        Using the modified total spaces, it follows that the identity $\germ{(\ba \vee \bb)}{(\ba \vee \bb)'}$ is an isomorphism-germ.
+        This surely extends $\inv{R'} \circ R$, which concludes the proof.
     \end{enumerate}
 \end{myproof}

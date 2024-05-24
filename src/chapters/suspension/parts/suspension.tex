@@ -11,7 +11,7 @@
     \[ \phi(x, t) = [(x, 2t - 1)]. \]
 
     Let $c_1: B \vee B \to B$ denote the map that is the identity on the first summand
-    and the constant mapt to $b_0$ on the second summand (symmetrically define $c_2$).
+    and the constant map to $b_0$ on the second summand (symmetrically define $c_2$).
 \end{myparagraph}
 
 % lemma triviality
@@ -23,18 +23,23 @@
         \item First, note that $c_1^*\bb \cong \bb \vee \be$:
         \[ E(c_1^*\bb) = \set{(b, e) \in (B \vee B) \times E(\bb)}{c_1(b) = j(e)} \]
         \[ = (\set{(b, e) \in B \times E(\bb)}{b = j(e)} \sqcup B \times E(\bb\restr{b_0})) / \sim \]
-        \[ = (E(\bb) \sqcup (B \times E(\bb\restr{b_0}))) / \sim\]
+        \[ = (\set{(j(e), e)}{e \in E(\bb)} \sqcup B \times E(\bb\restr{b_0})) / \sim \]
+        where $(b, e) \sim (b', e') \iff b = b_0 = b' \land e = e'$.
+        Additionally, we can omit first component on the left side resulting in
+        \[ (E(\bb) \sqcup (B \times E(\bb\restr{b_0}))) / \sim \]
         where $e \sim (b, e') \iff b = b_0 \land e = e'$.
         
         On the other side, consider
         \[ E(\bb \vee \be_B) = (E(\bb) \sqcup (B \times \R^n)) / e \sim f(e) \]
-        with some representative $f: E(\bb\restr{b_0}) \bus V \to b_0 \times \R^n$ for $R_e^{-1} \circ R_b$.
+        with $f$ being some representative $E(\bb\restr{b_0}) \bus V \to b_0 \times \R^n$ for $R_e^{-1} \circ R_b$.
         
-        Now, we have the mapping $g: (E(\bb) \sqcup (B \times V)) / \sim \isomto (E(\bb) \sqcup (B \times f(V))) / \sim$ via
+        Now, we have the mapping
+        \[ g: E(c_1^*\bb) \bus (E(\bb) \sqcup (B \times V)) / \sim \isomto (E(\bb) \sqcup (B \times f(V))) / \sim \sub E(\bb \vee \be) \]
         \[ g(e) = e \tand g(b, e) = (b, f^{(2)}(e)). \]
-        This map is well-defined because $\forall e = (b, e): g(e) = e = f(e) = (b, f^{(2)}(e)) = g(b, e)$.
-        Bijectivity is clear and continuity follows from continuity of it's composing components.
-        It's clear that injection and projection commute.
+        This map is well-defined because $\forall e = (b_0, e): g(e) = e = f(e) = (b_0, f^{(2)}(e)) = g(b_0, e)$.
+        Bijectivity and continuity follow from bijectivity and continuity of its summands.
+        Since $(E(\bb) \sqcup (B \times V)) / \sim$ and $(E(\bb) \sqcup (B \times f(V))) / \sim$ are open ($V$ and $f(V)$ are open)
+        and injection and projection maps commute, it follows that $g$ represents an isomorphism germ between $c_1^*\bb$ and $\bb \vee \be$.
         % TODO: refine
         \item Now, from $c_1 \circ \phi = id$ we can conclude that
         \[ \phi^*(\bb \oplus \be_B) = \phi^*c_1^*\bb = (c_1 \circ \phi)^*\bb = \bb. \]
