@@ -11,16 +11,17 @@
 \end{mydefinition}
 % proof
 \begin{myproof}[that $\bb_1 \oplus \bb_2$ is a microbundle]
-    Let $b \in B$.
-    Choose local trivializations $(U_1, V_1, \phi_1)$ and $(U_2, V_2, \phi_2)$ in $b$ of $\bb_1$ and $\bb_2$.
-    Based on this, we can construct a local trivialization in $b$ of $\bb_1 \oplus \bb_2$:
+    For an arbitray $b \in B$, let $(U_1, V_1, \phi_1)$ and $(U_2, V_2, \phi_2)$ be two local trivializations of $b$ in $\bb_1$ and $\bb_2$.
+    We construct a local trivialization of $b$ in $\bb_1 \oplus \bb_2$ as follows:
     \begin{itemize}
         \item $U := U_1 \cap U_2$
         \item $V := (V_1 \times V_2) \cap E$
         \item $\phi: V \to U \times \R^{n_1 + n_2}; \phi(e_1, e_2) := (\phi_1^{(1)}(e_1), \phi_1^{(2)}(e_1) \times  \phi_2^{(2)}(e_2))$
     \end{itemize}
     Note that $\phi_1^{(1)}(e_1) = \phi_2^{(1)}(e_2)$.
-    Openness of $U$ and $V$ as well as homeomorphy of $\phi$ is inherited from the local triviality properties of $(U_1, V_1, \phi_1)$ and $(U_2, V_2, \phi_2)$.
+    Both $U$ and $V$ are open since $U_1, U_2$ and $V_1, V_2$ are open.
+    Since $\phi$ is a composed by homeomorphisms, it's an homeomorphism as well.
+    This conludes the proof that $\bb_1 \oplus \bb_2$ is a microbundle (of fibre-dimension $n_1 + n_2$).
 \end{myproof}
 
 % equivalent definitions

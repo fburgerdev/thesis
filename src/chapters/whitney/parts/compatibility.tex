@@ -1,19 +1,28 @@
 % statement
 \begin{mylemma}{whitney::compatibility}
-    Let $\bb_1$ and $\bb_1$ be two microbundles over $B$ and $f: A \to B$ be a map.
-    Induced microbundles and whitney sums are compatible, i.e.
-    \[ f^*(\bb_1 \oplus \bb_2) \cong f^*\bb_1 \oplus f^*\bb_2 \]
+    Let $\bb_1$ and $\bb_1$ be two microbundles over $B$ and let $f: A \to B$ be a map.
+    The induced microbundle and the whitney sum are compatible, that is
+    \[ f^*(\bb_1 \oplus \bb_2) \cong f^*\bb_1 \oplus f^*\bb_2. \]
 \end{mylemma}
 % proof
 \begin{myproof}
-    From the definition of the induced microbundle and the whitney sum, we can explicitly describe the total spaces:
-    \begin{enumerate}
-        \item $E(f^*(\bb_1 \oplus \bb_2)) = \{(a, (e_1, e_2)) \in A \times (E_1 \times E_2) \mid j_1(e_1) = j_2(e_2) = f(a) \}$
-        \item $E(f^*\bb_1 \oplus f^*\bb_2) = \{((a_1, e_1), (a_2, e_2)) \in (A \times E_1) \times (A \times E_2) \mid j(a_1, e_1) = j(a_2, e_2)$ and $f(a_i) = j(e_i)\}$
-    \end{enumerate}
-    Those two total spaces are homeomorphic via $\phi(a, (e_1, e_2)) := ((a, e_1), (a, e_2))$ and
-    $\phi^{-1}((a, e_1), (a, e_2)) = (a, (e_1, e_2))$. Continuity of $\phi$ and $\phi^{-1}$ follows from componentwise continuity, which is obvious.
+    From the definition of the induced microbundle and the whitney sum, we can explicitly write the total spaces
+    \[ E(f^*(\bb_1 \oplus \bb_2)) \]
+    \[ = \{(a, (e_1, e_2)) \in A \times (E(\bb_1) \times E(\bb_2)) \mid j_1(e_1) = j_2(e_2) = f(a) \} \]
+    and
+    \[ E(f^*\bb_1 \oplus f^*\bb_2) \]
+    \[ = \{(e_1, e_2) \in E(f^*\bb_1) \times E(f^*\bb_2) \mid j_1(e_1) = j(e_2)\}\]
+    \[ = \{((a_1, e_1), (a_2, e_2)) \in (A \times E(\bb_1)) \times (A \times E(\bb_2)) \mid \]
+    \[ j(a_1, e_1) = j(a_2, e_2) \land f(a_i) = j(e_i)\} \]
+    The two total spaces are homeomorphic via $\phi(a, (e_1, e_2)) := ((a, e_1), (a, e_2))$ with $\phi^{-1}((a, e_1), (a, e_2)) = (a, (e_1, e_2))$.
+    Homeomorphy of $\phi$ follows from the continuity of $\phi$ and $\inv{\phi}$, which is given since both $\phi$ and $\inv{\phi}$ are composed by identity maps.
     
-    Additionally, the appropriate injection and projection maps commute with $\phi$, i.e $\phi \circ i = i$ and $\phi \circ j = j$.
-    This concludes the proof. 
+    It remains to be shown that injection and projection maps $i$ and $j$ for $E(f^*(\bb_1 \oplus \bb_2))$
+    and $i'$ and $j'$ for $f^*\bb_1 \oplus f^*\bb_2$ agree under $\phi$.
+
+    This follows from
+    \[ \phi(i(a)) = \phi(a, i_1(f(a)), i_2(f(a))) \]
+    \[ = ((a, i_1(f(a))), (a, i_2(f(a)))) = (i_1'(a), i_2'(a)) = i'(a) \]
+    and
+    \[ j(a, e_1, e_2) = a = j'((a, e_1), (a, e_2)) = j'(\phi(a, e_1, e_2)). \]
 \end{myproof}
