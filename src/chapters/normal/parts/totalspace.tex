@@ -1,33 +1,67 @@
-% statement
-\lemma{\parttitle{homeomorphism of total spaces}} \\
-Let $\bt_N$ and $\bt_M$ be the tangent microbundles of $N$ and $M$.
-The total space $E(\iota^*\bt_M)$ and $E(r^*\bt_N)$ are homeomorphic.
-% proof
+% lemma homeomorphy
+\begin{mylemma}{normal::homeomorphy}
+    Let $\bt_N$ and $\bt_M$ be tangent microbundles of $N$ and $M$.
+    The total spaces $E(\iota^*\bt_M)$ and $E(r^*\bt_N)$ are homeomorphic.
+\end{mylemma}
+
+% proof homeomorphy
 \begin{myproof}
-We explicitly construct a homeomorphism:
-\begin{enumerate}
-    \item $E(\iota^*\bt_M) = \{ (n, (m_1, m_2)) \in N \times (M \times M) \mid \iota(n) = m_1\}$
-    \item $E(r^*\bt_N) = \{ (m, (n_1, n_2)) \in M \times (N \times N) \mid r(m) = n_1\}$
-\end{enumerate}
-Now, we have the homeomorphism $\phi: E(\iota^*\bt_M) \to E(r^*\bt_N)$ with
-$\phi(n, (m_1, m_2)) = (m_2, (r(m_2), n))$ and $\phi^{-1}(m, (n_1, n_2)) = (n_2, (n_2, m))$.
-We easily see that $\phi$ suffices all requirements of $E(\iota^*\bt_M)$ and $E(r^*\bt_N)$.
+    The total space
+    \[ E(\iota^*\bt_M) = \{ (n, m_1, m_2) \in N \times (M \times M) \mid \iota(n) = m_1\} \]
+    is homeomorphic to $N \times M$ via
+    \[ (n, m_1, m_2) \mapsto (n, m_2) \tand (n, m) \mapsto (n, \iota(n), m). \]
+    Similarly, the total space
+    \[ E(r^*\bt_N) = \{ (m, n_1, n_2) \in M \times (N \times N) \mid r(m) = n_1\} \]
+    is homeomorphic to $M \times N$ via
+    \[ (m, n_1, n_2) \mapsto (m, n) \tand (m, n) \mapsto (m, r(m), n). \]
+    Composed together with the trivial homeomorphism $N \times M \cong M \times N$, this yields a homeomorphism
+    \[ \psi: E(\iota^*\bt_M) \isomto E(r^*\bt_N) \]
+    \begin{center}
+        with $\psi(n, m_1, m_2) := (m_2, r(m_2), n)$
+    \end{center}
 \end{myproof}
 
-% remark
-\begin{remark}
-Note that the following diagram commutes
-\[\begin{tikzcd}
-    N \ar[r] \ar[hookrightarrow]{d} & E(\iota^*\bt_M) \ar[d, "\phi"] \\
-    M \ar[r] & E(r^*\bt_N)
-\end{tikzcd}\]
-\end{remark}
+% remark commute
+\begin{myremark}{normal::commute}
+    The following diagram commutes:
+    \[
+        \begin{tikzcd}
+            N \ar[r, "i_1"] \ar[hookrightarrow, "\iota"']{d} & E(\iota^*\bt_M) \ar[d, "\psi"] \\
+            M \ar[r, "i_2"] & E(r^*\bt_N)
+        \end{tikzcd}
+    \]
+    Here $i_1$ and $i_2$ denote the injections of $\iota^*\bt_M$ and $r^*\bt_N$.
+\end{myremark}
 
-% statement
-\lemma{(normal microbundle on total space)}
-There exists a normal microbundle $\bn$ of $N$ in $E(r^*\bt_N)$ with $\bn \cong \iota^*\bt_M$.
-% proof
+% foreword normal
+\begin{myparagraph}
+    The total space $E(r^*\bt_N)$ carries the structure of a topological manifold with
+    \[ E(r^*\bt_N) \cong M \times N \]
+    as described in the previous lemma.
+    That is since $M \times N$ comes equipped with the product manifold structure.
+
+    The fact that the diagram
+    \[
+        \begin{tikzcd}
+            N \ar[r, "i_1"] \ar[hookrightarrow, "\iota"']{d} & E(\iota^*\bt_M) \ar[d, "\psi"] \\
+            M \ar[r, "i_2"] & E(r^*\bt_N)
+        \end{tikzcd}
+    \]
+    commutes ($i_1$ and $i_2$ denote the injections of $\iota^*\bt_M$ and $r^*\bt_N$),
+    lets us consider $N$ to be a submanifold of $E(r^*\bt_N)$ via $N \incl M \xto{i_2} E(r^*\bt_N)$.
+    % TODO: why exactly is this an embedding and are the manifold structures compatible?
+\end{myparagraph}
+
+% lemma normal
+\begin{mylemma}{normal::total}
+    There exists a normal microbundle $\bn$ of $N$ in $E(r^*\bt_N)$ such that $\bn \cong \iota^*\bt_M$.
+\end{mylemma}
+
+% proof normal
 \begin{myproof}
-Obviously, $\bn := r^*\bt_N \restr{N}$ is a normal microbundle of $N$ in $E(r^*\bt_N)$.
-Since $E(r^*\bt_N \restr{N}) \sub E(r^*\bt_N)$, isomorphy follows from the previous lemma and remark.
+    We are already given a normal microbundle of $N$ in $E(r^*\bt_N)$ with $r^*\bt_N\restr{N}$.
+    Isomorphy between $r^*\bt_N\restr{N}$ and $\iota^*\bt_M$ follows from
+    \[ \psi: E(\iota^*\bt_M) \isomto E(r^*\bt_N) \]
+    together with the fact that $E(r^*\bt_N\restr{N})$ is a neighborhood of $i_2(B)$ in $E(r^*\bt_N)$
+    and from the diagram which shows that injection and projection maps commute with $\psi$.
 \end{myproof}

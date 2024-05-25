@@ -1,18 +1,27 @@
-% statement
-\definition{\parttitle{composition microbundle}} \\
-Let $\bundledef{\bb}{B}{E}{i_\bb}{j_\bb}$ and $\bundledef{\bc}{E}{E'}{i_\bc}{j_\bc}$ be two microbundles.
-We define the \defterm{composition microbundle} $\bundledef{\bb \circ \bc}{B}{E'}{i}{j}$ with
-$i(b) := (i_\bc \circ i_\bb)(b)$ and $j(e') := (j_\bb \circ j_\bc)(e')$
-% proof
-\begin{myproof}
-Let $b \in B$. \\
-Choose local trivializations $(U_\bb, V_\bb, \phi_\bb)$ of $b$ and $(U_\bc, V_\bc, \phi_\bc)$ of $j_\bb(b)$.
-From this, we construct our local trivialization over $\bb \circ \bc$.
-Consider $\phi_\bb(V_\bb \cap U_\bc)$, which is a neighborhood of $(b, 0)$.
-Therefore, there exist open neighborhoods $b \in U \sub U_\bb$ and $0 \in X \sub R^n$ such that $U \times X \sub \phi_\bb(V_\bb \cap U_\bc)$.
-Analoguous to the proof of restricting the total space in Chapter 1, it follows that
-\[ \exists \varepsilon > 0: U \times B_\varepsilon(0) \sub \phi_\bb(V_\bb \cap U_\bc) \]
-\[ \implies U \times \R^n \cong U \times B_\varepsilon(0) \cong \phi_\bb^{-1}(U \times B_\varepsilon(0)) \cong \phi_\bc^{-1}(\phi_\bb^{-1}(U \times B_\varepsilon(0))) \]
-which is an open neighborhood of $i(U)$ and therefore a valid candidate for $V$.
-This concludes local triviality and the proof.
+% definition composition
+\begin{mydefinition}[composition microbundle]{normal::composition}
+    Let $\bb$ and $\bc$ be two microbundles over $B$ and $E(\bb)$.
+    The \defterm{composition microbundle} $\bb \circ \bc$ is a microbundle
+    \[ \bundle{B}{E(\bc)}{i}{j} \]
+    where $i := i_\bc \circ i_\bb$ and $j := j_\bb \circ j_\bc$.
+\end{mydefinition}
+
+% proof composition
+\begin{myproof}[that $\bb \circ \bc$ is a microbundle]
+    Both injection and projection are continuous since the are composed by continuous maps.
+    Additionally, $j \circ i = j_\bb \circ (j_\bc \circ i_\bc) \circ i_\bb = j_\bb \circ i_\bb = id_B$.
+
+    It remains to be shown that $\bb \circ \bc$ is locally trivial:
+
+    For an arbitrary $b \in B$, choose local trivializations
+    \begin{center}
+        $(U_\bb, V_\bb, \phi_\bb)$ of $b$ and $(U_\bc, V_\bc, \phi_\bc)$ of $j_\bb(b)$.
+    \end{center}
+    Since $V_\bb$ and $U_\bc$ are both neighborhoods of $i_\bb(b)$ in $E(\bb)$, the image
+    \[ \phi_\bb(V_\bb \cap U_\bc) \]
+    contains an open set $U \times \ball[\varepsilon]$ where $U$ is open and $\varepsilon$ is sufficiently small.
+
+    With $V := \phi_\bc^{-1}(\phi_\bb^{-1}(U \times \ball[\varepsilon])) \sub E(\bc)$ and
+    \[ U \times \R^n \cong U \times \ball[\varepsilon] \xto{\inv{\phi_\bc} \circ \inv{\phi_\bb}} V \]
+    which is a homeomorphism because its composed by homeomorphisms, we constructed a local trivialization of $b$ in $\bc \circ \bb$.
 \end{myproof}
