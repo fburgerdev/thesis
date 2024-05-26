@@ -1,16 +1,56 @@
-% lemma: induced trival microbundle
+% lemma trivial
 \begin{mylemma}{induced::trivial}
     Let $\bb$ be a microbundle over $B$ and $f: A \to B$ be a map.
     The induced microbundle $f^*\bb$ is trivial if $\bb$ is already trivial.
 \end{mylemma}
-% proof
+
+% proof trivial
 \begin{myproof}
-Let $(V, \phi)$ be a global trivialization, so $\phi: V \isomto B \times \R^n$.
-We define
-\begin{itemize}
-    \item $V' := (A \times V) \cap E(f^*\bb)$ a neighborhood of $i'(A)$.
-    \item $\phi': V' \isomto B \times \R^n, (a, e) \mapsto (a, \pi_2(\phi(e)))$.
-\end{itemize}
-The existence of an inverse $\phi'^{(-1)}(a, x) = (a, \phi^{-1}(f(a), x))$ and component-wise continuity show that $\phi'$ is a homeomorphism.
-This proves that $(V', \phi')$ is a global trivialization for $f^*\bb$. 
+    To proof triviality, we need to show that there exists a homeomorphism between a neighborhood of $i'(A)$ and $A \times \{0\}$
+    that commutes with the injection and projection maps of $f^*\bb$ and $\be_A$.
+    
+    % homeomorphism
+    Since $\bb$ is trivial, there exists a homeomorphism $\psi: V \to \psi(V)$
+    where $V$ is a neighborhood of $i(B)$ and $\psi(V)$ is a neighborhood of $B \times \{0\}$
+    such that $\psi$ commutes with injection and projection maps.
+    We define a map 
+    \[ \psi': V' \isomto \psi'(V') \]
+    \[ (a, e) \mapsto (a, \psi^{(2)}(e)) \]
+    where $V' := (A \times V) \cap E(f^*\bb)$.
+    Since $\psi'$ is component-wise homeomorphic, $\psi'$ is a homeomorphism.
+    Note that $V'$ is a neighborhood of $i'(A)$ since $\forall a \in A: i(f(a)) \in V$ and $i'(a) = (a, i(f(a)))$.
+    From $\psi^{(2)}(i(f(a))) = 0$ and homeomorphy of $\psi'$ it follows that $\psi'(V')$ is a neighborhood of $A \times \{0\}$.
+
+    % commute
+    Finally, $\psi'$ commutes with injection
+    \[ \psi'(i'(a)) = (a, \psi^{(2)}(i(f(a)))) = (a, 0) = i_{\be_A}(a) \]
+    and projection maps
+    \[ j'(a, e) = j'(a) = j_{\be_A}(a, \psi'^{(2)}(a, e)) = j_{\be_A}(\psi'(a, e)) \]
+    which completes the proof.
+\end{myproof}
+
+% lemma const
+\begin{mylemma}{induced::const}
+    Let $\bb$ be a microbundle over $B$. The induced microbundle $const_{b_0}^*\bb$ over a map
+    \[ const_{b_0}: A \to B \twith const_{b_0}(a) = b_0 \]
+    is trivial.
+\end{mylemma}
+
+% proof const
+\begin{myproof}
+    The total space $E(const_{b_0}^*\bb)$ is of the form
+    \[ \set{(a, e) \in A \times E(\bb)}{f(a) = b_0 = j(e)} \]
+    \[ = A \times j^{-1}(b_0). \]
+    By choosing a local trivialization $(U, V, \phi)$ of $b_0$ in $\bb$ and restricting $\phi$ to $j^{-1}(b_0)$,
+    we receive a homeomorphism $\phi\restr{j^{-1}(b_0)}: V' \isomto b_0 \times \R^n$ where $V' := V \cap j^{-1}(b_0)$.
+    
+    With $\phi$ and $V'$ we can construct a homeomorphism $\psi: A \times V' \isomto A \times \R^n$ with
+    \[ \psi(a, e) := (a, \phi^{(2)}(e)). \]
+    Homeomorphy follows from component-wise homeomorphy of $\psi$.
+
+    The map commutes with injection
+    \[ \psi(i'(a)) = \psi(a, i(b_0)) = (a, \phi^{(2)}(i(b_0))) = (a, 0) = i_{\be_A}(a) \]
+    and projection maps
+    \[ j'(a, e) = a = j_{\be_A}(a, x) = j_{\be_A}(\psi(a, e)) \]
+    which completes the proof
 \end{myproof}

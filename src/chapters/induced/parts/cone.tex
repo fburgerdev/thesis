@@ -1,25 +1,37 @@
-% NOTE: Check proof clarity and notation
+% definition extend
+\begin{mydefinition}{induced::extend}
+    Let $\bb$ and $\bb'$ be two microbundles over $B$ and $B'$ where $B' \sub B$.
+    We say that $\bb$ \defterm{extends} $\bb'$, if
+    \[ \bb\restr{B'} \cong \bb'. \]
+\end{mydefinition}
 
-% foreword
+% foreword cone / cylinder
 \begin{myparagraph}
+    % foreword
+    In the following, let $f: A \to B$ be a map and $A$ be paracompact.
+    
+    % cone
     For a topological space $X$, we define the \defterm{cone} of $X$ to be 
     \[ CX := X \times \I / X \times \{1\} \]
-    and for a map $f: A \to B$ the \defterm{mapping cone} of $f$ to be
+    and the \defterm{mapping cone} of $f$ to be
     \[ B \sqcup_f CA := B \sqcup CA / \sim \]
-    where $(a, 0) \sim b :\iff f(a) = b$.
+    where $(a, 0) \sim b \iff f(a) = b$.
     
+    % cylinder
     Similarly, we define the \defterm{cylinder} of $X$ to be
     \[ MX := X \times \I \]
-    and for a map $f: A \to B$ the \defterm{map cylinder} of $f$ to be
-    \[ B \sqcup_f MA := B \sqcup CA / \sim \]
-    where $(a, 0) \sim b :\iff f(a) = b$.
+    and the \defterm{mapping cylinder} of $f$ to be
+    \[ B \sqcup_f MA := B \sqcup MA / \sim \]
+    where $(a, 0) \sim b \iff f(a) = b$.
 \end{myparagraph}
 
-% lemma: extending over a mapping cone
+% lemma cone
 \begin{mylemma}{induced::cone}
     A microbundle $\bb$ over $B$ can be extended to a microbundle over the mapping cone $B \sqcup_f CA$ if and only if $f^*\bb$ is trivial.
+    % TODO: make clearer that A is paracompact
 \end{mylemma}
-% proof
+
+% proof cone
 \begin{myproof}
     We show both implications.
 
@@ -27,10 +39,12 @@
     ``$\implies$''
 
     Let $\bb'$ be an extension of $\bb$ over $B \sqcup_f CA$.
-    Considering $A \xto{f} B \incl B \sqcup_f CA$, the composition $\iota \circ f$ is null-homotopic with homotopy
-    \[ H_t(a) := [(a, t)] \]
-    Note that $H_0(a) = [(a, 0)] = [f(a)] = (\iota \circ f)(a)$ and $H_1(a) = [(a, 1)] = [(\tilde{a}, 1)] = H_1(\tilde{a})$.
-    From the Homotopy \intref{homotopy::theorem} follows that $(\iota \circ f)^*\bb'$ is trivial. 
+
+    The composition $A \xto{f} B \incl B \sqcup_f CA$ is null-homotopic via the homotopy
+    \[ H(a, t) := [(a, t)] \]
+    because $H(a, 0) = [(a, 0)] = [f(a)] = (\iota \circ f)(a)$ and $H(a, 1) = [(a, 1)] = [(\tilde{a}, 1)] = H(\tilde{a}, 1)$.
+    From the Homotopy \intref{homotopy::theorem}, which we will prove in \intref{chapter::homotopy},
+    it follows that $(\iota \circ f)^*\bb'$ is isomorphic to $const^*\bb'$ and hence trivial (\intref{induced::const}).
 
     Since $(\iota \circ f)^*\bb' = f^*(\iota^*\bb') = f^*\bb$, it follows that $f^*\bb$ is trivial.
 
@@ -39,26 +53,41 @@
 
     Let $f^*\bb$ be trivial.
 
-    In contrast to the mapping cone, there exists a natural retraction from the map cylinder to the attached space
-    \[ r: B \sqcup_f MA \to B, r([(a, t)]) := f(a) \]
+    In contrast to the mapping cone, there exists a natural retraction from the mapping cylinder to the attached space
+    \[ r: B \sqcup_f MA \to B \twith r([(a, t)]) = f(a) \]
     The diagram
     \[ A \times \{1\} \incl B \sqcup_f MA \xto{r} B \]
     equals $f$ if we consider $A = A \times \{1\}$.
     It follows that
-    \[ r^*\bb\restr{A \times \{1\}} = (r \circ \iota)^*\bb \cong f^*\bb = \mathfrak{e}^n_A\]
+    \[ r^*\bb\restr{A \times \{1\}} = (r \circ \iota)^*\bb \cong f^*\bb \]
     is trivial.
-    From \intref{induced::trivial} and $(a, t) \mapsto (a, 1)$ it follows that $r^*\bb\restr{A \times [\frac{1}{2}, 1]}$ is trivial,
-    so there exists a
-    \[ \phi: E(r^*\bb\restr{A \times [\frac{1}{2}, 1]}) \isomto A \times [\frac{1}{2}, 1] \times \R^n \]
-    Now we explicitly construct our desired extended microbundle $\bundledef{\bb'}{B \sqcup_f CA}{E'}{i'}{j'}$
+
+    From \intref{induced::trivial} and the retraction $(a, t) \mapsto (a, 1)$ it follows that $r^*\bb\restr{A \times [\half, 1]}$ is trivial.
+    Since $A$ is paracompact and by \intref{microbundle::triviallemma}, there exists a map
+    \[ \phi: V \isomto A \times [\frac{1}{2}, 1] \times \R^n \]
+    where $V$ is a neighborhood of $i_r(B)$ in $E(r^*\bb\restr{A \times [\half, 1]})$.
+    \Wlog we can assume $V = E(r^*\bb\restr{A \times [\half, 1]})$ by removing a closed subset of $E(r^*\bb\restr{A \times [\half, 1]})$ if necessary and applying \intref{microbundle::total}.
+
+    Now we explicitly construct an extension
+    \[ \bundledef{\bb'}{B \sqcup_f CA}{E'}{i'}{j'} \]
+    with
     \begin{itemize}
-        \item $E' := E(r^*\bb) / \phi^{-1}(A \times \{1\} \times \{x\})$ (for every $x \in \R^n$).
-        \item $i'([a, t]) := [i_r(a, t)]$ where $i_r$ is the injection map for $r^*\bb$.
-        \item $j'([e]) := [j_r(e)]$ where $j_r$ is the projection map for $r^*\bb$.
+        \item $E' := E(r^*\bb) / \phi^{-1}(A \times \{1\} \times \{x\})$ (for every $x \in \R^n$)
+        \item $i'([a, t]) := [i_r(a, t)]$ where $i_r$ is the injection map for $r^*\bb$
+        \item $j'([e]) := [j_r(e)]$ where $j_r$ is the projection map for $r^*\bb$
     \end{itemize}
     The injection $i'$ is well-defined because $i_r$ maps every representative $[a, 1]$ to the same equivalence class of $E'$.
     Similarly, the projection $j'$ is well-defined since $[e] = [\tilde{e}] \implies [j_r(e)] = [j_r(e')]$
-    We easily derive the microbundle conditions from $r^*\bb$.
 
-    This proves the claim.
+    Both $i'$ and $j'$ are continuous by the construction of the quotient space topology.
+    Also, $i'(j'([a, t])) = i'([j_r(a, t)]) = [i_r(j_r(a, t))] = [a, t]$ and hence $i' \circ j' = id$.
+
+    It remains to be shown that $\bb'$ is locally trivial:
+
+    For an arbitrary $[a, t] \in B \sqcup_f MA$ choose a local trivialization $(U, V, \phi)$ of $[a, t]$ in $b^*\bb$.
+    We can collapse the map $\phi: V \isomto U \times \R^n$ to
+    \[ [\phi]: E' \bus V' \isomto U' \times \R^n \]
+    where $V'$ is $V$ collapsed along the quotient $E(r^*\bb) \subm E'$ and $U'$ is $U$ collapsed along the quotient $B \sqcup_f MA \subm B \sqcup_f CA$.
+    This map is well-defined and a homoemorphism, which concludes the proof.
+    % TODO: why well-defined?
 \end{myproof}

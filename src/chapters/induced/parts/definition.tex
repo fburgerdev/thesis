@@ -1,7 +1,7 @@
 % statement
 \begin{mydefinition}[induced microbundle]{induced::definition}
-    Let $\bb: \bundle{B}{E}{i}{j}$ be a microbundle and $f: A \to B$ be a continuous map.
-    The \defterm{induced microbundle} $\bundledef{f^*\bb}{A}{E'}{i'}{j'}$ is defined as follows:
+    Let $\bb: \bundle{B}{E}{i}{j}$ be a microbundle and $f: A \to B$ be a map.
+    The \defterm{induced microbundle} $\bundledef{f^*\bb}{A}{E'}{i'}{j'}$ is a microbundle defined as follows:
     \begin{itemize}
         \item $E' := \{ (a, e) \in A \times E \mid f(a) = j(e) \}$
         \item $i': A \to E'$ with $i'(a) := (a, (i \circ f)(a))$
@@ -11,17 +11,22 @@
 % proof
 \begin{myproof}[that $f^*\bb$ is a microbundle]
     % continuity and compatibility
-    It is clear that $i'$ and $j'$ are continuous and that $id_A = j' \circ i'$.
-    So it remains to be shown that $f^*\bb$ is locally trivial.
+    Both $i'$ and $j'$ are continuous since they are composed by continuous functions
+    Additionally, $j'(i'(a)) = j'(a, i(f(a))) = a$ and hence $j' \circ i' = id_A$.
 
     % local triviality
-    Choose a local trivialization $(U, V, \phi)$ for an arbitrary $a \in A$.
+    It remains to be shown that $f^*\bb$ is locally trivial:
+
+    For an arbitrary $a_0 \in A$, choose a local trivialization $(U, V, \phi)$ of $i(a_0)$ in $\bb$.
+    We construct a local trivialization of $a_0$ in $f^*\bb$ as follows:
     \begin{itemize}
-        \item $U' := f^{-1}(U) \sub A$ neighborhood of $a$.
-        \item $V' := j'^{-1}(U') \sub E'$ neighborhood of $i'(a)$.
-        \item $\phi': V' \isomto U' \times \R^n, \phi'(a, e) := (a, \pi_2(\phi(e)))$.
+        \item $U' := f^{-1}(U) \sub A$
+        \item $V' := (U' \times V) \cap E' \sub E'$
+        \item $\phi': V' \isomto U' \times \R^n$ with $\phi'(a, e) := (a, \phi^{(2)}(e))$
     \end{itemize}
-    The map $\phi'$ is well-defined because $(a, e) \in V': j(e) = f(a) \in U \implies e \in V$.
+    Note that $U'$ is an open neighborhood of $a_0$ since $f$ is continuous and $U$ is an open neighborhood of $i(a_0)$.
+    Similarly, $V'$ is an open neighborhood of $i'(a_0)$ since both $U' \times V$ and $E'$ are open neighborhoods of $i'(a_0)$.
+    The map $\phi'$ is well-defined because $(a, e) \in V' \implies e \in V$.
     The existence of an inverse $\phi'^{-1}(a, v) = (a, \phi^{-1}(f(a), v))$ and component-wise continuity show that $\phi'$ is a homeomorphism.
-    This proves that $(U', V', \phi')$ is a local trivialization for $a$. 
+    This completes the proof. 
 \end{myproof}

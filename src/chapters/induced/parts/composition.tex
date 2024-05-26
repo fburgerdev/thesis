@@ -1,20 +1,33 @@
-% lemma: composition
+% lemma composition
 \begin{mylemma}{induced::composition}
-    For a diagram $A \xto{f} B \xto{g} C$ and a microbundle $\mathfrak{c}: \bundle{C}{E}{i}{j}$ applies:
-    \[ (g \circ f)^*\mathfrak{c} \cong f^*(g^*\mathfrak{c}) \]
+    Let $\bundledef{\bc}{C}{E}{i}{j}$ be microbundle and let $A \xto{f} B \xto{g} C$ be a map diagram.
+    Then the two microbundles
+    \[ \bundledef{(g \circ f)^*\bc}{A}{E_1}{i_1}{j_1} \]
+    and
+    \[ \bundledef{f^*(g^*\bc)}{A}{E_2}{i_2}{j_2} \]
+    are isomorphic.
 \end{mylemma}
-% proof
+
+% proof composition
 \begin{myproof}
-    To prove isomorphy, we need to show that the two total spaces are homeomorphic and that the injection and projection maps commute with
-    such a homeomorphism.
+    % foreword
+    Again, we need to find a homeomorphism between a neighborhood of $i_1(A)$ and a neighborhood of $i_2(A)$
+    that commutes with injection and projection maps.
     
+    % homoemorphism
     First, compare the two total spaces:
     \begin{enumerate}
-        \item $E((g \circ f)^*\mathfrak{c}) = \{ (a, e) \in A \times E(\mathfrak{c}) \mid g(f(a)) = j(e)\}$ 
-        \item $E(f^*(g^*\mathfrak{c})) = \{ (a, (b, e)) \in A \times (B \times E(\mathfrak{c})) \mid f(a) = b$ and $ g(b) = j(e) \}$.
+        \item $E_1 = \{ (a, e) \in A \times E \mid g(f(a)) = j(e)\}$ 
+        \item $E_2 = \{ (a, b, e) \in A \times (B \times E) \mid f(a) = b$ and $ g(b) = j(e) \}$
     \end{enumerate}
-    We have the bijection $\phi: E((g \circ f)^*\mathfrak{c}) \isomto E(f^*(g^*\mathfrak{c}))$ with $\phi(a, e) := (a, (f(a), e))$ and $\phi^{-1}(a, (b, e)) = (a, e)$.
-    Since $\phi$ and $\phi^{-1}$ are component-wise continuous, it follows that $\phi$ is a homeomorphism.
-    
-    It's easy to see that $\phi$ commutes with injection and projection maps, which concludes the proof.
+    We construct a bijection $\psi: E_1 \isomto E_2$ with
+    \[ \psi(a, e) = (a, f(a), e) \tand \psi^{-1}(a, b, e) = (a, e).\]
+    Since both $\psi$ and $\psi^{-1}$ are component-wise continuous, it follows that $\psi$ is a homeomorphism.
+
+    % commute
+    This homeomorphism commutes with injection
+    \[ \psi(i_1(a)) = \psi(a, i(g(f(a)))) = (a, f(a), i(g(f(a)))) = i_2(a) \]
+    and projection maps
+    \[ j_1(a, e) = a = j_2(a, f(a), e) = j_2(\psi(a, e)) \]
+    which concludes the proof.
 \end{myproof}
