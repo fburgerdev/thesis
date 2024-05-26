@@ -3,23 +3,27 @@
     The following example acts as the microbundle analog to the tangent bundle on a smooth manifold.
 \end{myparagraph}
 
-% tangent microbundle
+% example tangent
 \begin{myexample}[tangent microbundle]{microbundle::tangent}
-    % def: tangent microbundle
+    % definition tangent
     The \defterm{tangent microbundle} $\bt_M$ over a topological $d$-manifold $M$ is a diagram
     \[ \bundle{M}{M \times M}{\Delta}{\pi_1} \]
     where $\Delta(m) := (m, m)$ is the diagonal map and $\pi_1(m_1, m_2) := m_1$ is the projection map on the first component.
-    % proof: microbundle properties
+    % proof tangent
     \begin{myproof}[that $\bt_M$ is a microbundle]
         Let $p \in M$ and $(U, \phi)$ be a chart over $p$.
-        We explicitly construct a local trivialization
+        We construct a local trivialization
         % diagram
         \[\begin{tikzcd}
             & U \times U \ar[dr, "\pi_1"] \ar[dd, "{\psi}"] & \\
-            U \ar[ur, "\Delta"] \ar[dr, "{(0, id)}"'] & & U \\
+            U \ar[ur, "\Delta"] \ar[dr, "{(id, 0)}"'] & & U \\
             & U \times \R^d \ar[ur, "\pi_1"'] &
         \end{tikzcd}\]
-        where $\psi(u, \tilde{u}) := (u, \phi(u) - \phi(\tilde{u}))$.
-        It's obvious that $(U, U \times U, \psi)$ meets all local triviality conditions.
+        where $\psi(u, u') := (u, \phi(u) - \phi(u'))$.
+        Homeomorphy of $\psi$ follows from homeomorphy of $\phi$ and commutativity of the diagram is seen with
+        \[ \psi(\Delta(m)) = \psi(m, m) = (m, \phi(m) - \phi(m)) = (m, 0) = (id \times 0)(m)\]
+        and
+        \[ \pi_1(u, u') = u = \pi_1(u, \psi^{(2)}(u, u')) = \pi_1(\psi(u, u')). \]
+        Hence, $(U, U \times U, \psi)$ meets all local triviality conditions of $p$ in $\bt_M$.
     \end{myproof}
 \end{myexample}
