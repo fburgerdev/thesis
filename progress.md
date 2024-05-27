@@ -1,6 +1,6 @@
 - Introduction
-- Suspension
 - Homotopy
+- Suspension
 - Normal
 - Induced
 - Whitney

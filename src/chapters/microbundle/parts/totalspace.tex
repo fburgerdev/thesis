@@ -6,20 +6,44 @@
     This is certainly one of the strongest conceptual differences between microbundles and classical vector bundles.
 \end{myparagraph}
 
-% prop: restricting the total space
+% proposition total
 \begin{myproposition}{microbundle::total}
-    % statement
-    For a microbundle $\bundledef{\bb}{B}{E}{i}{j}$ over $B$, we can be restrict the total space $E$ to an arbitray neighborhood $E' \sub E$ of $i(B)$
-    where the resulting microbundle is isomorphic to $\bb$.
-    % proof
-    \begin{myproof}
-        For an arbitray $b \in B$, choose a local trivialization $(U, V, \phi)$.
-
-        The intersection $V \cap E'$ is a neighborhood of $i(b)$ because $V$ and $E'$ both are.
-        It follows that $\phi(V \cap E')$ is a neighborhood of $(b, 0)$. Hence there exist $U' \sub B$ open and $\ball[\varepsilon] \sub \R^n$ such that $U' \times \ball[\varepsilon] \sub \phi(V \cap E')$. 
-        Now we construct our local trivialization by choosing $V' := \phi^{-1}(U' \times \ball[\varepsilon])$ and the fact that $\ball[\varepsilon] \cong \R^n$:
-        \[ U' \times \R^n \cong U' \times \ball[\varepsilon] \cong V' \]
-
-        We easily see that the resulting microbundle is isomorphic to $\bb$ via the identity.
-    \end{myproof}
+    Given a microbundle $\bundledef{\bb}{B}{E}{i}{j}$ over $B$,
+    restricting the total space $E$ to an arbitrary neighborhood $E' \sub E$ of $i(B)$ leaves the microbundle unchanged.
+    That is, the microbundle
+    \[ \bundledef{\bb'}{B}{E'}{i}{j\restr{E'}} \]
+    is isomorphic to $\bb$.
 \end{myproposition}
+
+% proof total
+\begin{myproof}
+    We prove this proposition in two steps.
+    \begin{enumerate}
+        % microbundle
+        \item $\bb'$ is a microbundle:
+        
+        Since we take $i$ and $j$ from $\bb$, we only need to show local triviality.
+
+        For an arbitrary $b \in B$, choose a local trivialization $(U, V, \phi)$ of $b$ in $\bb$.
+        
+        The image $\phi(V \cap E')$ is a neighborhood of $(b, 0)$.
+        That follows from $\phi(i(b)) = (b, 0)$ and $V \cap E'$ being a neighborhood of $i(b)$.
+
+        Hence, there exists a $U' \times \ball[\varepsilon] \sub \phi(V \cap E')$ with $U'$ open and $\varepsilon$ sufficiently small.
+
+        By utilising the fact that $\ball[\varepsilon] \cong \R^n$, we have a local trivialization $(U', V', \phi')$ with
+        \[ \phi': V' \xto{\phi} U' \times \ball[\varepsilon] \xto{id \times \mu_\varepsilon} U' \times \R^n \]
+        and $V' := \phi^{-1}(U' \times \ball[\varepsilon])$.
+
+        Note that homeomorphism commutes with injection
+        \[ \phi'(i(b)) =  (id \times \mu_\varepsilon)(\phi(i(b))) = (id \times \mu_\varepsilon)(b, 0) = (b, 0) = (id \times 0)(b)\]
+        and projection maps
+        \[ j(e) = \pi_1(\phi(e)) = \pi_1((id \times \mu_\varepsilon)(\phi(e))) = \pi_1(\phi'(e)). \]
+        
+        % isomorphy
+        \item $\bb'$ is isomorphic to $\bb$:
+
+        Since $E' \sub E$, we can simply take the identity $E' \to E' \sub E$ as our homeomorphism between neighborhoods of $i(B)$.
+        Furthermore, the injection and projection maps for $\bb$ and $\bb'$ are the same, so they clearly commute with the identity.
+    \end{enumerate}
+\end{myproof}

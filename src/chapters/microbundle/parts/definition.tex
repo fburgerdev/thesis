@@ -3,25 +3,27 @@
     We start with the definition of a microbundle.
 \end{myparagraph}
 
-% def: microbundle
+% definition microbundle
 \begin{mydefinition}[microbundle]{microbundle::definition}
     A \defterm{microbundle} $\bb$ over $B$ (with \defterm{fibre-dimension} $n$) is a diagram $\bundle{B}{E}{i}{j}$ satisfying the following:
     \begin{enumerate}[(i)]
         \item $B$ is a topological space (\defterm{base space})
         \item $E$ is a topological space (\defterm{total space})
-        \item $i: B \to E$ (\defterm{injection}) and $j: E \to B$ (\defterm{projection}) are continuous maps such that $id_B = j \circ i$
-        \item Every $b \in B$ is \defterm{locally trivializable}, that is there exist open neighborhoods $U \sub B$ of $b$ and $V \sub E$ of $i(U)$ with a homeomorphism $\phi: V \isomto U \times \R^n$ such that the following diagram commutes:
+        \item $i: B \to E$ (\defterm{injection}) and $j: E \to B$ (\defterm{projection}) are maps such that $id_B = j \circ i$
+        \item Every $b \in B$ is \defterm{locally trivializable},
+        that is there exist open neighborhoods $U \sub B$ of $b$ and $V \sub E$ of $i(U)$
+        together with a homeomorphism $\phi: V \isomto U \times \R^n$ such that the following diagram commutes:
         \[
             \begin{tikzcd}[column sep=tiny]
                 & V \ar[dr, "j\vert_V"] \ar[dd, "\psi"] & \\
-                U \ar[ur, "i"] \ar[dr, "{(id, 0)}"'] & & U \\
+                U \ar[ur, "i"] \ar[dr, "{id \times 0}"'] & & U \\
                 & U \times\R^n \ar[ur, "\pi_1"'] &
             \end{tikzcd}
         \]
     \end{enumerate}
 \end{mydefinition}
 
-% rmk: omit fibre dimension
+% remark dimension
 \begin{myremark}{microbundle::dimension}
-    In the following, unless explicitly stated otherwise we assume the fiber dimension of any given microbundle to be $n$.
+    In the following, unless explicitly stated otherwise, we assume the fiber dimension of any given microbundle to be $n$.
 \end{myremark}
