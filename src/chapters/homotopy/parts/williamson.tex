@@ -16,7 +16,7 @@
 
 % lemma
 \begin{mylemma}{homotopy::ball}
-    If a homeomorphism $\phi: \R^n \isomto \phi(\R^n) \sub \R^n$ satisfies
+    If a homeomorphism $\phi: \clball[2] \isomto \phi(\R^n) \sub \R^n$ satisfies
     \[ \abs{\phi(x) - x} < 1, \forall x \in \clball[2] \]
     then $\clball[1] \sub \phi(\clball[2])$.
 \end{mylemma}
@@ -43,16 +43,17 @@
 % proof of williamson
 \begin{myproof}[of the proposition]
     Let $f$ be a representative for $F$.
-    We show the proposition in two steps.
+    First we assume a special and then generalize the result to show the proposition.
     \begin{enumerate}
         % special case
-        \item Assume $f$ to map from $B \times \R^n$ to $B \times \R^n$.
+        \item Let $f$ map from $B \times \R^n$ to $B \times \R^n$:
         
-        Hence $f$ is of the form
+        Hence, $f$ is of the form
         \[ f(b, x) = (b, g_b(x)) \]
         where $g_b: \R^n \to \R^n$ are individual maps.
         Since the $g_b$ are continuous and injective, it follows from the \extref{domain invariance theorem} that the $g_b$ are open maps.
-        Let $(b_0, x_0) \in B \times \R^n$ and $\varepsilon > 0$.
+        
+        Let $(b_0, x_0) \in B \times \R^n$ and let $\varepsilon > 0$.
         Since $g_{b_0}$ is an open map, there exists a $\delta > 0$ such that
         $\clball[2\delta][x_1] \sub g_{b_0}(\clball[\varepsilon][x_0])$ where $x_1 := g_{b_0}(x_0)$.
 
@@ -60,22 +61,24 @@
         There exists a neighborhood $V \sub B$ of $b_0$ such that
         \[ \abs{g_b(x) - g_{b_0}(x)} < \delta \]
         for every $b \in V$ and $x \in \clball[\varepsilon][x_0]$.
+        
         To show that, consider $\phi(b, x) := g_b(x) - g_{b_0}(x)$.
-        The closed set $\phi^{-1}(\clball[\delta])$ is a neighborhood of $\{b_0\} \times \R^n$ since $\phi(b_0, x) = 0$.
-        Therefore, for every $x \in \clball[\delta]$ exist $V_x \sub B$ and $U_x \sub \R^n$ open with $x \in U_x$ and $V_x \times U_x \sub \phi^{-1}(\clball[\varepsilon][x_0])$.
-        Obviously, $\bigcup_{x \in \clball[\delta][x_1]} U_x$ is an open covering of $\clball[\delta][x_1]$ and since $\clball[\delta][x_1]$ is compact,
-        there exist $x_1, \dots, x_n \in \clball[\delta][x_1]$ with $\clball[\delta][x_1] \sub \bigcup_{i = 1}^{n} U_{x_i}$.
+        The open set $\phi^{-1}(\ball[\delta])$ is a neighborhood of $\{b_0\} \times \R^n$ since $\phi(b_0, x) = 0$.
+        Hence, there exist open subsets $V_x \sub B$ and $W_x \sub \R^n$ such that
+        \[ \bigcup_{x \in \clball[\varepsilon][x_0]} V_x \times W_x \sub \inv{\phi}(\clball[\delta]) \]
+        and $x \in W_x$.
+        Since $\clball[\varepsilon][x_0]$ is compact, there exist $x_1, \dots, x_n \in \clball[\varepsilon][x_0]$ with $\clball[\varepsilon][x_0] \sub \bigcup_{i = 1}^{n} V_{x_i}$.
         The claim follows via $V := V_{x_1} \cap \dots \cap V_{x_n}$.
 
         % apply lemma
         Now we want to apply the previous lemma:
 
-        Consider the homeomorphism $g_b \circ g_{b_0}^{-1}$ for an arbitrary $b \in V$.
+        Consider the homeomorphism $g_b \circ \inv{g_{b_0}}\restr{\clball[2\delta][x_1]}$ for an arbitrary $b \in V$.
         Since
         \[ \clball[2\delta][x_1] \sub g_{b_0}(\clball[\varepsilon][x_0]) \implies g_{b_0}^{-1}(\clball[2\delta][x_1]) \sub \clball[\varepsilon][x_0] \]
         we conclude from the above that
-        \[ \abs{(g_b \circ g_{b_0}^{-1})(x) - x} < \delta. \]
-        It follows that, by translation and scaling, $g_b \circ g_{b_0}^{-1}$ satisfies the requirements of the lemma.
+        \[ \abs{(g_b \circ g_{b_0}^{-1})(x) - x} < \delta, \forall x \in \clball[2\delta][x_1] \]
+        It follows that, by translation and scaling, $g_b \circ g_{b_0}^{-1}\restr{\clball[2\delta][x_1]}$ satisfies the requirements of the lemma.
         Therefore, $\clball[\delta][x_1] \sub (g_b \circ g_{b_0}^{-1})(\clball[2\delta][x_0])$ and so $\clball[\delta][x_1] \sub g_b(\clball[\varepsilon][x_0])$.
 
         % conclusion
@@ -84,9 +87,9 @@
         it follows that $f$ is an open map.
 
         % general case
-        \item Glue together $f$ from its local trivializations.
+        \item Glue together $f: U_f \to E(\bb')$ using its local trivializations:
 
-        Choose a local trivialization $(U, V, \phi)$ over $b \in B$.
+        For an arbitrary $b \in B$, choose a local trivialization $(U, V, \phi)$ of $b$ in $\bb$.
         First, we restrict $f$ to $f^{-1}(V)$.
         Since $f^{-1}(V)$ is a neighborhood of $i(b)$, we can choose an open neighborhood $V' \sub f^{-1}(V) \cap V$ of $i(b)$ of the form $U' \times \ball[\varepsilon]$.
         Now we have
@@ -94,7 +97,7 @@
         a map $U' \times \R^n \to U' \times \R^n$ that is injective and fibre-preserving and therefore an open map (apply 1.).
         It follows that $f: V' \to V$ must be an open map as well.
 
-        By glueing the $V'$ over all $b \in B$ together, we see that $f$ is an open map which concludes the proof.
+        By glueing the $V'$ together over all $b \in B$, we see that $f$ is an open map.
     \end{enumerate}
 \end{myproof}
 
