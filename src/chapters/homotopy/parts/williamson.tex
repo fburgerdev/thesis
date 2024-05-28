@@ -48,7 +48,7 @@
         % special case
         \item Let $f$ map from $B \times \R^n$ to $B \times \R^n$:
         
-        Hence, $f$ is of the form
+        Since $F$ covers the identity, $f$ is of the form
         \[ f(b, x) = (b, g_b(x)) \]
         where $g_b: \R^n \to \R^n$ are individual maps.
         Since the $g_b$ are continuous and injective, it follows from the \extref{domain invariance theorem} that the $g_b$ are open maps.
@@ -58,7 +58,7 @@
         $\clball[2\delta][x_1] \sub g_{b_0}(\clball[\varepsilon][x_0])$ where $x_1 := g_{b_0}(x_0)$.
 
         % estimation
-        There exists a neighborhood $V \sub B$ of $b_0$ such that
+        We claim that there exists a neighborhood $V \sub B$ of $b_0$ such that
         \[ \abs{g_b(x) - g_{b_0}(x)} < \delta \]
         for every $b \in V$ and $x \in \clball[\varepsilon][x_0]$.
         
@@ -68,17 +68,19 @@
         \[ \bigcup_{x \in \clball[\varepsilon][x_0]} V_x \times W_x \sub \inv{\phi}(\clball[\delta]) \]
         and $x \in W_x$.
         Since $\clball[\varepsilon][x_0]$ is compact, there exist $x_1, \dots, x_n \in \clball[\varepsilon][x_0]$ with $\clball[\varepsilon][x_0] \sub \bigcup_{i = 1}^{n} V_{x_i}$.
-        The claim follows via $V := V_{x_1} \cap \dots \cap V_{x_n}$.
+        The claim follows with $V := V_{x_1} \cap \dots \cap V_{x_n}$ which is open by forming the intersection over finitely many open sets.
 
         % apply lemma
         Now we want to apply the previous lemma:
 
-        Consider the homeomorphism $g_b \circ \inv{g_{b_0}}\restr{\clball[2\delta][x_1]}$ for an arbitrary $b \in V$.
+        Consider the homeomorphism
+        \[ \clball[2\delta][x_1] \isomto g_b \circ \inv{g_{b_0}}(\clball[2\delta][x_1]) \]
+        for an arbitrary $b \in V$.
         Since
         \[ \clball[2\delta][x_1] \sub g_{b_0}(\clball[\varepsilon][x_0]) \implies g_{b_0}^{-1}(\clball[2\delta][x_1]) \sub \clball[\varepsilon][x_0] \]
         we conclude from the above that
         \[ \abs{(g_b \circ g_{b_0}^{-1})(x) - x} < \delta, \forall x \in \clball[2\delta][x_1] \]
-        It follows that, by translation and scaling, $g_b \circ g_{b_0}^{-1}\restr{\clball[2\delta][x_1]}$ satisfies the requirements of the lemma.
+        It follows that, by translation and scaling, $g_b \circ g_{b_0}^{-1}\restr{\clball[2\delta][x_1]}$ satisfies the conditions of \intref{homotopy::ball}.
         Therefore, $\clball[\delta][x_1] \sub (g_b \circ g_{b_0}^{-1})(\clball[2\delta][x_0])$ and so $\clball[\delta][x_1] \sub g_b(\clball[\varepsilon][x_0])$.
 
         % conclusion
@@ -87,17 +89,21 @@
         it follows that $f$ is an open map.
 
         % general case
-        \item Glue together $f: U_f \to E(\bb')$ using its local trivializations:
+        \item Glue together $f: U_f \to E(\bb')$ along local trivializations:
 
-        For an arbitrary $b \in B$, choose a local trivialization $(U, V, \phi)$ of $b$ in $\bb$.
-        First, we restrict $f$ to $f^{-1}(V)$.
-        Since $f^{-1}(V)$ is a neighborhood of $i(b)$, we can choose an open neighborhood $V' \sub f^{-1}(V) \cap V$ of $i(b)$ of the form $U' \times \ball[\varepsilon]$.
-        Now we have
-        \[ U' \times \R^n \cong U' \times \ball[\varepsilon] \xto{f} U' \times \R^n \sub U \times \R^n \]
-        a map $U' \times \R^n \to U' \times \R^n$ that is injective and fibre-preserving and therefore an open map (apply 1.).
-        It follows that $f: V' \to V$ must be an open map as well.
+        For an arbitrary $b \in B$, choose local trivializations $(U, V, \phi)$ and $(U', V', \phi')$ of $b$ in $\bb$ and $\bb'$.
+        Without loss of generality we may assume that $U = U'$ because otherwise we can choose $V = \inv{\phi}(U \cap U')$ and $V' = \inv{\phi'}(U \cap U')$
+        and restrict $\phi$ and $\phi'$ accordingly.   
+        
+        First, we restrict $f$ to $V \cap \inv{f}(V')$. Since $V \cap \inv{f}(V')$ is an open neighborhood of $i(b)$ and contained in $V$, we can choose
+        an open neighborhood $\tilde{U} \sub U$ of $i(b)$ and $\varepsilon > 0$ such that $\inv{\phi}(\tilde{U} \times \ball[\varepsilon]) \sub V \cap \inv{f}(V')$.
+        
+        This yields a map $U' \times \R^n \to U' \times \R^n$ with
+        \[ \tilde{U} \times \R^n \cong  \tilde{U} \times \ball[\varepsilon] \isomto \inv{\phi}(\tilde{U} \times \ball[\varepsilon]) \xto{f} U' \times \R^n \sub U \times \R^n \]
+        that is injective and fibre-preserving and therefore an open map (apply 1.).
+        It follows that $f: \inv{\phi}(\tilde{U} \times \ball[\varepsilon]) \to V'$ must be an open map as well since the other composing maps are homeomorphisms.
 
-        By glueing the $V'$ together over all $b \in B$, we see that $f$ is an open map.
+        By glueing the $\inv{\phi}(\tilde{U} \times \ball[\varepsilon])$ together over all $b \in B$, we see that $f$ is an open map.
     \end{enumerate}
 \end{myproof}
 
@@ -108,15 +114,17 @@
 
 % corollary
 \begin{mycorollary}{homotopy::corollary}
-    If a map $g: B \to B'$ is covered by a bundle-germ $F: \bb \double \bb'$, then $\bb$ is isomorphic to the induced bundle $g^*\bb'$.
+    If a map $g: B \to B'$ is covered by a bundle-germ $F: \bb \double \bb'$, then $\bb$ is isomorphic to the induced microbundle $g^*\bb'$.
 \end{mycorollary}
 % proof
 \begin{myproof}
     Let $f: U_f \to E'$ be a representative map for $F$.
-    We define $F': \bb \double g^*\bb'$ with a representative $f'$ as follows:
-    \[ f': U_f \to E(g^*\bb'), f'(e) := (j(e), f(e)) \]
-    The element $f'(e)$ actually lies in $E(g^*\bb')$ because
+    We define $F': \bb \double g^*\bb'$ by a representative
+    \[ f': U_f \to E(g^*\bb') \twith f'(e) := (j(e), f(e)). \]
+    Every $f'(e)$ actually lies in $E(g^*\bb')$ because
     \[ g(j(e)) = j'(f(e)) \]
     as we can see from the commutative diagram for bundle-germs.
-    Applying the previous proposition proves the claim.
+    The germ $F'$ is an isomorphism-germ because $F$ is an isomorphism-germ.
+    Applying the previous proposition on $F'$ proves the claim.
+    % TODO: why is F' an isomorphims-germ?
 \end{myproof}

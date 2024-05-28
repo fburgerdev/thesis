@@ -8,21 +8,21 @@
 % proof
 \begin{myproof}
     Choose representative maps $f_\alpha: U_\alpha \to E'$ for $F_\alpha$ such that the $U_\alpha$ are open.
-    For every $\alpha$ and $\beta$, choose a neighborhood $U_{\alpha\beta}$ of $i(B_\alpha \cap B_\beta)$ on which the representative maps $f_\alpha$ and $f_\beta$ agree.
+    For every $\alpha$ and $\beta$, choose an open neighborhood $U_{\alpha\beta}$ of $i(B_\alpha \cap B_\beta)$ on which the representative maps $f_\alpha$ and $f_\beta$ agree.
     Now consider
     \[ U := \{ e \in E \mid j(e) \in B_\alpha \cap B_\beta \implies e \in U_{\alpha\beta} \}\]
     which satisfies the following:
     \begin{enumerate}
         % open
-        \item $U$ is open.
+        \item $U$ is open:
 
         We can express $U$ like this:
         \[ E - \bigcup_{\alpha\beta} \{ j^{-1}(B_\alpha \cap B_\beta) \cap U_{\alpha\beta}^c \} \]
         
         Since $j^{-1}(B_\alpha \cap B_\beta)$ and $U_{\alpha\beta}^c$ are closed sets, $U$ must be open.
-        That is because an open set remains open after removing arbitrary closed sets.
+        That is because an open set remains open after removing arbitrarily many closed sets.
         % subset
-        \item $i(B) \sub U$.
+        \item $i(B) \sub U$:
         
         This follows from
         \[ b \in B_\alpha \cap B_\beta \implies i(b) \in i(B_\alpha \cap B_\beta) \sub U_{\alpha\beta} \]
@@ -30,5 +30,6 @@
     \end{enumerate}
     With the construction of $U$, we can define $f: U \to E'$ in the obvious way
     \[ f(u \in U_{\alpha\beta}) := f_\alpha(u) = f_\beta(u) \]
-    which is a representative map for our desired $F$.
+    which is continuous according to the \extref{glueing lemma}.
+    Therefore, $f$ is a representative map for our required $F$.
 \end{myproof}
