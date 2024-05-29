@@ -1,25 +1,25 @@
-% rooted homotopy theorem
+% theorem
 \begin{mytheorem}[Rooted Homotopy Theorem]{suspension::homotopy}
     Let $\bb$ be a rooted microbundle over $B$ and $f, g: A \to B$ be two based maps.
-    If there exists a homotopy $H: A \times \I \to B$ between $f$ and $g$ that leaves the base point fixed,
-    then the two rooted microbundles $f^*\bb$ and $g^*\bb$ are isomorphic.
+    If there exists a homotopy $H: \cyl{A} \to B$ between $f$ and $g$ that leaves the base point fixed,
+    then the two rooted microbundles $\ind{f}\bb$ and $\ind{g}\bb$ are isomorphic.
 \end{mytheorem}
 
 % foreword lemma
 \begin{myparagraph}
     We need to show a rooted version of \intref{homotopy::lemma2}.
     Before we prove the lemma, note that 
-    \[ E(H^*\bb\restr{a_0 \times \I}) \]
+    \[ E(\ind{H}\bb\restr{\cyl{a_0}}) \]
     is just
-    \[ \{ e \in E(H^*\bb) \mid j(e) \in a_0 \times \I \} \]
-    \[ = \{ (a, t, e) \in A \times \I \times E(\bb) \mid a = a_0 \land H(a, t) = j(e) \} \]
-    \[ = a_0 \times \I \times E(\bbb). \]
+    \[ \set{e \in E(\ind{H}\bb)}{j(e) \in \cyl{a_0}} \]
+    \[ = \set{ (a, t, e) \in \cyl{A} \times E(\bb)}{a = a_0 \land H(a, t) = j(e)} \]
+    \[ = \cyl{a_0} \times E(\bbb). \]
     Based on this, we can define an isomorphism-germ
-    \[ \germdef{\bar{R}}{H^*\bb\restr{a_0 \times \I}}{\be_{a_0 \times \I}} \]
+    \[ \germdef{\bar{R}}{\ind{H}\bb\restr{\cyl{a_0}}}{\be_{\cyl{a_0}}} \]
     via a representative
-    \[ \bar{r}: a_0 \times \I \times V \to a_0 \times \I \times \R^n \]
+    \[ \bar{r}: \cyl{a_0} \times V \to \cyl{a_0} \times \R^n \]
     with
-    \[ \bar{r}(a_0, t, v) = (a_0, t, r^{(2)}(v) )\]
+    \[ \bar{r}(a_0, t, v) = (a_0, t, \snd{r}(v) )\]
     where $r: V \to b_0 \times \R^n$ is a representative for $R$.
     The representative $\bar{r}$ is a homoemorphism on its image
     because it is a product of the identity and $r$, which are both homoemorphisms on their image. 
@@ -27,28 +27,30 @@
 
 % lemma
 \begin{mylemma}{suspension::sharper}
-    Let $\bb$ be a rooted microbundle over $B$ and let $H: A \times \I \to B$ be a map that leaves the base point fixed.
+    Let $\bb$ be a rooted microbundle over $B$ and let $H: \cyl{A} \to B$ be a map that leaves the base point fixed.
     There exists a neighborhood $V$ of $a_0$ with an isomorphism-germ
-    \[ \germ{H^*\bb\restr{V \times \I}}{\be_{V \times \I}} \]
+    \[ \germ{\ind{H}\bb\restr{\cyl{V}}}{\be_{\cyl{V}}} \]
     extending $\bar{R}$ (as defined above).
 \end{mylemma}
+
+% proof lemma
 \begin{myproof}
     By applying \intref{homotopy::lemma2}, it follows that there exists an isomorphism-germ
-    \[ \germdef{Q}{H^*\bb\restr{V \times \I}}{\be_{V \times \I}} \]
+    \[ \germdef{Q}{\ind{H}\bb\restr{\cyl{V}}}{\be_{\cyl{V}}} \]
     for a sufficiently small neighborhood $V$ of $a_0$.
 
     Now consider
-    \[ \germdef{Q \circ \bar{R}^{-1}}{\be_{a_0 \times \I}}{\double \be_{a_0 \times \I}}. \]
+    \[ \germdef{Q \circ \inv{\bar{R}}}{\be_{\cyl{a_0}}}{\be_{\cyl{a_0}}}. \]
     Similarly to the construction of $\bar{R}$ we can construct an isomorphism-germ
-    \[ \germdef{P}{\be_{V \times \I}}{\be_{V \times \I}} \]
-    extending $Q \circ \bar{R}^{-1}$ represented by
+    \[ \germdef{P}{\be_{\cyl{V}}}{\be_{\cyl{V}}} \]
+    extending $Q \circ \inv{\bar{R}}$ represented by
     \[ p(v, t, x) = (v, q(a_0, t, x)) \]
-    where $q$ is a representative for $Q \circ \bar{R}^{-1}$.
+    where $q$ is a representative for $Q \circ \inv{\bar{R}}$.
 
-    Restricted to $a_0 \times \I$, $P$ agrees with $Q \times \bar{R}^{-1}$ and thus
-    \[ P^{-1} \circ Q = (\bar{R} \circ Q^{-1}) \circ Q = \bar{R} \]
-    Since $P$ and $Q$ are both isomorphism-germs, $P^{-1} \circ Q$ is an isomorphism-germ as well.
-    Therefore, $P^{-1} \circ Q$ suffices our requirements which concludes the proof.
+    Restricted to $\cyl{a_0}$, $P$ agrees with $Q \times \inv{\bar{R}}$ and thus
+    \[ \inv{P} \circ Q = (\bar{R} \circ \inv{Q}) \circ Q = \bar{R} \]
+    Since $P$ and $Q$ are both isomorphism-germs, $\inv{P} \circ Q$ is an isomorphism-germ as well.
+    Therefore, $\inv{P} \circ Q$ suffices our requirements which concludes the proof.
 \end{myproof}
 
 % proof theorem

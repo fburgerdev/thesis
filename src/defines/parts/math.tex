@@ -1,0 +1,128 @@
+% number
+\newcommand{\N} {%
+    \mathbb{N}%
+}
+\newcommand{\Z} {%
+    \mathbb{Z}%
+}
+\newcommand{\Q} {%
+    \mathbb{Q}%
+}
+\newcommand{\R} {%
+    \mathbb{R}%
+}
+\newcommand{\C} {%
+    \mathbb{C}%
+}
+
+% arrow
+\newcommand{\xto}[1] {%
+    \xrightarrow{#1}%
+}
+\newcommand{\isomto} {%
+    \xto{\sim}%
+}
+\newcommand{\incl} {%
+    \hookrightarrow{}%
+}
+\newcommand{\xincl}[1] {%
+    \overset{#1}{\incl}%
+}
+\newcommand{\subm} {%
+    \twoheadrightarrow{}%
+}
+\newcommand{\xsubm}[1] {%
+    \overset{#1}{\subm}%
+}
+
+% set
+\newcommand{\set}[2] {%
+    \{#1:#2\}%
+}
+\newcommand{\coll}[1] {%
+    \{#1\}%
+}
+\newcommand{\cmpl}[1] {%
+    #1^c%
+}
+\newcommand{\sub} {%
+    \subseteq{}%
+}
+\newcommand{\bus} {%
+    \supseteq{}%
+}
+
+% Restrict
+\newcommand{\restr}[1] {%
+    \vert_{#1}%
+}
+
+% calculus
+% calculus :: absolute
+\newcommand{\abs}[1] {%
+    \vert{} #1 \vert{}%
+}
+% calculus :: ball
+\NewDocumentCommand{\ball} {% 
+    O{1} O{0}%
+} {%
+    \ifthenelse{\equal{#2}{0}} {%
+        B_{#1} (0)%
+    } {%
+        B_{#1} (#2)%
+    }%
+}
+\NewDocumentCommand{\clball} {%
+    O{1} O{0}%
+} {%
+    \overline{\ball[#1][#2]}%
+}
+
+% text
+\newcommand{\tand} {%
+    \text{ and }%
+}
+\newcommand{\twith} {%
+    \text{ with }%
+}
+
+% function
+\newcommand{\inv}[1] {%
+    #1^{-1}%
+}
+\newcommand{\frst}[1] {%
+    #1^{(1)}%
+}
+\newcommand{\snd}[1] {%
+    #1^{(2)}%
+}
+
+% interval
+\newcommand{\I} {%
+    [0, 1]%
+}
+% interval :: cylinder
+\newcommand{\cyl}[1] {%
+    #1 \times{} \I%
+}
+\newcommand{\cylup}[1] {%
+    #1 \times{} \I%
+}
+\newcommand{\cyldown}[1] {%
+    #1 \times{} \I%
+}
+
+% intern
+\newcommand{\supp} {%
+    \text{supp}%
+}
+
+% fraction
+\newcommand{\half} {%
+    \frac{1}{2}%
+}
+
+% variable
+\newcommand{\eps} {%
+    \varepsilon{}%
+}

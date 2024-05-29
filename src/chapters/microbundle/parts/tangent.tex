@@ -3,14 +3,14 @@
     The following example acts as the microbundle analog to the tangent bundle on a smooth manifold.
 \end{myparagraph}
 
-% example tangent
+% example
 \begin{myexample}[tangent microbundle]{microbundle::tangent}
     The \defterm{tangent microbundle} $\bt_M$ over a topological $d$-manifold $M$ is a diagram
     \[ \bundle{M}{M \times M}{\Delta}{\pi_1} \]
     where $\Delta(m) := (m, m)$ denotes the diagonal map.
 \end{myexample}
 
-% proof tangent
+% proof
 \begin{myproof}[that $\bt_M$ is a microbundle]
     The maps $\Delta$ and $\pi_1$ are continuous and clearly $id_M = \pi_1 \circ \Delta$.
 
@@ -24,6 +24,6 @@
     Lastly, $\phi$ commutes with injection
     \[ \phi(\Delta(m)) = \phi(m, m) = (m, \psi(m) - \psi(m)) = (m, 0) = (id \times 0)(m)\]
     and projection maps
-    \[ \pi_1(u, u') = u = \pi_1(u, \phi^{(2)}(u, u')) = \pi_1(\phi(u, u')). \]
+    \[ \pi_1(u, u') = u = \pi_1(u, \snd{\phi}(u, u')) = \pi_1(\phi(u, u')). \]
     which concludes the proof.
 \end{myproof}

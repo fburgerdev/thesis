@@ -1,143 +1,24 @@
-\begin{scope}
-% local
-\newcommand{\A}[1][] {
-    A_\alpha#1
-}
-
-% local
-\newcommand{\bbleft} {
-    \bb\restr{B \times{} [0, \half]}
-}
-\newcommand{\bbright} {
-    \bb\restr{B \times{} [\half, 1]}
-}
-\newcommand{\bbhalf} {
-    \bb\restr{B \times{} \{ \half \}}
-}
-
-% statement
-\begin{mylemma}{homotopy::lemma1}
-    Let $\bb$ be a microbundle over $B \times \I$. If $\bbleft$ and $\bbright$ are both trivial,
-    then $\bb$ itself is trivial.
-\end{mylemma}
-
-% proof
-\begin{myproof}
-    Consider the identity bundle-germ over $\bbhalf$, that is the bundle-germ represented by the identity on $E(\bbhalf)$.
-    Since $\bbright$ is trivial, we can extend this bundle-germ to 
-    \[ \bbright \double \bbhalf \]
-    by the representative
-    \[ B \times [\half, 1] \times \R^n \to B \times \{\half\} \times \R^n \]
-    \[ (b, t, x) \mapsto (b, \half, x). \]
-    Here we identified an open subset of $E(\bb\restr{B \times [\half, 1]})$ with $B \times [\half, 1] \times \R^n$ using \intref{microbundle::triviallemma}.
-    Using the previous lemma, we can piece this together with the identity bundle-germ on $\bbleft$ (note that the bundle germs agree on their intersection) resulting in a bundle-germ
-    \[ \bb \double \bbleft. \]
-
-    The previous corollary infers that $\bb$ is isomorphic to $r^*\bbleft$ where $r: B \times [0, 1]$ is the retraction $(b, t) \mapsto (b, \min(t, \half))$.
-    But $\bbleft$ is trivial, hence $r^*\bbleft$ is trivial as well (\intref{induced::trivial}) which concludes the proof.
-\end{myproof}
-
-% statement
-\begin{mylemma}{homotopy::lemma2}
-    Let $\bb$ be a microbundle over $B \times \I$.
-    Every $b \in B$ has a neighborhood $V$ where $\bb\restr{V \times \I}$ is trivial.
-\end{mylemma}
-%proof
-\begin{myproof}
-    Let $b \in B$ be arbitrary.
-
-    For every $t \in \I$, choose a neighborhood $U_t := V_t \times (t - \eps_t, t + \eps_t)$ of $(b, t)$ such that $\bb\restr{U_t}$ is trivial.
-    This can be achieved by taking a local trivialization of $(b, t)$ in $\bb$ and restricting the spaces if necessary.
-
-    Since $\{b\} \times \I$ is compact, we can choose a finite subset
-    \[ (V_1 \times (t_1 - \eps_1, t_1 + \eps_1)), \dots, (V_n \times (t_n - \eps_n, t_n + \eps_n)) \]
-    of the collection $\{U_t\}$ covering $\{b\} \times \I$ and define $V = V_1 \cap \dots \cap V_n$.
-
-    The restricted microbundles $\bb\restr{V \times (t_i - \eps_i, t_i + \eps_i)}$ are trivial, because every $\bb\restr{U_t}$ is trivial and $V \times (t_i - \eps_i, t_i + \eps_i) \sub U_t$.
-    Hence, there exists a subdivision $0 = t_0 < \cdots < t_k = 1$ such that every $\bb\restr{V \times [t_{i}, t_{i + 1}]}$ is trivial.
-    
-    By iteratively applying the previous lemma on the $\bb\restr{V \times [t_i, t_{i + 1}]}$, it follows that $\bb\restr{V \times \I}$ is trivial.
-\end{myproof}
-
-% lemma
-\begin{mylemma}{homotopy::lemma3}
-    Let $\bb$ be a microbundle over $B \times \I$ where $B$ is paracompact hausdorff.
-    Then there exists a bundle map-germ $\germdef{R}{\bb}{\bb\restr{B \times \{1\}}}$
-    covering the standard retraction $r: B \times \I \to B \times \{1\}$ with $(b, t) \mapsto (b, 1)$.
-\end{mylemma}
-% proof
-\begin{myproof}
-    % partition of unity
-    First, we assume a locally finite covering $\{V_\alpha\}$ of open sets where $\bb\restr{V_\alpha \times \I}$ is trivial.
-    The existence of such a covering is justified by the previous lemma and
-    the fact that any open cover of $B$ has a locally finite subcover due to paracompactness.
-
-    This open cover has a partition of unity ($B$ is paracompact hausdorff) 
-    \[ \lambda_\alpha: B \to \I \]
-    with $\supp \lambda_\alpha \sub V_\alpha$ that is rescaled in way that
-    \[ \max_\alpha(\lambda_\alpha(b)) = 1, \forall b \in B. \]
-    This can be achieved by dividing $\lambda_\alpha$ with $\max_\alpha \lambda_\alpha$
-    which is well-defined because $\{V_\alpha\}$ is locally finite and continuous because the $\max$ function is continuous.
-    
-    % construction
-    Now we define a retraction $r_\alpha: B \times \I \to B \times \I$ with
-    \[ r_\alpha(b, t) = (b, \max(t, \lambda_\alpha(b))). \]
-
-    In the following, we will construct bundle-germs $\germdef{R_\alpha}{\bb}{\bb}$ covering $r_\alpha$
-    and piece them together to obtain the desired bundle-germ.
-    \begin{enumerate}
-        % local bundle-germ
-        \item 
-        We can divide $B \times \I$ into two subsets
-        \[ A_\alpha := \supp \lambda_\alpha \times \I \tand \]
-        \[ A'_\alpha := \{(b, t) \mid t \ge \lambda_\alpha(b)\}. \]
-        We already know that $\bb\restr{A_\alpha}$ is trivial since $A_\alpha \sub V_\alpha \times \I$.
-        Like in the proof of \intref{homotopy::lemma1}, we can extend the identity bundle-germ on $\bb\restr{\A \cap \A'}$ to a bundle-germ
-        \[ \bb\restr{\A} \double \bb\restr{\A \cap \A'} \]
-        via the representative
-        \[ \A \times \R^n \to (\A \cap \A') \times \R^n\]
-        \[ (a, x) \mapsto (r_\alpha(a), x). \]
-        Piecing this together with the identity bundle germ $\bb\restr{\A'}$, we obtain out required bundle germ $R_\alpha$.
-        
-        % glue together
-        \item Lastly, we construct a bundle germ $R$ using the $R_\alpha$.
-
-        Applying the well-ordering theorem, which is equivalent to the axiom of choice, we can assume an ordering of $\{ V_\alpha \}$.
-
-        Let $\{B_\beta\}$ be a locally finite covering of $B$ with closed sets where $B_\beta$ intersects only finitely many $V_{\alpha_1} < \cdots < V_{\alpha_k}$.
-        We can construct a collection like this as follows:
-        % TODO: existence of {B}
-
-        Now the composition $R_{\alpha_1} \circ \ldots \circ R_{\alpha_k}$ restricts to a bundle germ $R(\beta): \bb\restr{B_\beta} \times \I \double \bb\restr{B_\beta} \times \{1\}$ covering the retraction $(b, t) \mapsto (b, 1)$.
-        That is because for every $b \in B_\beta$, there is some $1 \le i \le k$ with $\lambda_{\alpha_i}(b) = 1$ and hence $r_{\alpha_i}(b, t) = (b, 1)$.
-        
-        Pieced together using \intref{homotopy::lemma1}, we obtain $R: \bb \times \I\to \bb \times \{1\}$ covering $(b, t) \mapsto (b, 1)$, which concludes the proof.
-    \end{enumerate}    
-\end{myproof}
-
-% foreword theorem
+% foreword
 \begin{myparagraph}
     Finally, we gathered all the tools to proof the homotopy theorem.
 \end{myparagraph}
 
-% proof theorem
+% proof
 \begin{myproof}[of the Homotopy Theorem]
     Let $H: \cyl{A} \to B$ be a homotopy between $f$ and $g$.
 
     The previous lemma states that there exists a bundle germ
-    \[ \germdef{R}{H^*\bb}{H^*\bb\restr{\cylup{A}}} \]
+    \[ \germdef{R}{\ind{H}\bb}{\ind{H}\bb\restr{\cylup{A}}} \]
     covering the standard retraction $(A, t) \mapsto (a, 1)$.
 
-    By restricting $R$ to $H^*\bb\restr{\cyldown{A}}$ we obtain a bundle germ
-    \[ \germ{H^*\bb\restr{\cyldown{A}}}{H^*\bb\restr{\cylup{A}}} \]
+    By restricting $R$ to $\ind{H}\bb\restr{\cyldown{A}}$ we obtain a bundle germ
+    \[ \germ{\ind{H}\bb\restr{\cyldown{A}}}{\ind{H}\bb\restr{\cylup{A}}} \]
     covering $\theta: \cyldown{A} \to \cylup{A}$ with $(a, 0) \mapsto (a, 1)$.
-    Applying \intref{homotopy::corollary} yields $H^*\bb\restr{\cyldown{A}} \cong \theta^*(H^*\bb\restr{\cylup{A}})$.
+    Applying \intref{homotopy::corollary} yields $\ind{H}\bb\restr{\cyldown{A}} \cong \ind{\theta}(\ind{H}\bb\restr{\cylup{A}})$.
 
-    Considering $\cyldown{A} = A$, we can identify $H^*\bb\restr{\cyldown{B}}$ with $f^*\bb$
-    \[ H^*\bb\restr{A \times \{0\}} = \iota^*(H^*\bb) \cong (H \circ \iota)^*\bb = f^*\bb \]
-    and symmetrically $\theta^*(H^*\bb\restr{\cylup{B}})$ with $g^*\bb$.
+    Considering $\cyldown{A} = A$, we can identify $\ind{H}\bb\restr{\cyldown{B}}$ with $\ind{f}\bb$
+    \[ \ind{H}\bb\restr{A \times \{0\}} = \ind{\iota}(\ind{H}\bb) \cong \ind{(H \circ \iota)}\bb = \ind{f}\bb \]
+    and symmetrically $\ind{\theta}(\ind{H}\bb\restr{\cylup{B}})$ with $\ind{g}\bb$.
 
-    Together with $H^*\bb\restr{\cyldown{A}} \cong \theta^*(H^*\bb\restr{\cylup{A}})$ it follows that $f^*\bb \cong g^*\bb$.
+    Together with $\ind{H}\bb\restr{\cyldown{A}} \cong \ind{\theta}(\ind{H}\bb\restr{\cylup{A}})$ it follows that $\ind{f}\bb \cong \ind{g}\bb$.
 \end{myproof}
-
-\end{scope}

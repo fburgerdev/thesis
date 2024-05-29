@@ -1,43 +1,48 @@
-% foreword
-Finally, we gathered all the tools to prove Milnor's theorem.
+\begin{scope}
+    % defines
+    \newcommand{\rwithney} {
+        \whitney{\ind{r}\bt_N}{\ind{r}\bt'}
+    }
+    \newcommand{\rtn} {
+        \ind{r}\bt_N
+    }
 
-\newcommand{\whitney} {
-    r^*\bt_N \oplus{} r^*\bt'
-}
-\newcommand{\rtn} {
-    r^*\bt_N
-}
+    % foreword
+    \begin{myparagraph}
+        Finally, we gathered all the tools to prove Milnor's theorem.
+    \end{myparagraph}
 
-% theorem milnor
-\begin{mytheorem}[Milnors Theorem]{normal::milnor}
-    For a sufficently large $q \in \N$, $N = N \times \{0\}$ has a normal microbundle in $M \times \R^q$.
-\end{mytheorem}
+    % theorem
+    \begin{mytheorem}[Milnors Theorem]{normal::milnor}
+        For a sufficently large $q \in \N$, $N = \cyldown{N}$ has a normal microbundle in $M \times \R^q$.
+    \end{mytheorem}
 
-% proof milnor
-\begin{myproof}
-    We show the theorem in multiple steps:
-    \begin{enumerate}
-        % statement
-        \item There exists a microbundle $\eta$ over $N$ such that $\bt_N \oplus \eta \cong \be[q]_N$:
-        
-        % proof
-        From the \extref{Whitney Embedding Thereom} it follows that we can consider $M$ to be embedded in euclidean space $\R^{2m + 1}$.
-        Additionally, since we can find a retraction $r: V \to N$ where $V$ is an open neighborhood of $N$ in $M$ we can extend $\bt_N$ over $V$.
-        Now we can apply the \intref{whitney::theorem} from the ``Whitney Sum'' Chapter to the extended microbundle
-        to receive a $\eta$ such that $\bt_N \oplus \eta \cong \be[q]_N$.
+    % proof
+    \begin{myproof}
+        We show the theorem in multiple steps:
+        \begin{enumerate}
+            % statement
+            \item There exists a microbundle $\eta$ over $N$ such that $\whitney{\bt_N}{\eta} \cong \be[q]{N}$:
+            
+            % proof
+            From the \extref{Whitney Embedding Thereom} it follows that we can consider $M$ to be embedded in euclidean space $\R^{2m + 1}$.
+            Additionally, since we can find a retraction $r: V \to N$ where $V$ is an open neighborhood of $N$ in $M$ we can extend $\bt_N$ over $V$.
+            Now we can apply the \intref{whitney::theorem} from the ``Whitney Sum'' Chapter to the extended microbundle
+            to receive a $\eta$ such that $\whitney{\bt_N}{\eta} \cong \be[q]{N}$.
 
-        % statement
-        \item $E(\rtn) \sub E(\whitney)$ has a normal microbundle:
+            % statement
+            \item $E(\rtn) \sub E(\whitney)$ has a normal microbundle:
 
-        %proof
-        Consider the microbundle
-        \[ \bundledef{j^*(\whitney)}{E(\rtn)}{E(\whitney)}{i'}{j'} \]
-        where $j$ is the projection map for $\rtn$.
-        Since $i'$ is injective, we can assume $E(\rtn) \sub E(\whitney)$.
-        Now $j^*(\whitney)$ is a normal microbundle if we equip $\whitney$ with a manifolds structure as shown above.
-        % TODO: how?
-    \end{enumerate}
-    Since $N \sub M \sub E(\rtn)$ has a normal microbundle (\intref{normal::total}) it follows from \intref{normal::transitivity} that $N \sub E(r^*\bt_N \oplus r^*\bt')$ has a normal microbundle.
-    But $r^*\bt_N \oplus r^*\bt'$ is trivial and therefore w.l.o.g. $E(\whitney) \cong N \times \R^q$
-    % TODO: last portion is unclear
-\end{myproof}
+            %proof
+            Consider the microbundle
+            \[ \bundledef{\ind{j}(\rwithney)}{E(\rtn)}{E(\rwithney)}{i'}{j'} \]
+            where $j$ is the projection map for $\rtn$.
+            Since $i'$ is injective, we can assume $E(\rtn) \sub E(\rwithney)$.
+            Now $\ind{j}(\rwithney)$ is a normal microbundle if we equip $\rwithney$ with a manifolds structure as shown above.
+            % TODO: how?
+        \end{enumerate}
+        Since $N \sub M \sub E(\rtn)$ has a normal microbundle (\intref{normal::total}) it follows from \intref{normal::transitivity} that $N \sub E(\whitney{\ind{r}\bt_N}{\ind{r}\bt'})$ has a normal microbundle.
+        But $\whitney{\ind{r}\bt_N}{\ind{r}\bt'}$ is trivial and therefore w.l.o.g. $E(\rwithney) \cong N \times \R^q$
+        % TODO: last portion is unclear
+    \end{myproof}
+\end{scope}

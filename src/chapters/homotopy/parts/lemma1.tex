@@ -1,0 +1,34 @@
+\begin{scope}
+    % defines
+    \newcommand{\bbleft} {
+        \bb\restr{B \times{} [0, \half]}
+    }
+    \newcommand{\bbright} {
+        \bb\restr{B \times{} [\half, 1]}
+    }
+    \newcommand{\bbhalf} {
+        \bb\restr{B \times{} \coll{\half{}}}
+    }
+
+    % lemma
+    \begin{mylemma}{homotopy::lemma1}
+        Let $\bb$ be a microbundle over $\cyl{B}$. If $\bbleft$ and $\bbright$ are both trivial,
+        then $\bb$ itself is trivial.
+    \end{mylemma}
+
+    % proof
+    \begin{myproof}
+        Consider the identity bundle-germ over $\bbhalf$, that is the bundle-germ represented by the identity on $E(\bbhalf)$.
+        Since $\bbright$ is trivial, we can extend this bundle-germ to 
+        \[ \germ{\bbright}{\bbhalf} \]
+        by the representative
+        \[ B \times [\half, 1] \times \R^n \to B \times \coll{\half} \times \R^n \]
+        \[ (b, t, x) \mapsto (b, \half, x). \]
+        Here we identified an open subset of $E(\bb\restr{B \times [\half, 1]})$ with $B \times [\half, 1] \times \R^n$ using \intref{microbundle::triviallemma}.
+        Using the previous lemma, we can piece this together with the identity bundle-germ on $\bbleft$ (note that the bundle germs agree on their intersection) resulting in a bundle-germ
+        \[ \germ{\bb}{\bbleft}. \]
+
+        The previous corollary infers that $\bb$ is isomorphic to $\ind{r}\bbleft$ where $r: B \times [0, 1]$ is the retraction $(b, t) \mapsto (b, \min(t, \half))$.
+        But $\bbleft$ is trivial, hence $\ind{r}\bbleft$ is trivial as well (\intref{induced::trivial}) which concludes the proof.
+    \end{myproof}
+\end{scope}

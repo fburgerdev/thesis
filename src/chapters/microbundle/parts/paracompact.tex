@@ -1,0 +1,48 @@
+% foreword
+\begin{myparagraph}
+    In order to make it easier classifying microbundles as trivial,
+    we provide a sharper description of what it means for a microbundle to be trival. 
+\end{myparagraph}
+
+% lemma
+\begin{mylemma}{microbundle::paracompact}
+    A microbundle $\bb$ over a paracompact hausdorff space $B$ is trivial
+    if and only if there exists an open neighborhood $V$ of $i(B)$ such that $V \cong B \times \R^n$
+    with injection and projection maps being compatible with this homeomorphism.
+\end{mylemma}
+
+% proof
+\begin{myproof}
+    ``$\implies$''
+
+    By restricting $E(\bb)$ to an open neighborhood and applying \intref{microbundle::total},
+    we may assume that $E(\bb)$ is an open subset of $B \times \R^n$.
+
+    Since $E(\bb)$ is a neighborhood of $\cyldown{B}$, there exist $B_i \sub B$ open and $0 < \eps_i < 1$ with
+    \[ \bigcup_{i \in I } B_i \times \ball[\eps_i] \sub E(\bb)\]
+    such that $\bigcup_{i \in I} B_i = B$.
+    Without loss of generality, we may assume that the collection $\{B_i\}$ is locally finite because if not
+    we can simply choose a locally finite refinement using the fact that $B$ is paracompact.
+
+    Furthermore, from paracompactness and the hausdorff property we derive a partition of unity over $\{B_i\}$
+    \[ f_i: B \to [0, 1] \twith \supp{f_i} \sub B_i\]
+    such that $\sum_{i \in I}f_i = 1$.
+    
+    Now we define a map $\lambda: B \to (0, \infty)$ via
+    \[ \lambda := \sum_{i \in I} \eps_i f_i \]
+    which has the property that $\abs{x} < \lambda(b) \implies (b, x) \in E(\bb)$ because
+    \[ \abs{x} < \lambda(b) \]
+    \[ \iff  \abs{x} < \eps_{i_1} f_{i_1}(b) + \cdots + \eps_{i_n} f_{i_n}(b) \]
+    \[ \iff 0 < (\eps_{i_1} - \abs{x}) f_{i_1}(b) + \cdots + (\eps_{i_n} - \abs{x}) f_{i_n}(b) \]
+    \[ \implies \exists i \in I: 0 < (\eps_{i_1} - \abs{x}) f_{i_1}(b) \]
+    \[ \implies (b, x) \in B_i \times \ball[\eps_i]  \implies (b, x) \in E(\bb). \]
+
+    Lastly, we have a homeomorphism between the open subset
+    $\set{(b, x) \in B \times \R^n}{\abs{x} < \lambda(b)} \sub E(\bb)$ and $B \times \R^n$ via
+    \[ (b, x) \mapsto (b, \frac{x}{\lambda(b) - \abs{x}}). \]
+    Note that $(b, 0) \mapsto (b, 0)$ and hence this homeomorphism is compatible with injection and projection maps.
+
+    ``$\impliedby$''
+
+    This is simply a weakening of the definition of triviality. 
+\end{myproof}

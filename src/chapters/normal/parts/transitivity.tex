@@ -1,15 +1,15 @@
-% lemma transitivity
+% lemma
 \begin{mylemma}{normal::transitivity}
     Let $M, N$ and $P$ be topological manifolds with $P \sub N \sub M$.
     There exists a normal microbundle
     \[ \bundledef{\bn}{P}{U}{\iota}{r} \]
     of $P$ in $M$, if there exist normal microbundles
     \begin{center}
-        $\bn_p: \bundle{P}{U_N}{\iota_P}{j_P}$ in $N$ and $\bn_n: \bundle{N}{U_M}{\iota_N}{j_N}$ in $M$.
+        $\bundledef{\bn_p}{P}{U_N}{\iota_P}{j_P}$ in $N$ and $\bundledef{\bn_n}{N}{U_M}{\iota_N}{j_N}$ in $M$.
     \end{center}
 \end{mylemma}
 
-% proof transitivity
+% proof
 \begin{myproof}
     Considering the composition $\bn_p \circ \bn_n\restr{U_N}$, we found a normal microbundle $\bn$ of $P$ in $M$
     since $\iota_N \circ \iota_P$ is just the inclusion $P \incl U_M$.

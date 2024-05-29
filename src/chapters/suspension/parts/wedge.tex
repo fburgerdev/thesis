@@ -5,7 +5,7 @@
     and can therefore be removed from any open set without losing openness.  
 \end{myparagraph}
 
-% definition wedge sum
+% definition
 \begin{mydefinition}{suspension::wedge}
     Let $\ba$ and $\bb$ be two rooted microbundles over $A$ and $B$.
     % microbundle
@@ -13,16 +13,17 @@
     \[ \ba \vee \bb \xto{i_\ba \vee i_\bb} E(\ba \vee \bb) \xto{j_\ba \vee j_\bb} A \vee B \]
     where the total space is
     \[ (E(\ba) \sqcup E(\bb)) / (f(e_a) \sim e_a) \]
-    and $f: E(\ba\restr{a_0}) \bus W_a \isomto W_b \sub E(\bb\restr{b_0})$ is some representative for $R_b^{-1} \circ R_a$.
+    and $f: E(\ba\restr{a_0}) \bus W_a \isomto W_b \sub E(\bb\restr{b_0})$ is some representative for $\inv{R_b} \circ R_a$.
     % rooting
     We equip $\ba \vee \bb$ with a rooting
-    \[ R: E((\ba \vee \bb)\restr{a_0}) \double \be_{a_0} \]
+    \[ \germdef{R}{E((\ba \vee \bb)\restr{a_0})}{\be_{a_0}} \]
     represented by any representative for $R_a$ (or $R_b$).
 \end{mydefinition}
-% proof wedge sum
+
+% proof
 \begin{myproof}[that $\ba \vee \bb$ is a microbundle]
     We show that $\ba \vee \bb$ is a microbundle and afterwards show
-    that the definition of $\ba \vee \bb$ is independant of the choice of the representative $f$ for $R_b^{-1} \circ R_a$.
+    that the definition of $\ba \vee \bb$ is independant of the choice of the representative $f$ for $\inv{R_b} \circ R_a$.
     \begin{enumerate}
         % microbundle
         \item $\ba \vee \bb$ is a microbundle:
@@ -53,21 +54,23 @@
             
             Choose a local trivialization $(U, V, \phi)$ for $x$ in $\ba$.
             We can assume $U \cap B = \emptyset$ by subtracting $U$ by $\{a_0\}$ which is closed since $A$ is hausdorff.
-            Now we can simply use this trivialization for $\ba \vee \bb$ since $U$ is open in $A \vee B$, $V$ is open in $E(\ba \vee \bb)$ and $V \cong U \times \R^n$.
+            Now we can simply use this trivialization for $\ba \vee \bb$
+            since $U$ is open in $A \vee B$, $V$ is open in $E(\ba \vee \bb)$ and $V \cong U \times \R^n$.
             % special case
             \item $x = a_0$:
             
             Choose local trivializations $(U_a, V_a, \phi_a)$ for $a_0$ in $\ba$ and $(U_b, V_b, \phi_b)$ for $b_0$ in $\bb$.
             \begin{itemize}
                 \item We can assume $V_b \cap E(\bbb) \sub W_b$ by choosing a local trivialization for $b_0$ in
-                the microbundle over the restricted total space $(E(\bb) - E(\bbb)) \cup W_a$ (the existence is justified by \intref{microbundle::total}).
+                the microbundle over the restricted total space
+                $(E(\bb) - E(\bbb)) \cup W_a$ (the existence is justified by \intref{microbundle::total}).
                 \item We can assume $V_a \cap E(\bab) \sub W_b \cap E(\bbb)$ by choosing a local trivialization for $a_0$ in
                 the microbundle over the restricted total space $(E(\ba) - E(\bbb)) \cup (V_b \cap E(\bbb))$.
             \end{itemize}
-            The subset $X_b := \phi_b^{(2)}f(V_a \cap E(\bab)) \sub W_b \cap E(\bbb)$ is homeomorphic to $\R^n$ via
+            The subset $X_b := \snd{\phi_b}f(V_a \cap E(\bab)) \sub W_b \cap E(\bbb)$ is homeomorphic to $\R^n$ via
             \[ a_0 \times \R^n \xto{\inv{\phi}} V_a \cap E(\bab) \xto{f} X_b \]
             and open since $f$ and $\phi$ are homeomorphisms.
-            By choosing $V_b' := \inv{\phi_b}(B \times X_b)$ and $\phi_b'(e) := (j(e), \phi_a^{(2)}(\inv{f}(\phi_b^{(2)}(e))))$,
+            By choosing $V_b' := \inv{\phi_b}(B \times X_b)$ and $\phi_b'(e) := (j(e), \snd{\phi_a}(\inv{f}(\snd{\phi_b}(e))))$,
             we have local trivializations $(U_a, V_a, \phi_a)$ and $(U_b, V_b', \phi_b')$ that agree on $W_a = W_b$.
             This yields a local trivialization for $\ba \vee \bb$.
         \end{itemize}
@@ -78,7 +81,7 @@
         We need to find an isomorphism germ that extends $\inv{R'} \circ R = \inv{R} \circ R = id$.
         Choose an open neighborhood $V \sub E(\ba\restr{a_0})$ of $i_\ba(a)$ where $f$ and $f'$ agree.
         By subtracting $\inv{j_\ba}(a_0) - V$ from $E(\ba \vee \bb)$ and $E(\ba \vee \bb)'$ the microbundles remain unchanged.
-        This is because the resulting subspaces are open since $j_\ba^{-1}(a_0)$ is closed (hausdorff) and $V$ is open.
+        This is because the resulting subspaces are open since $\inv{j_\ba}(a_0)$ is closed (hausdorff) and $V$ is open.
         So the total spaces are equal and injection and projection maps are defined the same.
         Using the modified total spaces, it follows that the identity $\germ{(\ba \vee \bb)}{(\ba \vee \bb)'}$ is an isomorphism-germ.
         This surely extends $\inv{R'} \circ R$, which concludes the proof.

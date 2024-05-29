@@ -1,4 +1,4 @@
-% definition composition
+% definition
 \begin{mydefinition}[composition microbundle]{normal::composition}
     Let $\bb$ and $\bc$ be two microbundles over $B$ and $E(\bb)$.
     The \defterm{composition microbundle} $\bb \circ \bc$ is a microbundle
@@ -6,7 +6,7 @@
     where $i := i_\bc \circ i_\bb$ and $j := j_\bb \circ j_\bc$.
 \end{mydefinition}
 
-% proof composition
+% proof
 \begin{myproof}[that $\bb \circ \bc$ is a microbundle]
     Both injection and projection are continuous since the are composed by continuous maps.
     Additionally, $j \circ i = j_\bb \circ (j_\bc \circ i_\bc) \circ i_\bb = j_\bb \circ i_\bb = id_B$.
@@ -21,7 +21,8 @@
     \[ \phi_\bb(V_\bb \cap U_\bc) \]
     contains an open set $U \times \ball[\eps]$ where $U$ is open and $\eps$ is sufficiently small.
 
-    With $V := \phi_\bc^{-1}(\phi_\bb^{-1}(U \times \ball[\eps])) \sub E(\bc)$ and
+    With $V := \inv{\phi_\bc}(\inv{\phi_\bb}(U \times \ball[\eps])) \sub E(\bc)$ and
     \[ U \times \R^n \cong U \times \ball[\eps] \xto{\inv{\phi_\bc} \circ \inv{\phi_\bb}} V \]
-    which is a homeomorphism because its composed by homeomorphisms, we constructed a local trivialization of $b$ in $\bc \circ \bb$.
+    which is a homeomorphism because its composed by homeomorphisms,
+    we constructed a local trivialization of $b$ in $\bc \circ \bb$.
 \end{myproof}

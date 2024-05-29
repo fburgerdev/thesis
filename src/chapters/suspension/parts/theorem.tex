@@ -1,81 +1,29 @@
-% lemma paracompact
-\begin{mylemma}{suspension::paracompact}
-    Let $\bb$ be a rooted microbundle over a paracompact space $B$ with rooting $R$.
-    Then there exists a closed neighborhood $W$ of $b_0$ and an isomorphism-germ
-    \[ \germ{\bb\restr{W}}{\be_W} \]
-    extending $R$ together with a map $\lambda: B \to [0, 1]$ with
-    \[ \supp\lambda \sub W \tand \lambda(b_0) = 1. \]
-\end{mylemma}
-
-% proof paracompact
-\begin{myproof}
-    Let $r: W_r \to b_0 \times \R^n$ be a representative map for $R$.
-    Consider a local trivialization $(U, V, \phi)$ for $b_0$ such that $V \cap E(\bbb) \sub W_r$. % Why does such a trivialization exist?
-    With
-    \[ \psi: V \isomto \psi(V) \sub U \times \R^n \]
-    \[ \psi(e) = (j(e), r(\inv{\phi}(b_0, \phi^{(2)}(e)))) \]
-    we have a representative for an isomorphism-germ $\germ{\bb\restr{U}}{\be_U}$ extending $R$.
-    Consider the open covering of $B$ with $U$ and $B$ itself.
-    Since $B$ is paracompact, we can apply the concept of partition of unity and have therefore a map
-    \[ \lambda: B \to [0, 1] \]
-    with 
-    \[ \supp\lambda \sub U \tand \lambda(b_0) = 1. \]
-    Now we can choose $W := \supp\lambda$, which is closed by definition of $\supp$.
-    By restricting the constructed isomorphism-germ over $U$ to $W$, we have an isomorphism-germ $\germ{\bb\restr{W}}{\be_W}$.
-    Together with $\lambda$, this concludes our proof.
-\end{myproof}
-
-% lemma commutativity
-\begin{mylemma}{suspension::commutativity}
-    The rooted microbundles $\bb \oplus \be_B$ and $\be_B \oplus \bb$ are rooted-isomorphic. 
-\end{mylemma}
-\begin{myproof}
-    We need to find an isomorphism germ $\bb \oplus \be_B \double \be_B \oplus \bb$ that extends
-    \[ (I \oplus R) \circ (R \oplus I)^{-1} = R \oplus R^{-1} \]
-    where $I$ denotes the identity germ.
-
-    Ignoring the rooting, we have an isomorphism-germ $f: E(\bb) \times \R^n \isomto \R^n \times E(\bb)$ with $f(e, x) = (-x, e)$.
-    The idea is to change to $f$ near $b_0$ so that it extends the rooting.
-
-    Using the previous lemma, choose a sufficiently small closed neighborhood $U$ of $b_0$
-    such that there exists an extension $\germdef{Q}{(\bb \oplus \be)\restr{U}}{(\be \oplus \bb)\restr{U}}$ for the rooting.
-
-    Since $B$ is Tychonoff, there exists a map
-    \[ \lambda: B \to [0, \frac{\pi}{2}] \]
-    with $\supp \lambda \sub U$ and $\lambda(b_0) = \frac{\pi}{2}$.
-    With this map, we can define a homeomorphism
-    \[ g: U \times \R^n \times \R^n \isomto U \times \R^n \times \R^n \]
-    by
-    \[ g(b, x, y) = (b, x \sin(\lambda(b)) - y \cos(\lambda(b)), x \cos(\lambda(b)) - y \sin(\lambda(b))). \]
-
-    Now, we can consider
-    \[ (\bb \oplus \be)\restr{U} \double (\bb \oplus \be)\restr{U} \xto{g} (\bb \oplus \be)\restr{U} \double (\be \oplus \bb)\restr{U}\]
-    which coincides with $R \oplus R^{-1}$ over $b_0$ since $g(b_0, x, y) = (b_0, x, y)$ and with $F$ over $U \cap \lambda^{-1}(0)$.
-    Pieced together with $F\restr{\lambda^{-1}(b)}$, we have an isomorphism germ $\bb \oplus \be_B \double \be_B \oplus \bb$ that extends the rooting, which completes the proof.
-\end{myproof}
-
 % theorem
 \begin{mytheorem}{suspension::theorem}
     If $\ba$ and $\bb$ are rooted microbundles over a completly regular space $B$, then
-    \[ \phi^*(\ba \vee \bb) \oplus \be_B = \ba \oplus \bb. \]
+    \[ \whitney{\ind{\phi}(\ba \vee \bb)}{\be_B} = \whitney{\ba}{\bb}. \]
 \end{mytheorem}
+
+% proof theorem
 \begin{myproof}
-    The previous lemma yields $\bb \oplus \be \cong \be \oplus \bb$.
+    The previous lemma yields $\whitney{\bb}{\be} \cong \whitney{\be}{\bb}$.
     Hence
-    \[ \phi^*((\ba \oplus \be) \vee (\bb \oplus \be)) \cong \phi^*((\ba \oplus \be) \vee (\be \oplus \bb)). \]
+    \[ \ind{\phi}((\whitney{\ba}{\be}) \vee (\whitney{\bb}{\be})) \cong \ind{\phi}((\whitney{\ba}{\be}) \vee (\whitney{\be}{\bb})). \]
     Additionally we have
-    \[ \phi^*((\ba \vee \bb) \oplus (\be \vee \be)) \cong \phi^*(\ba \vee \bb) \oplus \be \]
+    \[ \whitney{\ind{\phi}((\ba \vee \bb))}{(\be \vee \be)} \cong \whitney{\ind{\phi}(\ba \vee \bb)}{\be} \]
     for the left side of the isomorphy and
-    \[ \phi^*((\ba \vee \be) \oplus (\be \vee \bb)) \cong \ba \oplus \bb\]
+    \[ \ind{\phi}(\whitney{(\ba \vee \be)}{(\be \vee \bb)}) \cong \whitney{\ba}{\bb}\]
     for the right side of the isomorphy which concludes the proof.
 \end{myproof}
 
 % corollary
 \begin{mycorollary}{suspension::corollary}
-    The wedge sum $\bb \oplus r^*\bb$ is trivial.
+    The wedge sum $\whitney{\bb}{\ind{r}\bb}$ is trivial.
 \end{mycorollary}
+
+% proof corollary
 \begin{myproof}
-    This follows directly from the Theorem and the fact that $\phi^*(\bb \oplus r^*\bb)$ is trivial.
+    This follows directly from the Theorem and the fact that $\ind{\phi}(\whitney{\bb}{\ind{r}\bb})$ is trivial.
 \end{myproof}
 
 % TODO: bouqet of circles

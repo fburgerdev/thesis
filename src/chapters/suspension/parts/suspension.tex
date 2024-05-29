@@ -1,7 +1,7 @@
 % foreword suspension
 \begin{myparagraph}
     In the following, let $B$ be a \defterm{reduced suspension}
-    \[ SX = (X \times \I) / (X \times \{ 0, 1 \} \cup x_0 \times \I)\]
+    \[ SX = (\cyl{X}) / (X \times \coll{0, 1} \cup \cyl{x_0})\]
     over $X$.
 
     Let $\phi: B \to B \vee B$ denote the map that sends
@@ -16,12 +16,12 @@
 
 % lemma triviality
 \begin{mylemma}{suspension::triviality}
-    \[ \phi^*(\bb \oplus \be_B) \cong \bb \cong \phi^*(\be_B \oplus \bb) \]
+    \[ \ind{\phi}(\whitney{\bb}{\be_B}) \cong \bb \cong \ind{\phi}(\whitney{\be_B}{\bb}) \]
 \end{mylemma}
 \begin{myproof}
     \begin{itemize}
-        \item First, note that $c_1^*\bb \cong \bb \vee \be$:
-        \[ E(c_1^*\bb) = \set{(b, e) \in (B \vee B) \times E(\bb)}{c_1(b) = j(e)} \]
+        \item First, note that $\ind{c_1}\bb \cong \bb \vee \be$:
+        \[ E(\ind{c_1}\bb) = \set{(b, e) \in (B \vee B) \times E(\bb)}{c_1(b) = j(e)} \]
         \[ = (\set{(b, e) \in B \times E(\bb)}{b = j(e)} \sqcup B \times E(\bb\restr{b_0})) / \sim \]
         \[ = (\set{(j(e), e)}{e \in E(\bb)} \sqcup B \times E(\bb\restr{b_0})) / \sim \]
         where $(b, e) \sim (b', e') \iff b = b_0 = b' \land e = e'$.
@@ -31,27 +31,29 @@
         
         On the other side, consider
         \[ E(\bb \vee \be_B) = (E(\bb) \sqcup (B \times \R^n)) / e \sim f(e) \]
-        with $f$ being some representative $E(\bb\restr{b_0}) \bus V \to b_0 \times \R^n$ for $R_e^{-1} \circ R_b$.
+        with $f$ being some representative $E(\bb\restr{b_0}) \bus V \to b_0 \times \R^n$ for $\inv{R_e} \circ R_b$.
         
         Now, we have the mapping
-        \[ g: E(c_1^*\bb) \bus (E(\bb) \sqcup (B \times V)) / \sim \isomto (E(\bb) \sqcup (B \times f(V))) / \sim \sub E(\bb \vee \be) \]
-        \[ g(e) = e \tand g(b, e) = (b, f^{(2)}(e)). \]
-        This map is well-defined because $\forall e = (b_0, e): g(e) = e = f(e) = (b_0, f^{(2)}(e)) = g(b_0, e)$.
+        \[ g: E(\ind{c_1}\bb) \bus (E(\bb) \sqcup (B \times V)) / \sim \isomto (E(\bb) \sqcup (B \times f(V))) / \sim \sub E(\bb \vee \be) \]
+        \[ g(e) = e \tand g(b, e) = (b, \snd{f}(e)). \]
+        This map is well-defined because $\forall e = (b_0, e): g(e) = e = f(e) = (b_0, \snd{f}(e)) = g(b_0, e)$.
         Bijectivity and continuity follow from bijectivity and continuity of its summands.
         Since $(E(\bb) \sqcup (B \times V)) / \sim$ and $(E(\bb) \sqcup (B \times f(V))) / \sim$ are open ($V$ and $f(V)$ are open)
-        and injection and projection maps commute, it follows that $g$ represents an isomorphism germ between $c_1^*\bb$ and $\bb \vee \be$.
+        and injection and projection maps commute,
+        it follows that $g$ represents an isomorphism germ between $\ind{c_1}\bb$ and $\bb \vee \be$.
         % TODO: refine
+    
         \item Now, from $c_1 \circ \phi = id$ we can conclude that
-        \[ \phi^*(\bb \oplus \be_B) = \phi^*c_1^*\bb = (c_1 \circ \phi)^*\bb = \bb. \]
-        The equality $\bb = \phi^*(\be_B \oplus \bb)$ follows by symmetry, which concludes the proof.
+        \[ \ind{\phi}(\whitney{\bb}{\be_B}) = \ind{\phi}\ind{c_1}\bb = \ind{(c_1 \circ \phi)}\bb = \bb. \]
+        The equality $\bb = \ind{\phi}(\whitney{\be_B}{\bb})$ follows by symmetry, which concludes the proof.
     \end{itemize}
 \end{myproof}
 
 % definition induced
 \begin{mydefinition}{suspension::induced}
     Let $\bb$ be a rooted microbundle over $B$ and $f: A \to B$ a base point preserving map.
-    The \defterm{induced microbundle} of $f$ over $\bb$ is the initial induced microbundle $f^*\bb$ together with the rooting
-    \[ f^*R: E(f^*\bb\restr{a_0}) = a_0 \times E(\bb\restr{b_0}) \double e^n_{a_0} \]
+    The \defterm{induced microbundle} of $f$ over $\bb$ is the initial induced microbundle $\ind{f}\bb$ together with the rooting
+    \[ \germdef{\ind{f}R}{E(\ind{f}\bb\restr{a_0}) = a_0 \times E(\bb\restr{b_0})}{e^n_{a_0}} \]
     that coincides with $R$ if we consider $a_0 \times E(\bb\restr{b_0}) = E(\bb\restr{b_0})$ and $e^n_{a_0} = e^n_{b_0}$.
 \end{mydefinition}
 
@@ -59,14 +61,16 @@
 \begin{mylemma}{suspension::distributivity}
     Let $\ba$ and $\bb$ be rooted microbundles over $A$ and $B$.
     For maps $f: A' \to A$ and $g: B' \to B$ the following applies:
-    \[ (f \vee g)^*(\ba \vee \bb) \cong f^*\ba \vee g^*\bb \]
+    \[ \ind{(f \vee g)}(\ba \vee \bb) \cong \ind{f}\ba \vee \ind{g}\bb \]
 \end{mylemma}
+
+% proof distributivity
 \begin{myproof}
     Consider the equation
-    \[ E((f \vee g)^*(\ba \vee \bb)) = \set{(x, e) \in (A' \vee B') \times E(\ba \vee \bb)}{(f \vee g)(x) = j(e)} \]
+    \[ E(\ind{(f \vee g)}(\ba \vee \bb)) = \set{(x, e) \in (A' \vee B') \times E(\ba \vee \bb)}{(f \vee g)(x) = j(e)} \]
     \[ = \set{(x, e) \in ((A' \times E(\ba)) \sqcup (B' \times E(\bb))) / \sim}{(f \vee g)(x) = j(e)} \]
     \[ = (\set{(x, e) \in A' \times E(\ba)}{f(x) = j_\ba(e)} \sqcup \set{(x, e) \in B' \times E(\bb)}{g(x) = j_\bb(e)}) / \sim \]
-    \[ = (E(f^*\ba) \sqcup E(g^*\bb)) / \sim = E(f^*\ba \vee g^*\bb)\]
+    \[ = (E(\ind{f}\ba) \sqcup E(\ind{g}\bb)) / \sim = E(\ind{f}\ba \vee \ind{g}\bb)\]
     where $(a, e_a) \sim (b, e_b) \iff a = a_0 = b_0 = b \land e_a = e_b$ in $E(\ba \vee \bb)$.
     So the total spaces are equal and also the injection and projection map agree, which concludes the proof.
     % TODO: refine 
@@ -78,36 +82,15 @@
     \[ (x, t) \mapsto (x, 1 - t)\]
     and let $c: B \vee B \to B$ be the identity on the first summand and $r$ on the second summand.
 \end{myparagraph}
+
 % lemma reflection
 \begin{mylemma}{suspension::reflection}
-    The induced microbundle $\phi^*(\bb \vee r^*\bb)$ is trivial.
+    The induced microbundle $\ind{\phi}(\bb \vee \ind{r}\bb)$ is trivial.
 \end{mylemma}
 \begin{myproof}
     The composition $f \circ \phi$ is null-homotopic via $H: B \times \I \to B$ with
     \[ H([x, t], s) = f(\phi(x, t * s)) \]
-    and therefore $\phi^*f^*\bb = (f \circ \phi)^*\bb = const_{b_0}^*\bb = \be$ (see \intref{homotopy::theorem}).
-    With distributivity, we conclude $\phi^*(\bb \vee c^*\bb) = \phi^*f^*\bb$ and hence that $\phi^*(\bb \vee c^*\bb)$ is trivial.
-\end{myproof}
-
-% definition whitney
-\begin{mydefinition}{suspension::whitney}
-    The \defterm{whitney sum} of two rooted microbundles $\bb$ and $\bb'$ over $B$
-    is the initial whitney sum $\bb \oplus \bb'$ together with the rooting
-    \[ R \oplus R': (\bb \oplus \bb')\restr{b_0} \double \be[n_1]_{b_0} \oplus \be[n_2]_{b_0} = \be[n_1 + n_1]_{b_0}. \]
-\end{mydefinition}
-
-% lemma compatability wedge ~ whitney
-\begin{mylemma}{suspension::compatability}   
-    The following applies for rooted microbundles $\ba, \ba'$ over $A$ and $\bb, \bb'$ over $B$: 
-    \[ (\ba \vee \bb) \oplus (\ba' \vee \bb') \cong (\ba \oplus \ba') \vee (\bb \oplus \bb') \]
-\end{mylemma}
-\begin{myproof}
-    Consider the equation
-    \[ E((\ba \vee \bb) \oplus (\ba' \vee \bb')) = \set{(e, e') \in E(\ba \vee \bb) \times E(\ba' \vee \bb')}{j(e) = j'(e')} \]
-    \[ = \set{(e, e') \in (E(\ba) \sqcup E(\bb)) / \sim \times (E(\ba') \sqcup E(\bb')) / \sim'}{j(e) = j'(e')} \]
-    \[ = (\set{(e, e') \in E(\ba) \times E(\ba')}{j_\ba(e) = j_{\ba'}(e')} \sqcup \set{(e, e') \in E(\bb) \times E(\bb')}{j_\bb(e) = j_{\bb'}(e')}) / \approx \]
-    \[ = (E(\ba \oplus \ba') \sqcup E(\bb \oplus \bb')) / \approx = E((\ba \oplus \ba') \vee (\bb \oplus \bb'))\]
-    where $(e_a, e_a') \approx (e_b, e_b') \iff e_a \sim e_b \land e_a' \sim' e_b'$.
-    So the total spaces are equal and also the injection and projection map agree, which concludes the proof.
-    % TODO: refine
+    and therefore $\ind{\phi}\ind{f}\bb = \ind{(f \circ \phi)}\bb = \ind{const_{b_0}}\bb = \be$ (see \intref{homotopy::theorem}).
+    With distributivity, we conclude $\ind{\phi}(\bb \vee \ind{c}\bb) = \ind{\phi}\ind{f}\bb$
+    and hence that $\ind{\phi}(\bb \vee \ind{c}\bb)$ is trivial.
 \end{myproof}

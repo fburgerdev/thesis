@@ -6,7 +6,7 @@
     This is certainly one of the strongest conceptual differences between microbundles and classical vector bundles.
 \end{myparagraph}
 
-% proposition total
+% proposition
 \begin{myproposition}{microbundle::total}
     Given a microbundle $\bundledef{\bb}{B}{E}{i}{j}$ over $B$,
     restricting the total space $E$ to an arbitrary neighborhood $E' \sub E$ of $i(B)$ leaves the microbundle unchanged.
@@ -15,7 +15,7 @@
     is isomorphic to $\bb$.
 \end{myproposition}
 
-% proof total
+% proof
 \begin{myproof}
     We prove this proposition in two steps.
     \begin{enumerate}
@@ -33,7 +33,7 @@
 
         By utilising the fact that $\ball[\eps] \cong \R^n$, we have a local trivialization $(U', V', \phi')$ with
         \[ \phi': V' \xto{\phi} U' \times \ball[\eps] \xto{id \times \mu_\eps} U' \times \R^n \]
-        and $V' := \phi^{-1}(U' \times \ball[\eps])$.
+        and $V' := \inv{\phi}(U' \times \ball[\eps])$.
 
         Note that homeomorphism commutes with injection
         \[ \phi'(i(b)) =  (id \times \mu_\eps)(\phi(i(b))) = (id \times \mu_\eps)(b, 0) = (b, 0) = (id \times 0)(b)\]
@@ -43,7 +43,9 @@
         % isomorphy
         \item $\bb'$ is isomorphic to $\bb$:
 
-        Since $E' \sub E$, we can simply take the identity $E' \to E' \sub E$ as our homeomorphism between neighborhoods of $i(B)$.
-        Furthermore, the injection and projection maps for $\bb$ and $\bb'$ are the same, so they clearly commute with the identity.
+        Since $E' \sub E$, we can simply take the identity $E' \to E' \sub E$
+        as our homeomorphism between neighborhoods of $i(B)$.
+        Furthermore, the injection and projection maps for $\bb$ and $\bb'$ are the same,
+        so they clearly commute with the identity.
     \end{enumerate}
 \end{myproof}

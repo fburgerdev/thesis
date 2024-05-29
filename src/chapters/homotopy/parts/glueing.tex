@@ -1,26 +1,29 @@
-% statement
+% lemma
 \begin{mylemma}{homotopy::glueing}
-    Let $\bb$ be a microbundle over $B$ and $\{B_\alpha\}$ a locally finite collection of closed sets covering $B$.
-    Additionally, we are given a collection of bundle germs $\bgerm{F_\alpha}{\bb\restr{B_\alpha}}{\bb'}$
+    % conditions
+    Let $\bb$ be a microbundle over $B$ and $\coll{B_\alpha}$ a locally finite collection of closed sets covering $B$.
+    Additionally, we are given a collection of bundle germs $\germdef{F_\alpha}{\bb\restr{B_\alpha}}{\bb'}$
     such that $F_\alpha = F_\beta$ on $\bb\restr{B_\alpha \cap B_\beta}$.
-    Then there exists a bundle germ $\bgerm{F}{\bb}{\bb'}$ extending $F_\alpha$,
+    % conclusion
+    Then there exists a bundle germ $\germdef{F}{\bb}{\bb'}$ extending $F_\alpha$,
     that is $F$ and $F_\alpha$ agree on a sufficiently small neighborhood of $i(B_\alpha)$.
 \end{mylemma}
+
 % proof
 \begin{myproof}
     Choose representative maps $f_\alpha: U_\alpha \to E(\bb')$ for $F_\alpha$ such that the $U_\alpha$ are open.
     For every $\alpha$ and $\beta$, choose an open neighborhood $U_{\alpha\beta}$ of $i(B_\alpha \cap B_\beta)$ on which the representative maps $f_\alpha$ and $f_\beta$ agree.
     Now consider
-    \[ U := \{ e \in E \mid j(e) \in B_\alpha \cap B_\beta \implies e \in U_{\alpha\beta} \}\]
+    \[ U := \set{ e \in E}{j(e) \in B_\alpha \cap B_\beta \implies e \in U_{\alpha\beta}} \]
     which satisfies the following:
     \begin{enumerate}
         % open
         \item $U$ is open:
 
         We can express $U$ like this:
-        \[ E - \bigcup_{\alpha\beta} \{ j^{-1}(B_\alpha \cap B_\beta) \cap U_{\alpha\beta}^c \} \]
+        \[ E - \bigcup_{\alpha\beta} \{ \inv{j}(B_\alpha \cap B_\beta) \cap \cmpl{U_{\alpha\beta}} \} \]
         
-        Since $j^{-1}(B_\alpha \cap B_\beta)$ and $U_{\alpha\beta}^c$ are closed sets, $U$ must be open.
+        Since $\inv{j}(B_\alpha \cap B_\beta)$ and $\cmpl{U_{\alpha\beta}}$ are closed sets, $U$ must be open.
         That is because an open set remains open after removing arbitrarily many closed sets.
         % subset
         \item $i(B) \sub U$:
@@ -33,6 +36,7 @@
     \[ f(u \in U_{\alpha\beta}) := f_\alpha(u) = f_\beta(u) \]
     which is continuous according to the \extref{glueing lemma}.
     We see that $f$ agrees with $f_\alpha$ on $U_{\alpha\alpha}$,
-    hence $f$ is a representative for a bundle germ $\germdef{F}{\bb}{\bb'}$ extending $\{F_\alpha\}$.
+    hence $f$ is a representative for a bundle germ $\germdef{F}{\bb}{\bb'}$ extending $\coll{F_\alpha}$.
+    
     Therefore, $f$ is a representative map for our required $F$.
 \end{myproof}

@@ -6,7 +6,7 @@
 % williamson
 \begin{myproposition}[Williamson]{homotopy::williamson}
     Let $\bb$ and $\bb'$ be two microbundles over $B$.
-    A bundle-germ $\bgerm{F}{\bb}{\bb'}$ covering the identity map is an isomorphism-germ.
+    A bundle-germ $\germdef{F}{\bb}{\bb'}$ covering the identity map is an isomorphism-germ.
 \end{myproposition}
 
 % foreword lemma
@@ -21,9 +21,9 @@
     then $\clball[1] \sub \phi(\clball[2])$.
 \end{mylemma}
 
-% proof of lemma
+% proof lemma
 \begin{myproof}[of the lemma]
-    % TODO: Check proof
+    % TODO: check proof
     Consider $\phi(2S^n)$ where $2S^n$ denotes the $n$-sphere of radius $2$.
     The condition for $\phi$ yields $1 < \abs{\phi(s)}, \forall s \in 2S^n$.
     Since $\clball[2]$ has trivial homology groups which are preserved under homeomorphisms,
@@ -31,16 +31,9 @@
 
     From this we can conclude that $\clball[1]$ must be contained in $\phi(\clball[2])$,
     because otherwise ``holes'' would form which would result in non-trivial homology groups of $\phi(\clball[2])$.
-    % Consider the subspace $\R^n - 2S^n$ where $2S^n$ denotes the $n$-sphere of radius $2$.
-    % This subspace consists of the two path-components $\ball[2]$ and $\R^n - \clball[2]$.
-    % Since homeomorphisms preserve path-components, we know that $\phi(\R^n - 2S^n)$ consists of the two path-components $\phi(\ball[2])$ and $\phi(\R^n - \clball[2])$.
-    % Now, applying the requirement yields $\abs{\phi(0)} < 1$ and $1 < \abs{\phi(s)}$ for every $s \in 2S^n$.
-    % Hence, there exists a path between $\phi(0)$ and any $x \in \clball[1]$ in $\phi(\R^n - 2S^n)$, e.g. a straight line.
-    % Therefore, every $x \in \clball[1]$ is contained in the same path-component of $\phi(\R^n - 2S^n)$.
-    % The statement follows from $\phi(0) \in \phi(\clball[2])$.
 \end{myproof}
 
-% proof of williamson
+% proof williamson
 \begin{myproof}[of the proposition]
     Let $f$ be a representative for $F$.
     First we assume a special and then generalize the result to show the proposition.
@@ -63,7 +56,7 @@
         for every $b \in V$ and $x \in \clball[\eps][x_0]$.
         
         To show that, consider $\phi(b, x) := g_b(x) - g_{b_0}(x)$.
-        The open set $\phi^{-1}(\ball[\delta])$ is a neighborhood of $\{b_0\} \times \R^n$ since $\phi(b_0, x) = 0$.
+        The open set $\inv{\phi}(\ball[\delta])$ is a neighborhood of $\{b_0\} \times \R^n$ since $\phi(b_0, x) = 0$.
         Hence, there exist open subsets $V_x \sub B$ and $W_x \sub \R^n$ such that
         \[ \bigcup_{x \in \clball[\eps][x_0]} V_x \times W_x \sub \inv{\phi}(\clball[\delta]) \]
         and $x \in W_x$.
@@ -77,11 +70,11 @@
         \[ \clball[2\delta][x_1] \isomto g_b \circ \inv{g_{b_0}}(\clball[2\delta][x_1]) \]
         for an arbitrary $b \in V$.
         Since
-        \[ \clball[2\delta][x_1] \sub g_{b_0}(\clball[\eps][x_0]) \implies g_{b_0}^{-1}(\clball[2\delta][x_1]) \sub \clball[\eps][x_0] \]
+        \[ \clball[2\delta][x_1] \sub g_{b_0}(\clball[\eps][x_0]) \implies \inv{g_{b_0}}(\clball[2\delta][x_1]) \sub \clball[\eps][x_0] \]
         we conclude from the above that
-        \[ \abs{(g_b \circ g_{b_0}^{-1})(x) - x} < \delta, \forall x \in \clball[2\delta][x_1] \]
-        It follows that, by translation and scaling, $g_b \circ g_{b_0}^{-1}\restr{\clball[2\delta][x_1]}$ satisfies the conditions of \intref{homotopy::ball}.
-        Therefore, $\clball[\delta][x_1] \sub (g_b \circ g_{b_0}^{-1})(\clball[2\delta][x_0])$ and so $\clball[\delta][x_1] \sub g_b(\clball[\eps][x_0])$.
+        \[ \abs{(g_b \circ \inv{g_{b_0}})(x) - x} < \delta, \forall x \in \clball[2\delta][x_1] \]
+        It follows that, by translation and scaling, $g_b \circ \inv{g_{b_0}}\restr{\clball[2\delta][x_1]}$ satisfies the conditions of \intref{homotopy::ball}.
+        Therefore, $\clball[\delta][x_1] \sub (g_b \circ \inv{g_{b_0}})(\clball[2\delta][x_0])$ and so $\clball[\delta][x_1] \sub g_b(\clball[\eps][x_0])$.
 
         % conclusion
         From
@@ -114,14 +107,14 @@
 
 % corollary
 \begin{mycorollary}{homotopy::corollary}
-    If a map $g: B \to B'$ is covered by a bundle-germ $F: \bb \double \bb'$, then $\bb$ is isomorphic to the induced microbundle $g^*\bb'$.
+    If a map $g: B \to B'$ is covered by a bundle-germ $\germdef{F}{\bb}{\bb'}$, then $\bb$ is isomorphic to the induced microbundle $\ind{g}\bb'$.
 \end{mycorollary}
 % proof
 \begin{myproof}
     Let $f: U_f \to E'$ be a representative map for $F$.
-    We define $F': \bb \double g^*\bb'$ by a representative
-    \[ f': U_f \to E(g^*\bb') \twith f'(e) := (j(e), f(e)). \]
-    Every $f'(e)$ actually lies in $E(g^*\bb')$ because
+    We define $\germdef{F'}{\bb}{\ind{g}\bb'}$ by a representative
+    \[ f': U_f \to E(\ind{g}\bb') \twith f'(e) := (j(e), f(e)). \]
+    Every $f'(e)$ actually lies in $E(\ind{g}\bb')$ because
     \[ g(j(e)) = j'(f(e)) \]
     as we can see from the commutative diagram for bundle-germs.
     The germ $F'$ is an isomorphism-germ because $F$ is an isomorphism-germ.
