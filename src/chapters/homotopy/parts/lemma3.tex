@@ -15,7 +15,7 @@
     \begin{myproof}
         % partition of unity
         First, we assume a locally finite covering $\{V_\alpha\}$ of open sets where $\bb\restr{\cyl{V_\alpha}}$ is trivial.
-        The existence of such a covering is justified by the previous lemma and
+        The existence of such a covering is justified by the \intref{homotopy::lemma2} and
         the fact that any open cover of $B$ has a locally finite subcover due to paracompactness.
 
         This open cover has a partition of unity ($B$ is paracompact hausdorff) 
@@ -50,9 +50,9 @@
 
             Applying the well-ordering theorem, which is equivalent to the axiom of choice, we can assume an ordering of $\coll{V_\alpha}$.
 
-            Let $\coll{B_\beta}$ be a locally finite covering of $B$ with closed sets where $B_\beta$ intersects only finitely many $V_{\alpha_1} < \cdots < V_{\alpha_k}$.
-            We can construct a collection like this as follows:
-            % TODO: existence of {B}
+            Let $\coll{B_\beta}$ be a locally finite closed cover of $B$
+            such that $B_\beta$ intersects only finitely many $V_{\alpha_1} < \cdots < V_{\alpha_k}$
+            by applying the previous lemma.
 
             Now the composition $R_{\alpha_1} \circ \ldots \circ R_{\alpha_k}$ restricts to a bundle germ $\germdef{R(\beta)}{\cyl{\bb\restr{B_\beta}}}{\cylup{\bb\restr{B_\beta}}}$ covering the retraction $(b, t) \mapsto (b, 1)$.
             That is because for every $b \in B_\beta$, there is some $1 \le i \le k$ with $\lambda_{\alpha_i}(b) = 1$ and hence $r_{\alpha_i}(b, t) = (b, 1)$.
