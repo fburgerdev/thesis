@@ -100,7 +100,7 @@
         Piecing this together with the identity bundle germ $\bb\restr{\A'}$, we obtain out required bundle germ $R_\alpha$.
         
         % glue together
-        \item Lastly, we construct a bundle germ $R$ using the $R_\alpha$
+        \item Lastly, we construct a bundle germ $R$ using the $R_\alpha$.
 
         Applying the well-ordering theorem, which is equivalent to the axiom of choice, we can assume an ordering of $\{ V_\alpha \}$.
 
@@ -122,13 +122,22 @@
 
 % proof theorem
 \begin{myproof}[of the Homotopy Theorem]
-Let $H: A \times \I \to B$ be a homotopy between $f$ and $g$.
-The previous lemma states that there exists a bundle germ
-\[ \germdef{R}{H^*\bb}{H^*\bb\restr{B \times \{1\}}} \]
-covering the standard retraction $B \times \I \to B \times \{1\}$.
-By considering $E(f^*\bb) = E(H^*\bb\restr{A \times \{0\}}) \sub E(H^*\bb)$ and $E(g^*\bb) = E(H^*\bb\restr{B \times \{1\}})$,
-we conclude that $R$ extends an isomorphism germ $\germ{f^*\bb}{g^*\bb}$.
-It follows that $f^*\bb \cong g^*\bb$.
+    Let $H: \cyl{A} \to B$ be a homotopy between $f$ and $g$.
+
+    The previous lemma states that there exists a bundle germ
+    \[ \germdef{R}{H^*\bb}{H^*\bb\restr{\cylup{A}}} \]
+    covering the standard retraction $(A, t) \mapsto (a, 1)$.
+
+    By restricting $R$ to $H^*\bb\restr{\cyldown{A}}$ we obtain a bundle germ
+    \[ \germ{H^*\bb\restr{\cyldown{A}}}{H^*\bb\restr{\cylup{A}}} \]
+    covering $\theta: \cyldown{A} \to \cylup{A}$ with $(a, 0) \mapsto (a, 1)$.
+    Applying \intref{homotopy::corollary} yields $H^*\bb\restr{\cyldown{A}} \cong \theta^*(H^*\bb\restr{\cylup{A}})$.
+
+    Considering $\cyldown{A} = A$, we can identify $H^*\bb\restr{\cyldown{B}}$ with $f^*\bb$
+    \[ H^*\bb\restr{A \times \{0\}} = \iota^*(H^*\bb) \cong (H \circ \iota)^*\bb = f^*\bb \]
+    and symmetrically $\theta^*(H^*\bb\restr{\cylup{B}})$ with $g^*\bb$.
+
+    Together with $H^*\bb\restr{\cyldown{A}} \cong \theta^*(H^*\bb\restr{\cylup{A}})$ it follows that $f^*\bb \cong g^*\bb$.
 \end{myproof}
 
 \end{scope}

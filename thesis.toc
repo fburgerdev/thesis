@@ -2,5 +2,5 @@
 \contentsline {chapter}{\numberline {2}Induced Microbundles}{6}{chapter.2}%
 \contentsline {chapter}{\numberline {3}The Whitney Sum}{12}{chapter.3}%
 \contentsline {chapter}{\numberline {4}The Homotopy Theorem}{15}{chapter.4}%
-\contentsline {chapter}{\numberline {5}Microbundles over a Suspension}{23}{chapter.5}%
-\contentsline {chapter}{\numberline {6}Normal Microbundles}{32}{chapter.6}%
+\contentsline {chapter}{\numberline {5}Microbundles over a Suspension}{24}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Normal Microbundles}{33}{chapter.6}%
