@@ -1,6 +1,6 @@
 % theorem
 \begin{mytheorem}{suspension::theorem}
-    If $\ba$ and $\bb$ are rooted microbundles over a completly regular space $B$, then
+    If $\ba$ and $\bb$ are rooted microbundles over a paracompact hausdorff space $B$, then
     \[ \whitney{\ind{\phi}(\ba \vee \bb)}{\be_B} = \whitney{\ba}{\bb}. \]
 \end{mytheorem}
 
@@ -9,11 +9,11 @@
     The previous lemma yields $\whitney{\bb}{\be} \cong \whitney{\be}{\bb}$.
     Hence
     \[ \ind{\phi}((\whitney{\ba}{\be}) \vee (\whitney{\bb}{\be})) \cong \ind{\phi}((\whitney{\ba}{\be}) \vee (\whitney{\be}{\bb})). \]
-    Additionally we have
+    Additionally, we have
     \[ \whitney{\ind{\phi}((\ba \vee \bb))}{(\be \vee \be)} \cong \whitney{\ind{\phi}(\ba \vee \bb)}{\be} \]
-    for the left side of the isomorphy and
+    for the left side and
     \[ \ind{\phi}(\whitney{(\ba \vee \be)}{(\be \vee \bb)}) \cong \whitney{\ba}{\bb}\]
-    for the right side of the isomorphy which concludes the proof.
+    for the right side. That completes the proof.
 \end{myproof}
 
 % corollary
@@ -23,7 +23,7 @@
 
 % proof corollary
 \begin{myproof}
-    This follows directly from the Theorem and the fact that $\ind{\phi}(\whitney{\bb}{\ind{r}\bb})$ is trivial.
+    This follows directly from the previous theorem and the fact that $\ind{\phi}(\whitney{\bb}{\ind{r}\bb})$ is trivial.
 \end{myproof}
 
 % TODO: bouqet of circles

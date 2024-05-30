@@ -3,26 +3,26 @@
     Let $\bb$ and $\bc$ be two microbundles over $B$ and $E(\bb)$.
     The \defterm{composition microbundle} $\bb \circ \bc$ is a microbundle
     \[ \bundle{B}{E(\bc)}{i}{j} \]
-    where $i := i_\bc \circ i_\bb$ and $j := j_\bb \circ j_\bc$.
+    where $i := i_\bc \circ i_b$ and $j := j_b \circ j_\bc$.
 \end{mydefinition}
 
 % proof
 \begin{myproof}[that $\bb \circ \bc$ is a microbundle]
     Both injection and projection are continuous since the are composed by continuous maps.
-    Additionally, $j \circ i = j_\bb \circ (j_\bc \circ i_\bc) \circ i_\bb = j_\bb \circ i_\bb = id_B$.
+    Additionally, $j \circ i = j_b \circ (j_\bc \circ i_\bc) \circ i_b = j_b \circ i_b = id_B$.
 
     It remains to be shown that $\bb \circ \bc$ is locally trivial:
 
     For an arbitrary $b \in B$, choose local trivializations
     \begin{center}
-        $(U_\bb, V_\bb, \phi_\bb)$ of $b$ and $(U_\bc, V_\bc, \phi_\bc)$ of $j_\bb(b)$.
+        $(U_\bb, V_\bb, \phi_b)$ of $b$ and $(U_\bc, V_\bc, \phi_\bc)$ of $j_b(b)$.
     \end{center}
-    Since $V_\bb$ and $U_\bc$ are both neighborhoods of $i_\bb(b)$ in $E(\bb)$, the image
-    \[ \phi_\bb(V_\bb \cap U_\bc) \]
+    Since $V_\bb$ and $U_\bc$ are both neighborhoods of $i_b(b)$ in $E(\bb)$, the image
+    \[ \phi_b(V_\bb \cap U_\bc) \]
     contains an open set $U \times \ball[\eps]$ where $U$ is open and $\eps$ is sufficiently small.
 
-    With $V := \inv{\phi_\bc}(\inv{\phi_\bb}(U \times \ball[\eps])) \sub E(\bc)$ and
-    \[ U \times \R^n \cong U \times \ball[\eps] \xto{\inv{\phi_\bc} \circ \inv{\phi_\bb}} V \]
+    With $V := \inv{\phi_\bc}(\inv{\phi_b}(U \times \ball[\eps])) \sub E(\bc)$ and
+    \[ U \times \R^n \cong U \times \ball[\eps] \xto{\inv{\phi_\bc} \circ \inv{\phi_b}} V \]
     which is a homeomorphism because its composed by homeomorphisms,
     we constructed a local trivialization of $b$ in $\bc \circ \bb$.
 \end{myproof}

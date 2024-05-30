@@ -6,74 +6,93 @@
 
     Let $\phi: B \to B \vee B$ denote the map that sends
     $X \times [0, \half]$ to the first $B$ via
-    \[ \phi(x, t) = [(x, 2t)] \]
+    \[ \phi([x, t]) = [x, 2t] \]
     and $X \times [\half, 1]$ to the second $B$ via
-    \[ \phi(x, t) = [(x, 2t - 1)]. \]
+    \[ \phi([x, t]) = [x, 2t - 1]. \]
 
-    Let $c_1: B \vee B \to B$ denote the map that is the identity on the first summand
-    and the constant map to $b_0$ on the second summand (symmetrically define $c_2$).
+    Additionally, let $c_1: B \vee B \to B$ denote the map
+    that is the identity on the first summand
+    and the constant map $const_{b_0}$ on the second summand (symmetrically define $c_2$).
 \end{myparagraph}
 
 % lemma triviality
 \begin{mylemma}{suspension::triviality}
-    \[ \ind{\phi}(\whitney{\bb}{\be_B}) \cong \bb \cong \ind{\phi}(\whitney{\be_B}{\bb}) \]
+    The following non-rooted isomorphy holds:
+    \[ \ind{\phi}(\bb \vee \be_B) \cong \bb \cong \ind{\phi}(\be_B \vee \bb) \]
 \end{mylemma}
 \begin{myproof}
+    We prove the lemma in two steps.
     \begin{itemize}
-        \item First, note that $\ind{c_1}\bb \cong \bb \vee \be$:
+        \item $\ind{c_1}\bb \cong \bb \vee \be$:
+        
+        First, consider the total space
         \[ E(\ind{c_1}\bb) = \set{(b, e) \in (B \vee B) \times E(\bb)}{c_1(b) = j(e)} \]
         \[ = (\set{(b, e) \in B \times E(\bb)}{b = j(e)} \sqcup B \times E(\bb\restr{b_0})) / \sim \]
         \[ = (\set{(j(e), e)}{e \in E(\bb)} \sqcup B \times E(\bb\restr{b_0})) / \sim \]
         where $(b, e) \sim (b', e') \iff b = b_0 = b' \land e = e'$.
-        Additionally, we can omit first component on the left side resulting in
-        \[ (E(\bb) \sqcup (B \times E(\bb\restr{b_0}))) / \sim \]
+        We can omit the first component on the left side resulting in
+        \[ E(\ind{c_1}\bb) = (E(\bb) \sqcup (B \times E(\bb\restr{b_0}))) / \sim \]
         where $e \sim (b, e') \iff b = b_0 \land e = e'$.
         
         On the other side, consider
-        \[ E(\bb \vee \be_B) = (E(\bb) \sqcup (B \times \R^n)) / e \sim f(e) \]
-        with $f$ being some representative $E(\bb\restr{b_0}) \bus V \to b_0 \times \R^n$ for $\inv{R_e} \circ R_b$.
+        \[ E(\bb \vee \be_B) = (E(\bb) \sqcup (B \times \R^n)) / e \sim' f(e) \]
+        with $f$ being some representative
+        $U_f \to b_0 \times \R^n$ for $\inv{id_{\cyl{b_0}}} \circ R_b$.
         
-        Now, we have the mapping
-        \[ g: E(\ind{c_1}\bb) \bus (E(\bb) \sqcup (B \times V)) / \sim \isomto (E(\bb) \sqcup (B \times f(V))) / \sim \sub E(\bb \vee \be) \]
-        \[ g(e) = e \tand g(b, e) = (b, \snd{f}(e)). \]
-        This map is well-defined because $\forall e = (b_0, e): g(e) = e = f(e) = (b_0, \snd{f}(e)) = g(b_0, e)$.
-        Bijectivity and continuity follow from bijectivity and continuity of its summands.
-        Since $(E(\bb) \sqcup (B \times V)) / \sim$ and $(E(\bb) \sqcup (B \times f(V))) / \sim$ are open ($V$ and $f(V)$ are open)
-        and injection and projection maps commute,
-        it follows that $g$ represents an isomorphism germ between $\ind{c_1}\bb$ and $\bb \vee \be$.
-        % TODO: refine
+        Now, we have a map $\psi$ from the open subset of $E(\ind{c_1}\bb)$
+        \[ (E(\bb) \sqcup (B \times U_f)) / \sim \]
+        to the open subset of $E(\bb \vee \be_B)$
+        \[ (E(\bb) \sqcup (B \times f(U_f))) / \sim' \]
+        with $\psi([e]) = [e]$ and $\psi([b, e]) = [(b, \snd{f}(e))]$.
+        The map is well-defined because for every $e \sim (b_0, e)$
+        \[ \psi([e]) = [e] = [f(e)] = [b_0, \snd{f}(e)] = \psi([b_0, e]). \]
+        Homeomorphy of $\psi$ follows by the homeomorphy of its summands.
+        
+        The map commutes with the injection map in the first summand
+        \[ \psi(i_{c_1}([b_1])) = \psi(b_1, i(c_1([b_1]))) = \psi(b_1, i(b_1)) \]
+        \[ = [b_1, \snd{f}(i(b_1))] = [f(i(b_1))] = [i(b_1)] \]
+        and the second summand
+        \[ \psi(i_{c_1}([b_2])) = \psi(b_2, i(c_1([b_2]))) = \psi(b_2, i(b_0)) \]
+        \[ = [b_2, \snd{f}(b_0)] = [b_2, 0] = [i_{\be_B}(b_2)] \]
+        as well as with the projection map in the first summand
+        \[ j_{c_1}([e]) = [j(e)] = j(\psi([e])) \]
+        and the second summand
+        \[ j_{c_1}([b, e]) = [b] = [\pi_1(b, \snd{\psi}([b, e]))] = [\pi_1(\psi(b, e))]. \]
+        Therefore, $\psi$ represents an isomorphism-germ between $\ind{c_1}\bb$ and $\bb \vee \be$.
     
-        \item Now, from $c_1 \circ \phi = id$ we can conclude that
-        \[ \ind{\phi}(\whitney{\bb}{\be_B}) = \ind{\phi}\ind{c_1}\bb = \ind{(c_1 \circ \phi)}\bb = \bb. \]
-        The equality $\bb = \ind{\phi}(\whitney{\be_B}{\bb})$ follows by symmetry, which concludes the proof.
+        \item From $c_1 \circ \phi = id_B$ we can conclude that
+        \[ \ind{\phi}(\bb \vee \be_B) \cong \ind{\phi}\ind{c_1}\bb \cong \ind{(c_1 \circ \phi)}\bb \cong \bb. \]
+        The isomorphy $\bb \cong \ind{\phi}(\be_B \vee \bb)$ follows by symmetry,
+        which concludes the proof.
     \end{itemize}
 \end{myproof}
-
-% definition induced
-\begin{mydefinition}{suspension::induced}
-    Let $\bb$ be a rooted microbundle over $B$ and $f: A \to B$ a base point preserving map.
-    The \defterm{induced microbundle} of $f$ over $\bb$ is the initial induced microbundle $\ind{f}\bb$ together with the rooting
-    \[ \germdef{\ind{f}R}{E(\ind{f}\bb\restr{a_0}) = a_0 \times E(\bb\restr{b_0})}{e^n_{a_0}} \]
-    that coincides with $R$ if we consider $a_0 \times E(\bb\restr{b_0}) = E(\bb\restr{b_0})$ and $e^n_{a_0} = e^n_{b_0}$.
-\end{mydefinition}
 
 % lemma distributivity
 \begin{mylemma}{suspension::distributivity}
     Let $\ba$ and $\bb$ be rooted microbundles over $A$ and $B$.
-    For maps $f: A' \to A$ and $g: B' \to B$ the following applies:
+    For maps $f: A' \to A$ and $g: B' \to B$ the following non-rooted isomorphy holds:
     \[ \ind{(f \vee g)}(\ba \vee \bb) \cong \ind{f}\ba \vee \ind{g}\bb \]
 \end{mylemma}
 
 % proof distributivity
 \begin{myproof}
     Consider the equation
-    \[ E(\ind{(f \vee g)}(\ba \vee \bb)) = \set{(x, e) \in (A' \vee B') \times E(\ba \vee \bb)}{(f \vee g)(x) = j(e)} \]
+    \[ E(\ind{(f \vee g)}(\ba \vee \bb)) \]
+    \[ = \set{(x, e) \in (A' \vee B') \times E(\ba \vee \bb)}{(f \vee g)(x) = j(e)} \]
     \[ = \set{(x, e) \in ((A' \times E(\ba)) \sqcup (B' \times E(\bb))) / \sim}{(f \vee g)(x) = j(e)} \]
-    \[ = (\set{(x, e) \in A' \times E(\ba)}{f(x) = j_\ba(e)} \sqcup \set{(x, e) \in B' \times E(\bb)}{g(x) = j_\bb(e)}) / \sim \]
-    \[ = (E(\ind{f}\ba) \sqcup E(\ind{g}\bb)) / \sim = E(\ind{f}\ba \vee \ind{g}\bb)\]
+    \[ = (\set{(x, e) \in A' \times E(\ba)}{f(x) = j_a(e)} \sqcup \set{(x, e) \in B' \times E(\bb)}{g(x) = j_b(e)}) / \sim \]
+    \[ = (E(\ind{f}\ba) \sqcup E(\ind{g}\bb)) / \sim \]
+    \[ = E(\ind{f}\ba \vee \ind{g}\bb) \]
     where $(a, e_a) \sim (b, e_b) \iff a = a_0 = b_0 = b \land e_a = e_b$ in $E(\ba \vee \bb)$.
-    So the total spaces are equal and also the injection and projection map agree, which concludes the proof.
-    % TODO: refine 
+
+    Additionally, the injection
+    \[ i_{f \vee g}(a) = i_f(a) = i_{\vee}(a) \]
+    and projection maps
+    \[ j_{f \vee g}(a, e) = a = j_f(a, e) = i_{\vee}(a, e) \]
+    are equal.
+    Here, $i_\vee$ and $j_\vee$ denote the
+    injection and projection maps for $\ind{f}\ba \vee \ind{g}\bb$.
+    It follows that the two microbundles are isomorphic.
 \end{myproof}
 
 % foreword reflection
@@ -88,9 +107,10 @@
     The induced microbundle $\ind{\phi}(\bb \vee \ind{r}\bb)$ is trivial.
 \end{mylemma}
 \begin{myproof}
-    The composition $f \circ \phi$ is null-homotopic via $H: B \times \I \to B$ with
-    \[ H([x, t], s) = f(\phi(x, t * s)) \]
-    and therefore $\ind{\phi}\ind{f}\bb = \ind{(f \circ \phi)}\bb = \ind{const_{b_0}}\bb = \be$ (see \intref{homotopy::theorem}).
-    With distributivity, we conclude $\ind{\phi}(\bb \vee \ind{c}\bb) = \ind{\phi}\ind{f}\bb$
-    and hence that $\ind{\phi}(\bb \vee \ind{c}\bb)$ is trivial.
+    The composition $f \circ \phi$ is null-homotopic via the homotopy $H: B \times \I \to B$ with
+    \[ H([x, t], s) = f(\phi(x, t * s)). \]
+    Therefore $\ind{\phi}\ind{f}\bb \cong \ind{(f \circ \phi)}\bb\cong \ind{const_{b_0}}\bb \cong \be_B$ (see \intref{homotopy::theorem}).
+    
+    Applying the previous lemma, it follows that $\ind{\phi}(\bb \vee \ind{c}\bb) = \ind{\phi}\ind{f}\bb$ and hence
+    \[ \ind{\phi}(\bb \vee \ind{c}\bb) \cong \be_B. \]
 \end{myproof}

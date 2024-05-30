@@ -1,15 +1,14 @@
 # TODO-List
-- Refactoring
-- Explanatory Texxt
-- Block bundles Ausblick
-- Introduction
-- Abstract
-- Referenzen
-
-# Refactoring Order
-- Homotopy
-- Suspension
-- Normal
-- Induced
-- Whitney
-- Introduction
+- refactoring
+    - suspension
+- add remaining explanations
+    - ball
+    - ...
+- whole read + refactor
+- whole read
+- explanatory text
+- block bundles
+- introduction
+- abstract
+- references
+- print

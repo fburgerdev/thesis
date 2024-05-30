@@ -7,17 +7,31 @@
 
 % lemma
 \begin{mylemma}{suspension::compatability}   
-    The following applies for rooted microbundles $\ba, \ba'$ over $A$ and $\bb, \bb'$ over $B$: 
-    \[ \whitney{(\ba \vee \bb)}{(\ba' \vee \bb')} \cong (\whitney{\ba}{\ba'}) \vee (\whitney{\bb}{\bb'}) \]
+    The following non-rooted isomorphy holds
+    for rooted microbundles $\ba$ and $\ba'$ over $A$
+    and $\bb$ and $\bb'$ over $B$: 
+    \[
+        \whitney{(\ba \vee \bb)}{(\ba' \vee \bb')}
+        \cong (\whitney{\ba}{\ba'}) \vee (\whitney{\bb}{\bb'})
+    \]
 \end{mylemma}
 \begin{myproof}
     Consider the equation
-    \[ E(\whitney{(\ba \vee \bb)}{(\ba' \vee \bb')}) = \set{(e, e') \in E(\ba \vee \bb) \times E(\ba' \vee \bb')}{j(e) = j'(e')} \]
-    \[ = \set{(e, e') \in (E(\ba) \sqcup E(\bb)) / \sim \times (E(\ba') \sqcup E(\bb')) / \sim'}{j(e) = j'(e')} \]
-    \[ = (\set{(e, e') \in E(\ba) \times E(\ba')}{j_\ba(e) = j_{\ba'}(e')} \sqcup \]
-    \[ \set{(e, e') \in E(\bb) \times E(\bb')}{j_\bb(e) = j_{\bb'}(e')}) / \approx \]
-    \[ = (E(\whitney{\ba}{\ba'}) \sqcup E(\whitney{\bb}{\bb'})) / \approx = E((\whitney{\ba}{\ba'}) \vee (\whitney{\bb}{\bb'}))\]
-    where $(e_a, e_a') \approx (e_b, e_b') \iff e_a \sim e_b \land e_a' \sim' e_b'$.
-    So the total spaces are equal and also the injection and projection map agree, which concludes the proof.
-    % TODO: refine
+    \[ E(\whitney{(\ba \vee \bb)}{(\ba' \vee \bb')}) \]
+    \[ = \set{(e, e') \in E(\ba \vee \bb) \times E(\ba' \vee \bb')}{j(e) = j'(e')} \]
+    \[ = \set{(e, e') \in ((E(\ba) \sqcup E(\bb)) / \sim) \times ((E(\ba') \sqcup E(\bb')) / \sim')}{j(e) = j'(e')} \]
+    \[ = (\set{(e, e') \in E(\ba) \times E(\ba')}{j_a(e) = j_{\ba'}(e')} \sqcup \]
+    \[ \set{(e, e') \in E(\bb) \times E(\bb')}{j_b(e) = j_{\bb'}(e')}) / \backsim \]
+    \[ = (E(\whitney{\ba}{\ba'}) \sqcup E(\whitney{\bb}{\bb'})) / \backsim \]
+    \[ = E((\whitney{\ba}{\ba'}) \vee (\whitney{\bb}{\bb'})) \]
+    where $(e_a, e_a') \backsim (e_b, e_b') \iff e_a \sim e_b \land e_a' \sim' e_b'$.
+    Here, the equivalence relations $\sim$ and $\sim'$ denote the ones
+    used in the construction of the corresponding wedge sums.
+
+    Additionally, the injection
+    \[ i_\oplus(a) = (i_a(a), i_a'(a)) = i_\vee(a) \text{ (symmetrical for $b$)}\]
+    and projection maps
+    \[ j_\oplus(e, e') = j(e) =  j_\vee(e) \]
+    are equal.
+    It follows that the two microbundles are isomorphic.
 \end{myproof}
