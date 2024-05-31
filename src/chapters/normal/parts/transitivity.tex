@@ -1,6 +1,7 @@
 % lemma
 \begin{mylemma}{normal::transitivity}
-    Let $M, N$ and $P$ be topological manifolds with $P \sub N \sub M$.
+    Let $M$ be topological manifold with $N \sub M$
+    being a submanifold of $M$ and $P \sub N$ being a submanifold of $N$.
     There exists a normal microbundle
     \[ \bundledef{\bn}{P}{U}{\iota}{r} \]
     of $P$ in $M$, if there exist normal microbundles
@@ -11,6 +12,7 @@
 
 % proof
 \begin{myproof}
-    Considering the composition $\bn_p \circ \bn_n\restr{U_N}$, we found a normal microbundle $\bn$ of $P$ in $M$
+    Considering the composition $\bn_p \circ \bn_n\restr{U_N}$,
+    we found a normal microbundle $\bn$ of $P$ in $M$
     since $\iota_N \circ \iota_P$ is just the inclusion $P \incl U_M$.
 \end{myproof}

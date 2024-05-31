@@ -3,26 +3,33 @@
     Let $\bb$ and $\bc$ be two microbundles over $B$ and $E(\bb)$.
     The \defterm{composition microbundle} $\bb \circ \bc$ is a microbundle
     \[ \bundle{B}{E(\bc)}{i}{j} \]
-    where $i := i_\bc \circ i_b$ and $j := j_b \circ j_\bc$.
+    where $i := i_c \circ i_b$ and $j := j_b \circ j_c$.
 \end{mydefinition}
 
 % proof
 \begin{myproof}[that $\bb \circ \bc$ is a microbundle]
-    Both injection and projection are continuous since the are composed by continuous maps.
-    Additionally, $j \circ i = j_b \circ (j_\bc \circ i_\bc) \circ i_b = j_b \circ i_b = id_B$.
+    Both injection and projection are continuous being composed by continuous maps.
+    Additionally, $j \circ i = j_b \circ (j_c \circ i_c) \circ i_b = j_b \circ i_b = id_B$.
 
-    It remains to be shown that $\bb \circ \bc$ is locally trivial:
+    It remains to be shown that $\bb \circ \bc$ is locally trivial.
 
     For an arbitrary $b \in B$, choose local trivializations
     \begin{center}
-        $(U_\bb, V_\bb, \phi_b)$ of $b$ and $(U_\bc, V_\bc, \phi_\bc)$ of $j_b(b)$.
+        $(U_b, V_b, \phi_b)$ of $b$ and $(U_c, V_c, \phi_c)$ of $j_b(b)$.
     \end{center}
-    Since $V_\bb$ and $U_\bc$ are both neighborhoods of $i_b(b)$ in $E(\bb)$, the image
-    \[ \phi_b(V_\bb \cap U_\bc) \]
+    Since $V_b$ and $U_c$ are both neighborhoods of $i_b(b)$ in $E(\bb)$, the image
+    \[ \phi_b(V_b \cap U_c) \]
     contains an open set $U \times \ball[\eps]$ where $U$ is open and $\eps$ is sufficiently small.
 
-    With $V := \inv{\phi_\bc}(\inv{\phi_b}(U \times \ball[\eps])) \sub E(\bc)$ and
-    \[ U \times \R^n \cong U \times \ball[\eps] \xto{\inv{\phi_\bc} \circ \inv{\phi_b}} V \]
-    which is a homeomorphism because its composed by homeomorphisms,
-    we constructed a local trivialization of $b$ in $\bc \circ \bb$.
+    With $V := \inv{\phi_c}(\inv{\phi_b}(U \times \ball[\eps]) \times \R^n) \sub E(\bc)$ and
+    \[ \phi: V \xto{\phi_b \circ \frst{\phi_c}} U \times \ball[\eps] \xto{id_U \times \inv{\mu_\eps}} U \times \R^n \]
+    we have a homeomorphism because its composed by homeomorphisms.
+    % TODO: fix trivialization
+
+    This homeomorphism commutes with injection
+    \[ \phi(i(b)) = \]
+    and projection maps
+    \[.\]
+    Hence, $(U, V, \phi)$ is a local trivialization of $b$ in $\bb \circ \bc$.
+    % TODO: show commutativity
 \end{myproof}

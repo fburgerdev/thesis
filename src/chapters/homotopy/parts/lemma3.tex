@@ -14,7 +14,8 @@
     % proof
     \begin{myproof}
         % partition of unity
-        First, we assume a locally finite covering $\{V_\alpha\}$ of open sets where $\bb\restr{\cyl{V_\alpha}}$ is trivial.
+        First, we assume a locally finite covering $\{V_\alpha\}$ of open sets
+        where $\bb\restr{\cyl{V_\alpha}}$ is trivial.
         The existence of such a covering is justified by the \intref{homotopy::lemma2} and
         the fact that any open cover of $B$ has a locally finite subcover due to paracompactness.
 
@@ -23,14 +24,17 @@
         with $\supp \lambda_\alpha \sub V_\alpha$ that is rescaled in way that
         \[ \max_\alpha(\lambda_\alpha(b)) = 1, \forall b \in B. \]
         This can be achieved by dividing $\lambda_\alpha$ with $\max_\alpha \lambda_\alpha$
-        which is well-defined because $\coll{V_\alpha}$ is locally finite and continuous because the $\max$ function is continuous.
-        Also, $\max_\alpha \lambda_\alpha > 0$ since the initial partition of unity adds up to $1$ in every point.
+        which is well-defined because $\coll{V_\alpha}$ is locally finite and continuous
+        because the $\max$ function is continuous.
+        Also, $\max_\alpha \lambda_\alpha > 0$ since the initial
+        partition of unity adds up to $1$ in every point.
 
         % construction
         Now we define a retraction $r_\alpha: \cyl{B} \to \cyl{B}$ with
         \[ r_\alpha(b, t) = (b, \max(t, \lambda_\alpha(b))). \]
 
-        In the following, we will construct bundle-germs $\germdef{R_\alpha}{\bb}{\bb}$ covering $r_\alpha$
+        In the following,
+        we will construct bundle-germs $\germdef{R_\alpha}{\bb}{\bb}$ covering $r_\alpha$
         and piece them together to obtain the desired bundle-germ.
         \begin{enumerate}
             % local bundle-germ
@@ -38,29 +42,39 @@
             We can divide $B \times \I$ into two subsets
             \[ A_\alpha := \cyl{\supp{\lambda_\alpha}} \tand \]
             \[ A'_\alpha := \set{(b, t)}{t \ge \lambda_\alpha(b)}. \]
-            We already know that $\bb\restr{A_\alpha}$ is trivial since $A_\alpha \sub \cyl{V_\alpha}$.
-            Like in the proof of \intref{homotopy::lemma1}, we can extend the identity bundle-germ on $\bb\restr{\A \cap \A'}$ to a bundle-germ
+            We already know that $\bb\restr{A_\alpha}$
+            is trivial since $A_\alpha \sub \cyl{V_\alpha}$.
+            Like in the proof of \intref{homotopy::lemma1},
+            we can extend the identity bundle-germ on $\bb\restr{\A \cap \A'}$ to a bundle-germ
             \[ \germ{\bb\restr{\A}}{\bb\restr{\A \cap \A'}} \]
-            via the representative
+            by the representative
             \[ \A \times \R^n \to (\A \cap \A') \times \R^n\]
             \[ (a, x) \mapsto (r_\alpha(a), x). \]
-            Piecing this together with the identity bundle germ $\bb\restr{\A'}$ ($\A$ and $\A'$ are both closed), we obtain a bundle germ $R_\alpha$ covering $r_\alpha$.
+            Piecing this together with the identity
+            bundle-germ $\bb\restr{\A'}$ ($\A$ and $\A'$ are both closed),
+            we obtain a bundle-germ $R_\alpha$ covering $r_\alpha$.
             
             % glue together
             \item
-            Lastly, we construct a bundle germ $R$ using the $R_\alpha$.
+            Lastly, we construct a bundle-germ $R$ using the $R_\alpha$.
 
-            Applying the well-ordering theorem, which is equivalent to the axiom of choice, we can assume an ordering of $\coll{V_\alpha}$.
+            Applying the well-ordering theorem,
+            which is equivalent to the axiom of choice, we can assume an ordering of $\coll{V_\alpha}$.
 
             Let $\coll{B_\beta}$ be a locally finite closed cover of $B$
             such that $B_\beta$ intersects only finitely many $V_{\alpha_1} < \cdots < V_{\alpha_k}$
             by applying the previous lemma.
 
-            Now the composition $R_{\alpha_1} \circ \ldots \circ R_{\alpha_k}$ restricts
-            to a bundle germ $\germdef{R(\beta)}{\bb\restr{\cyl{B_\beta}}}{\bb\restr{\cylup{B_\beta}}}$ covering the retraction $(b, t) \mapsto (b, 1)$.
-            That is because for every $b \in B_\beta$, there is some $1 \le i \le k$ with $\lambda_{\alpha_i}(b) = 1$ and hence $r_{\alpha_i}(b, t) = (b, 1)$.
+            Now the composition $R_{\alpha_1} \circ \ldots \circ R_{\alpha_k}$ restricts to a bundle-germ 
+            \[ \germdef{R(\beta)}{\bb\restr{\cyl{B_\beta}}}{\bb\restr{\cylup{B_\beta}}} \]
+            covering the retraction $(b, t) \mapsto (b, 1)$.
+            That is because for every $b \in B_\beta$,
+            there is some $1 \le i \le k$ with
+            $\lambda_{\alpha_i}(b) = 1$ and hence $r_{\alpha_i}(b, t) = (b, 1)$.
             
-            Pieced together using \intref{homotopy::lemma1}, we obtain $R: \bb\restr{\cyl{B}} \to \bb\restr{\cylup{B}}$ covering $(b, t) \mapsto (b, 1)$, which concludes the proof.
+            Pieced together using \intref{homotopy::lemma1},
+            we obtain $R: \bb\restr{\cyl{B}} \to \bb\restr{\cylup{B}}$
+            covering $(b, t) \mapsto (b, 1)$, which concludes the proof.
         \end{enumerate}    
     \end{myproof}
 \end{scope}

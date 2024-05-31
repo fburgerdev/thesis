@@ -1,6 +1,3 @@
-# TODO-List
-- refactoring
-    - suspension
 - add remaining explanations
     - ball
     - ...
