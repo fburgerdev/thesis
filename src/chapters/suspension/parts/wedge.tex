@@ -17,7 +17,7 @@
     
     % rooting
     We equip $\ba \vee \bb$ with a rooting
-    \[ \germdef{R}{E((\ba \vee \bb)\restr{a_0})}{\be_{a_0}} \]
+    \[ \germdef{R}{E((\ba \vee \bb)\restr{a_0})}{\be{a_0}} \]
     represented by any representative for $R_a$ (or $R_b$).
 \end{mydefinition}
 
@@ -99,8 +99,9 @@
             \[ \phi_a'(\inv{f}(e)) = (a_0, (\snd{\phi_b} \circ f \circ \inv{\phi_a})(a_0, \snd{\phi_a}(e))) \]
             \[ = (a_0, \snd{\phi_b}(f(\inv{f}(e)))) = (a_0, \snd{\phi_b})(e) \]
             \[ = (b_0, \snd{\phi_b}(e)) = \phi_b(e). \]
-
-            % TODO: compatibility with injection and projection
+            
+            Compatibility with injection and projection maps follows is inherited
+            from the summands $\ba$ and $\bb$.
         \end{enumerate}
         % well-defined
         \item The wedge sum $\ba \vee \bb$ is independant of the choice of $f$ up to rooted-isomorphy:
@@ -114,7 +115,7 @@
         By subtracting $\inv{j_a}(a_0) - V$ from $E(\ba \vee \bb)$ and $E(\ba \vee \bb)'$
         the microbundles remain unchanged using \intref{microbundle::total}.
         
-        However now the resulting total spaces $E(\ba \vee \bb)$ and $E(\ba \vee \bb)'$ agree
+        So the resulting total spaces $E(\ba \vee \bb)$ and $E(\ba \vee \bb)'$ agree
         as well as the injection and projection maps that are defined in the same way.
         
         Using the modified total spaces,

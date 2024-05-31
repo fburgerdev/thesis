@@ -2,7 +2,7 @@
 \begin{mylemma}{suspension::paracompact}
     Let $\bb$ be a rooted microbundle over a paracompact hausdorff space $B$.
     Then there exists a closed neighborhood $W$ of $b_0$ and an isomorphism-germ
-    \[ \germ{\bb\restr{W}}{\be_W} \]
+    \[ \germ{\bb\restr{W}}{\be{W}} \]
     extending $R$ together with a map $\lambda: B \to [0, 1]$ with
     \[ \supp{\lambda} \sub W \tand \lambda(b_0) = 1. \]
 \end{mylemma}
@@ -18,7 +18,7 @@
     Consider the map
     \[ \psi: V \isomto \psi(V) \sub U \times \R^n \twith \]
     \[ \psi(e) = (j(e), r(\inv{\phi}(b_0, \snd{\phi}(e)))) \]
-    which is a representative for an isomorphism-germ $\germ{\bb\restr{U}}{\be_U}$ extending $R$.
+    which is a representative for an isomorphism-germ $\germ{\bb\restr{U}}{\be{U}}$ extending $R$.
     
     Consider the open covering of $B$ with $U$ and $B - \{b_0\}$.
     Since $B$ is paracompact, we can apply the concept
@@ -29,6 +29,6 @@
     Now we can choose $W := \supp{\lambda}$, which is closed by the definition of $\supp$.
     Restricting the constructed isomorphism-germ over $U$ to $W$
     yields an isomorphism-germ
-    \[ \germ{\bb\restr{W}}{\be_W}. \]
+    \[ \germ{\bb\restr{W}}{\be{W}}. \]
     Together with $\lambda$, this completes the proof.
 \end{myproof}

@@ -1,12 +1,12 @@
 % lemma
 \begin{mylemma}{suspension::commutativity}
-    The rooted microbundles $\whitney{\bb}{\be_B}$ and $\whitney{\be_B}{\bb}$ are rooted-isomorphic. 
+    The rooted microbundles $\whitney{\bb}{\be{B}}$ and $\whitney{\be{B}}{\bb}$ are rooted-isomorphic. 
 \end{mylemma}
 
 % proof
 \begin{myproof}
     We need to find an isomorphism germ
-    $\germ{\whitney{\bb}{\be_B}}{\whitney{\be_B}{\bb}}$ that extends
+    $\germ{\whitney{\bb}{\be{B}}}{\whitney{\be{B}}{\bb}}$ that extends
     \[ (\whitney{I}{R}) \circ \inv{(\whitney{R}{I})} = \whitney{R}{\inv{R}} \]
     where $I$ denotes the identity germ.
 
@@ -16,7 +16,7 @@
 
     Using the previous lemma, choose a sufficiently small closed neighborhood $U$ of $b_0$
     such that there exists an extension
-    $\germdef{Q}{(\whitney{\bb}{\be})\restr{U}}{(\whitney{\be}{\bb})\restr{U}}$ for the rooting.
+    $\germdef{Q}{(\whitney{\bb}{\be{B}})\restr{U}}{(\whitney{\be{B}}{\bb})\restr{U}}$ for the rooting.
 
     The previous lemma also equips us with a map
     \[ \lambda: B \to [0, \frac{\pi}{2}] \]
@@ -27,12 +27,12 @@
     \[ \psi(b, x, y) = (b, x \sin(\lambda(b)) - y \cos(\lambda(b)), x \cos(\lambda(b)) - y \sin(\lambda(b))). \]
 
     Consider the composition
-    \[ \germ{(\whitney{\bb}{\be})\restr{U}}{(\whitney{\bb}{\be})\restr{U}} \xto{g} \germ{(\whitney{\bb}{\be})\restr{U}}{(\whitney{\be}{\bb})\restr{U}} \]
+    \[ \germ{(\whitney{\bb}{\be{B}})\restr{U}}{(\whitney{\bb}{\be{B}})\restr{U}} \xto{g} \germ{(\whitney{\bb}{\be{B}})\restr{U}}{(\whitney{\be{B}}{\bb})\restr{U}} \]
     which coincides with $\whitney{R}{\inv{R}}$ over $b_0$
     since $\psi(b_0, x, y) = (b_0, x, y)$ and with $F$ over $U \cap \inv{\lambda}(0)$.
     
     Pieced together with $F\restr{\inv{\lambda}(b)}$ using \intref{homotopy::glueing},
     we obtain an isomorphism germ 
-    \[ \germ{\whitney{\bb}{\be_B}}{\whitney{\be_B}{\bb}} \]
+    \[ \germ{\whitney{\bb}{\be{B}}}{\whitney{\be{B}}{\bb}} \]
     extending the rooting.
 \end{myproof}

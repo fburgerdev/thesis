@@ -18,12 +18,12 @@
 % lemma triviality
 \begin{mylemma}{suspension::triviality}
     The following non-rooted isomorphy holds:
-    \[ \ind{\phi}(\bb \vee \be_B) \cong \bb \cong \ind{\phi}(\be_B \vee \bb) \]
+    \[ \ind{\phi}(\bb \vee \be{B}) \cong \bb \cong \ind{\phi}(\be{B} \vee \bb) \]
 \end{mylemma}
 \begin{myproof}
     We prove the lemma in two steps.
     \begin{itemize}
-        \item $\ind{c_1}\bb \cong \bb \vee \be$:
+        \item $\ind{c_1}\bb \cong \bb \vee \be{B}$:
         
         First, consider the total space
         \[ E(\ind{c_1}\bb) = \set{(b, e) \in (B \vee B) \times E(\bb)}{c_1(b) = j(e)} \]
@@ -35,13 +35,13 @@
         where $e \sim (b, e') \iff b = b_0 \land e = e'$.
         
         On the other side, consider
-        \[ E(\bb \vee \be_B) = (E(\bb) \sqcup (B \times \R^n)) / e \sim' f(e) \]
+        \[ E(\bb \vee \be{B}) = (E(\bb) \sqcup (B \times \R^n)) / e \sim' f(e) \]
         with $f$ being some representative
         $U_f \to b_0 \times \R^n$ for $\inv{id_{\cyl{b_0}}} \circ R_b$.
         
         Now, we have a map $\psi$ from the open subset of $E(\ind{c_1}\bb)$
         \[ (E(\bb) \sqcup (B \times U_f)) / \sim \]
-        to the open subset of $E(\bb \vee \be_B)$
+        to the open subset of $E(\bb \vee \be{B})$
         \[ (E(\bb) \sqcup (B \times f(U_f))) / \sim' \]
         with $\psi([e]) = [e]$ and $\psi([b, e]) = [(b, \snd{f}(e))]$.
         The map is well-defined because for every $e \sim (b_0, e)$
@@ -53,16 +53,16 @@
         \[ = [b_1, \snd{f}(i(b_1))] = [f(i(b_1))] = [i(b_1)] \]
         and the second summand
         \[ \psi(i_{c_1}([b_2])) = \psi(b_2, i(c_1([b_2]))) = \psi(b_2, i(b_0)) \]
-        \[ = [b_2, \snd{f}(b_0)] = [b_2, 0] = [i_{\be_B}(b_2)] \]
+        \[ = [b_2, \snd{f}(b_0)] = [b_2, 0] = [i_{\be{B}}(b_2)] \]
         as well as with the projection map in the first summand
         \[ j_{c_1}([e]) = [j(e)] = j(\psi([e])) \]
         and the second summand
         \[ j_{c_1}([b, e]) = [b] = [\pi_1(b, \snd{\psi}([b, e]))] = [\pi_1(\psi(b, e))]. \]
-        Therefore, $\psi$ represents an isomorphism-germ between $\ind{c_1}\bb$ and $\bb \vee \be$.
+        Therefore, $\psi$ represents an isomorphism-germ between $\ind{c_1}\bb$ and $\bb \vee \be{B}$.
     
         \item From $c_1 \circ \phi = id_B$ we can conclude that
-        \[ \ind{\phi}(\bb \vee \be_B) \cong \ind{\phi}\ind{c_1}\bb \cong \ind{(c_1 \circ \phi)}\bb \cong \bb. \]
-        The isomorphy $\bb \cong \ind{\phi}(\be_B \vee \bb)$ follows by symmetry,
+        \[ \ind{\phi}(\bb \vee \be{B}) \cong \ind{\phi}\ind{c_1}\bb \cong \ind{(c_1 \circ \phi)}\bb \cong \bb. \]
+        The isomorphy $\bb \cong \ind{\phi}(\be{B} \vee \bb)$ follows by symmetry,
         which concludes the proof.
     \end{itemize}
 \end{myproof}
@@ -109,8 +109,8 @@
 \begin{myproof}
     The composition $f \circ \phi$ is null-homotopic via the homotopy $H: B \times \I \to B$ with
     \[ H([x, t], s) = f(\phi(x, t * s)). \]
-    Therefore $\ind{\phi}\ind{f}\bb \cong \ind{(f \circ \phi)}\bb\cong \ind{const_{b_0}}\bb \cong \be_B$ (see \intref{homotopy::theorem}).
+    Therefore $\ind{\phi}\ind{f}\bb \cong \ind{(f \circ \phi)}\bb\cong \ind{const_{b_0}}\bb \cong \be{B}$ (see \intref{homotopy::theorem}).
     
     Applying the previous lemma, it follows that $\ind{\phi}(\bb \vee \ind{c}\bb) = \ind{\phi}\ind{f}\bb$ and hence
-    \[ \ind{\phi}(\bb \vee \ind{c}\bb) \cong \be_B. \]
+    \[ \ind{\phi}(\bb \vee \ind{c}\bb) \cong \be{B}. \]
 \end{myproof}

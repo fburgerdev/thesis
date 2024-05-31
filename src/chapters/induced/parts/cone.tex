@@ -27,8 +27,9 @@
 
 % lemma cone
 \begin{mylemma}{induced::cone}
-    A microbundle $\bb$ over $B$ can be extended to a microbundle over the mapping cone $B \sqcup_f CA$ if and only if $\ind{f}\bb$ is trivial.
-    % TODO: make clearer that A is paracompact
+    Let $A$ be a paracompact hausdorff space.
+    A microbundle $\bb$ over $B$ can be extended to a microbundle
+    over the mapping cone $B \sqcup_f CA$ if and only if $\ind{f}\bb$ is trivial.
 \end{mylemma}
 
 % proof cone
@@ -40,21 +41,27 @@
 
     Let $\bb'$ be an extension of $\bb$ over $B \sqcup_f CA$.
 
-    The composition $A \xto{f} B \incl B \sqcup_f CA$ is null-homotopic via the homotopy
-    \[ H(a, t) := [(a, t)] \]
-    because $H(a, 0) = [(a, 0)] = [f(a)] = (\iota \circ f)(a)$ and $H(a, 1) = [(a, 1)] = [(\tilde{a}, 1)] = H(\tilde{a}, 1)$.
-    From the Homotopy \intref{homotopy::theorem}, which we will prove in \intref{chapter::homotopy},
-    it follows that $\ind{(\iota \circ f)}\bb'$ is isomorphic to $\ind{const}\bb'$ and hence trivial (\intref{induced::const}).
+    The composition $A \xto{f} B \incl B \sqcup_f CA$ is
+    null-homotopic via the homotopy
+    \[ H(a, t) := [a, t] \]
+    because $H(a, 0) = [a, 0] = [f(a)] = (\iota \circ f)(a)$
+     and $H(a, 1) = [a, 1] = [\tilde{a}, 1] = H(\tilde{a}, 1)$.
+    From the Homotopy \intref{homotopy::theorem},
+    which we will prove in \intref{chapter::homotopy},
+    it follows that $\ind{(\iota \circ f)}\bb'$ is
+    isomorphic to $\ind{const}\bb'$ and hence trivial (\intref{induced::const}).
 
-    Since $\ind{(\iota \circ f)}\bb' = \ind{f}(\ind{\iota}\bb') = \ind{f}\bb$, it follows that $\ind{f}\bb$ is trivial.
+    Since $\ind{(\iota \circ f)}\bb' = \ind{f}(\ind{\iota}\bb') = \ind{f}\bb$,
+    it follows that $\ind{f}\bb$ is trivial.
 
     % <=
     ``$\impliedby$''
 
     Let $\ind{f}\bb$ be trivial.
 
-    In contrast to the mapping cone, there exists a natural retraction from the mapping cylinder to the attached space
-    \[ r: B \sqcup_f MA \to B \twith r([(a, t)]) = f(a) \]
+    In contrast to the mapping cone,
+    there exists a natural retraction from the mapping cylinder to the attached space
+    \[ r: B \sqcup_f MA \to B \twith r([a, t]) = f(a) \]
     The diagram
     \[ A \times \{1\} \incl B \sqcup_f MA \xto{r} B \]
     equals $f$ if we consider $A = \cylup{A}$.
@@ -62,33 +69,50 @@
     \[ \ind{r}\bb\restr{A \times \{1\}} = \ind{(r \circ \iota)}\bb \cong \ind{f}\bb \]
     is trivial.
 
-    From \intref{induced::trivial} and the retraction $(a, t) \mapsto (a, 1)$ it follows that $\ind{r}\bb\restr{A \times [\half, 1]}$ is trivial.
-    Since $A$ is paracompact and by \intref{microbundle::paracompact}, there exists a map
+    From \intref{induced::trivial} and the retraction $(a, t) \mapsto (a, 1)$
+    it follows that $\ind{r}\bb\restr{A \times [\half, 1]}$ is trivial.
+    Since $A$ is paracompact hausdorff and by \intref{microbundle::paracompact},
+    there exists a homoemorphism
     \[ \phi: V \isomto A \times [\half, 1] \times \R^n \]
     where $V$ is a neighborhood of $i_r(B)$ in $E(\ind{r}\bb\restr{A \times [\half, 1]})$.
-    Without loss of generality, we may assume that $V = E(\ind{r}\bb\restr{A \times [\half, 1]})$
-    by removing a closed subset of $E(\ind{r}\bb\restr{A \times [\half, 1]})$ if necessary and applying \intref{microbundle::total}.
+    Without loss of generality,
+    we may assume that $V = E(\ind{r}\bb\restr{A \times [\half, 1]})$
+    by removing a closed subset of $E(\ind{r}\bb\restr{A \times [\half, 1]})$
+    if necessary and applying \intref{microbundle::total}.
 
-    Now we explicitly construct an extension
+    Now we construct an extension
     \[ \bundledef{\bb'}{B \sqcup_f CA}{E'}{i'}{j'} \]
     with
     \begin{itemize}
         \item $E' := E(\ind{r}\bb) / \inv{\phi}(A \times \{1\} \times \{x\})$ (for every $x \in \R^n$)
-        \item $i'([a, t]) := [i_r(a, t)]$ where $i_r$ is the injection map for $\ind{r}\bb$
-        \item $j'([e]) := [j_r(e)]$ where $j_r$ is the projection map for $\ind{r}\bb$
+        \item $i'([a, t]) := [i_r([a, t])]$
+        \item $j'([[a, t], e]) := [j_r([a, t], e)] = [a, t]$
     \end{itemize}
-    The injection $i'$ is well-defined because $i_r$ maps every representative $[a, 1]$ to the same equivalence class of $E'$.
-    Similarly, the projection $j'$ is well-defined since $[e] = [\tilde{e}] \implies [j_r(e)] = [j_r(e')]$
+    The injection $i'$ is well-defined because $i_r$ maps every
+    representative $[a, 1]$ to the same equivalence class of $E'$.
+    Similarly, the projection $j'$ is well-defined because
+    \[ [[a, t], e] = [[a', t'], e'] \implies  [a, t] = [a, t']. \]
 
-    Both $i'$ and $j'$ are continuous by the construction of the quotient space topology.
-    Also, $i'(j'([a, t])) = i'([j_r(a, t)]) = [i_r(j_r(a, t))] = [a, t]$ and hence $i' \circ j' = id$.
-
+    Both $i'$ and $j'$ are continuous
+    by the construction of the quotient space topology.
+    Also, $j' \circ i' = id_{B \sqcup_f CA}$ because
+    \[ j'(i'([a, t])) = j'([i_r(a, t)]) = [j_r(i_r(a, t))] = [a, t]. \]
+    
     It remains to be shown that $\bb'$ is locally trivial:
 
-    For an arbitrary $[a, t] \in B \sqcup_f MA$ choose a local trivialization $(U, V, \phi)$ of $[a, t]$ in $\ind{r}\bb$.
+    For an arbitrary $[a, t] \in B \sqcup_f MA$, choose a
+    local trivialization $(U, V, \phi)$ of $[a, t]$ in $\ind{r}\bb$.
     We can collapse the map $\phi: V \isomto U \times \R^n$ to
     \[ [\phi]: E' \bus V' \isomto U' \times \R^n \]
-    where $V'$ is $V$ collapsed along the quotient $E(\ind{r}\bb) \subm E'$ and $U'$ is $U$ collapsed along the quotient $B \sqcup_f MA \subm B \sqcup_f CA$.
-    This map is well-defined and a homoemorphism, which concludes the proof.
-    % TODO: why well-defined?
+    where $V'$ is $V$ collapsed along the quotient
+    $E(\ind{r}\bb) \subm E'$ and $U'$ is $U$ collapsed
+    along the quotient $B \sqcup_f MA \subm B \sqcup_f CA$.
+    
+    This map is well-defined because
+    \[ [[a, 1], e] = [[a', 1], e'] \in V': [\phi([a, 1], e)] = [a, 1, \snd{\phi}(e)] \]
+    \[ = [a, 1, \snd{\phi}(e')] = [a', 1, \snd{\phi}(e')] = [\phi([a', 1], e')]. \]
+    Note that $[[a, 1], e] = [[a', 1], e'] \implies \snd{\phi}(e) = \snd{\phi}(e')$.
+    
+    Commutativity with injection and projection maps
+    are inherited directly from $\ind{r}\bb$.
 \end{myproof}

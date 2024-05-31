@@ -18,7 +18,7 @@
     to be an open subset of $a_0 \times [0, 1] \times E(\bbb)$.
 
     Based on this, we can define an isomorphism-germ
-    \[ \germdef{\bar{R}}{\ind{H}\bb\restr{\cyl{a_0}}}{\be_{\cyl{a_0}}} \]
+    \[ \germdef{\bar{R}}{\ind{H}\bb\restr{\cyl{a_0}}}{\be{\cyl{a_0}}} \]
     by the representative
     \[ \bar{r}: \cyl{a_0} \times V \to \cyl{a_0} \times \R^n \]
     with
@@ -33,7 +33,7 @@
     Let $\bb$ be a rooted microbundle over $B$ and
     let $H: \cyl{A} \to B$ be a map that leaves the base point fixed.
     Then there exists a neighborhood $V$ of $a_0$ together with an isomorphism-germ
-    \[ \germ{\ind{H}\bb\restr{\cyl{V}}}{\be_{\cyl{V}}} \]
+    \[ \germ{\ind{H}\bb\restr{\cyl{V}}}{\be{\cyl{V}}} \]
     extending $\bar{R}$ (as defined above).
 \end{mylemma}
 
@@ -41,31 +41,31 @@
 \begin{myproof}
     By applying \intref{homotopy::lemma2},
     it follows that there exists an isomorphism-germ
-    \[ \germdef{Q}{\ind{H}\bb\restr{\cyl{V}}}{\be_{\cyl{V}}} \]
+    \[ \germdef{Q}{\ind{H}\bb\restr{\cyl{V}}}{\be{\cyl{V}}} \]
     for a sufficiently small neighborhood $V$ of $a_0$.
     However $Q$ doesn't extend $R$ in general.
 
     To fix this, consider
-    \[ \germdef{Q \circ \inv{\bar{R}}}{\be_{\cyl{a_0}}}{\be_{\cyl{a_0}}} \]
+    \[ \germdef{Q \circ \inv{\bar{R}}}{\be{\cyl{a_0}}}{\be{\cyl{a_0}}} \]
     represented by $\nu: U_\nu \to \cyl{a_0} \times \R^n$
     with $U_\nu \sub \cyl{a_0} \times \R^n$ open.
 
     Similar to the construction of $\bar{R}$, we can construct an isomorphism-germ
-    \[ \germdef{P}{\be_{\cyl{V}}}{\be_{\cyl{V}}} \]
+    \[ \germdef{P}{\be{\cyl{V}}}{\be{\cyl{V}}} \]
     extending $Q \circ \inv{\bar{R}}$ represented by
     \[ p(a, t, x) = (a, \nu(a_0, t, x)) \]
     considering $\nu(a_0, t, x) \in \I \times \R^n$.
 
-    Restricted to $\be_{\cyl{a_0}}$, $P$ agrees with $Q \circ \inv{\bar{R}}$ and thus
+    Restricted to $\be{\cyl{a_0}}$, $P$ agrees with $Q \circ \inv{\bar{R}}$ and thus
     \[
-        \inv{Q} \circ P\restr{\be_{\cyl{a_0}}}
+        \inv{Q} \circ P\restr{\be{\cyl{a_0}}}
         = (\inv{Q} \circ (Q \circ \inv{\bar{R}}))
         = ((\inv{Q} \circ Q) \circ \inv{\bar{R}})
         = \inv{\bar{R}}
     \]
     \[ \implies (\inv{P} \circ Q)\restr{\ind{H}\bb\restr{\cyl{a_0}}} = \bar{R}. \]
     Since $P$ and $Q$ are both isomorphism-germs,
-    \[ \germdef{\inv{P} \circ Q}{\ind{H}\bb\restr{\cyl{V}}}{\be_{\cyl{V}}} \]
+    \[ \germdef{\inv{P} \circ Q}{\ind{H}\bb\restr{\cyl{V}}}{\be{\cyl{V}}} \]
     is an isomorphism-germ extending $\bar{R}$.
 \end{myproof}
 

@@ -34,27 +34,32 @@
 
     \begin{enumerate}
         % simplex
-        \item $\whitney{\bn'}{\be_{B'}}$ can be extended over any $d$-simplex $\sigma$:
+        \item $\whitney{\bn'}{\be{B'}}$ can be extended over any $d$-simplex $\sigma$:
 
         Consider the equation
         \[
-            (\whitney{\bn'}{\be_{B'}})\restr{\partial\sigma}
-            = \whitney{\bn'\restr{\partial\sigma}}{\be_{B'}\restr{\partial\sigma}}
+            (\whitney{\bn'}{\be{B'}})\restr{\partial\sigma}
+            = \whitney{\bn'\restr{\partial\sigma}}{\be{B'}\restr{\partial\sigma}}
             = \whitney{\bn'\restr{\partial\sigma}}{\bb\restr{\partial\sigma}}
             = (\whitney{\bn'}{\bb\restr{B'}})\restr{\partial\sigma}
         \]
         in which we used the previous lemma and \intref{induced::simplex}
-        for $\be_{B'}\restr{\partial\sigma} = \bb\restr{\partial\sigma}$.
+        for $\be{B'}\restr{\partial\sigma} = \bb\restr{\partial\sigma}$.
         Since $(\whitney{\bn'}{\bb\restr{B'}})\restr{\partial\sigma}$ is trivial, the claim follows from \intref{induced::simplex}.
 
         % extend
-        \item $\whitney{\bn'}{\be_{B'}}$ can be extended over $B$:
+        \item $\whitney{\bn'}{\be{B'}}$ can be extended over $B$:
 
         The difficulty is that the individual $d$-simplices are not well-seperated.
         Let $B''$ denote $B$ with small open $d$-cells removed from every $d$-simplex.
-        Since $B'$ is a retract of $B''$ we can extend $\whitney{\bn'}{\be_{B'}}$ over $B''$ and now apply the first statement.
+        Since $B'$ is a retract of $B''$ we can extend $\whitney{\bn'}{\be{B'}}$ to a microbundle $\nu$ over $B''$.
+
+        Now we can extend $\nu$ over every $d$-simplex by taking the extensions
+        over every simplex individually (using 1.) and glueing its total spaces together along $E(\nu)$.
+        The injection and projection maps can be constructed
+        by glueing the injetion and projection maps of the individual extensions together.
+
         We denote the resulting microbundle by $\eta$.
-        % TODO: explain further by providing the total space
 
         % trivial
         \item
@@ -63,9 +68,9 @@
         \[
             (\whitney{\bb}{\eta})\restr{B'}
             = \whitney{\bb\restr{B'}}{\eta\restr{B'}}
-            = \whitney{\bb\restr{B'}}{(\whitney{\bn'}{\be_{B'}})}
-            = \whitney{(\whitney{\bb\restr{B'}}{\bn'})}{\be_{B'}}
-            = \whitney{\be_{B'}}{\be_{B'}}
+            = \whitney{\bb\restr{B'}}{(\whitney{\bn'}{\be{B'}})}
+            = \whitney{(\whitney{\bb\restr{B'}}{\bn'})}{\be{B'}}
+            = \whitney{\be{B'}}{\be{B'}}
         \]
         is trivial, it follows from \intref{induced::cone} that we can extend $\whitney{\bb}{\eta}$ over $B \sqcup CB'$
         which will be denoted by $\xi$.
@@ -78,7 +83,7 @@
         we conclude that there exists a microbundle $\bn$ such that $(\whitney{\xi}{\bn})\restr{B}$ is trivial.
         The equation
         \[
-            \be_{B}
+            \be{B}
             = (\whitney{\xi}{\bn})\restr{B}
             = \whitney{\xi\restr{B}}{\bn\restr{B}}
             = \whitney{(\whitney{\bb}{\eta})}{\bn\restr{B}}

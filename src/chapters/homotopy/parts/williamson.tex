@@ -109,15 +109,18 @@
 \begin{mycorollary}{homotopy::corollary}
     If a map $g: B \to B'$ is covered by a bundle-germ $\germdef{F}{\bb}{\bb'}$, then $\bb$ is isomorphic to the induced microbundle $\ind{g}\bb'$.
 \end{mycorollary}
-% proof
+
+% proof corollary
 \begin{myproof}
     Let $f: U_f \to E'$ be a representative map for $F$.
-    We define $\germdef{F'}{\bb}{\ind{g}\bb'}$ by a representative
-    \[ f': U_f \to E(\ind{g}\bb') \twith f'(e) := (j(e), f(e)). \]
-    Every $f'(e)$ actually lies in $E(\ind{g}\bb')$ because
+    We define $\germdef{F'}{\bb}{\ind{g}\bb'}$ by the representative
+    \[ f': U_f \to E(\ind{g}\bb') \twith f'(e) = (j(e), f(e)). \]
+    Every $f'(e)$ lies in $E(\ind{g}\bb')$ because
     \[ g(j(e)) = j'(f(e)) \]
     as we can see from the commutative diagram for bundle-germs.
-    The germ $F'$ is an isomorphism-germ because $F$ is an isomorphism-germ.
+
+    The germ $F'$ is a bundle-germ covering the identity because
+    \[ j(e) = j_g'(j(e), f(e)) = j_g'(f'(e)) \]
+    and because $f'$ is injective (since $f$ is injective).
     Applying the previous proposition on $F'$ proves the claim.
-    % TODO: why is F' an isomorphims-germ?
 \end{myproof}

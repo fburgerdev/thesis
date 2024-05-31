@@ -1,18 +1,28 @@
 % theorem
 \begin{mytheorem}{suspension::theorem}
-    If $\ba$ and $\bb$ are rooted microbundles over a paracompact hausdorff space $B$, then
-    \[ \whitney{\ind{\phi}(\ba \vee \bb)}{\be_B} = \whitney{\ba}{\bb}. \]
+    If $\ba$ and $\bb$ are rooted microbundles
+    over a paracompact hausdorff space $B$, then
+    \[ \whitney{\ind{\phi}(\ba \vee \bb)}{\be{B}} = \whitney{\ba}{\bb}. \]
 \end{mytheorem}
 
 % proof theorem
 \begin{myproof}
-    The previous lemma yields $\whitney{\bb}{\be} \cong \whitney{\be}{\bb}$.
+    The previous lemma yields $\whitney{\bb}{\be{B}} \cong \whitney{\be{B}}{\bb}$.
     Hence
-    \[ \ind{\phi}((\whitney{\ba}{\be}) \vee (\whitney{\bb}{\be})) \cong \ind{\phi}((\whitney{\ba}{\be}) \vee (\whitney{\be}{\bb})). \]
+    \[
+        \ind{\phi}((\whitney{\ba}{\be{B}}) \vee (\whitney{\bb}{\be{B}}))
+        \cong \ind{\phi}((\whitney{\ba}{\be{B}}) \vee (\whitney{\be{B}}{\bb})).
+    \]
     Additionally, we have
-    \[ \whitney{\ind{\phi}((\ba \vee \bb))}{(\be \vee \be)} \cong \whitney{\ind{\phi}(\ba \vee \bb)}{\be} \]
+    \[
+        \whitney{\ind{\phi}((\ba \vee \bb))}{(\be{B} \vee \be{B})}
+        \cong \whitney{\ind{\phi}(\ba \vee \bb)}{\be{B}}
+    \]
     for the left side and
-    \[ \ind{\phi}(\whitney{(\ba \vee \be)}{(\be \vee \bb)}) \cong \whitney{\ba}{\bb}\]
+    \[
+        \ind{\phi}(\whitney{(\ba \vee \be{B})}{(\be{B} \vee \bb)})
+        \cong \whitney{\ba}{\bb}
+    \]
     for the right side. That completes the proof.
 \end{myproof}
 
@@ -23,7 +33,6 @@
 
 % proof corollary
 \begin{myproof}
-    This follows directly from the previous theorem and the fact that $\ind{\phi}(\whitney{\bb}{\ind{r}\bb})$ is trivial.
+    This follows directly from the previous theorem and
+    the fact that $\ind{\phi}(\whitney{\bb}{\ind{r}\bb})$ is trivial.
 \end{myproof}
-
-% TODO: bouqet of circles

@@ -2,7 +2,7 @@
 \begin{mydefinition}{suspension::whitney}
     The \defterm{whitney sum} of two rooted microbundles $\bb$ and $\bb'$ over $B$
     is the initial whitney sum $\whitney{\bb}{\bb'}$ together with the rooting
-    \[ \germdef{\whitney{R}{R'}}{(\whitney{\bb}{\bb'})\restr{b_0}}{\whitney{\be[n_1]{}_{b_0}}{\be[n_2]{}_{b_0}} = \be[n_1 + n_1]{}_{b_0}}. \]
+    \[ \germdef{\whitney{R}{R'}}{(\whitney{\bb}{\bb'})\restr{b_0}}{\whitney{\be[n_1]{b_0}}{\be[n_2]{b_0}} = \be[n_1 + n_1]{b_0}}. \]
 \end{mydefinition}
 
 % lemma
@@ -20,8 +20,8 @@
     \[ E(\whitney{(\ba \vee \bb)}{(\ba' \vee \bb')}) \]
     \[ = \set{(e, e') \in E(\ba \vee \bb) \times E(\ba' \vee \bb')}{j(e) = j'(e')} \]
     \[ = \set{(e, e') \in ((E(\ba) \sqcup E(\bb)) / \sim) \times ((E(\ba') \sqcup E(\bb')) / \sim')}{j(e) = j'(e')} \]
-    \[ = (\set{(e, e') \in E(\ba) \times E(\ba')}{j_a(e) = j_{\ba'}(e')} \sqcup \]
-    \[ \set{(e, e') \in E(\bb) \times E(\bb')}{j_b(e) = j_{\bb'}(e')}) / \backsim \]
+    \[ = (\set{(e, e') \in E(\ba) \times E(\ba')}{j_a(e) = j_{a'}(e')} \sqcup \]
+    \[ \set{(e, e') \in E(\bb) \times E(\bb')}{j_b(e) = j_{b'}(e')}) / \backsim \]
     \[ = (E(\whitney{\ba}{\ba'}) \sqcup E(\whitney{\bb}{\bb'})) / \backsim \]
     \[ = E((\whitney{\ba}{\ba'}) \vee (\whitney{\bb}{\bb'})) \]
     where $(e_a, e_a') \backsim (e_b, e_b') \iff e_a \sim e_b \land e_a' \sim' e_b'$.
@@ -33,5 +33,9 @@
     and projection maps
     \[ j_\oplus(e, e') = j(e) =  j_\vee(e) \]
     are equal.
+    Here, $i_\oplus$ and $j_\oplus$ denote the injection and projection maps for
+    \[ \whitney{(\ba \vee \bb)}{(\ba' \vee \bb')} \]
+    and $i_\vee$ and $j_\vee$ denote the injection and projection maps for
+    \[ (\whitney{\ba}{\ba'}) \vee (\whitney{\bb}{\bb'}). \]
     It follows that the two microbundles are isomorphic.
 \end{myproof}
