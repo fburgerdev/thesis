@@ -1,7 +1,7 @@
 \begin{scope}
     % defines
-    \newcommand{\rwithney} {
-        \whitney{\ind{r}\bt_N}{\ind{r}\bt'}
+    \newcommand{\rwhitney} {
+        \whitney{\ind{r}\bt_N}{\ind{r}\eta}
     }
     \newcommand{\rtn} {
         \ind{r}\bt_N
@@ -21,28 +21,71 @@
     \begin{myproof}
         We show the theorem in multiple steps:
         \begin{enumerate}
-            % statement
+            % first
             \item There exists a microbundle $\eta$ over $N$ such that $\whitney{\bt_N}{\eta} \cong \be[q]{N}$:
             
-            % proof
-            From the \extref{Whitney Embedding Thereom} it follows that we can consider $M$ to be embedded in euclidean space $\R^{2m + 1}$.
-            Additionally, since we can find a retraction $r: V \to N$ where $V$ is an open neighborhood of $N$ in $M$ we can extend $\bt_N$ over $V$.
-            Now we can apply the \intref{whitney::theorem} from the ``Whitney Sum'' Chapter to the extended microbundle
-            to receive a $\eta$ such that $\whitney{\bt_N}{\eta} \cong \be[q]{N}$.
+            From the \extref{Whitney Embedding Thereom} it follows that
+            we can embed $M$ in euclidean space $\R^{2m + 1}$.
 
-            % statement
-            \item $E(\rtn) \sub E(\whitney)$ has a normal microbundle:
+            Additionally, since there exists a retraction $r: V \to N$
+            where $V$ is an open neighborhood of $N$ in $M$ we can extend $\bt_N$
+            to a microbundle $\bt_N'$ over $V$.
+            Since $V$ is an open subset of euclidean space, it's a simplicial complex.
 
-            %proof
-            Consider the microbundle
-            \[ \bundledef{\ind{j}(\rwithney)}{E(\rtn)}{E(\rwithney)}{i'}{j'} \]
-            where $j$ is the projection map for $\rtn$.
-            Since $i'$ is injective, we can assume $E(\rtn) \sub E(\rwithney)$.
-            Now $\ind{j}(\rwithney)$ is a normal microbundle if we equip $\rwithney$ with a manifolds structure as shown above.
-            % TODO: how?
+            Hence, we can apply \intref{whitney::theorem} to the extended microbundle $\bt_N'$
+            to obtain a microbundle $\eta'$ such that $\whitney{\bt_N'}{\eta} \cong \be[q]{V}$.
+
+            We conclude that
+            \[
+                \whitney{\bt_N}{\eta'\restr{N}}
+                = \whitney{\bt_N'\restr{N}}{\eta'\restr{N}}
+                = (\whitney{\bt_N'}{\eta'})\restr{N} = \be[q]{N}.
+            \]
+
+            % second
+            \item $E(\rtn) \sub E(\rwhitney)$ has a normal microbundle:
+
+            Since the total space
+            \[ E(\rwhitney) = \set{(e, e') \in E(\rtn) \times E(\ind{r}\eta)}{j(e) = j'(e)} \]
+            we can consider $E(\rtn) \sub E(\rwhitney)$ embedded via
+            \[ \iota: e \mapsto (e, i'(j(e))) \]
+            with the inverse $\pi_1: (e, e') \mapsto e$.
+
+            Because $\rwhitney \cong \ind{r}(\whitney{\bt_N}{\eta})$ is trivial,
+            it follows that $E(\rwhitney) \sub M \times \R^k$ open and hence being a manifold.
+
+            We have a normal microbundle of $E(\rtn)$ in $E(\rwhitney)$ via
+            \[ \bundledef{\bn}{E(\rtn)}{E(\rwhitney)}{\iota}{\pi_1}. \]
+
+            To show local triviality,
+            let $(U, V, \phi)$ be a local trivialization of $i'(j(e))$ in $\ind{r}\eta$
+            for an arbitrary $e \in E(\rtn)$.
+
+            By choosing
+            \begin{itemize}
+                \item $U' := \inv{j}(U)$
+                \item $V' := (U' \times V) \cap E(\rwhitney)$
+                \item $\phi': V' \isomto U' \times \R^{n_\eta}$ with $\phi'(e, e') = (e, \snd{\phi}(e'))$
+            \end{itemize}
+            we have a local trivialization of $e$ in $\bn$.
+
+            That is because both $U' \sub E(\rtn)$ and $V' \sub E(\rwhitney)$ are open sets
+            and $\phi'$ is a homeomorphism with its inverse $\inv{\phi'}(e, x) = (e, \inv{\phi}(j(e), x))$.
+            
+            Also, $\phi'$ commutes with injection
+            \[ \phi'(\iota(e)) = \phi'(e, i'(j(e))) = (e, \snd{\phi}(i'(j(e)))) = (e, 0) = (id \times 0)(e) \]
+            and projection maps
+            \[ \pi_1(e, e') = \pi_1(e, \snd{\phi'}(e, e')) = \pi_1(\phi'(e, e')). \]
         \end{enumerate}
-        Since $N \sub M \sub E(\rtn)$ has a normal microbundle (\intref{normal::total}) it follows from \intref{normal::transitivity} that $N \sub E(\whitney{\ind{r}\bt_N}{\ind{r}\bt'})$ has a normal microbundle.
-        But $\whitney{\ind{r}\bt_N}{\ind{r}\bt'}$ is trivial and therefore w.l.o.g. $E(\rwithney) \cong N \times \R^q$
-        % TODO: last portion is unclear
+        % transitivity
+        Since $N \sub M \sub E(\rtn)$ has a normal microbundle (using \intref{normal::total}),
+        it follows from \intref{normal::transitivity} that
+        $N \sub E(\whitney{\ind{r}\bt_N}{\ind{r}\bt'})$ has a normal microbundle.
+
+        By restricting $E(\rwhitney)$ to an open subset if necessary, we may assume that
+         \[ E(\rwhitney) = M \times \R^q \]
+        for some $q \in \N$ using \intref{induced::trivial}.
+
+        This completes the proof.
     \end{myproof}
 \end{scope}
