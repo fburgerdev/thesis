@@ -71,5 +71,45 @@
 
 % proof theorem
 \begin{myproof}[of the Rooted Homotopy Theorem]
-    % TODO
+    For $\ind{f}\bb$ and $\ind{g}\bb$ to be rooted-isomorphic,
+    there needs to exist an isomorphism-germ
+    \[ \germdef{F}{\ind{f}\bb}{\ind{g}\bb} \]
+    extending $\inv{R_g} \circ R_f = \inv{R} \circ R = id_\bb$.
+
+    We construct this isomorphism-germ as in \intref{chapter::homotopy},
+    by taking a bundle-germ
+    \[ \germ{\ind{H}\bb}{\ind{H}\bb\restr{\cylup{A}}} \]
+    using \intref{homotopy::lemma3} and restricting it to $\ind{H}\bb\restr{\cyldown{A}}$.
+
+    So the only thing to do is to modify \intref{homotopy::lemma3} such a that
+    \[ \germ{\ind{H}\bb\restr{\cyldown{a_0}}}{\ind{H}\bb\restr{\cyldown{b_0}}} \]
+    extends the identity germ if we consider $a_0 \times E(\bbb) = b_0 \times E(\bbb)$.
+
+    This is achieved by taking a locally finite open cover $\coll{V_\alpha}$
+    of $A$ as in \intref{homotopy::lemma3}, removing the base point $a_0$ in every set
+    and adding the set $V$ obtained from \intref{suspension::sharper}.
+    Since $a_0 \in V$, the resulting collection is still a locally finite open cover of $A$.
+
+    We continue with the proof like normal.
+    Note that $\lambda_V(a_0) = 1$,
+    since $\lambda_\alpha(a_0) = 0$ because we removed $a_0$ from every other set.
+
+    Lastly, we construct the extension $R_V$ for $r_v$ like in \intref{chapter::homotopy},
+    but instead of taking an arbitrary trivialization $E(\ind{H}\restr{A_\alpha}) \cong A_\alpha \times \R^n$
+    for construction we use a representative $r$ for the bundle-germ constructed in \intref{suspension::sharper}.
+    
+    This has the effect that the mapping
+    \[
+        E(\ind{H}\bb\restr{A_V}) \xto{r}
+        A_V \times \R^n \xto{r_V \times id} (A_V \cap A'_V) \times \R^n
+        \xto{\inv{r}} E(\ind{H}\bb\restr{A_V \cap A'_V})
+    \]
+    is the identity on $\ind{H}\bb\restr{\cyldown{a_0}}$ if we consider $a_0 \times E(\bbb) = b_0 \times E(\bbb)$.
+
+    This is exactly what we wanted and since
+    every other $R_\alpha$ leaves $\ind{H}\bb\restr{\cyldown{a_0}}$ unaffected
+    because $r_\alpha(a_0, t) = (a_0, \max(\lambda_\alpha(t), t)) = (a_0, t)$.
+
+    Therefore, the pieced together bundle-germ
+    is also the identity on $\ind{H}\bb\restr{\cyldown{a_0}}$, completing the proof.
 \end{myproof}
