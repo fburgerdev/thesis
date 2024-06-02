@@ -18,20 +18,31 @@
 
     For an arbitrary $a \in A$, choose local trivializations
     \begin{center}
-        $(U_a, V_a, \phi_a)$ of $b$ and $(U_b, V_b, \phi_b)$ of $i_a(a)$.
+        $(U_a, V_a, \phi_a)$ of $a$ and $(U_b, V_b, \phi_b)$ of $i_a(a)$.
     \end{center}
     Note that both $U_b$ and $V_a$ are open neighborhoods of $i_a(a)$.
-    Without loss of generality, the subsets $V_a$ and $U_b$ are equal by
-    restricting $U_b$ to $V_a \cap U_b$ and $V_b$ to $\inv{\phi_b}((V_a \cap U_b) \times \R^{n'})$ if necessary.
+    
+    Without loss of generality, we may assume that $V_a = U_b$, because:
+    
+    `$\sub$':
+    Modify $U_a$ such that
+    \[ U_a \times \ball[\eps] \sub \phi_a(V_a \cap U_b) \]
+    for a sufficiently small $\eps > 0$ and let
+    \[ V_a = \inv{\phi_a}(U_a \times \ball[\eps]) \sub V_a \cap U_b. \]
+    Composing $\phi_a$ with $\mu_\eps: \ball[\eps] \isomto \R^n$
+    yields a local trivialization of $a$ in $\ba$ that $V_a \sub U_a$.
 
-    We have a local trivialization $(U_a, V_b, \phi)$ of $a$ in $\ba \circ \bb$ where
+    `$\bus$': Restrict $U_b$ to $V_a \cap U_b$ and $V_b$ to $\inv{\phi_b}((V_a \cap U_b) \times \R^{n'})$.
+
+    It follows that have a local trivialization
+    $(U_a, V_b, \phi)$ of $a$ in $\ba \circ \bb$ where
     \[ 
         \phi: V_b \xto{\phi_b} U_b \times \R^{n'}
         = V_a \times \R^{n'}
         \xto{\phi_a \times id_{\R^{n'}}} U_a \times \R^{n} \times \R^{n'}
         = U_a \times \R^{n + n'}.
     \]
-    The map $\phi$ is an homeomorphism, since it's composed by homeomorphisms.
+    The map $\phi$ is an homeomorphism since it's composed by homeomorphisms.
 
     Additionally, $\phi$ commutes with injection
     \[ \phi(i(a)) = \phi(i_b(i_a(a))) = (\phi_a(i_a(a)), \snd{\phi_b}(i_b(i_a(a)))) \]

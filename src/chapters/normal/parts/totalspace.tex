@@ -1,26 +1,26 @@
 % foreword
 \begin{myparagraph}
-    The total space $E(\ind{r}\bt_N)$ carries the structure of a topological manifold with
+    The total space $E(\ind{r}\bt_N)$ is a topological manifold with
     \[ E(\ind{r}\bt_N) \cong M \times N \]
     as described in the previous lemma.
-    That is since $M \times N$ comes equipped with the product manifold structure.
 
     The fact that the above diagram commutes,
-    allows us to consider $N$ to be a submanifold of $E(\ind{r}\bt_N)$ via $N \incl M \xto{i_2} E(\ind{r}\bt_N)$.
-    The composition $\iota \circ i_2$ is an embedding because $i_2$ is an embedding
+    allows us to consider $N$ to be a submanifold of $E(\ind{r}\bt_N)$ via
+    \[ N \incl M \xto{i_r} E(\ind{r}\bt_N). \]
+    The composition $\iota \circ i_r$ is an embedding since $i_r$ is an embedding
     due to the construction of the induced microbundle.
 \end{myparagraph}
 
 % lemma
 \begin{mylemma}{normal::total}
-    There exists a normal microbundle $\bn$ of $N$ in $E(\ind{r}\bt_N)$ such that $\bn \cong \ind{\iota}\bt_M$.
+    Let $M$ be a topological manifold together with a submanifold $N \sub M$.
+    Then there exists a normal microbundle $\bn$ of $N$ in $E(\ind{r}\bt_N)$ such that $\bn \cong \ind{\iota}\bt_M$.
 \end{mylemma}
 
 % proof
 \begin{myproof}
     We are already given a normal microbundle of $N$ in $E(\ind{r}\bt_N)$ with $\ind{r}\bt_N\restr{N}$.
-    Isomorphy between $\ind{r}\bt_N\restr{N}$ and $\ind{\iota}\bt_M$ follows from
+    Isomorphy between $\ind{r}\bt_N\restr{N}$ and $\ind{\iota}\bt_M$ follows from the homeomorphy
     \[ \psi: E(\ind{\iota}\bt_M) \isomto E(\ind{r}\bt_N) \]
-    together with the fact that $E(\ind{r}\bt_N\restr{N})$ is a neighborhood of $i_2(B)$ in $E(\ind{r}\bt_N)$
     and from the diagram which shows that injection and projection maps commute with $\psi$.
 \end{myproof}
