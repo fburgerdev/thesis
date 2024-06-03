@@ -1,12 +1,20 @@
-% hausdorff
+% foreword
 \begin{myparagraph}
-    The following definition requires the base spaces to be hausdorff.
-    This is useful because this implies that the singleton containing only the base point is closed,
-    and can therefore be removed from any open set without losing openness.  
+    With the concept of rooted-microbundles,
+    we are able to define the wedge sum.
+    As we will see in the subsequent proof,
+    it is necessary to have a fixed rooting given because otherwise
+    one would have to choose a rooting which the resuling microbundle depends on,
+    hence not being well-defined.
+
+    Given a space $A \sqcup B / \sim$ and maps $f: A \to C$ and $g: B \to C$, we denote
+    the map that sends elements from $A$ along $f$
+    and elements from $B$ along $g$ to $C$ by $f \vee g$.
+    Clearly, this map is only well defined if $[a] = [b] \implies f(a) = g(b)$.
 \end{myparagraph}
 
 % definition
-\begin{mydefinition}{suspension::wedge}
+\begin{mydefinition}{suspension::wedge}{}
     Let $\ba$ and $\bb$ be two rooted microbundles over $A$ and $B$.
     % microbundle
     The \defterm{wedge sum} $\ba \vee \bb$ of $\ba$ and $\bb$ is a rooted microbundle over $A \vee B$

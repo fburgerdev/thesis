@@ -1,12 +1,11 @@
 % foreword
 \begin{myparagraph}
-    The following example is our microbundle analog
-    to the tangent bundle over smooth manifolds,
-    hence being of significant interest.
+    The following example is the microbundle analog
+    to the tangent bundle over smooth manifolds.
 \end{myparagraph}
 
 % example
-\begin{myexample}[tangent microbundle]{microbundle::tangent}
+\begin{myexample}[tangent microbundle]{microbundle::tangent}{}
     The \defterm{tangent microbundle} $\bt_M$ over a topological $d$-manifold $M$ is a diagram
     \[ \bundle{M}{M \times M}{\Delta}{\pi_1} \]
     where $\Delta(m) := (m, m)$ denotes the diagonal map.
@@ -31,6 +30,18 @@
 \end{myproof}
 
 % remark
-\begin{myremark}{microbundle::tangentdim}
+\begin{myremark}{microbundle::tangentdim}{}
     Note that the tangent microbundle $\bt_M$ has fibre dimension $d$.
 \end{myremark}
+
+% afterword
+\begin{myparagraph}
+    The definition of the tangent microbundle
+    takes use of the intuitive approach to define a tangent vector
+    using the difference $\psi(p) - \psi(p')$ in euclidean space.
+    Note that the tangent vector is hence dependant
+    on the choice of the chart used.
+    However this causes no problems since
+    for microbundles one doesn't have global trivializations anyway.
+    % TODO: explain tangent microbundle
+\end{myparagraph}

@@ -1,17 +1,19 @@
 % foreword
 \begin{myparagraph}
-    Last, we show a theorem about whitney sums that will be essential in the proof of Milnor's theorem.
-    For its prove, we need to use the following proposition that will be deferred until \autoref{chapter::suspension}.
+    Last, we show a theorem about whitney sums that will be
+    essential in the proof of Milnor's theorem.
+    For its prove, we need to use the following proposition
+    that will be deferred until \intref{chapter::suspension}.
 \end{myparagraph}
 
 % bouqet lemma
-\begin{myproposition}{whitney::bouqet}
+\begin{myproposition}{whitney::bouqet}{}
     Let $\bb$ be a microbundle over a `bouqet' of spheres $B$, meeting at a single point.
-    There exists a map $r: B \to B$ such that $\whitney{\bb}{\ind{r}\bb}$ is trivial.
+    Then there exists a map $r: B \to B$ such that $\whitney{\bb}{\ind{r}\bb}$ is trivial.
 \end{myproposition}
 
 % theorem trivialize
-\begin{mytheorem}{whitney::theorem}
+\begin{mytheorem}{whitney::theorem}{}
     Let $\bb$ be a microbundle over a $d$-dimensional simplicial complex $B$.
     Then there exists a microbundle $\bn$ over $B$ so that the whitney sum $\whitney{\bb}{\bn}$ is trivial.
 \end{mytheorem}
@@ -24,7 +26,7 @@
     (Start of induction)
 
     A $1$-dimensional simplicial complex is just a bouquet of circles.
-    Therefore, the start of induction follows directly from \intref{whitney::bouqet}.   
+    Hence, the start of induction follows directly from \intref{whitney::bouqet}.   
 
     % step
     (Inductive Step)

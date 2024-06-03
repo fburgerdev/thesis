@@ -5,12 +5,17 @@
     but only in an arbitrary small neighborhood of the base space.
     This is a significant conceptual differences between
     microbundles and classical vector bundles.
-
     The following proposition makes this even clearer.
+    
+    Throughout the paper we will often take use of homeomorphisms
+    \[ \mu_\eps: \ball[\eps] \isomto \R^n \twith \mu_\eps(0) = 0 \]
+    for example given by
+    \[ x \mapsto \tan(\frac{\abs{x}\cdot\pi}{2\eps}) x \]
+    in order to show local triviality, for example.
 \end{myparagraph}
 
 % proposition
-\begin{myproposition}{microbundle::total}
+\begin{myproposition}{microbundle::total}{}
     Given a microbundle $\bundledef{\bb}{B}{E}{i}{j}$ over $B$,
     restricting the total space $E$ to an
     arbitrary neighborhood $E' \sub E$ of $i(B)$ leaves the microbundle unchanged.

@@ -1,7 +1,8 @@
 % foreword
 \begin{myparagraph}
     Now consider two isomorphic microbundles $\bb$ and $\bb'$ over $B$.
-    There exists a homeomorphism $\phi: V \isomto V'$ where $V \sub E$ is a neighborhood of $i(B)$ and $V' \sub E'$ is a neighborhood of $i'(B)$.
+    There exists a homeomorphism $\phi: V \isomto V'$ where
+    $V \sub E$ is a neighborhood of $i(B)$ and $V' \sub E'$ is a neighborhood of $i'(B)$.
     The homeomorphism $\phi$ is a representative for a homeomorphism-germ
     \[ \germdef{[\phi]}{(E, i(B))}{(E', i'(B))}. \]
     
@@ -11,9 +12,10 @@
     Now, naturally, the question arises whether the existence of a homeomorphism-germ
     \[ \germdef{F}{(E, i(B))}{(E', i'(B))} \]
     already implies that $\bb$ and $\bb'$ are isomorphic.
-    The answer is generally no, because isomorphy of microbundles requires 
-    a homeomorphism that \ul{commutes with injection and projection maps}.
-    Therefore, we must assume an extra condition called `fibre-preservation' for this implication to be true.
+    The answer is generally no, because isomorphy of microbundles additionally requires 
+    the homeomorphism to commute with injection and projection maps.
+    Therefore, we need to assume an extra condition (`fibre-preservation')
+    for this implication to be true.
     This justifies the following definition.
     
     % precondition
@@ -22,13 +24,13 @@
 \end{myparagraph}
 
 % definition
-\begin{mydefinition}[isomorphism-germ]{homotopy::isomorphism}
+\begin{mydefinition}[isomorphism-germ]{homotopy::isomorphism}{}
     An \defterm{isomorphism-germ} between $\bb$ and $\bb'$ is a homeomorphism-germ 
     \[ \germdef{F}{(E, B)}{(E', B)} \]
     which is \defterm{fibre-preserving}, that is $J' \circ F = J$.
 \end{mydefinition}
 
 % remark
-\begin{myremark}{homotopy::isomorphismremark}
+\begin{myremark}{homotopy::isomorphismremark}{}
     There exists an isomorphism-germ between $\bb$ and $\bb'$ if and only if $\bb$ is isomorphic to $\bb'$.
 \end{myremark}

@@ -1,6 +1,18 @@
+% foreword theorem
+\begin{myparagraph}
+    We can apply the Homotopy Theorem on the underlying microbundles of
+    rooted-microbundles, however with the statement in \intref{chapter::homotopy}
+    we are generally not given rooted-isomorphy.
+
+    By assuming that $f$ and $g$ are based maps and that a homotopy
+    between $f$ and $g$ exists that leaves the base point fixed,
+    we can show a version of the Homotopy Theorem that yields rooted-isomorphy.
+\end{myparagraph}
+
 % theorem
-\begin{mytheorem}[Rooted Homotopy Theorem]{suspension::homotopy}
-    Let $\bb$ be a rooted microbundle over $B$ and $f, g: A \to B$ be two based maps.
+\begin{mytheorem}[Rooted Homotopy Theorem]{suspension::homotopy}{}
+    Let $\bb$ be a rooted microbundle over $B$ and $f, g: A \to B$ be two based maps
+    where $A$ is paracompact hausdorff.
     If there exists a homotopy $H: \cyl{A} \to B$ between $f$ and $g$ that leaves the base point fixed,
     then the two rooted microbundles $\ind{f}\bb$ and $\ind{g}\bb$ are rooted-isomorphic.
 \end{mytheorem}
@@ -26,10 +38,13 @@
     where $r: V \to b_0 \times \R^n$ is a representative for $R$ with $V \sub E(\bbb)$ open.
     The representative $\overline{r}$ is a homeomorphism on its image
     because its component-wise the identity and $r$, which are both homeomorphisms on their image. 
+
+    The following lemma is the rooted-version of \intref{homotopy::lemma2}
+    which will be necessary in order to prove the Rooted Homotopy Theorem.
 \end{myparagraph}
 
 % lemma
-\begin{mylemma}{suspension::sharper}
+\begin{mylemma}{suspension::sharper}{}
     Let $\bb$ be a rooted microbundle over $B$ and
     let $H: \cyl{A} \to B$ be a map that leaves the base point fixed.
     Then there exists a neighborhood $V$ of $a_0$ together with an isomorphism-germ
@@ -68,6 +83,16 @@
     \[ \germdef{\inv{P} \circ Q}{\ind{H}\bb\restr{\cyl{V}}}{\be{\cyl{V}}} \]
     is an isomorphism-germ extending $\overline{R}$.
 \end{myproof}
+
+% foreword proof
+\begin{myparagraph}
+    Together with the previous lemma,
+    we are able to prove the Rooted Homotopy Theorem.
+
+    To understand the proof,
+    it is useful to have the proof of \intref{homotopy::lemma3} in mind,
+    which we modify in a few places.
+\end{myparagraph}
 
 % proof theorem
 \begin{myproof}[of the Rooted Homotopy Theorem]

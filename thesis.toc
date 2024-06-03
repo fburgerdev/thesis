@@ -1,6 +1,6 @@
 \contentsline {chapter}{\numberline {1}Introduction to Microbundles}{1}{chapter.1}%
 \contentsline {chapter}{\numberline {2}Induced Microbundles}{6}{chapter.2}%
-\contentsline {chapter}{\numberline {3}The Whitney Sum}{12}{chapter.3}%
-\contentsline {chapter}{\numberline {4}The Homotopy Theorem}{16}{chapter.4}%
-\contentsline {chapter}{\numberline {5}Microbundles over a Suspension}{25}{chapter.5}%
-\contentsline {chapter}{\numberline {6}Normal Microbundles}{37}{chapter.6}%
+\contentsline {chapter}{\numberline {3}The Whitney Sum}{13}{chapter.3}%
+\contentsline {chapter}{\numberline {4}The Homotopy Theorem}{17}{chapter.4}%
+\contentsline {chapter}{\numberline {5}Microbundles over a Suspension}{26}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Normal Microbundles}{39}{chapter.6}%
