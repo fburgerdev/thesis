@@ -1,22 +1,22 @@
 % lemma
-\begin{mylemma}{homotopy::lemma2}{}
+\begin{mystatement}{lemma}{homotopy::lemma2}
     Let $\bb$ be a microbundle over $\cyl{B}$.
-    Every $b \in B$ has a neighborhood $V$ where $\bb\restr{\cyl{V}}$ is trivial.
-\end{mylemma}
+    Every $b \in B$ has a neighborhood $V$ where $\bb[\cyl{V}]$ is trivial.
+\end{mystatement}
 
 % proof
 \begin{myproof}
     Let $b \in B$ be arbitrary.
 
-    For every $t \in \I$, choose a neighborhood $U_t := V_t \times (t - \eps_t, t + \eps_t)$ of $(b, t)$ such that $\bb\restr{U_t}$ is trivial.
+    For every $t \in \I$, choose a neighborhood $U_t := V_t \cross (t - \eps_t, t + \eps_t)$ of $(b, t)$ such that $\bb[U_t]$ is trivial.
     This can be achieved by taking a local trivialization of $(b, t)$ in $\bb$ and restricting the spaces if necessary.
 
     Since $\cyl{\coll{b}}$ is compact, we can choose a finite subset
-    \[ (V_1 \times (t_1 - \eps_1, t_1 + \eps_1)), \dots, (V_n \times (t_n - \eps_n, t_n + \eps_n)) \]
-    of the collection $\{U_t\}$ covering $\{b\} \times \I$ and define $V = V_1 \cap \dots \cap V_n$.
+    \[ (V_1 \cross (t_1 - \eps_1, t_1 + \eps_1)), \dots, (V_n \cross (t_n - \eps_n, t_n + \eps_n)) \]
+    of the collection $\{U_t\}$ covering $\{b\} \cross \I$ and define $V = V_1 \cap \dots \cap V_n$.
 
-    The restricted microbundles $\bb\restr{V \times (t_i - \eps_i, t_i + \eps_i)}$ are trivial, because every $\bb\restr{U_t}$ is trivial and $V \times (t_i - \eps_i, t_i + \eps_i) \sub U_t$.
-    Hence, there exists a subdivision $0 = t_0 < \cdots < t_k = 1$ such that every $\bb\restr{V \times [t_{i}, t_{i + 1}]}$ is trivial.
+    The restricted microbundles $\bb[V \cross (t_i - \eps_i, t_i + \eps_i)]$ are trivial, because every $\bb[U_t]$ is trivial and $V \cross (t_i - \eps_i, t_i + \eps_i) \sub U_t$.
+    Hence, there exists a subdivision $0 = t_0 < \cdots < t_k = 1$ such that every $\bb[V \cross [t_{i}, t_{i + 1}]]$ is trivial.
     
-    By iteratively applying the previous lemma on the $\bb\restr{V \times [t_i, t_{i + 1}]}$, it follows that $\bb\restr{\cyl{V}}$ is trivial.
+    By iteratively applying the previous lemma on the $\bb[V \cross [t_i, t_{i + 1}]]$, it follows that $\bb[\cyl{V}]$ is trivial.
 \end{myproof}

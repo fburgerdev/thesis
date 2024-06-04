@@ -1,28 +1,28 @@
 % lemma
-\begin{mylemma}{normal::homeomorphy}{}
+\begin{mystatement}{lemma}{normal::homeomorphy}
     Let $\bt_N$ and $\bt_M$ be two tangent microbundles of $N$ and $M$.
     The total spaces $E(\ind{\iota}\bt_M)$ and $E(\ind{r}\bt_N)$ are homeomorphic.
-\end{mylemma}
+\end{mystatement}
 
 % proof
 \begin{myproof}
     The total space
-    \[ E(\ind{\iota}\bt_M) = \{ (n, m_1, m_2) \in N \times (M \times M) \mid \iota(n) = m_1\} \]
-    is homeomorphic to $N \times M$ via
+    \[ E(\ind{\iota}\bt_M) = \{ (n, m_1, m_2) \in N \cross (M \cross M) \mid \iota(n) = m_1\} \]
+    is homeomorphic to $N \cross M$ via
     \[ (n, m_1, m_2) \mapsto (n, m_2) \]
     with inverse $(n, m) \mapsto (n, \iota(n), m)$.
     Similarly, the total space
-    \[ E(\ind{r}\bt_N) = \{ (m, n_1, n_2) \in M \times (N \times N) \mid r(m) = n_1\} \]
-    is homeomorphic to $M \times N$ via
+    \[ E(\ind{r}\bt_N) = \{ (m, n_1, n_2) \in M \cross (N \cross N) \mid r(m) = n_1\} \]
+    is homeomorphic to $M \cross N$ via
     \[ (m, n_1, n_2) \mapsto (m, n) \]
     with inverse $(m, n) \mapsto (m, r(m), n)$.
     
-    Composed with the canonic homeomorphism $N \times M \cong M \times N$, this yields a homeomorphism
+    Composed with the canonic homeomorphism $N \cross M \cong M \cross N$, this yields a homeomorphism
     \[ \psi: E(\ind{\iota}\bt_M) \isomto E(\ind{r}\bt_N) \twith \psi(n, m_1, m_2) := (m_2, r(m_2), n). \]
 \end{myproof}
 
 % remark
-\begin{myremark}{normal::commute}{}
+\begin{mystatement}{remark}{normal::commute}
     The following diagram commutes:
     \[
         \begin{tikzcd}
@@ -30,4 +30,4 @@
             M \ar[r, "i_r"] & E(\ind{r}\bt_N)
         \end{tikzcd}
     \]
-\end{myremark}
+\end{mystatement}

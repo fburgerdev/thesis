@@ -1,7 +1,7 @@
 % lemma
-\begin{mylemma}{suspension::commutativity}{}
+\begin{mystatement}{lemma}{suspension::commutativity}
     The rooted microbundles $\whitney{\bb}{\be{B}}$ and $\whitney{\be{B}}{\bb}$ are rooted-isomorphic. 
-\end{mylemma}
+\end{mystatement}
 
 % proof
 \begin{myproof}
@@ -11,7 +11,7 @@
     where $I$ denotes the identity germ.
 
     Ignoring the rooting, we have an
-    isomorphism-germ $f: E(\bb) \times \R^n \isomto \R^n \times E(\bb)$ with $f(e, x) = (-x, e)$.
+    isomorphism-germ $f: E(\bb) \cross \R^n \isomto \R^n \cross E(\bb)$ with $f(e, x) = (-x, e)$.
     The idea is to change the $f$ near $b_0$ so that it extends the rooting.
 
     Using the previous lemma, choose a sufficiently small closed neighborhood $U$ of $b_0$
@@ -23,7 +23,7 @@
     such that $\supp \lambda \sub U$ and $\lambda(b_0) = \frac{\pi}{2}$.
     
     Now, we can define a homeomorphism
-    \[ \psi: U \times \R^n \times \R^n \isomto U \times \R^n \times \R^n \twith \]
+    \[ \psi: U \cross \R^n \cross \R^n \isomto U \cross \R^n \cross \R^n \twith \]
     \[ \psi(b, x, y) = (b, x \sin(\lambda(b)) - y \cos(\lambda(b)), x \cos(\lambda(b)) - y \sin(\lambda(b))). \]
 
     Consider the composition

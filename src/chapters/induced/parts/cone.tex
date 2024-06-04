@@ -1,15 +1,15 @@
 % definition extend
-\begin{mydefinition}{induced::extend}{}
+\begin{mystatement}{definition}{induced::extend}
     Let $\bb$ and $\bb'$ be two microbundles over $B$ and $B'$ where $B' \sub B$.
     We say that $\bb$ is an \defterm{extension} of $\bb'$ over $B$, if
-    \[ \bb\restr{B'} \cong \bb'. \]
-\end{mydefinition}
+    \[ \bb[B'] \cong \bb'. \]
+\end{mystatement}
 
 % foreword cone / cylinder
 \begin{myparagraph}
     % cone
     For a topological space $X$, we define the \defterm{cone} of $X$ to be 
-    \[ CX := \cyl{X} / X \times \{1\} \]
+    \[ CX := \cyl{X} / X \cross \{1\} \]
     and the \defterm{mapping cone} of a map $f: A \to B$ to be
     \[ B \sqcup_f CA := B \sqcup CA / \sim \]
     where $(a, 0) \sim b \iff f(a) = b$.
@@ -23,11 +23,11 @@
 \end{myparagraph}
 
 % lemma cone
-\begin{mylemma}{induced::cone}{}
+\begin{mystatement}{lemma}{induced::cone}
     Let $A$ be a paracompact hausdorff space.
     A microbundle $\bb$ over $B$ can be extended to a microbundle
     over the mapping cone $B \sqcup_f CA$ if and only if $\ind{f}\bb$ is trivial.
-\end{mylemma}
+\end{mystatement}
 
 % proof cone
 \begin{myproof}
@@ -57,31 +57,31 @@
     Let $\ind{f}\bb$ be trivial.
 
     In contrast to the mapping cone,
-    there exists a natural retraction from the mapping cylinder to the attached space
-    \[ r: B \sqcup_f MA \to B \twith r([a, t]) = f(a) \]
+    there exists a natural retraction from the mapping cylinder to its attached space
+    \[ r: B \sqcup_f MA \to B \twith r([a, t]) = f(a). \]
     The diagram
-    \[ A \times \{1\} \incl B \sqcup_f MA \xto{r} B \]
-    equals $f$ if we consider $A = \cylup{A}$.
+    \[ A \cross \{1\} \incl B \sqcup_f MA \xto{r} B \]
+    is equal to $f$ if we consider $A = \cylup{A}$.
     It follows that
-    \[ \ind{r}\bb\restr{A \times \{1\}} = \ind{(r \circ \iota)}\bb = \ind{f}\bb \]
+    \[ \ind{r}\bb[A \cross \{1\}] = \ind{(r \circ \iota)}\bb = \ind{f}\bb \]
     is trivial.
 
     From \intref{induced::trivial} and the retraction $(a, t) \mapsto (a, 1)$
-    it follows that $\ind{r}\bb\restr{A \times [\half, 1]}$ is trivial.
+    it follows that $\ind{r}\bb[A \cross [\half, 1]]$ is trivial.
     Since $A$ is paracompact hausdorff and by \intref{microbundle::paracompact},
-    there exists a homoemorphism
-    \[ \psi: V \isomto A \times [\half, 1] \times \R^n \]
-    where $V$ is a neighborhood of $i_r(B)$ in $E(\ind{r}\bb\restr{A \times [\half, 1]})$.
+    there exists a homeomorphism
+    \[ \psi: V \isomto A \cross [\half, 1] \cross \R^n \]
+    where $V$ is a neighborhood of $i_r(B)$ in $E(\ind{r}\bb[A \cross [\half, 1]])$.
     Without loss of generality,
-    we may assume that $V = E(\ind{r}\bb\restr{A \times [\half, 1]})$
-    by removing a closed subset of $E(\ind{r}\bb\restr{A \times [\half, 1]})$
+    we may assume that $V = E(\ind{r}\bb[A \cross [\half, 1]])$
+    by removing a closed subset of $E(\ind{r}\bb[A \cross [\half, 1]])$
     if necessary and applying \intref{microbundle::total}.
 
     Now we construct an extension
     \[ \bundledef{\bb'}{B \sqcup_f CA}{E'}{i'}{j'} \]
     with
     \begin{itemize}
-        \item $E' := E(\ind{r}\bb) / \inv{\psi}(A \times \{1\} \times \{x\})$ (for every $x \in \R^n$)
+        \item $E' := E(\ind{r}\bb) / \inv{\psi}(A \cross \{1\} \cross \{x\})$ (for every $x \in \R^n$)
         \item $i'([a, t]) := [i_r([a, t])]$
         \item $j'([[a, t], e]) := [j_r([a, t], e)] = [a, t]$
     \end{itemize}

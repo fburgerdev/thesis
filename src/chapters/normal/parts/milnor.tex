@@ -13,9 +13,9 @@
     \end{myparagraph}
 
     % theorem
-    \begin{mytheorem}[Milnors Theorem]{normal::milnor}{}
-        For a sufficently large $q \in \N$, $N = \cyldown{N}$ has a normal microbundle in $M \times \R^q$.
-    \end{mytheorem}
+    \begin{mystatement}{theorem}[Milnors Theorem]{normal::milnor}
+        For a sufficently large $q \in \N$, $N = \cyldown{N}$ has a normal microbundle in $M \cross \R^q$.
+    \end{mystatement}
 
     % proof
     \begin{myproof}
@@ -46,13 +46,13 @@
             \item $E(\rtn) \sub E(\rwhitney)$ has a normal microbundle:
 
             Since the total space
-            \[ E(\rwhitney) = \set{(e, e') \in E(\rtn) \times E(\ind{r}\eta)}{j(e) = j'(e)} \]
+            \[ E(\rwhitney) = \set{(e, e') \in E(\rtn) \cross E(\ind{r}\eta)}{j(e) = j'(e)} \]
             we can consider $E(\rtn) \sub E(\rwhitney)$ embedded via
             \[ \iota: e \mapsto (e, i'(j(e))) \]
             with the inverse $\pi_1: (e, e') \mapsto e$.
 
             Because $\rwhitney \cong \ind{r}(\whitney{\bt_N}{\eta})$ is trivial,
-            it follows that $E(\rwhitney) \sub M \times \R^k$ open and hence being a manifold.
+            it follows that $E(\rwhitney) \sub M \cross \R^k$ open and hence being a manifold.
 
             We have a normal microbundle of $E(\rtn)$ in $E(\rwhitney)$ via
             \[ \bundledef{\bn}{E(\rtn)}{E(\rwhitney)}{\iota}{\pi_1}. \]
@@ -64,8 +64,8 @@
             By choosing
             \begin{itemize}
                 \item $U' := \inv{j}(U)$
-                \item $V' := (U' \times V) \cap E(\rwhitney)$
-                \item $\phi': V' \isomto U' \times \R^{n_\eta}$ with $\phi'(e, e') = (e, \snd{\phi}(e'))$
+                \item $V' := (U' \cross V) \cap E(\rwhitney)$
+                \item $\phi': V' \isomto U' \cross \R^{n_\eta}$ with $\phi'(e, e') = (e, \snd{\phi}(e'))$
             \end{itemize}
             we have a local trivialization of $e$ in $\bn$.
 
@@ -74,7 +74,7 @@
             $\inv{\phi'}(e, x) = (e, \inv{\phi}(j(e), x))$.
             
             Also, $\phi'$ commutes with injection
-            \[ \phi'(\iota(e)) = \phi'(e, i'(j(e))) = (e, \snd{\phi}(i'(j(e)))) = (e, 0) = (id \times 0)(e) \]
+            \[ \phi'(\iota(e)) = \phi'(e, i'(j(e))) = (e, \snd{\phi}(i'(j(e)))) = (e, 0) = (id \cross 0)(e) \]
             and projection maps
             \[ \pi_1(e, e') = \pi_1(e, \snd{\phi'}(e, e')) = \pi_1(\phi'(e, e')). \]
         \end{enumerate}
@@ -84,7 +84,7 @@
         $N \sub E(\whitney{\ind{r}\bt_N}{\ind{r}\bt'})$ has a normal microbundle.
 
         By restricting $E(\rwhitney)$ to an open subset if necessary, we may assume that
-         \[ E(\rwhitney) = M \times \R^q \]
+         \[ E(\rwhitney) = M \cross \R^q \]
         for some $q \in \N$ using \intref{induced::trivial}.
 
         This completes the proof.

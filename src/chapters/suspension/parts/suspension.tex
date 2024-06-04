@@ -1,13 +1,13 @@
 % foreword suspension
 \begin{myparagraph}
     In the following, let $B$ be a \defterm{reduced suspension}
-    \[ SX = (\cyl{X}) / (X \times \coll{0, 1} \cup \cyl{x_0})\]
+    \[ SX = (\cyl{X}) / (X \cross \coll{0, 1} \cup \cyl{x_0})\]
     over $X$.
 
     Let $\phi: B \to B \vee B$ denote the map that sends
-    $X \times [0, \half]$ to the first $B$ via
+    $X \cross [0, \half]$ to the first $B$ via
     \[ \phi([x, t]) = [x, 2t] \]
-    and $X \times [\half, 1]$ to the second $B$ via
+    and $X \cross [\half, 1]$ to the second $B$ via
     \[ \phi([x, t]) = [x, 2t - 1]. \]
 
     Additionally, let $c_1: B \vee B \to B$ denote the map
@@ -16,33 +16,33 @@
 \end{myparagraph}
 
 % lemma triviality
-\begin{mylemma}{suspension::triviality}{}
+\begin{mystatement}{lemma}{suspension::triviality}
     The following non-rooted isomorphy holds:
     \[ \ind{\phi}(\bb \vee \be{B}) \cong \bb \cong \ind{\phi}(\be{B} \vee \bb) \]
-\end{mylemma}
+\end{mystatement}
 \begin{myproof}
     We prove the lemma in two steps.
     \begin{itemize}
         \item $\ind{c_1}\bb \cong \bb \vee \be{B}$:
         
         First, consider the total space
-        \[ E(\ind{c_1}\bb) = \set{(b, e) \in (B \vee B) \times E(\bb)}{c_1(b) = j(e)} \]
-        \[ = (\set{(b, e) \in B \times E(\bb)}{b = j(e)} \sqcup B \times E(\bb\restr{b_0})) / \sim \]
-        \[ = (\set{(j(e), e)}{e \in E(\bb)} \sqcup B \times E(\bb\restr{b_0})) / \sim \]
+        \[ E(\ind{c_1}\bb) = \set{(b, e) \in (B \vee B) \cross E(\bb)}{c_1(b) = j(e)} \]
+        \[ = (\set{(b, e) \in B \cross E(\bb)}{b = j(e)} \sqcup B \cross E(\bb[b_0])) / \sim \]
+        \[ = (\set{(j(e), e)}{e \in E(\bb)} \sqcup B \cross E(\bb[b_0])) / \sim \]
         where $(b, e) \sim (b', e') \iff b = b_0 = b' \land e = e'$.
         We can omit the first component on the left side resulting in
-        \[ E(\ind{c_1}\bb) = (E(\bb) \sqcup (B \times E(\bb\restr{b_0}))) / \sim \]
+        \[ E(\ind{c_1}\bb) = (E(\bb) \sqcup (B \cross E(\bb[b_0]))) / \sim \]
         where $e \sim (b, e') \iff b = b_0 \land e = e'$.
         
         On the other side, consider
-        \[ E(\bb \vee \be{B}) = (E(\bb) \sqcup (B \times \R^n)) / e \sim' f(e) \]
+        \[ E(\bb \vee \be{B}) = (E(\bb) \sqcup (B \cross \R^n)) / e \sim' f(e) \]
         with $f$ being some representative
-        $U_f \to b_0 \times \R^n$ for $\inv{id_{\cyl{b_0}}} \circ R_b$.
+        $U_f \to b_0 \cross \R^n$ for $\inv{id_{\cyl{b_0}}} \circ R_b$.
         
         Now, we have a map $\psi$ from the open subset of $E(\ind{c_1}\bb)$
-        \[ (E(\bb) \sqcup (B \times U_f)) / \sim \]
+        \[ (E(\bb) \sqcup (B \cross U_f)) / \sim \]
         to the open subset of $E(\bb \vee \be{B})$
-        \[ (E(\bb) \sqcup (B \times f(U_f))) / \sim' \]
+        \[ (E(\bb) \sqcup (B \cross f(U_f))) / \sim' \]
         with $\psi([e]) = [e]$ and $\psi([b, e]) = [(b, \snd{f}(e))]$.
         The map is well-defined because for every $e \sim (b_0, e)$
         \[ \psi([e]) = [e] = [f(e)] = [b_0, \snd{f}(e)] = \psi([b_0, e]). \]
@@ -68,19 +68,19 @@
 \end{myproof}
 
 % lemma distributivity
-\begin{mylemma}{suspension::distributivity}{}
+\begin{mystatement}{lemma}{suspension::distributivity}
     Let $\ba$ and $\bb$ be rooted microbundles over $A$ and $B$.
     For maps $f: A' \to A$ and $g: B' \to B$ the following non-rooted isomorphy holds:
     \[ \ind{(f \vee g)}(\ba \vee \bb) \cong \ind{f}\ba \vee \ind{g}\bb \]
-\end{mylemma}
+\end{mystatement}
 
 % proof distributivity
 \begin{myproof}
     Consider the equation
     \[ E(\ind{(f \vee g)}(\ba \vee \bb)) \]
-    \[ = \set{(x, e) \in (A' \vee B') \times E(\ba \vee \bb)}{(f \vee g)(x) = j(e)} \]
-    \[ = \set{(x, e) \in ((A' \times E(\ba)) \sqcup (B' \times E(\bb))) / \sim}{(f \vee g)(x) = j(e)} \]
-    \[ = (\set{(x, e) \in A' \times E(\ba)}{f(x) = j_a(e)} \sqcup \set{(x, e) \in B' \times E(\bb)}{g(x) = j_b(e)}) / \sim \]
+    \[ = \set{(x, e) \in (A' \vee B') \cross E(\ba \vee \bb)}{(f \vee g)(x) = j(e)} \]
+    \[ = \set{(x, e) \in ((A' \cross E(\ba)) \sqcup (B' \cross E(\bb))) / \sim}{(f \vee g)(x) = j(e)} \]
+    \[ = (\set{(x, e) \in A' \cross E(\ba)}{f(x) = j_a(e)} \sqcup \set{(x, e) \in B' \cross E(\bb)}{g(x) = j_b(e)}) / \sim \]
     \[ = (E(\ind{f}\ba) \sqcup E(\ind{g}\bb)) / \sim \]
     \[ = E(\ind{f}\ba \vee \ind{g}\bb) \]
     where $(a, e_a) \sim (b, e_b) \iff a = a_0 = b_0 = b \land e_a = e_b$ in $E(\ba \vee \bb)$.
@@ -103,11 +103,11 @@
 \end{myparagraph}
 
 % lemma reflection
-\begin{mylemma}{suspension::reflection}{}
+\begin{mystatement}{lemma}{suspension::reflection}
     The induced microbundle $\ind{\phi}(\bb \vee \ind{r}\bb)$ is trivial.
-\end{mylemma}
+\end{mystatement}
 \begin{myproof}
-    The composition $f \circ \phi$ is null-homotopic via the homotopy $H: B \times \I \to B$ with
+    The composition $f \circ \phi$ is null-homotopic via the homotopy $H: B \cross \I \to B$ with
     \[ H([x, t], s) = f(\phi(x, t * s)). \]
     Therefore $\ind{\phi}\ind{f}\bb \cong \ind{(f \circ \phi)}\bb\cong \ind{const_{b_0}}\bb \cong \be{B}$ (see \intref{homotopy::theorem}).
     

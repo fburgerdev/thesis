@@ -1,5 +1,5 @@
 % definition
-\begin{mydefinition}[composition microbundle]{normal::composition}{}
+\begin{mystatement}{definition}[composition microbundle]{normal::composition}
     Let $\ba$ be a $n$-dimensional microbundle with
     \[ \bundledef{\ba}{A}{E(\ba)}{i_a}{j_a} \]
     and let $\bb$ be a $n'$-dimensional microbundle with
@@ -7,7 +7,7 @@
     The \defterm{composition microbundle} $\ba \circ \bb$ is a $(n + n')$-dimensional microbundle
     \[ \bundle{A}{E(\bb)}{i}{j} \]
     where $i := i_b \circ i_a$ and $j := j_a \circ j_b$.
-\end{mydefinition}
+\end{mystatement}
 
 % proof
 \begin{myproof}[that $\ba \circ \bb$ is a $(n + n')$-dimensional microbundle]
@@ -26,27 +26,27 @@
     
     `$\sub$':
     Modify $U_a$ such that
-    \[ U_a \times \ball[\eps] \sub \phi_a(V_a \cap U_b) \]
+    \[ U_a \cross \ball[\eps] \sub \phi_a(V_a \cap U_b) \]
     for a sufficiently small $\eps > 0$ and let
-    \[ V_a = \inv{\phi_a}(U_a \times \ball[\eps]) \sub V_a \cap U_b. \]
+    \[ V_a = \inv{\phi_a}(U_a \cross \ball[\eps]) \sub V_a \cap U_b. \]
     Composing $\phi_a$ with $\mu_\eps: \ball[\eps] \isomto \R^n$
     yields a local trivialization of $a$ in $\ba$ that $V_a \sub U_a$.
 
-    `$\bus$': Restrict $U_b$ to $V_a \cap U_b$ and $V_b$ to $\inv{\phi_b}((V_a \cap U_b) \times \R^{n'})$.
+    `$\bus$': Restrict $U_b$ to $V_a \cap U_b$ and $V_b$ to $\inv{\phi_b}((V_a \cap U_b) \cross \R^{n'})$.
 
     It follows that have a local trivialization
     $(U_a, V_b, \phi)$ of $a$ in $\ba \circ \bb$ where
     \[ 
-        \phi: V_b \xto{\phi_b} U_b \times \R^{n'}
-        = V_a \times \R^{n'}
-        \xto{\phi_a \times id_{\R^{n'}}} U_a \times \R^{n} \times \R^{n'}
-        = U_a \times \R^{n + n'}.
+        \phi: V_b \xto{\phi_b} U_b \cross \R^{n'}
+        = V_a \cross \R^{n'}
+        \xto{\phi_a \cross id_{\R^{n'}}} U_a \cross \R^{n} \cross \R^{n'}
+        = U_a \cross \R^{n + n'}.
     \]
     The map $\phi$ is an homeomorphism since it's composed by homeomorphisms.
 
     Additionally, $\phi$ commutes with injection
     \[ \phi(i(a)) = \phi(i_b(i_a(a))) = (\phi_a(i_a(a)), \snd{\phi_b}(i_b(i_a(a)))) \]
-    \[ = (\snd{\phi_a}(i_a(a)), 0) = (a, (0, 0)) = (id_{U_a} \times 0)(a) \]
+    \[ = (\snd{\phi_a}(i_a(a)), 0) = (a, (0, 0)) = (id_{U_a} \cross 0)(a) \]
     and projection maps
     \[ j(e) = j_a(j_b(e)) = \pi_1(j_a(j_b(e)), \snd{\phi}(e)) = \pi_1(\phi(e)) \]
     which completes the proof.

@@ -9,8 +9,8 @@
 \newcommand{\ba} {%
     \mathfrak{a}%
 }
-\newcommand{\bb} {%
-    \mathfrak{b}%
+\NewDocumentCommand{\bb}{o}{
+    \IfValueTF{#1}{\mathfrak{b}\restr{#1}}{\mathfrak{b}}
 }
 \newcommand{\bc} {%
     \mathfrak{c}%
@@ -19,7 +19,7 @@
     \mathfrak{d}%
 }
 % bundle :: trivial
-\newcommand{\be}[2][n] {%
+\newcommand{\be}[2][n]{
     \mathfrak{e}^{#1}_{#2}
 }
 % bundle :: tangent
@@ -54,7 +54,7 @@
     \ba\restr{a_0}%
 }
 \newcommand{\bbb} {%
-    \bb\restr{b_0}%
+    \bb[b_0]%
 }
 \newcommand{\bcb} {%
     \bc\restr{c_0}%

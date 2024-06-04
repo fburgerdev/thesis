@@ -1,19 +1,19 @@
 % lemma
-\begin{mylemma}{whitney::compatibility}{}
+\begin{mystatement}{lemma}{whitney::compatibility}
     Let $\bb_1$ and $\bb_1$ be two microbundles over $B$ and let $f: A \to B$ be a map.
     The induced microbundle and the whitney sum are compatible, that is
     \[ \ind{f}(\whitney{\bb_1}{\bb_2}) \cong \whitney{\ind{f}\bb_1}{\ind{f}\bb_2}. \]
-\end{mylemma}
+\end{mystatement}
 
 % proof
 \begin{myproof}
     From the definition of the induced microbundle and the whitney sum, we can explicitly write the total spaces
     \[ E(\ind{f}(\whitney{\bb_1}{\bb_2})) \]
-    \[ = \{(a, (e_1, e_2)) \in A \times (E(\bb_1) \times E(\bb_2)) \mid j_1(e_1) = j_2(e_2) = f(a) \} \]
+    \[ = \{(a, (e_1, e_2)) \in A \cross (E(\bb_1) \cross E(\bb_2)) \mid j_1(e_1) = j_2(e_2) = f(a) \} \]
     and
     \[ E(\whitney{\ind{f}\bb_1}{\ind{f}\bb_2}) \]
-    \[ = \{(e_1, e_2) \in E(\ind{f}\bb_1) \times E(\ind{f}\bb_2) \mid j_1(e_1) = j(e_2)\}\]
-    \[ = \{((a_1, e_1), (a_2, e_2)) \in (A \times E(\bb_1)) \times (A \times E(\bb_2)) \mid \]
+    \[ = \{(e_1, e_2) \in E(\ind{f}\bb_1) \cross E(\ind{f}\bb_2) \mid j_1(e_1) = j(e_2)\}\]
+    \[ = \{((a_1, e_1), (a_2, e_2)) \in (A \cross E(\bb_1)) \cross (A \cross E(\bb_2)) \mid \]
     \[ j(a_1, e_1) = j(a_2, e_2) \land f(a_i) = j(e_i)\} \]
     The two total spaces are homeomorphic via $\phi(a, (e_1, e_2)) := ((a, e_1), (a, e_2))$ with $\inv{\phi}((a, e_1), (a, e_2)) = (a, (e_1, e_2))$.
     Homeomorphy of $\phi$ follows from the continuity of $\phi$ and $\inv{\phi}$, which is given since both $\phi$ and $\inv{\phi}$ are composed by identity maps.

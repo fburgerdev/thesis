@@ -1,5 +1,4 @@
-- whole read + refactor
-- whole read
+- polish thesis
 - block bundles
 - abstract
 - references

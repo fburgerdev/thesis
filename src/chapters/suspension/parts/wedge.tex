@@ -14,7 +14,7 @@
 \end{myparagraph}
 
 % definition
-\begin{mydefinition}{suspension::wedge}{}
+\begin{mystatement}{definition}{suspension::wedge}
     Let $\ba$ and $\bb$ be two rooted microbundles over $A$ and $B$.
     % microbundle
     The \defterm{wedge sum} $\ba \vee \bb$ of $\ba$ and $\bb$ is a rooted microbundle over $A \vee B$
@@ -27,7 +27,7 @@
     We equip $\ba \vee \bb$ with a rooting
     \[ \germdef{R}{E((\ba \vee \bb)\restr{a_0})}{\be{a_0}} \]
     represented by any representative for $R_a$ (or $R_b$).
-\end{mydefinition}
+\end{mystatement}
 
 % proof
 \begin{myproof}[that $\ba \vee \bb$ is a rooted microbundle]
@@ -63,7 +63,7 @@
             We can assume $U \cap B = \emptyset$ by subtracting $U$ by $\{a_0\}$ which is closed since $A$ is hausdorff.
             
             Now we can simply take this trivialization for $\ba \vee \bb$
-            since $U$ is open in $A \vee B$, $V$ is open in $E(\ba \vee \bb)$ and $V \cong U \times \R^n$.
+            since $U$ is open in $A \vee B$, $V$ is open in $E(\ba \vee \bb)$ and $V \cong U \cross \R^n$.
             % special case
             \item $x = a_0$:
             
@@ -97,9 +97,9 @@
             \[ X = (\snd{\phi_a} \circ \inv{f})(V_b \cap E(\bbb)). \]
 
             By definining 
-            \[ V_a' = \inv{\phi_a}(U_a \times X) \]
+            \[ V_a' = \inv{\phi_a}(U_a \cross X) \]
             together with
-            \[ \phi_a': V_a' \isomto U_a \times \R^n \]
+            \[ \phi_a': V_a' \isomto U_a \cross \R^n \]
             \[ e \mapsto (j_a(e), (\snd{\phi_b} \circ f \circ \inv{\phi_a})(a_0, \snd{\phi_a}(e))) \]
             we finally have a local trivialization $(U_a \vee U_b, (V_a' \sqcup V_b) / \sim, \phi_a' \vee \phi_b)$ of $a_0$ in $\ba \vee \bb$.
 

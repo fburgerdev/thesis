@@ -15,14 +15,14 @@
 \end{myparagraph}
 
 % proposition
-\begin{myproposition}{microbundle::total}{}
+\begin{mystatement}{proposition}{microbundle::total}
     Given a microbundle $\bundledef{\bb}{B}{E}{i}{j}$ over $B$,
     restricting the total space $E$ to an
     arbitrary neighborhood $E' \sub E$ of $i(B)$ leaves the microbundle unchanged.
     That is, the microbundle
     \[ \bundledef{\bb'}{B}{E'}{i}{j\restr{E'}} \]
     is isomorphic to $\bb$.
-\end{myproposition}
+\end{mystatement}
 
 % proof
 \begin{myproof}
@@ -40,18 +40,18 @@
         This follows from $\phi(i(b)) = (b, 0)$ and $V \cap E'$ being a neighborhood of $i(b)$.
 
         Hence, for a sufficiently small $\eps > 0$ there
-        exists a $U' \times \ball[\eps] \sub \phi(V \cap E')$ such that
+        exists a $U' \cross \ball[\eps] \sub \phi(V \cap E')$ such that
         $U'$ is an open neighborhood of $b$.
 
         Utilizing a homeomorphism $\mu_\eps: \ball[\eps] \isomto \R^n$,
         we have a local trivialization $(U', V', \phi')$ with
-        \[ \phi': V' \xto{\phi} U' \times \ball[\eps] \xto{id \times \mu_\eps} U' \times \R^n \]
-        and $V' := \inv{\phi}(U' \times \ball[\eps])$.
+        \[ \phi': V' \xto{\phi} U' \cross \ball[\eps] \xto{id \cross \mu_\eps} U' \cross \R^n \]
+        and $V' := \inv{\phi}(U' \cross \ball[\eps])$.
 
         That is because $\phi'$ commutes with the injection
-        \[ \phi'(i(b)) =  (id \times \mu_\eps)(\phi(i(b))) = (id \times \mu_\eps)(b, 0) = (b, 0) = (id \times 0)(b)\]
+        \[ \phi'(i(b)) =  (id \cross \mu_\eps)(\phi(i(b))) = (id \cross \mu_\eps)(b, 0) = (b, 0) = (id \cross 0)(b)\]
         and projection maps
-        \[ j(e) = \pi_1(\phi(e)) = \pi_1((id \times \mu_\eps)(\phi(e))) = \pi_1(\phi'(e)). \]
+        \[ j(e) = \pi_1(\phi(e)) = \pi_1((id \cross \mu_\eps)(\phi(e))) = \pi_1(\phi'(e)). \]
         
         % isomorphy
         \item $\bb'$ is isomorphic to $\bb$:

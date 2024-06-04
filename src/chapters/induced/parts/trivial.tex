@@ -1,8 +1,8 @@
 % lemma
-\begin{mylemma}{induced::trivial}{}
+\begin{mystatement}{lemma}{induced::trivial}
     Let $\bb$ be a microbundle over $B$ and $f: A \to B$ be a map.
     The induced microbundle $\ind{f}\bb$ is trivial if $\bb$ is already trivial.
-\end{mylemma}
+\end{mystatement}
 
 % proof
 \begin{myproof}
@@ -12,12 +12,12 @@
     
     % homeomorphism
     Since $\bb$ is trivial, there exists a homeomorphism $\psi: V \to \psi(V)$
-    where $V$ is a neighborhood of $i(B)$ and $\psi(V)$ is a neighborhood of $B \times \{0\}$
+    where $V$ is a neighborhood of $i(B)$ and $\psi(V)$ is a neighborhood of $B \cross \{0\}$
     such that $\psi$ commutes with injection and projection maps.
     We define a map 
     \[ \psi': V' \isomto \psi'(V') \]
     \[ (a, e) \mapsto (a, \snd{\psi}(e)) \]
-    where $V' := (A \times V) \cap E(\ind{f}\bb)$.
+    where $V' := (A \cross V) \cap E(\ind{f}\bb)$.
     Since $\psi'$ is component-wise homeomorphic, $\psi'$ is a homeomorphism.
     Note that $V'$ is a neighborhood of $i'(A)$ since
     \[ \forall a \in A: i(f(a)) \in V \tand i'(a) = (a, i(f(a))). \]
@@ -25,7 +25,7 @@
 
     % commute
     Finally, $\psi'$ commutes with the injection
-    \[ \psi'(i'(a)) = (a, \snd{\psi}(i(f(a)))) = (a, 0) = (id \times 0)(a) \]
+    \[ \psi'(i'(a)) = (a, \snd{\psi}(i(f(a)))) = (a, 0) = (id \cross 0)(a) \]
     and projection maps
     \[ j'(a, e) = j'(a) = \pi_1(a, \snd{\psi'}(a, e)) = \pi_1(\psi'(a, e)) \]
     which completes the proof.

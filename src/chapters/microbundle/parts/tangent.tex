@@ -5,11 +5,11 @@
 \end{myparagraph}
 
 % example
-\begin{myexample}[tangent microbundle]{microbundle::tangent}{}
+\begin{mystatement}{example}[tangent microbundle]{microbundle::tangent}
     The \defterm{tangent microbundle} $\bt_M$ over a topological $d$-manifold $M$ is a diagram
-    \[ \bundle{M}{M \times M}{\Delta}{\pi_1} \]
+    \[ \bundle{M}{M \cross M}{\Delta}{\pi_1} \]
     where $\Delta(m) := (m, m)$ denotes the diagonal map.
-\end{myexample}
+\end{mystatement}
 
 % proof
 \begin{myproof}[that $\bt_M$ is a microbundle]
@@ -18,11 +18,11 @@
     Let $p \in M$ be arbitrary and let $(U, \psi)$ be a chart over $p$.
     Note that $U$ is an open neighborhood of $p$.
     
-    We have a local trivialization $(U, U \times U, \phi)$ of $p$ in $\bt_M$ where
-    \[ \phi: U \times U \isomto U \times \R^n \twith \phi(u, u') := (u, \psi(u) - \psi(u')). \]
+    We have a local trivialization $(U, U \cross U, \phi)$ of $p$ in $\bt_M$ where
+    \[ \phi: U \cross U \isomto U \cross \R^n \twith \phi(u, u') := (u, \psi(u) - \psi(u')). \]
     Homeomorphy of $\phi$ is given by homeomorphy of $\psi$
     and $\phi$ commutes with the injection
-    \[ \phi(\Delta(m)) = \phi(m, m) = (m, \psi(m) - \psi(m)) = (m, 0) = (id \times 0)(m)\]
+    \[ \phi(\Delta(m)) = \phi(m, m) = (m, \psi(m) - \psi(m)) = (m, 0) = (id \cross 0)(m)\]
     and projection maps
     \[ \pi_1(u, u') = u = \pi_1(u, \snd{\phi}(u, u')) = \pi_1(\phi(u, u')). \]
     Note that $\snd{\phi}$ denotes the map on the second component of $\phi$,
@@ -30,9 +30,9 @@
 \end{myproof}
 
 % remark
-\begin{myremark}{microbundle::tangentdim}{}
+\begin{mystatement}{remark}{microbundle::tangentdim}
     The tangent microbundle $\bt_M$ has fibre dimension $d$.
-\end{myremark}
+\end{mystatement}
 
 % afterword
 \begin{myparagraph}

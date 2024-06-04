@@ -4,16 +4,16 @@
 \end{myparagraph}
 
 % lemma
-\begin{mylemma}{microbundle::paracompact}{}
+\begin{mystatement}{lemma}{microbundle::paracompact}
     A microbundle $\bb$ over a paracompact hausdorff space $B$ is trivial
-    if and only if there exists an open neighborhood $V$ of $i(B)$ such that $V \cong B \times \R^n$
+    if and only if there exists an open neighborhood $V$ of $i(B)$ such that $V \cong B \cross \R^n$
     with injection and projection maps being compatible with this homeomorphism.
-\end{mylemma}
+\end{mystatement}
 
 % afterword
 \begin{myparagraph}
     So for trivial microbundles $\bb$ over $B$, given that the $B$ is paracompact hausdorff,
-    we may assume that an open subset of $E(\bb)$ is homeomorphic to the whole $B \times \R^n$,
+    we may assume that an open subset of $E(\bb)$ is homeomorphic to the whole $B \cross \R^n$,
     instead of only a neighborhood of $\cyldown{B}$.
 \end{myparagraph}
 
@@ -23,10 +23,10 @@
 
     By restricting $E(\bb)$ to an open neighborhood
     and applying \intref{microbundle::total} if necessary,
-    we may assume that $E(\bb)$ is an open subset of $B \times \R^n$.
+    we may assume that $E(\bb)$ is an open subset of $B \cross \R^n$.
 
     Since $E(\bb)$ is a neighborhood of $\cyldown{B}$, there exist $B_i \sub B$ open and $0 < \eps_i < 1$ with
-    \[ \bigcup_{i \in I } B_i \times \ball[\eps_i] \sub E(\bb)\]
+    \[ \bigcup_{i \in I } B_i \cross \ball[\eps_i] \sub E(\bb)\]
     such that $\bigcup_{i \in I} B_i = B$.
     Without loss of generality, we may assume that the collection $\{B_i\}$ is locally finite because if not
     we can simply choose a locally finite refinement using the fact that $B$ is paracompact.
@@ -42,10 +42,10 @@
     \[ \iff  \abs{x} < \eps_{i_1} f_{i_1}(b) + \cdots + \eps_{i_n} f_{i_n}(b) \]
     \[ \iff 0 < (\eps_{i_1} - \abs{x}) f_{i_1}(b) + \cdots + (\eps_{i_n} - \abs{x}) f_{i_n}(b) \]
     \[ \implies \exists i \in I: 0 < (\eps_{i_1} - \abs{x}) f_{i_1}(b) \]
-    \[ \implies (b, x) \in B_i \times \ball[\eps_i]  \implies (b, x) \in E(\bb). \]
+    \[ \implies (b, x) \in B_i \cross \ball[\eps_i]  \implies (b, x) \in E(\bb). \]
 
     Finally, we have a homeomorphism between the open subset
-    $\set{(b, x) \in B \times \R^n}{\abs{x} < \lambda(b)} \sub E(\bb)$ and $B \times \R^n$ via
+    $\set{(b, x) \in B \cross \R^n}{\abs{x} < \lambda(b)} \sub E(\bb)$ and $B \cross \R^n$ via
     \[ (b, x) \mapsto (b, \frac{x}{\lambda(b) - \abs{x}}). \]
     Note that $(b, 0) \mapsto (b, 0)$ so this homeomorphism
     is compatible with the injection and projection maps.

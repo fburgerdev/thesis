@@ -1,11 +1,11 @@
 % lemma
-\begin{mylemma}{homotopy::paracompact}{}
+\begin{mystatement}{lemma}{homotopy::paracompact}
     Let $B$ be a paracompact hausdorff space and let $\coll{V_\alpha}$
     be a locally finite open cover of $B$.
     Then there exists a locally finite closed cover $\coll{\overline{B_\beta}}$ of $B$
     such that every $\overline{B_\beta}$ intersects only with
     finitely many $V_{\alpha_1}, \dots V_{\alpha_n}$.
-\end{mylemma}
+\end{mystatement}
 
 % proof
 \begin{myproof}
@@ -20,7 +20,8 @@
     \begin{enumerate}
         \item $\coll{\overline{B_\beta}}$ is locally finite:
         
-        For an arbitrary $b \in B$, let $W_b$ be an open neighborhood of $b$ that intersects only finitely many $B_{\beta_1}, \dots, B_{\beta_k}$.
+        For an arbitrary $b \in B$, let $W_b$
+        be an open neighborhood of $b$ that intersects only finitely many $B_{\beta_1}, \dots, B_{\beta_k}$.
         Now $W_b$ intersects only $\overline{B_{\beta_1}}, \dots, \overline{B_{\beta_1}}$ from $\coll{B_\beta}$, because
         \[ W_b \cap B_\beta = \emptyset \]
         \[ \implies B_\beta \sub B - W_b \]

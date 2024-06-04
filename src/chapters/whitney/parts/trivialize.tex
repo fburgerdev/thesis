@@ -7,16 +7,16 @@
 \end{myparagraph}
 
 % bouqet lemma
-\begin{myproposition}{whitney::bouqet}{}
+\begin{mystatement}{proposition}{whitney::bouqet}
     Let $\bb$ be a microbundle over a `bouqet' of spheres $B$, meeting at a single point.
     Then there exists a map $r: B \to B$ such that $\whitney{\bb}{\ind{r}\bb}$ is trivial.
-\end{myproposition}
+\end{mystatement}
 
 % theorem trivialize
-\begin{mytheorem}{whitney::theorem}{}
+\begin{mystatement}{theorem}{whitney::theorem}
     Let $\bb$ be a microbundle over a $d$-dimensional simplicial complex $B$.
     Then there exists a microbundle $\bn$ over $B$ so that the whitney sum $\whitney{\bb}{\bn}$ is trivial.
-\end{mytheorem}
+\end{mystatement}
 
 % proof trivialize
 \begin{myproof}
@@ -32,7 +32,7 @@
     (Inductive Step)
 
     Let $B'$ be the $(d - 1)$-skeleton of $B$ and $\bn'$ be it's corresponding microbundle
-    such that $\whitney{\bb\restr{B'}}{\bn'}$ is trivial.
+    such that $\whitney{\bb[B']}{\bn'}$ is trivial.
 
     \begin{enumerate}
         % simplex
@@ -42,12 +42,12 @@
         \[
             (\whitney{\bn'}{\be{B'}})\restr{\partial\sigma}
             = \whitney{\bn'\restr{\partial\sigma}}{\be{B'}\restr{\partial\sigma}}
-            = \whitney{\bn'\restr{\partial\sigma}}{\bb\restr{\partial\sigma}}
-            = (\whitney{\bn'}{\bb\restr{B'}})\restr{\partial\sigma}
+            = \whitney{\bn'\restr{\partial\sigma}}{\bb[\partial\sigma]}
+            = (\whitney{\bn'}{\bb[B']})\restr{\partial\sigma}
         \]
         in which we used the previous lemma and \intref{induced::simplex}
-        for $\be{B'}\restr{\partial\sigma} = \bb\restr{\partial\sigma}$.
-        Since $(\whitney{\bn'}{\bb\restr{B'}})\restr{\partial\sigma}$ is trivial, the claim follows from \intref{induced::simplex}.
+        for $\be{B'}\restr{\partial\sigma} = \bb[\partial\sigma]$.
+        Since $(\whitney{\bn'}{\bb[B']})\restr{\partial\sigma}$ is trivial, the claim follows from \intref{induced::simplex}.
 
         % extend
         \item $\whitney{\bn'}{\be{B'}}$ can be extended over $B$:
@@ -69,9 +69,9 @@
         Since
         \[
             (\whitney{\bb}{\eta})\restr{B'}
-            = \whitney{\bb\restr{B'}}{\eta\restr{B'}}
-            = \whitney{\bb\restr{B'}}{(\whitney{\bn'}{\be{B'}})}
-            = \whitney{(\whitney{\bb\restr{B'}}{\bn'})}{\be{B'}}
+            = \whitney{\bb[B']}{\eta\restr{B'}}
+            = \whitney{\bb[B']}{(\whitney{\bn'}{\be{B'}})}
+            = \whitney{(\whitney{\bb[B']}{\bn'})}{\be{B'}}
             = \whitney{\be{B'}}{\be{B'}}
         \]
         is trivial, it follows from \intref{induced::cone} that we can extend $\whitney{\bb}{\eta}$ over $B \sqcup CB'$

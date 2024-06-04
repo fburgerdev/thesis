@@ -1,14 +1,14 @@
 % definition
-\begin{mydefinition}{whitney::definition}{}
+\begin{mystatement}{definition}{whitney::definition}
     Let $\bb_1$ and $\bb_1$ be two microbundles over $B$ with fibre dimensions $n_1$ and $n_2$.
     The \defterm{whitney sum} $\whitney{\bb_1}{\bb_2}$ is a microbundle $\bundle{B}{E}{i}{j}$ where
     \begin{itemize}
-        \item $E := \set{ (e_1, e_2) \in E(\bb_1) \times E(\bb_2)}{j_1(e_1) = j_2(e_2)}$
+        \item $E := \set{ (e_1, e_2) \in E(\bb_1) \cross E(\bb_2)}{j_1(e_1) = j_2(e_2)}$
         \item $i(b) := (i_1(b), i_2(b))$
         \item $j(e_1, e_2) := j_1(e_1) = j_2(e_2)$
     \end{itemize}
     with fibre dimension $n_1 + n_2$.
-\end{mydefinition}
+\end{mystatement}
 
 % proof
 \begin{myproof}[that $\whitney{\bb_1}{\bb_2}$ is a microbundle]
@@ -17,8 +17,8 @@
     We construct a local trivialization of $b$ in $\whitney{\bb_1}{\bb_2}$ as follows:
     \begin{itemize}
         \item $U := U_1 \cap U_2$
-        \item $V := (V_1 \times V_2) \cap E$
-        \item $\phi: V \to U \times \R^{n_1 + n_2}; \phi(e_1, e_2) := (\frst{\phi_1}(e_1), \snd{\phi_1}(e_1) \times  \snd{\phi_2}(e_2))$
+        \item $V := (V_1 \cross V_2) \cap E$
+        \item $\phi: V \to U \cross \R^{n_1 + n_2}; \phi(e_1, e_2) := (\frst{\phi_1}(e_1), \snd{\phi_1}(e_1) \cross  \snd{\phi_2}(e_2))$
     \end{itemize}
     Note that $\frst{\phi_1}(e_1) = \frst{\phi_2}(e_2)$.
     Both $U$ and $V$ are open since $U_1, U_2$ and $V_1, V_2$ are open.
@@ -27,9 +27,9 @@
 \end{myproof}
 
 % equivalent definitions
-\begin{myremark}{whitney::alternative}{}
+\begin{mystatement}{remark}{whitney::alternative}
     Alternatively, one could define the whitney sum between $\bb_1$ and $\bb_2$
-    to be the induced microbundle $\ind{\Delta}(\bb_1 \times \bb_2)$
-    where $\Delta$ denotes the diagonal map and $\bb_1 \times \bb_2$
+    to be the induced microbundle $\ind{\Delta}(\bb_1 \cross \bb_2)$
+    where $\Delta$ denotes the diagonal map and $\bb_1 \cross \bb_2$
     denotes the literal cross-product between the two microbundles.
-\end{myremark}
+\end{mystatement}

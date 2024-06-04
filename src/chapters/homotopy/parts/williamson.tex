@@ -5,10 +5,10 @@
 \end{myparagraph}
 
 % williamson
-\begin{myproposition}[Williamson]{homotopy::williamson}{}
+\begin{mystatement}{proposition}[Williamson]{homotopy::williamson}
     Let $\bb$ and $\bb'$ be two microbundles over $B$.
     A bundle-germ $\germdef{F}{\bb}{\bb'}$ covering the identity map is an isomorphism-germ.
-\end{myproposition}
+\end{mystatement}
 
 % foreword lemma
 \begin{myparagraph}
@@ -16,11 +16,11 @@
 \end{myparagraph}
 
 % lemma
-\begin{mylemma}{homotopy::ball}{}
+\begin{mystatement}{lemma}{homotopy::ball}
     If a homeomorphism $\phi: \clball[2] \isomto \phi(\R^n) \sub \R^n$ satisfies
     \[ \abs{\phi(x) - x} < 1, \forall x \in \clball[2] \]
     then $\clball[1] \sub \phi(\clball[2])$.
-\end{mylemma}
+\end{mystatement}
 
 % proof lemma
 \begin{myproof}[of the lemma]
@@ -40,14 +40,15 @@
     First we assume a special and then generalize the result to show the proposition.
     \begin{enumerate}
         % special case
-        \item Let $f$ map from $B \times \R^n$ to $B \times \R^n$:
+        \item Let $f$ map from $B \cross \R^n$ to $B \cross \R^n$:
         
         Since $F$ covers the identity, $f$ is of the form
         \[ f(b, x) = (b, g_b(x)) \]
         where $g_b: \R^n \to \R^n$ are individual maps.
-        Since the $g_b$ are continuous and injective, it follows from the \extref{domain invariance theorem} that the $g_b$ are open maps.
+        Since the $g_b$ are continuous and injective,
+        it follows from the \extref{domain invariance theorem} that the $g_b$ are open maps.
         
-        Let $(b_0, x_0) \in B \times \R^n$ and let $\eps > 0$.
+        Let $(b_0, x_0) \in B \cross \R^n$ and let $\eps > 0$.
         Since $g_{b_0}$ is an open map, there exists a $\delta > 0$ such that
         $\clball[2\delta][x_1] \sub g_{b_0}(\clball[\eps][x_0])$ where $x_1 := g_{b_0}(x_0)$.
 
@@ -57,12 +58,13 @@
         for every $b \in V$ and $x \in \clball[\eps][x_0]$.
         
         To show that, consider $\phi(b, x) := g_b(x) - g_{b_0}(x)$.
-        The open set $\inv{\phi}(\ball[\delta])$ is a neighborhood of $\{b_0\} \times \R^n$ since $\phi(b_0, x) = 0$.
+        The open set $\inv{\phi}(\ball[\delta])$ is a neighborhood of $\{b_0\} \cross \R^n$ since $\phi(b_0, x) = 0$.
         Hence, there exist open subsets $V_x \sub B$ and $W_x \sub \R^n$ such that
-        \[ \bigcup_{x \in \clball[\eps][x_0]} V_x \times W_x \sub \inv{\phi}(\clball[\delta]) \]
+        \[ \bigcup_{x \in \clball[\eps][x_0]} V_x \cross W_x \sub \inv{\phi}(\clball[\delta]) \]
         and $x \in W_x$.
         Since $\clball[\eps][x_0]$ is compact, there exist $x_1, \dots, x_n \in \clball[\eps][x_0]$ with $\clball[\eps][x_0] \sub \bigcup_{i = 1}^{n} V_{x_i}$.
-        The claim follows with $V := V_{x_1} \cap \dots \cap V_{x_n}$ which is open by forming the intersection over finitely many open sets.
+        The claim follows with $V := V_{x_1} \cap \dots \cap V_{x_n}$
+        which is open by forming the intersection over finitely many open sets.
 
         % apply lemma
         Now we want to apply the previous lemma:
@@ -79,7 +81,7 @@
 
         % conclusion
         From
-        \[ V \times \clball[\delta][x_1] \sub g(V \times \clball[\eps][x_0]) \]
+        \[ V \cross \clball[\delta][x_1] \sub g(V \cross \clball[\eps][x_0]) \]
         it follows that $f$ is an open map.
 
         % general case
@@ -90,14 +92,14 @@
         and restrict $\phi$ and $\phi'$ accordingly.   
         
         First, we restrict $f$ to $V \cap \inv{f}(V')$. Since $V \cap \inv{f}(V')$ is an open neighborhood of $i(b)$ and contained in $V$, we can choose
-        an open neighborhood $\tilde{U} \sub U$ of $i(b)$ and $\eps > 0$ such that $\inv{\phi}(\tilde{U} \times \ball[\eps]) \sub V \cap \inv{f}(V')$.
+        an open neighborhood $\tilde{U} \sub U$ of $i(b)$ and $\eps > 0$ such that $\inv{\phi}(\tilde{U} \cross \ball[\eps]) \sub V \cap \inv{f}(V')$.
         
-        This yields a map $U' \times \R^n \to U' \times \R^n$ with
-        \[ \tilde{U} \times \R^n \cong  \tilde{U} \times \ball[\eps] \isomto \inv{\phi}(\tilde{U} \times \ball[\eps]) \xto{f} U' \times \R^n \sub U \times \R^n \]
+        This yields a map $U' \cross \R^n \to U' \cross \R^n$ with
+        \[ \tilde{U} \cross \R^n \cong  \tilde{U} \cross \ball[\eps] \isomto \inv{\phi}(\tilde{U} \cross \ball[\eps]) \xto{f} U' \cross \R^n \sub U \cross \R^n \]
         that is injective and fibre-preserving and therefore an open map (apply 1.).
-        It follows that $f: \inv{\phi}(\tilde{U} \times \ball[\eps]) \to V'$ must be an open map as well since the other composing maps are homeomorphisms.
+        It follows that $f: \inv{\phi}(\tilde{U} \cross \ball[\eps]) \to V'$ must be an open map as well since the other composing maps are homeomorphisms.
 
-        By glueing the $\inv{\phi}(\tilde{U} \times \ball[\eps])$ together over all $b \in B$, we see that $f$ is an open map.
+        By glueing the $\inv{\phi}(\tilde{U} \cross \ball[\eps])$ together over all $b \in B$, we see that $f$ is an open map.
     \end{enumerate}
 \end{myproof}
 
@@ -107,9 +109,9 @@
 \end{myparagraph}
 
 % corollary
-\begin{mycorollary}{homotopy::corollary}{}
+\begin{mystatement}{corollary}{homotopy::corollary}
     If a map $g: B \to B'$ is covered by a bundle-germ $\germdef{F}{\bb}{\bb'}$, then $\bb$ is isomorphic to the induced microbundle $\ind{g}\bb'$.
-\end{mycorollary}
+\end{mystatement}
 
 % proof corollary
 \begin{myproof}

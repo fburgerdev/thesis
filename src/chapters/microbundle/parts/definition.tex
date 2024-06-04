@@ -1,5 +1,5 @@
 % definition
-\begin{mydefinition}[microbundle]{microbundle::definition}{}
+\begin{mystatement}{definition}[microbundle]{microbundle::definition}
     A \defterm{microbundle} $\bb$ over $B$ (with \defterm{fibre dimension} $n$)
     is a diagram $\bundle{B}{E}{i}{j}$ satisfying the following:
     \begin{enumerate}[(i)]
@@ -9,20 +9,20 @@
         are maps such that $id_B = j \circ i$
         \item Every $b \in B$ is \defterm{locally trivializable},
         that is there exist open neighborhoods $U \sub B$ of $b$ and $V \sub E$ of $i(U)$
-        together with a homeomorphism $\phi: V \isomto U \times \R^n$ such that the following diagram commutes:
+        together with a homeomorphism $\phi: V \isomto U \cross \R^n$ such that the following diagram commutes:
         \[
             \begin{tikzcd}[column sep=tiny]
                 & V \ar[dr, "j\vert_V"] \ar[dd, "\phi"] & \\
-                U \ar[ur, "i"] \ar[dr, "{id \times 0}"'] & & U \\
-                & U \times\R^n \ar[ur, "\pi_1"'] &
+                U \ar[ur, "i"] \ar[dr, "{id \cross 0}"'] & & U \\
+                & U \cross\R^n \ar[ur, "\pi_1"'] &
             \end{tikzcd}
         \]
         Note that $\pi_1$ denotes the projection $(u, x) \mapsto x$.
     \end{enumerate}
-\end{mydefinition}
+\end{mystatement}
 
 % remark
-\begin{myremark}{microbundle::dimension}{}
+\begin{mystatement}{remark}{microbundle::dimension}
     In the following, unless explicitly stated otherwise,
     we assume the fibre dimension of any given microbundle to be $n$.
-\end{myremark}
+\end{mystatement}

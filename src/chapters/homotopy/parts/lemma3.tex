@@ -5,17 +5,17 @@
     }
 
     % lemma
-    \begin{mylemma}{homotopy::lemma3}{}
+    \begin{mystatement}{lemma}{homotopy::lemma3}
         Let $\bb$ be a microbundle over $\cyl{B}$ where $B$ is paracompact hausdorff.
-        Then there exists a bundle map-germ $\germdef{R}{\bb}{\bb\restr{\cylup{B}}}$
+        Then there exists a bundle map-germ $\germdef{R}{\bb}{\bb[\cylup{B}]}$
         covering the standard retraction $r: \cyl{B} \to \cylup{B}$ with $(b, t) \mapsto (b, 1)$.
-    \end{mylemma}
+    \end{mystatement}
 
     % proof
     \begin{myproof}
         % partition of unity
         First, we assume a locally finite covering $\{V_\alpha\}$ of open sets
-        where $\bb\restr{\cyl{V_\alpha}}$ is trivial.
+        where $\bb[\cyl{V_\alpha}]$ is trivial.
         The existence of such a covering is justified by the \intref{homotopy::lemma2} and
         the fact that any open cover of $B$ has a locally finite subcover due to paracompactness.
 
@@ -39,19 +39,19 @@
         \begin{enumerate}
             % local bundle-germ
             \item 
-            We can divide $B \times \I$ into two subsets
+            We can divide $B \cross \I$ into two subsets
             \[ A_\alpha := \cyl{\supp{\lambda_\alpha}} \tand \]
             \[ A'_\alpha := \set{(b, t)}{t \ge \lambda_\alpha(b)}. \]
-            We already know that $\bb\restr{A_\alpha}$
+            We already know that $\bb[A_\alpha]$
             is trivial since $A_\alpha \sub \cyl{V_\alpha}$.
             Like in the proof of \intref{homotopy::lemma1},
-            we can extend the identity bundle-germ on $\bb\restr{\A \cap \A'}$ to a bundle-germ
-            \[ \germ{\bb\restr{\A}}{\bb\restr{\A \cap \A'}} \]
+            we can extend the identity bundle-germ on $\bb[\A \cap \A']$ to a bundle-germ
+            \[ \germ{\bb[\A]}{\bb[\A \cap \A']} \]
             by the representative
-            \[ \A \times \R^n \to (\A \cap \A') \times \R^n\]
+            \[ \A \cross \R^n \to (\A \cap \A') \cross \R^n\]
             \[ (a, x) \mapsto (r_\alpha(a), x). \]
             Piecing this together with the identity
-            bundle-germ $\bb\restr{\A'}$ ($\A$ and $\A'$ are both closed),
+            bundle-germ $\bb[\A']$ ($\A$ and $\A'$ are both closed),
             we obtain a bundle-germ $R_\alpha$ covering $r_\alpha$.
             
             % glue together
@@ -66,14 +66,14 @@
             by applying the previous lemma.
 
             Now the composition $R_{\alpha_1} \circ \ldots \circ R_{\alpha_k}$ restricts to a bundle-germ 
-            \[ \germdef{R(\beta)}{\bb\restr{\cyl{B_\beta}}}{\bb\restr{\cylup{B_\beta}}} \]
+            \[ \germdef{R(\beta)}{\bb[\cyl{B_\beta}]}{\bb[\cylup{B_\beta}]} \]
             covering the retraction $(b, t) \mapsto (b, 1)$.
             That is because for every $b \in B_\beta$,
             there is some $1 \le i \le k$ with
             $\lambda_{\alpha_i}(b) = 1$ and hence $r_{\alpha_i}(b, t) = (b, 1)$.
             
             Pieced together using \intref{homotopy::lemma1},
-            we obtain $R: \bb\restr{\cyl{B}} \to \bb\restr{\cylup{B}}$
+            we obtain $R: \bb[\cyl{B}] \to \bb[\cylup{B}]$
             covering $(b, t) \mapsto (b, 1)$, which concludes the proof.
         \end{enumerate}    
     \end{myproof}

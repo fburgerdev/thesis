@@ -7,21 +7,21 @@
 \end{myparagraph}
 
 % corollary
-\begin{mycorollary}{induced::simplex}{}
+\begin{mystatement}{corollary}{induced::simplex}
     Let $B$ be a $(d + 1)$-simplicial complex, $B'$ its $d$-skeleton and $\Delta \sub B$ a $(d + 1)$-simplex.
     A microbundle $\bb$ over $B'$ can be extended to a microbundle over $B' \cup \Delta$
-    if and only if its restriction to the boundary $\bb\restr{\partial \Delta}$ is trivial.
-\end{mycorollary}
+    if and only if its restriction to the boundary $\bb[\partial \Delta]$ is trivial.
+\end{mystatement}
 
 % proof
 \begin{myproof}
     With $f: \partial \Delta \incl B'$ and the previous lemma,
     it follows that there exists a microbundle $\bb'$ over $B' \cup_f C\partial\Delta$ extending $\bb$
-    if and only if $\ind{f}\bb = \bb\restr{\partial\Delta}$ is trivial.
+    if and only if $\ind{f}\bb = \bb[\partial\Delta]$ is trivial.
 
     Now, consider the homeomorphism $\phi: C\partial \Delta \isomto \Delta$ with
     \[ \phi((t_1, \dots, t_{d + 1}), \lambda) := (1 - \lambda) (t_1, \dots, t_{d + 1}) + \frac{\lambda}{d + 1} (1, \dots, 1) \]
-    In particular, $\phi(\partial \Delta \times \{0\}) = \partial \Delta$.
+    In particular, $\phi(\partial \Delta \cross \{0\}) = \partial \Delta$.
 
     It follows that $B' \cup_f C\Delta \cong B' \cup \Delta$ which concludes the proof.
 \end{myproof}
