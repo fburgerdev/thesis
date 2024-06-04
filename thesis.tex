@@ -1,4 +1,4 @@
-\documentclass{report}
+\documentclass[bibliography=totoc]{report}
 % Packages
 \input{src/packages}
 % Global Definitions
@@ -8,23 +8,37 @@
 \begin{document}
 % Document :: Titlepage
 \input{src/titlepage}
-% Document :: Table of Contents
-\tableofcontents
-\clearpage
 % Document :: Abstract
 \input{src/abstract}
+% Document :: Table of Contents
+\tableofcontents
+% \thispagestyle{empty}
+\clearpage
 % Document :: Introduction
+\chapter{Introduction}\label{chapter::introduction}
+% Document :: Introduction :: Motivation
+\section{Motivation}\label{section::motivation}
 \input{src/introduction}
-% Document :: Microbundle
+% Document :: Introduction :: Microbundle
+\section{Introduction to Microbundles}\label{section::microbundle}
 \input{src/chapters/microbundle/section}
-% Document :: Induced
+% Docuement :: Constructions
+\chapter{Basic Constructions}\label{chapter::constructions}
+% Document :: Constructions :: Induced
+\section{Induced Microbundles}\label{section::induced}
 \input{src/chapters/induced/section}
-% Document :: Whitney
+% Document :: Constructions :: Whitney
+\section{The Whitney Sum}\label{section::whitney}
 \input{src/chapters/whitney/section}
 % Document :: Homotopy
+\chapter{The Homotopy Theorem}\label{section::homotopy}
 \input{src/chapters/homotopy/section}
 % Docuemnt :: Suspension
+\chapter{Rooted Microbundles and Suspensions}\label{chapter::suspension}
 \input{src/chapters/suspension/section}
 % Document :: Normal
+\chapter{Normal Microbundles and Milnors Theorem}\label{chapter::normal}
 \input{src/chapters/normal/section}
+% Document :: References
+\input{src/references}
 \end{document}

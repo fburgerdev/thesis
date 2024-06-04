@@ -1,7 +1,7 @@
 % foreword theorem
 \begin{myparagraph}
     We can apply the Homotopy Theorem on the underlying microbundles of
-    rooted-microbundles, however with the statement in \intref{chapter::homotopy}
+    rooted-microbundles, however with the statement in \myintref{section::homotopy}
     we are generally not given rooted-isomorphy.
 
     By assuming that $f$ and $g$ are based maps and that a homotopy
@@ -19,14 +19,14 @@
 
 % foreword lemma
 \begin{myparagraph}
-    To proof this, need to show a `rooted version' of \intref{homotopy::lemma2}.
+    To proof this, need to show a `rooted version' of \myintref{homotopy::lemma2}.
     
     First, note that 
     \[
         E(\ind{H}\bb[\cyl{a_0}]) = E(\ind{\iota}(\ind{H}(\bb)))
         \cong E(\ind{(H \circ \iota)}\bb) = E(\ind{const_{b_0}}\bb).
     \]
-    By applying \intref{induced::const}, we can consider $E(\ind{H}\bb[\cyl{a_0}])$
+    By applying \myintref{induced::const}, we can consider $E(\ind{H}\bb[\cyl{a_0}])$
     to be an open subset of $a_0 \cross [0, 1] \cross E(\bbb)$.
 
     Based on this, we can define an isomorphism-germ
@@ -39,7 +39,7 @@
     The representative $\overline{r}$ is a homeomorphism on its image
     because its component-wise the identity and $r$, which are both homeomorphisms on their image. 
 
-    The following lemma is the rooted-version of \intref{homotopy::lemma2}
+    The following lemma is the rooted-version of \myintref{homotopy::lemma2}
     which will be necessary in order to prove the Rooted Homotopy Theorem.
 \end{myparagraph}
 
@@ -54,7 +54,7 @@
 
 % proof lemma
 \begin{myproof}
-    By applying \intref{homotopy::lemma2},
+    By applying \myintref{homotopy::lemma2},
     it follows that there exists an isomorphism-germ
     \[ \germdef{Q}{\ind{H}\bb[\cyl{V}]}{\be{\cyl{V}}} \]
     for a sufficiently small neighborhood $V$ of $a_0$.
@@ -90,7 +90,7 @@
     we are able to prove the Rooted Homotopy Theorem.
 
     To understand the proof,
-    it is useful to have the proof of \intref{homotopy::lemma3} in mind,
+    it is useful to have the proof of \myintref{homotopy::lemma3} in mind,
     which we modify in a few places.
 \end{myparagraph}
 
@@ -101,27 +101,27 @@
     \[ \germdef{F}{\ind{f}\bb}{\ind{g}\bb} \]
     extending $\inv{R_g} \circ R_f = \inv{R} \circ R = id_{\bb}$.
 
-    We construct this isomorphism-germ as in \intref{chapter::homotopy},
+    We construct this isomorphism-germ as in \myintref{section::homotopy},
     by taking a bundle-germ
     \[ \germ{\ind{H}\bb}{\ind{H}\bb[\cylup{A}]} \]
-    using \intref{homotopy::lemma3} and restricting it to $\ind{H}\bb[\cyldown{A}]$.
+    using \myintref{homotopy::lemma3} and restricting it to $\ind{H}\bb[\cyldown{A}]$.
 
-    So the only thing to do is to modify \intref{homotopy::lemma3} such a that
+    So the only thing to do is to modify \myintref{homotopy::lemma3} such a that
     \[ \germ{\ind{H}\bb[\cyldown{a_0}]}{\ind{H}\bb[\cyldown{b_0}]} \]
     extends the identity germ if we consider $a_0 \cross E(\bbb) = b_0 \cross E(\bbb)$.
 
     This is achieved by taking a locally finite open cover $\coll{V_\alpha}$
-    of $A$ as in \intref{homotopy::lemma3}, removing the base point $a_0$ in every set
-    and adding the set $V$ obtained from \intref{suspension::sharper}.
+    of $A$ as in \myintref{homotopy::lemma3}, removing the base point $a_0$ in every set
+    and adding the set $V$ obtained from \myintref{suspension::sharper}.
     Since $a_0 \in V$, the resulting collection is still a locally finite open cover of $A$.
 
     We continue with the proof like normal.
     Note that $\lambda_V(a_0) = 1$,
     since $\lambda_\alpha(a_0) = 0$ because we removed $a_0$ from every other set.
 
-    Lastly, we construct the extension $R_V$ for $r_v$ like in \intref{chapter::homotopy},
+    Lastly, we construct the extension $R_V$ for $r_v$ like in \myintref{section::homotopy},
     but instead of taking an arbitrary trivialization $E(\ind{H}\restr{A_\alpha}) \cong A_\alpha \cross \R^n$
-    for construction we use a representative $r$ for the bundle-germ constructed in \intref{suspension::sharper}.
+    for construction we use a representative $r$ for the bundle-germ constructed in \myintref{suspension::sharper}.
     
     This has the effect that the mapping
     \[

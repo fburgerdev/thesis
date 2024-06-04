@@ -3,7 +3,7 @@
     Last, we show a theorem about whitney sums that will be
     essential in the proof of Milnor's theorem.
     For its prove, we need to use the following proposition
-    that will be deferred until \intref{chapter::suspension}.
+    that will be deferred until \myintref{chapter::suspension}.
 \end{myparagraph}
 
 % bouqet lemma
@@ -26,7 +26,7 @@
     (Start of induction)
 
     A $1$-dimensional simplicial complex is just a bouquet of circles.
-    Hence, the start of induction follows directly from \intref{whitney::bouqet}.   
+    Hence, the start of induction follows directly from \myintref{whitney::bouqet}.   
 
     % step
     (Inductive Step)
@@ -45,9 +45,9 @@
             = \whitney{\bn'\restr{\partial\sigma}}{\bb[\partial\sigma]}
             = (\whitney{\bn'}{\bb[B']})\restr{\partial\sigma}
         \]
-        in which we used the previous lemma and \intref{induced::simplex}
+        in which we used the previous lemma and \myintref{induced::simplex}
         for $\be{B'}\restr{\partial\sigma} = \bb[\partial\sigma]$.
-        Since $(\whitney{\bn'}{\bb[B']})\restr{\partial\sigma}$ is trivial, the claim follows from \intref{induced::simplex}.
+        Since $(\whitney{\bn'}{\bb[B']})\restr{\partial\sigma}$ is trivial, the claim follows from \myintref{induced::simplex}.
 
         % extend
         \item $\whitney{\bn'}{\be{B'}}$ can be extended over $B$:
@@ -74,14 +74,14 @@
             = \whitney{(\whitney{\bb[B']}{\bn'})}{\be{B'}}
             = \whitney{\be{B'}}{\be{B'}}
         \]
-        is trivial, it follows from \intref{induced::cone} that we can extend $\whitney{\bb}{\eta}$ over $B \sqcup CB'$
+        is trivial, it follows from \myintref{induced::cone} that we can extend $\whitney{\bb}{\eta}$ over $B \sqcup CB'$
         which will be denoted by $\xi$.
 
         The mapping cone $B \sqcup CB'$ has the homotopy type of a bouquet of spheres
         by transfering $B'$ along $CB'$ collapsing to a single point.
         Since any $d$-simplex is homotopic to a $d$-disc and it's border is collapsed, we get the homotopy of a $(d - 1)$-sphere.
         
-        With \intref{homotopy::theorem} and \intref{whitney::bouqet},
+        With \myintref{homotopy::theorem} and \myintref{whitney::bouqet},
         we conclude that there exists a microbundle $\bn$ such that $(\whitney{\xi}{\bn})\restr{B}$ is trivial.
         The equation
         \[
