@@ -6,6 +6,7 @@
 
 % proof
 \begin{myproof}
+    % explanation
     To proof triviality, we need to show that there exists a homeomorphism between a neighborhood of $i'(A)$ and $\cyldown{A}$
     that commutes with the injection and projection maps of $\ind{f}\bb$ and $\be{A}$.
     
@@ -18,13 +19,14 @@
     \[ (a, e) \mapsto (a, \snd{\psi}(e)) \]
     where $V' := (A \times V) \cap E(\ind{f}\bb)$.
     Since $\psi'$ is component-wise homeomorphic, $\psi'$ is a homeomorphism.
-    Note that $V'$ is a neighborhood of $i'(A)$ since $\forall a \in A: i(f(a)) \in V$ and $i'(a) = (a, i(f(a)))$.
+    Note that $V'$ is a neighborhood of $i'(A)$ since
+    \[ \forall a \in A: i(f(a)) \in V \tand i'(a) = (a, i(f(a))). \]
     From $\snd{\psi}(i(f(a))) = 0$ and homeomorphy of $\psi'$ it follows that $\psi'(V')$ is a neighborhood of $\cyldown{A}$.
 
     % commute
-    Finally, $\psi'$ commutes with injection
-    \[ \psi'(i'(a)) = (a, \snd{\psi}(i(f(a)))) = (a, 0) = i_{\be{A}}(a) \]
+    Finally, $\psi'$ commutes with the injection
+    \[ \psi'(i'(a)) = (a, \snd{\psi}(i(f(a)))) = (a, 0) = (id \times 0)(a) \]
     and projection maps
-    \[ j'(a, e) = j'(a) = j_{\be{A}}(a, \snd{\psi'}(a, e)) = j_{\be{A}}(\psi'(a, e)) \]
+    \[ j'(a, e) = j'(a) = \pi_1(a, \snd{\psi'}(a, e)) = \pi_1(\psi'(a, e)) \]
     which completes the proof.
 \end{myproof}

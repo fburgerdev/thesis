@@ -17,9 +17,26 @@
 \usepackage{ifthen} % If-Else Statements
 \usepackage{enumerate} % Enumerate with romans
 
+% leftbar
+\usepackage{framed}
+\newlength{\leftbarwidth}
+\setlength{\leftbarwidth}{2pt}
+\newlength{\leftbarsep}
+\setlength{\leftbarsep}{10pt}
+\newcommand*{\leftbarcolorcmd}{\color{leftbarcolor}}% as a command to be more flexible
+\colorlet{leftbarcolor}{black}
+\renewenvironment{leftbar}{%
+    \def\FrameCommand{{\leftbarcolorcmd{\vrule width \leftbarwidth\relax\hspace {\leftbarsep}}}}%
+    \MakeFramed {\advance \hsize -\width \FrameRestore }%
+}{%
+    \endMakeFramed
+}
+
 % Underline
 \usepackage{soul}
 
 % Images
 \usepackage{graphicx}
 \graphicspath{{images/}}
+
+\setcounter{chapter}{-1}

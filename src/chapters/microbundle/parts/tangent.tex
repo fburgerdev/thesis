@@ -20,28 +20,26 @@
     
     We have a local trivialization $(U, U \times U, \phi)$ of $p$ in $\bt_M$ where
     \[ \phi: U \times U \isomto U \times \R^n \twith \phi(u, u') := (u, \psi(u) - \psi(u')). \]
-    Homeomorphy of $\phi$ is given by homeomorphy of $\psi$.
-
-    Lastly, $\phi$ commutes with injection
+    Homeomorphy of $\phi$ is given by homeomorphy of $\psi$
+    and $\phi$ commutes with the injection
     \[ \phi(\Delta(m)) = \phi(m, m) = (m, \psi(m) - \psi(m)) = (m, 0) = (id \times 0)(m)\]
     and projection maps
     \[ \pi_1(u, u') = u = \pi_1(u, \snd{\phi}(u, u')) = \pi_1(\phi(u, u')). \]
-    which concludes the proof.
+    Note that $\snd{\phi}$ denotes the map on the second component of $\phi$,
+    i.e. $\pi_2 \circ \phi$.
 \end{myproof}
 
 % remark
 \begin{myremark}{microbundle::tangentdim}{}
-    Note that the tangent microbundle $\bt_M$ has fibre dimension $d$.
+    The tangent microbundle $\bt_M$ has fibre dimension $d$.
 \end{myremark}
 
 % afterword
 \begin{myparagraph}
     The definition of the tangent microbundle
-    takes use of the intuitive approach to define a tangent vector
-    using the difference $\psi(p) - \psi(p')$ in euclidean space.
-    Note that the tangent vector is hence dependant
-    on the choice of the chart used.
-    However this causes no problems since
-    for microbundles one doesn't have global trivializations anyway.
-    % TODO: explain tangent microbundle
+    utilizes the fact that one can subtract two elements in euclidean space
+    by using a chart for $p$.
+    The constructed homeomorphy is hence dependant
+    of the chosen chart.
+    % TODO: explain tangent microbundle further
 \end{myparagraph}

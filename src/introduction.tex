@@ -2,56 +2,69 @@
 
 \begin{myparagraph}
     In differential geometry,
-    the tangent space and normal space of a smooth manifolds are
-    essential in understanding its geometry.
+    the tangent- and normal bundle of smooth manifolds
+    play an essential role in understanding their underlying geometry.
 
     One can define the tangent space
-    in a particular point $p$ using derivations
+    in a point $p \in M$ using derivations
     \[ T_p M = \set{\nu: C^\infty(M) \to \R^n \text{ linear}}{\nu(fg) = f(p)\nu(g) + \nu(f)g(p)} \]    
     or using tangent curves
     \[ T_p M = \set{\gamma \in C^\infty((-1, 1), M)}{\gamma(0) = p } / \sim \]
-    where $\gamma \sim \gamma' \iff \frac{d}{dx}(\psi \circ \gamma)(0) = \frac{d}{dx}(\psi \circ \gamma)(0)$.
+    where $\gamma \sim \gamma' \iff \frac{d}{dx}(\psi \circ \gamma)(0) = \frac{d}{dx}(\psi \circ \gamma')(0)$
+    and $\psi$ is a chart for $p$.
     
-    The tangent space in a point yields the tangent bundle
+    The tangent space in a point allows for the definition of the tangent bundle
     \[ TM := \bigsqcup_{p \in M} T_p M\]
-    together with a section
+    together with the section
     \[ TM \xto{\pi} M \twith \pi(p, \nu) = p. \]
 
     Lets say one wants to define a tangent bundle over a topological manifold
     without given any smooth structure.
-    As we have seen that for the definition of the tangent space,
-    one needs the notion of differentiability.
+    We cannot use the same constructions as in the smooth case, because
+    as we have just seen the definition of
+    the tangent space always requires the notion of differentiability.
 
-    This means that we can only define a concept over topological manifolds
-    that is similar to the one over smooth manifolds.
-    In the paper `Microbundles I.', J. Milnor introduces a way
-    to define a tangent bundle over topological manifolds.
-    This tangent bundle however is not a vector bundle as for the smooth case,
-    instead the tangent bundle is a so called `microbundle' which is a weakening of
-    the concept of a vector bundle.
+    What we can do is to generalize the concept of tangent bundles
+    so that it can be applied to topological manifolds,
+    in the hope that many results transfer to this generalization.
 
-    One can transfer many constructions from the classical vector bundle over to the microbundle,
-    for example the whitney sum or the induced bundle. 
+    In the paper `Microbundles, Part I', J. Milnor introduces a concept
+    of tangent bundles over topological manifolds.
+    This tangent bundle is not a vector bundle as in the smooth case,
+    instead the tangent bundle is a `microbundle'
+    which is a weakening of the definition of a vector bundle.
 
-    But Milnor goes even further by also defining
-    normal bundles over topological manifolds.
+    One can transfer many constructions and results for
+    vector bundles over to microbundles,
+    for example the `whitney sum' or the `induced bundle'. 
 
-    In the smooth case, given an embedded submanifold $P \sub N$,
-    the normal space in a point $p$
+    Furthermore, one can also define a microbundle analogue
+    to the normal bundle for smooth manifolds.
+
+    In the smooth case, given an embedded submanifold $P \sub M$,
+    the normal space in a point $p \in P$
     is defined to be the quotient
     \[ N_p P = T_p M / T_p N. \]
-    So we are always given a normal bundle $NP$ between two smooth manifolds $P \sub M$.
+    Similar to the tangent bundle, the normal bundle is defined as
+    \[ NP  = \bigsqcup_{p \in P} N_p P \]
+    together with the section
+    \[ NP \xto{\pi} N \twith \pi(p, \nu) = p. \]
+    
+    So for smooth embedded manifolds there always exists a normal bundle
+    in its surrounding space.
 
-    This isn't true for normal microbundles.
+    This result doesn't transfer over to microbundles.
+    One can find examples for embedded topological manifolds
+    such that there doesn't exist a normal microbundle.
 
     However, Milnor shows that one can always find a normal microbundle
-    between the submanifold $P$ and a tubular space $M \times \R^q$
+    of the submanifold $P$ in a tubular space $M \times \R^q$
     for a sufficiently large $q \in \N$.
 
-    Proving this statement and introducing the concept of
-    microbundles along the way will be the content of this thesis.
+    Proving this statement while presenting the concept of
+    microbundles along the way is the content of this thesis.
 
-    This thesis is based on the works of Milnor,
+    It is based on Milnors paper `Microbundles, Part I',
     adopting much of its structure and proofs.
-    However, often we will provide more details,proving every single statement explicitly.
+    Mostly there will be provided more details, proving every statement explicitly, than in Milnors original work.
 \end{myparagraph}

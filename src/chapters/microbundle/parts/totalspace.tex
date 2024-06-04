@@ -1,17 +1,17 @@
 % foreword
 \begin{myparagraph}
     As the definition of isomorphy already implies, when studying microbundles,
-    we are not interested in the actual total space
-    but only in an arbitrary small neighborhood of the base space.
-    This is a significant conceptual differences between
-    microbundles and classical vector bundles.
+    we are not interested in the entire total space
+    but only in an arbitrary small neighborhood of the base space (more precise, the image $i(B)$).
+    This is one of the biggest conceptual differences between
+    microbundles and vector bundles.
     The following proposition makes this even clearer.
     
     Throughout the paper we will often take use of homeomorphisms
     \[ \mu_\eps: \ball[\eps] \isomto \R^n \twith \mu_\eps(0) = 0 \]
     for example given by
     \[ x \mapsto \tan(\frac{\abs{x}\cdot\pi}{2\eps}) x \]
-    in order to show local triviality, for example.
+    in order to show properties like local triviality.
 \end{myparagraph}
 
 % proposition
@@ -31,20 +31,24 @@
         % microbundle
         \item $\bb'$ is a microbundle:
         
-        Since we take $i$ and $j$ from $\bb$, we only need to show local triviality.
+        Continuity and $id_B = j\restr{E'} \circ i$ are already given since $\bb$ is a microbundle.
 
+        So we only need to show that $\bb'$ is locally trivial.
         For an arbitrary $b \in B$, choose a local trivialization $(U, V, \phi)$ of $b$ in $\bb$.
         
         The image $\phi(V \cap E')$ is a neighborhood of $(b, 0)$.
-        That follows from $\phi(i(b)) = (b, 0)$ and $V \cap E'$ being a neighborhood of $i(b)$.
+        This follows from $\phi(i(b)) = (b, 0)$ and $V \cap E'$ being a neighborhood of $i(b)$.
 
-        Hence, there exists a $U' \times \ball[\eps] \sub \phi(V \cap E')$ with $U'$ open and $\eps$ sufficiently small.
+        Hence, for a sufficiently small $\eps > 0$ there
+        exists a $U' \times \ball[\eps] \sub \phi(V \cap E')$ such that
+        $U'$ is an open neighborhood of $b$.
 
-        By utilising the fact that $\ball[\eps] \cong \R^n$, we have a local trivialization $(U', V', \phi')$ with
+        Utilizing a homeomorphism $\mu_\eps: \ball[\eps] \isomto \R^n$,
+        we have a local trivialization $(U', V', \phi')$ with
         \[ \phi': V' \xto{\phi} U' \times \ball[\eps] \xto{id \times \mu_\eps} U' \times \R^n \]
         and $V' := \inv{\phi}(U' \times \ball[\eps])$.
 
-        Note that homeomorphism commutes with injection
+        That is because $\phi'$ commutes with the injection
         \[ \phi'(i(b)) =  (id \times \mu_\eps)(\phi(i(b))) = (id \times \mu_\eps)(b, 0) = (b, 0) = (id \times 0)(b)\]
         and projection maps
         \[ j(e) = \pi_1(\phi(e)) = \pi_1((id \times \mu_\eps)(\phi(e))) = \pi_1(\phi'(e)). \]
