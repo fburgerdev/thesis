@@ -1,4 +1,4 @@
-\documentclass[bibliography=totoc]{report}
+\documentclass{report}
 % Packages
 \input{src/packages}
 % Global Definitions
@@ -21,24 +21,29 @@
 \input{src/introduction}
 % Document :: Introduction :: Microbundle
 \section{Introduction to Microbundles}\label{section::microbundle}
-\input{src/chapters/microbundle/section}
+\input{src/sections/microbundle/section}
 % Docuement :: Constructions
-\chapter{Basic Constructions}\label{chapter::constructions}
+\chapter{Standard Constructions}\label{chapter::constructions}
+\begin{myparagraph}
+    This chapter introduces two standard constructions for microbundles,
+    namely the `induced microbundle' and the `Whitney sum'.
+    These Constructions already exist for vector bundles and can be carried over immediately.
+\end{myparagraph}
 % Document :: Constructions :: Induced
 \section{Induced Microbundles}\label{section::induced}
-\input{src/chapters/induced/section}
+\input{src/sections/induced/section}
 % Document :: Constructions :: Whitney
 \section{The Whitney Sum}\label{section::whitney}
-\input{src/chapters/whitney/section}
+\input{src/sections/whitney/section}
 % Document :: Homotopy
-\chapter{The Homotopy Theorem}\label{section::homotopy}
-\input{src/chapters/homotopy/section}
+\chapter{The Homotopy Theorem}\label{chapter::homotopy}
+\input{src/sections/homotopy/section}
 % Docuemnt :: Suspension
 \chapter{Rooted Microbundles and Suspensions}\label{chapter::suspension}
-\input{src/chapters/suspension/section}
+\input{src/sections/suspension/section}
 % Document :: Normal
 \chapter{Normal Microbundles and Milnors Theorem}\label{chapter::normal}
-\input{src/chapters/normal/section}
+\input{src/sections/normal/section}
 % Document :: References
 \input{src/references}
 \end{document}

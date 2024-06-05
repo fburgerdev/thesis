@@ -1,6 +1,6 @@
 # Plan
-- 5.6
-    - refactor pg. 8 - 18
+- 6.6
+    - refactor pg. 16 - 23
 
 # General
 - refactoring (~8.3 pages/day with 6 days per week)

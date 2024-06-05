@@ -1,0 +1,50 @@
+% definition
+\begin{mystatement}{definition}[induced microbundle]{induced::definition}[58]
+    Let $\bb$ be a microbundle over $B$ and let $f: A \to B$ be a map.
+    The \defterm{induced microbundle} $\bundledef{\ind{f}\bb}{A}{E_f}{i_f}{j_f}$
+    is a microbundle over $A$ defined as follows:
+    \begin{itemize}
+        \item $E_f = \{ (a, e) \in A \cross E(\bb) \mid f(a) = j(e) \}$
+        \item $i_f(a) = (a, (i \circ f)(a))$
+        \item $j_f(a, e) = a$
+    \end{itemize}
+\end{mystatement}
+
+% fiber bundle
+\begin{myparagraph}
+    The construction is identical to the one over vector bundles,
+    more precisely over fiber bundles (see\cite[ch.2,sec.14]{brendon}).
+\end{myparagraph}
+
+% proof
+\begin{myproof}[that $\ind{f}\bb$ is a microbundle]
+    % continuity and compatibility
+    Both $i_f$ and $j_f$ are continuous
+    since they are composed by continuous functions.
+    Additionally, $j_f(i_f(a)) = j_f(a, i(f(a))) = a$ and hence $j_f \circ i_f = id_A$.
+
+    % local triviality
+    It remains to be shown that $\ind{f}\bb$ is locally trivial:
+
+    % local triviality :: homeomorphism
+    For an arbitrary $a \in A$,
+    choose a local trivialization $(U, V, \phi)$ of $i(a)$ in $\bb$.
+    We construct a local trivialization of $a$ in $\ind{f}\bb$ as follows:
+    \begin{itemize}
+        \item $U_f := \inv{f}(U) \sub A$
+        \item $V_f := (U_f \cross V) \cap E_f \sub E_f$
+        \item $\phi_f: V_f \isomto U_f \cross \R^n$ with $\phi_f(a', e) = (a', \snd{\phi}(e))$
+    \end{itemize}
+    Note that $U_f$ is an open neighborhood of $a$ since $f$ is continuous and $U$ is an open neighborhood of $i(a)$.
+    Similarly, $V_f$ is an open neighborhood of $i_f(a)$ since both $U' \cross V$ and $E_f$ are open neighborhoods of $i_f(a)$.
+    
+    The existence of an inverse $\inv{\phi_f}(a', v) = (a', \inv{\phi}(f(a'), v))$
+    and component-wise continuity for both $\phi_f$ and $\inv{\phi_f}$ show that $\phi_f$ is a homeomorphism.
+    
+    % local triviality :: commutativity
+    Commutativity between the injection and $id \times 0$ is given by
+    \[ \phi_f(i_f(a')) = \phi(a', i(f(a'))) = (a', \snd{\phi}(i(f(a')))) = (a', 0) = (id \cross 0)(a') \]
+    and between the projection and $\pi_1$ by
+    \[ j_f(a', e) = a'  = \pi_1(a', \snd{\phi_f}(a', e)) = \pi_1(\phi_f(a', e)), \]
+    which completes the proof. 
+\end{myproof}

@@ -1,7 +1,9 @@
 % foreword
 \begin{myparagraph}
-    The following lemma shows that the induced microbundle
-    is compatible with the composition of maps.
+    One would intuitively argue that the induced microbundle is compatible
+    with the composition of maps, i.e.
+    $\ind{(g \circ f)}\bc \cong \ind{f}(\ind{g}\bc)$.
+    This in fact true, as the following lemma shows.
 \end{myparagraph}
 
 % lemma
@@ -21,19 +23,20 @@
     that commutes with injection and projection maps.
     
     % homoemorphism
-    First, compare the two total spaces:
-    \begin{enumerate}
+    Firstly, we compare the two total spaces:
+    \begin{itemize}
         \item $E(\ind{(g \circ f)}) = \{ (a, e) \in A \cross E \mid g(f(a)) = j(e)\}$ 
         \item $E(\ind{f}(\ind{g}\bc)) = \{ (a, b, e) \in A \cross (B \cross E) \mid f(a) = b$ and $ g(b) = j(e) \}$
-    \end{enumerate}
-    We construct a bijection $\psi: E(\ind{(g \circ f)}) \isomto E(\ind{f}(\ind{g}\bc))$ with
-    \[ \psi(a, e) = (a, f(a), e) \tand \inv{\psi}(a, b, e) = (a, e).\]
-    Since both $\psi$ and $\inv{\psi}$ are component-wise continuous, it follows that $\psi$ is a homeomorphism.
+    \end{itemize}
+    We define a homeomorphism $\psi: E(\ind{(g \circ f)}) \isomto E(\ind{f}(\ind{g}\bc))$ with
+    \[ \psi(a, e) = (a, f(a), e) \tand \inv{\psi}(a, b, e) = (a, e) \]
+    for which homeomorphy follows from component-wise
+    continuity of both $\psi$ and $\inv{\psi}$.
 
-    % commute
-    This homeomorphism commutes with the injection
+    % commutativity
+    Commutativity between the injection maps is given by
     \[ \psi(i_1(a)) = \psi(a, i(g(f(a)))) = (a, f(a), i(g(f(a)))) = i_2(a) \]
-    and projection maps
+    and between the projection maps by
     \[ j_1(a, e) = a = j_2(a, f(a), e) = j_2(\psi(a, e)) \]
     which concludes the proof.
 \end{myproof}

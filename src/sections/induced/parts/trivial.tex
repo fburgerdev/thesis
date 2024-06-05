@@ -1,0 +1,40 @@
+% lemma
+\begin{mystatement}{lemma}{induced::trivial}
+    Let $\bb$ be a microbundle over $B$ and $f: A \to B$ be a map.
+    The induced microbundle $\ind{f}\bb$ is trivial if $\bb$ is already trivial.
+\end{mystatement}
+
+% proof
+\begin{myproof}
+    % explanation
+    To proof triviality, we need to show that there exists a homeomorphism between a neighborhood of $i'(A)$ and $\cyldown{A}$
+    that commutes with the injection and projection maps of $\ind{f}\bb$ and $\be{A}$.
+    
+    % homeomorphism
+    Since $\bb$ is trivial, there exists a homeomorphism $\psi: V \to \psi(V)$
+    where $V$ is a neighborhood of $i(B)$ and $\psi(V)$ is a neighborhood of $B \cross \{0\}$
+    such that $\psi$ commutes with the injection and projection maps of $\bb$ and $\be{A}$.
+    
+    We define a map 
+    \[ \psi_f: V_f \isomto \psi_f(V_f) \twith \psi_f(a, e) = (a, \snd{\psi}(e)), \]
+    where $V_f = (A \cross V) \cap E(\ind{f}\bb)$.
+    The existance of an inverse
+    \[ \inv{\psi_f}(a, x) = (a, \inv{\psi}(f(a), x)) \]
+    and component-wise continuity for both $\psi_f$ and $\inv{\psi_f}$
+    show that $\psi_f$ is a homeomorphism.
+    
+    % neighborhoods
+    The subset $V_f$ is a neighborhood of $i_f(A)$ since
+    \[ i_f(a) = (a, i(f(a))) \tand i(f(a)) \in V. \]
+    From $\snd{\psi}(i(f(a))) = 0$ and openness of $\psi_f$
+    it follows that $\psi_f(V_f)$ is a neighborhood of $\cyldown{A}$.
+    Hence, $\psi_f$ maps a neighborhood of $i_f(A)$
+    to a neighborhood of $\cyldown{A}$, just as required.
+
+    % commutativity
+    Finally, commutativity between the injection maps is given by
+    \[ \psi_f(i'(a)) = (a, \snd{\psi}(i(f(a)))) = (a, 0) = (id \cross 0)(a) \]
+    and between the projection maps by
+    \[ j_f(a, e) = a = \pi_1(a, \snd{\psi_f}(a, e)) = \pi_1(\psi_f(a, e)), \]
+    which completes the proof.
+\end{myproof}
