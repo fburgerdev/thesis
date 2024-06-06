@@ -4,13 +4,13 @@
 \contentsline {chapter}{\numberline {2}Standard Constructions}{9}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Induced Microbundles}{9}{section.2.1}%
 \contentsline {section}{\numberline {2.2}The Whitney Sum}{16}{section.2.2}%
-\contentsline {chapter}{\numberline {3}The Homotopy Theorem}{19}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Map-Germs}{19}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Proving the Homotopy Theorem}{23}{section.3.2}%
-\contentsline {chapter}{\numberline {4}Rooted Microbundles and Suspensions}{29}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Rooted Microbundles}{29}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Microbundles over a Suspension}{35}{section.4.2}%
-\contentsline {chapter}{\numberline {5}Normal Microbundles and Milnors Theorem}{42}{chapter.5}%
-\contentsline {section}{\numberline {5.1}The Normal Microbundle}{42}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Milnors Theorem}{43}{section.5.2}%
-\contentsline {chapter}{References}{48}{chapter*.2}%
+\contentsline {chapter}{\numberline {3}The Homotopy Theorem}{20}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Map-Germs}{20}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Proving the Homotopy Theorem}{24}{section.3.2}%
+\contentsline {chapter}{\numberline {4}Rooted Microbundles and Suspensions}{30}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Rooted Microbundles}{30}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Microbundles over a Suspension}{36}{section.4.2}%
+\contentsline {chapter}{\numberline {5}Normal Microbundles and Milnors Theorem}{43}{chapter.5}%
+\contentsline {section}{\numberline {5.1}The Normal Microbundle}{43}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Milnors Theorem}{44}{section.5.2}%
+\contentsline {chapter}{References}{49}{chapter*.2}%

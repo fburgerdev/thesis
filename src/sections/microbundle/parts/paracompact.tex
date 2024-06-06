@@ -35,9 +35,9 @@
     \[ f_i: B \to [0, 1] \twith \supp{f_i} \sub B_i\]
     such that $\sum_{i \in I}f_i = 1$.
     
-    Now we define a map
-    \[ \lambda: B \to (0, \infty) \twith \lambda := \sum_{i \in I} \eps_i f_i \]
-    which has the property that $\abs{x} < \lambda(b) \implies (b, x) \in E(\bb)$ since
+    Now, we define a map
+    \[ \lambda: B \to (0, \infty) \twith \lambda := \sum_{i \in I} \eps_i f_i, \]
+    which has the property that $\abs{x} < \lambda(b) \implies (b, x) \in E(\bb)$, because
     \[ \abs{x} < \lambda(b) \]
     \[ \iff  \abs{x} < \eps_{i_1} f_{i_1}(b) + \cdots + \eps_{i_n} f_{i_n}(b) \]
     \[ \iff 0 < (\eps_{i_1} - \abs{x}) f_{i_1}(b) + \cdots + (\eps_{i_n} - \abs{x}) f_{i_n}(b) \]
@@ -47,8 +47,8 @@
     Finally, we have a homeomorphism between the open subset
     $\set{(b, x) \in B \cross \R^n}{\abs{x} < \lambda(b)} \sub E(\bb)$ and $B \cross \R^n$ via
     \[ (b, x) \mapsto (b, \frac{x}{\lambda(b) - \abs{x}}). \]
-    Note that $(b, 0) \mapsto (b, 0)$ so this homeomorphism
-    is compatible with the injection and projection maps.
+    Note that $(b, 0) \mapsto (b, 0)$, hence this homeomorphism
+    is commutes with the injection and projection maps.
 
     `$\impliedby$'
 

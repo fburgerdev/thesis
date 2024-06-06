@@ -1,9 +1,13 @@
 \begin{myparagraph}
-    This chapter introduces another central construction over microbundles, the `whitney sum'.
-    Again, the construction and basic properties are similar to its vector bundle analogue.
-    It allows us to construct a microbundle given two microbundles over the same base space.
-    The fibre dimension of the resulting microbundle
-    is just the sum of the fibre dimensions of the initial microbundles.
+    Given two vector bundles $E$ and $F$ over the same base space $X$,
+    one can define the Whitney sum $\whitney{E}{F}$ by forming the direct sum
+    of the individual fibers $E_x$ and $F_x$, hence the notation.
+
+    This construction carries over to microbundles,
+    as elaborated in the following.
+    The centerpiece of this section will be \myintref{whitney::theorem},
+    which states that for microbundles over simplicial complexes,
+    one can find an `inverse' microbundle such that their Whitney sum is trivial.
 \end{myparagraph}
 \input{src/sections/whitney/parts/definition}
 \input{src/sections/whitney/parts/compatibility}

@@ -1,37 +1,39 @@
 % foreword
 \begin{myparagraph}
-    Last, we show a theorem about whitney sums that will be
-    essential in the proof of Milnor's theorem.
-    For its prove, we need to use the following proposition
-    that will be deferred until \myintref{chapter::suspension}.
+    Lastly, we show the above mentioned theorem about Whitney sums
+    which will be essential in the proof of Milnors Theorem.
+
+    For its prove, we need the following proposition
+    which will be shown in \myintref{chapter::suspension}.
 \end{myparagraph}
 
-% bouqet lemma
-\begin{mystatement}{proposition}{whitney::bouqet}
-    Let $\bb$ be a microbundle over a `bouqet' of spheres $B$, meeting at a single point.
+% bouquet proposition
+\begin{mystatement}{proposition}{whitney::bouquet}[59]
+    Let $\bb$ be a microbundle over a `bouquet' of spheres $B$, meeting in a single point.
     Then there exists a map $r: B \to B$ such that $\whitney{\bb}{\ind{r}\bb}$ is trivial.
 \end{mystatement}
 
 % theorem trivialize
-\begin{mystatement}{theorem}{whitney::theorem}
-    Let $\bb$ be a microbundle over a $d$-dimensional simplicial complex $B$.
-    Then there exists a microbundle $\bn$ over $B$ so that the whitney sum $\whitney{\bb}{\bn}$ is trivial.
+\begin{mystatement}{theorem}{whitney::theorem}[59]
+    Let $\bb$ be a microbundle over a $d$-simplicial complex $B$.
+    Then there exists a microbundle $\bn$ over $B$ such that
+    the Whitney sum $\whitney{\bb}{\bn}$ is trivial.
 \end{mystatement}
 
 % proof trivialize
 \begin{myproof}
-    We prove this theorem by induction over $d$.
+    We prove the theorem by induction over $d$.
 
     % start
     (Start of induction)
 
-    A $1$-dimensional simplicial complex is just a bouquet of circles.
-    Hence, the start of induction follows directly from \myintref{whitney::bouqet}.   
+    A $1$-simplicial complex is just a bouquet of circles.
+    Hence, the start of induction follows directly from \myintref{whitney::bouquet}.   
 
     % step
     (Inductive Step)
 
-    Let $B'$ be the $(d - 1)$-skeleton of $B$ and $\bn'$ be it's corresponding microbundle
+    Let $B'$ be the $(d - 1)$-skeleton of $B$ and let $\bn'$ be its corresponding microbundle
     such that $\whitney{\bb[B']}{\bn'}$ is trivial.
 
     \begin{enumerate}
@@ -56,16 +58,17 @@
         Let $B''$ denote $B$ with small open $d$-cells removed from every $d$-simplex.
         Since $B'$ is a retract of $B''$ we can extend $\whitney{\bn'}{\be{B'}}$ to a microbundle $\nu$ over $B''$.
 
-        Now we can extend $\nu$ over every $d$-simplex by taking the extensions
-        over every simplex individually (using 1.) and glueing its total spaces together along $E(\nu)$.
-        The injection and projection maps can be constructed
-        by glueing the injetion and projection maps of the individual extensions together.
+        Now we can extend $\nu$ over $B$ by taking all extensions of $\nu$
+        over every simplex
+        using (1.), and glueing its total spaces together along $E(\nu)$.
+        Similarly, the injection and projection can be obtained
+        by glueing the injection and projection maps over every simplex together.
 
         We denote the resulting microbundle by $\eta$.
 
         % trivial
         \item
-        Consider the mapping cone $B \sqcup CB'$ over the inclusion $B' \incl B$.
+        Consider the mapping cone $B \sqcup_\iota CB'$ over the inclusion $B' \incl B$.
         Since
         \[
             (\whitney{\bb}{\eta})\restr{B'}
@@ -74,14 +77,17 @@
             = \whitney{(\whitney{\bb[B']}{\bn'})}{\be{B'}}
             = \whitney{\be{B'}}{\be{B'}}
         \]
-        is trivial, it follows from \myintref{induced::cone} that we can extend $\whitney{\bb}{\eta}$ over $B \sqcup CB'$
+        % ! associativity not shown
+        is trivial, it follows from \myintref{induced::cone} that
+        we can extend $\whitney{\bb}{\eta}$ over $B \sqcup_\iota CB'$,
         which will be denoted by $\xi$.
 
-        The mapping cone $B \sqcup CB'$ has the homotopy type of a bouquet of spheres
-        by transfering $B'$ along $CB'$ collapsing to a single point.
-        Since any $d$-simplex is homotopic to a $d$-disc and it's border is collapsed, we get the homotopy of a $(d - 1)$-sphere.
+        The mapping cone $B \sqcup_\iota CB'$ has the homotopy type of a bouquet of spheres
+        by carrying $B'$ along $CB'$ collapsing to a single point.
+        Since any $d$-simplex is homotopic to a $d$-disc and its boundary is collapsed,
+        we obtain the homotopy of a $(d - 1)$-sphere.
         
-        With \myintref{homotopy::theorem} and \myintref{whitney::bouqet},
+        Using \myintref{homotopy::theorem} and \myintref{whitney::bouquet},
         we conclude that there exists a microbundle $\bn$ such that $(\whitney{\xi}{\bn})\restr{B}$ is trivial.
         The equation
         \[
