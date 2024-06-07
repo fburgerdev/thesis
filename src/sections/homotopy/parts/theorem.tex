@@ -7,17 +7,26 @@
 \begin{myproof}[of the Homotopy Theorem]
     The previous lemma states that there exists a bundle-germ
     \[ \germdef{R}{\ind{H}\bb}{\ind{H}\bb[\cylup{A}]} \]
-    covering the standard retraction $(a, t) \mapsto (a, 1)$.
+    covering the retraction $(a, t) \mapsto (a, 1)$.
 
     By restricting $R$ to $\ind{H}\bb[\cyldown{A}]$ we obtain a bundle-germ
     \[ \germ{\ind{H}\bb[\cyldown{A}]}{\ind{H}\bb[\cylup{A}]} \]
-    covering $\theta: \cyldown{A} \to \cylup{A}$ with $(a, 0) \mapsto (a, 1)$.
-    Applying \myintref{homotopy::corollary} yields $\ind{H}\bb[\cyldown{A}] \cong \ind{\theta}(\ind{H}\bb[\cylup{A}])$.
+    covering $\theta: \cyldown{A} \isomto \cylup{A}$ with $\theta(a, 0) = (a, 1)$.
+    Applying \myintref{homotopy::corollary} yields
+    $\ind{H}\bb[\cyldown{A}] \cong \ind{\theta}(\ind{H}\bb[\cylup{A}])$.
 
-    Considering $\cyldown{A} = A$, we can identify $\ind{H}\bb[\cyldown{A}]$ with $\ind{f}\bb$
-    \[ \ind{H}\bb[A \cross \{0\}] = \ind{\iota}(\ind{H}\bb) \cong \ind{(H \circ \iota)}\bb = \ind{f}\bb \]
-    and symmetrically $\ind{\theta}(\ind{H}\bb[\cylup{A}])$ with $\ind{g}\bb$.
+    Considering $\cyldown{A} = A$,
+    we can identify $\ind{H}\bb[\cyldown{A}]$ with $\ind{f}\bb$ as follows
+    \[
+        \ind{H}\bb[A \cross \{0\}] =
+        \ind{\iota}(\ind{H}\bb) \cong
+        \ind{(H \circ \iota)}\bb =
+        \ind{f}\bb.
+    \]
+    Analogously, we can identify
+    $\ind{\theta}(\ind{H}\bb[\cylup{A}])$ with $\ind{g}\bb$.
 
-    Together with $\ind{H}\bb[\cyldown{A}] \cong \ind{\theta}(\ind{H}\bb[\cylup{A}])$
+    Together with
+    $\ind{H}\bb[\cyldown{A}] \cong \ind{\theta}(\ind{H}\bb[\cylup{A}])$,
     it follows that $\ind{f}\bb \cong \ind{g}\bb$.
 \end{myproof}

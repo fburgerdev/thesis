@@ -1,37 +1,43 @@
 % foreword
 \begin{myparagraph}
-    Now consider two isomorphic microbundles $\bb$ and $\bb'$ over $B$.
-    There exists a homeomorphism $\phi: V \isomto V'$ where
-    $V \sub E$ is a neighborhood of $i(B)$ and $V' \sub E'$ is a neighborhood of $i'(B)$.
-    The homeomorphism $\phi$ is a representative for a homeomorphism-germ
-    \[ \germdef{[\phi]}{(E, i(B))}{(E', i'(B))}. \]
+    Let $\bb$ and $\bb'$ be two isomorphic microbundles over $B$.
+    There exists a homeomorphism $\psi: V \isomto V'$ where
+    $V \sub E(\bb)$ is a neighborhood of $i(B)$
+    and $V' \sub E(\bb')$ is a neighborhood of $i'(B)$.
+    We can view $\psi$ as a representative for a homeomorphism-germ
+    \[ \germdef{[\psi]}{(E, i(B))}{(E', i'(B))}. \]
     
-    Studying isomorphy between microbundles in this way is useful because we don't care what such a
-    homeomorphism does on particular neighborhoods of the base spaces but only what it does on arbitray small ones.
-    Hence every representative of $[\phi]$ describes the `same' isomorphy between $\bb$ and $\bb'$.
-    Now, naturally, the question arises whether the existence of a homeomorphism-germ
+    Studying isomorphy between $\bb$ and $\bb'$
+    using map-germs is useful,
+    because we don't care what $\psi$ does on its initial domain,
+    but only what it does on arbitray small neighborhoods of $i(B)$.
+    Hence, every representative of $[\psi]$
+    describes the `same' isomorphy between $\bb$ and $\bb'$.
+    Now, naturally, the question arises whether
+    the existence of a homeomorphism-germ
     \[ \germdef{F}{(E, i(B))}{(E', i'(B))} \]
     already implies that $\bb$ and $\bb'$ are isomorphic.
-    The answer is generally no, because isomorphy of microbundles additionally requires 
-    the homeomorphism to commute with injection and projection maps.
-    Therefore, we need to assume an extra condition (`fiber-preservation')
+    The answer is generally no, because isomorphy between microbundles
+    additionally requires 
+    the homeomorphism to commute with the injection and projection maps.
+    Therefore, we need to require an extra condition (`fiber-preservation')
     for this implication to be true.
     This justifies the following definition.
     
     % precondition
-    Let $\bb$ and $\bb'$ be two microbundles over $B$ and
-    let $\germdef{J}{(E, i(B))}{(B, B)}$ and $\germdef{J'}{(E', i(B))}{(B, B)}$
-    denote the map-germs representing its projection maps.
+    Let $\germdef{J}{(E(\bb), i(B))}{(B, B)}$ and $\germdef{J'}{(E(\bb'), i(B))}{(B, B)}$
+    denote the map-germs represented by the projections of $\bb$ and $\bb'$.
 \end{myparagraph}
 
 % definition
 \begin{mystatement}{definition}[isomorphism-germ]{homotopy::isomorphism}
     An \defterm{isomorphism-germ} between $\bb$ and $\bb'$ is a homeomorphism-germ 
-    \[ \germdef{F}{(E, B)}{(E', B)} \]
+    \[ \germdef{F}{(E(\bb), B)}{(E(\bb'), B)} \]
     which is \defterm{fiber-preserving}, that is $J' \circ F = J$.
 \end{mystatement}
 
 % remark
 \begin{mystatement}{remark}{homotopy::isomorphismremark}
-    There exists an isomorphism-germ between $\bb$ and $\bb'$ if and only if $\bb$ is isomorphic to $\bb'$.
+    There exists an isomorphism-germ between $\bb$ and $\bb'$
+    if and only if $\bb$ and $\bb'$ are isomorphic.
 \end{mystatement}

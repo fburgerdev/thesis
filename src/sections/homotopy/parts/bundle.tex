@@ -1,16 +1,19 @@
 % generalize
 \begin{myparagraph}
-    We can take this even further by giving up on the assumption that the base spaces of the considered microbundles equal.
+    We can take this even further by dropping the assumption
+    that the base spaces of the two microbundles equal.
     Note that in this case no comparison to isomorphy can be drawn,
-    since we have not defined isomorphy between microbundles over different base spaces.
+    because we haven't defined isomorphy between microbundles over different base spaces.
 \end{myparagraph}
 
 % definition
 \begin{mystatement}{definition}[bundle-germ]{homotopy::bundle}
-    Let $\bb$ and $\bb'$ be two microbundles over $B$ and $B'$ with the same fiber dimension.
+    Let $\bb$ and $\bb'$ be two microbundles over $B$ and $B'$
+    with the same fiber dimension.
     A \defterm{bundle-germ} $\germdef{F}{\bb}{\bb'}$ is a map-germ
-    \[ \germdef{F}{(E, B)}{(E', B')} \]
-    such that there exists a representative $f: U_f \to E'$ that maps each fiber $\inv{j}(b)$ injectively to a fiber $\inv{j'}(b')$.
+    \[ \germdef{F}{(E(\bb), B)}{(E(\bb'), B')} \]
+    such that there exists a representative $f: U_f \to E(\bb')$
+    that maps each fiber $\inv{j}(b)$ injectively to a fiber $\inv{j'}(b')$.
 \end{mystatement}
 
 % diagram
@@ -18,7 +21,7 @@
     For a bundle-germ $\germdef{F}{\bb}{\bb'}$, the following diagram commutes:
     \begin{center}
         \begin{tikzcd}
-            (E, B) \arrow[r, Rightarrow, "F"] \ar[d, "i"] & (E', B') \ar[d, "i'"] \\
+            (E(\mathfrak{b}), B) \arrow[r, Rightarrow, "F"] \ar[d, "i"] & (E(\mathfrak{b}'), B') \ar[d, "i'"] \\
             B \ar[r, "F\vert_B"] & B' \\
         \end{tikzcd}
     \end{center}

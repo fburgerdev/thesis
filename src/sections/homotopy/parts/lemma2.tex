@@ -1,17 +1,21 @@
 % lemma
-\begin{mystatement}{lemma}{homotopy::lemma2}
+\begin{mystatement}{lemma}{homotopy::lemma2}[67]
     Let $\bb$ be a microbundle over $\cyl{B}$.
-    Every $b \in B$ has a neighborhood $V$ where $\bb[\cyl{V}]$ is trivial.
+    Then every $b \in B$ has a neighborhood $V$ such that $\bb[\cyl{V}]$ is trivial.
 \end{mystatement}
 
 % proof
 \begin{myproof}
     Let $b \in B$ be arbitrary.
 
-    For every $t \in \I$, choose a neighborhood $U_t := V_t \cross (t - \eps_t, t + \eps_t)$ of $(b, t)$ such that $\bb[U_t]$ is trivial.
-    This can be achieved by taking a local trivialization of $(b, t)$ in $\bb$ and restricting the spaces if necessary.
+    For every $t \in \I$, assume a neighborhood
+    $U_t := V_t \cross (t - \eps_t, t + \eps_t)$ of $(b, t)$
+    such that $\bb[U_t]$ is trivial.
+    Such a $U_t$ can be constructed by taking
+    a local trivialization $(U', V', \phi')$ of $(b, t)$ in $\bb$
+    and restricting $U'$ accordingly.
 
-    Since $\cyl{\coll{b}}$ is compact, we can choose a finite subset
+    Since $\cyl{\coll{b}}$ is compact, we can choose a finitely many
     \[ (V_1 \cross (t_1 - \eps_1, t_1 + \eps_1)), \dots, (V_n \cross (t_n - \eps_n, t_n + \eps_n)) \]
     of the collection $\{U_t\}$ covering $\{b\} \cross \I$ and define $V = V_1 \cap \dots \cap V_n$.
 
