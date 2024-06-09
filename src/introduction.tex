@@ -1,104 +1,111 @@
 \begin{myparagraph}
     % smooth
-    In differential geometry,
-    the tangent bundle of a smooth manifold
-    is a fundamental concept in understanding the manifolds underlying geometry.
+    % In differential geometry,
+    % the tangent bundle of a smooth manifold
+    % is a fundamental concept in understanding its underlying geometry.
     
     % smooth :: tangent space
     Given a smooth manifold $M$,
     one can define the tangent space
-    in a point $p \in M$ using derivations
+    in a point $p \in M$ using `derivations'
     \[
         T_p M = \set{\nu: C^\infty(M) \to \R^n \text{ linear}}{\nu(fg)
         = f(p)\nu(g) + \nu(f)g(p)}
     \]    
-    or using tangent curves
+    or using `tangent curves'
     \[ T_p M = \set{\gamma \in C^\infty((-1, 1), M)}{\gamma(0) = p } / \sim \]
     where $\gamma \sim \gamma' \iff \frac{d}{dx}(\psi \circ \gamma)(0) = \frac{d}{dx}(\psi \circ \gamma')(0)$
     and $\psi$ is a chart for $p$.
     
     % smooth :: tangent bundle
-    The tangent space in a point allows for the definition of the tangent bundle
+    The tangent space allows for the definition of the tangent bundle
     \[ TM := \bigsqcup_{p \in M} T_p M\]
-    together with the section
-    \[ TM \xto{\pi} M \twith \pi(p, \nu) = p. \]
+    together with the projection
+    \[ TM \xto{\pi} M, \pi(p, \nu) = p. \]
 
     % topological
     Lets say one wants to define the tangent bundle over a topological manifold.
     % topological :: problem
-    We cannot use the same construction as in the smooth case, because
-    as we have just seen the definition of
-    the tangent space always requires the notion of differentiability.
-    However, a topological manifold in general
-    does not admit a differentiable structure (see\cite{kervaire})
-    and even if there exists one,
+    As we see from the two definitions of the tangent space,
+    the tangent bundle requires the notion of differentiability.
+    However, M. Kervaire showed in 1960 that there exists a $10$-dimensional manifold
+    that does not admit a differentiable structure (see\cite{kervaire}).
+    Furthermore, even if there exists such a structure for a topological manifold,
     it is generally not unique (e.g. the $7$-sphere\cite{milnor7sphere}).
 
+    Therefore,
+    we need a different construction than the one for the smooth case.
+    
     % topological :: naive
-    So a different construction to the smooth tangent bundle is necessary.
-    One plausible approach would be to define the tangent space in a point $p \in M$
-    to be $\coll{x} \cross U_x$, where $U_x \isomto \R^n$ using a chart of $p$.
-    However, with this construction we would have choose the neighborhoods $U_x$
-    accordingly such that they vary continuously over $M$.
-    Furthermore, it is unknown whether this construction would be topologically
-    invariant to the choices of $U_x$ (compare\cite[p.53]{milnor}).
+    One plausible approach would be to define the fibers of the tangent bundle
+    to be of the form $\coll{p} \cross U_p$,
+    where $U_p$ is a neighborhood of $p$ which is
+    homeomorphic to $\R^d$ via a chart.
+    However, this construction raises the problem
+    on choosing neighborhoods $U_p$
+    such that they vary continuously over $M$.
+    Furthermore,
+    it is questionable whether this construction is topologically
+    invariant if it depends on specific choices of neighborhoods $U_p$.
 
     % topological :: solution
     In 1964,
     the well-known mathematician John Milnor
-    published a paper called ``Microbundles, Part I''
-    introducing a unique way to solve this problem:
+    published ``Microbundles, Part I'',
+    introducing a unique way to think
+    about tangent bundles over topological manifolds:
 
-    The core idea is, that we drop the assumption
+    The core idea behind this approach is
+    to drop the assumption
     that the tangent bundle is a vector bundle and hence
-    every fiber is homeomorphic to euclidean spaces.
-    Instead, we only require the fibers to be a `germ' of euclidean space,
+    every fiber must be homeomorphic to euclidean spaces.
+    Instead, we require that the fibers are a `germ' of euclidean space,
     i.e. a topological space with an open subset homeomorphic to euclidean space.
-    So in contrast to the above approach,
-    we could now take any neighborhood of $p$ as the tangent space in $p$ since
-    one can always find a chart within.
+    In contrast to the above approach,
+    we can now choose the neighborhoods $U_p$ of $p$ regardless of any corresponding charts.
+    That is because we can always find
+    the domain of a chart (which is homeomorphic to $\R^d$) within arbitrary neighborhoods of $p$.
 
     If the respective neighborhoods can be chosen freely,
-    we could always choose the entire space $M$ for the sake of simplicity.
+    we may as well always choose the entire space $M$ for the sake of simplicity.
 
-    It follows that our resulting total space is of the form $M \cross M$.
+    So it follows that our resulting total space is of the form $M \cross M$, which,
+    analoguous to the smooth case, comes equipped with the projection
+    \[ M \cross M \xto{\pi} M, \pi(m, m') = m. \]
     
     % topological :: microbundle
-    Milnor establishes this approach by generalizing this type of bundle.
+    In order to develop this approach, Milnor introduces a new type of bundle
+    that arise from this.
     He calls them `microbundles'.
-    In the above mentioned paper, Milnor shows that many fundamental properties
-    and constructions immediatly carry over other to microbundles,
+    Many fundamental properties
+    and constructions of vector bundles immediatly carry over other to microbundles,
     e.g. induced microbundles or the Whitney sum (see \myintref{chapter::constructions}).
+    Moreover, Milnor shows that if a manifold can be equipped with a smooth structure,
+    then the tangent vector bundle regarded as microbundle is isomorphic to the
+    tangent microbundle.
 
     % topological :: normal bundle
-    Furthermore, Milnor defines what the topological analogue
-    of the normal bundle of a smooth manifold should look like.
-    In the smooth case, given an embedded submanifold $P \sub M$,
-    the normal space in a point $p \in P$
-    is defined to be the quotient
+    Furthermore, Milnor defines what the microbundle analogue
+    of the normal bundle is.
+    Given a smooth embedded submanifold $P \sub M$,
+    there always exists a normal bundle $NP$ defined fiber-wise with
     \[ N_p P = T_p M / T_p N. \]
-    Similar to the tangent bundle, the normal bundle is defined as
-    \[ NP  = \bigsqcup_{p \in P} N_p P \]
-    together with the section
-    \[ NP \xto{\pi} N \twith \pi(p, \nu) = p. \]
-    So for smooth embedded manifolds there always exists a normal bundle
-    in its surrounding space.
-    However, this is generally not true for normal microbundles (see\cite{rourke}).
-    Instead, Milnor could show that there exists a normal microbundle of an embedded manifold
-    in a stabalized surrounding manifold $M \times \R^q$ for some $q \in \N$. 
+    However, for the topological case it is not as easy.
+    The two mathematicians C. Rourke and B. Sanderson could construct a $19$-dimensional manifold
+    embedded in $S^{29}$ that does not admit a normal microbundles (see\cite{rourke}).
+    Instead, Milnor could show that there always exists a normal microbundle
+    of an embedded manifold
+    in a stabilized surrounding manifold $M \times \R^q$ for some $q \in \N$. 
 
     % applications
-    This is a very important result, since it allows for example to transfer many results
-    of cobordism theory by Thom over to topological manifolds
-    with the use of normal microbundles.
+    Milnors studies on microbundles allowed R. Williamson
+    to transfer fundamental results of cobordism theory from the smooth case
+    over to the topological case, particulary by utilising the existence
+    of a normal microbundle in a stabilized surrounding manifold.
 
     % thesis structure
-    Proving the statement of normal microbundles while establishing the concept of
-    microbundles along the way is the content of this thesis.
-
+    This thesis introduces the concept of microbundles and presents
+    a proof for the above theorem.
     It is based on Milnors paper `Microbundles, Part I',
     adopting much of its structure and proofs.
-    Mostly there will be provided more details,
-    proving every statement explicitly,
-    than in Milnors original work.
 \end{myparagraph}
