@@ -1,6 +1,6 @@
 \contentsline {chapter}{\numberline {1}Introduction}{2}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Motivation}{2}{section.1.1}%
-\contentsline {section}{\numberline {1.2}Introduction to Microbundles}{3}{section.1.2}%
+\contentsline {section}{\numberline {1.2}Introduction to Microbundles}{4}{section.1.2}%
 \contentsline {chapter}{\numberline {2}Standard Constructions}{9}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Induced Microbundles}{9}{section.2.1}%
 \contentsline {section}{\numberline {2.2}The Whitney Sum}{16}{section.2.2}%
