@@ -1,12 +1,10 @@
 % foreword theorem
 \begin{myparagraph}
-    We can apply the Homotopy Theorem on the underlying microbundles of
-    rooted-microbundles, however with the statement in \myintref{section::homotopy}
-    we are generally not given rooted-isomorphy.
-
-    By assuming that $f$ and $g$ are based maps and that a homotopy
-    between $f$ and $g$ exists that leaves the base point fixed,
-    we can show a version of the Homotopy Theorem that yields rooted-isomorphy.
+    Given a rooted microbundle $\bb$ and homotopic based maps $f, g: A \to B$,
+    the Homotopy Theorem yields that $\ind{f}\bb$ and $\ind{g}\bb$ are isomorphic (!not rooted).
+    
+    With the preliminary work in \myintref{section::homotopy_prove}, we can derive
+    a version of the Homotopy Theorem that also accounts for rooted isomorphy.
 \end{myparagraph}
 
 % theorem
@@ -14,33 +12,29 @@
     Let $\bb$ be a rooted microbundle over $B$ and $f, g: A \to B$ be two based maps
     where $A$ is paracompact hausdorff.
     If there exists a homotopy $H: \cyl{A} \to B$ between $f$ and $g$ that leaves the base point fixed,
-    then the two rooted microbundles $\ind{f}\bb$ and $\ind{g}\bb$ are rooted-isomorphic.
+    then the two rooted microbundles $\ind{f}\bb$ and $\ind{g}\bb$ are rooted isomorphic.
 \end{mystatement}
 
 % foreword lemma
 \begin{myparagraph}
-    To proof this, need to show a `rooted version' of \myintref{homotopy::lemma2}.
+    In order to proof this,
+    we need to show a `rooted version' of \myintref{homotopy::lemma2}.
     
     First, note that 
     \[
         E(\ind{H}\bb[\cyl{a_0}]) = E(\ind{\iota}(\ind{H}(\bb)))
-        \cong E(\ind{(H \circ \iota)}\bb) = E(\ind{const_{b_0}}\bb).
+        \cong E(\ind{(H \circ \iota)}\bb) = E(\ind{c_{\cyl{a_0}, b_0}}\bb),
     \]
-    By applying \myintref{induced::const}, we can consider $E(\ind{H}\bb[\cyl{a_0}])$
-    to be an open subset of $a_0 \cross [0, 1] \cross E(\bbb)$.
+    whose total space is of the form $(a_0 \cross [0, 1]) \cross E(\bb)$
+    by construction of the induced microbundle.
 
     Based on this, we can define an isomorphism-germ
     \[ \germdef{\overline{R}}{\ind{H}\bb[\cyl{a_0}]}{\be{\cyl{a_0}}} \]
-    by the representative
-    \[ \overline{r}: \cyl{a_0} \cross V \to \cyl{a_0} \cross \R^n \]
-    with
-    \[ \overline{r}(a_0, t, v) = (a_0, t, \snd{r}(v) )\]
-    where $r: V \to b_0 \cross \R^n$ is a representative for $R$ with $V \sub E(\bbb)$ open.
-    The representative $\overline{r}$ is a homeomorphism on its image
-    because its component-wise the identity and $r$, which are both homeomorphisms on their image. 
-
-    The following lemma is the rooted-version of \myintref{homotopy::lemma2}
-    which will be necessary in order to prove the Rooted Homotopy Theorem.
+    represented by
+    \[ \overline{r}(a_0, t, v) = (a_0, t, \snd{r}(v)), \]
+    where $r: V \to b_0 \cross \R^n$ is a representative for $R$.
+    The representative $\overline{r}$ is a homeomorphism on its image,
+    because its components are homeomorphisms on their image. 
 \end{myparagraph}
 
 % lemma
@@ -58,27 +52,26 @@
     it follows that there exists an isomorphism-germ
     \[ \germdef{Q}{\ind{H}\bb[\cyl{V}]}{\be{\cyl{V}}} \]
     for a sufficiently small neighborhood $V$ of $a_0$.
-    However $Q$ doesn't extend $R$ in general.
+    However, $Q$ does not extend $\overline{R}$ in general.
 
-    To fix this, consider
+    In order to fix this, consider
     \[ \germdef{Q \circ \inv{\overline{R}}}{\be{\cyl{a_0}}}{\be{\cyl{a_0}}} \]
-    represented by $\nu: U_\nu \to \cyl{a_0} \cross \R^n$
-    with $U_\nu \sub \cyl{a_0} \cross \R^n$ open.
+    together with a representative $f: U_f \to (\cyl{a_0}) \cross \R^n$.
 
     Similar to the construction of $\overline{R}$, we can construct an isomorphism-germ
     \[ \germdef{P}{\be{\cyl{V}}}{\be{\cyl{V}}} \]
     extending $Q \circ \inv{\overline{R}}$ represented by
-    \[ p(a, t, x) = (a, \nu(a_0, t, x)) \]
-    considering $\nu(a_0, t, x) \in \I \cross \R^n$.
+    \[ p(a, t, x) = (a, f(a_0, t, x)) \]
+    considering $f(a_0, t, x) \in \I \cross \R^n$.
 
     Restricted to $\be{\cyl{a_0}}$, $P$ agrees with $Q \circ \inv{\overline{R}}$ and thus
     \[
         \inv{Q} \circ P\restr{\be{\cyl{a_0}}}
         = (\inv{Q} \circ (Q \circ \inv{\overline{R}}))
         = ((\inv{Q} \circ Q) \circ \inv{\overline{R}})
-        = \inv{\overline{R}}
+        = \inv{\overline{R}}.
     \]
-    \[ \implies (\inv{P} \circ Q)\restr{\ind{H}\bb[\cyl{a_0}]} = \overline{R}. \]
+    % \[ \implies (\inv{P} \circ Q)\restr{\ind{H}\bb[\cyl{a_0}]} = \overline{R}. \]
     Since $P$ and $Q$ are both isomorphism-germs,
     \[ \germdef{\inv{P} \circ Q}{\ind{H}\bb[\cyl{V}]}{\be{\cyl{V}}} \]
     is an isomorphism-germ extending $\overline{R}$.
@@ -86,55 +79,72 @@
 
 % foreword proof
 \begin{myparagraph}
-    Together with the previous lemma,
-    we are able to prove the Rooted Homotopy Theorem.
+    We are now able to show the Rooted Homotopy Theorem.
 
     To understand the proof,
-    it is useful to have the proof of \myintref{homotopy::lemma3} in mind,
-    which we modify in a few places.
+    it is useful to have the constructions of \myintref{homotopy::lemma3} in mind,
+    because we will modify them slightly in order to preserve the rootings.
 \end{myparagraph}
 
 % proof theorem
 \begin{myproof}[of the Rooted Homotopy Theorem]
-    For $\ind{f}\bb$ and $\ind{g}\bb$ to be rooted-isomorphic,
-    there needs to exist an isomorphism-germ
-    \[ \germdef{F}{\ind{f}\bb}{\ind{g}\bb} \]
-    extending $\inv{R_g} \circ R_f = \inv{R} \circ R = id_{\bb}$.
+    We need to show that $\ind{f}\bb$ and $\ind{g}\bb$ are rooted isomorphic,
+    that is there exists an isomorphism-germ
+    \[ \germ{\ind{f}\bb}{\ind{g}\bb} \]
+    extending $\inv{R_g} \circ R_f$.
 
-    We construct this isomorphism-germ as in \myintref{section::homotopy},
-    by taking a bundle-germ
+    For the initial Homotopy Theorem,
+    we constructed a bundle-germ
     \[ \germ{\ind{H}\bb}{\ind{H}\bb[\cylup{A}]} \]
-    using \myintref{homotopy::lemma3} and restricting it to $\ind{H}\bb[\cyldown{A}]$.
+    covering $(a, t) \mapsto (a, 1)$
+    and restricted it to $\ind{H}\bb[\cyldown{A}]$.
+    The required isomorphism-germ was then obtained by
+    identifying $\ind{f}\bb$ with $\ind{H}\bb[\cyldown{A}]$ and
+    $\ind{g}\bb$ with $\ind{H}\bb[\cyldown{A}]$.
 
+    So in order that this isomorphism-germ extends $\inv{R_g} \circ R_f$,
+    we need to construct $\germ{\ind{H}\bb}{\ind{H}\bb[\cylup{A}]}$ such that
+    the restriction
+    \[ \germ{\ind{H}\bb[\cyldown{a_0}]}{\ind{H}\bb[\cylup{a_0}]} \]
+    Here w
     So the only thing to do is to modify \myintref{homotopy::lemma3} such a that
-    \[ \germ{\ind{H}\bb[\cyldown{a_0}]}{\ind{H}\bb[\cyldown{b_0}]} \]
-    extends the identity germ if we consider $a_0 \cross E(\bbb) = b_0 \cross E(\bbb)$.
+    \[ \germ{\ind{H}\bb[\cyldown{a_0}]}{\ind{H}\bb[\cylup{a_0}]} \]
+    extends the identity germ.
 
-    This is achieved by taking a locally finite open cover $\coll{V_\alpha}$
-    of $A$ as in \myintref{homotopy::lemma3}, removing the base point $a_0$ in every set
-    and adding the set $V$ obtained from \myintref{suspension::sharper}.
-    Since $a_0 \in V$, the resulting collection is still a locally finite open cover of $A$.
-
-    We continue with the proof like normal.
-    Note that $\lambda_V(a_0) = 1$,
-    since $\lambda_\alpha(a_0) = 0$ because we removed $a_0$ from every other set.
-
-    Lastly, we construct the extension $R_V$ for $r_v$ like in \myintref{section::homotopy},
-    but instead of taking an arbitrary trivialization $E(\ind{H}\restr{A_\alpha}) \cong A_\alpha \cross \R^n$
-    for construction we use a representative $r$ for the bundle-germ constructed in \myintref{suspension::sharper}.
+    This can be achieved by choosing a locally finite open cover $\coll{V_\alpha}$
+    of $A$ (as in \myintref{homotopy::lemma3}), removing the base point $a_0$ from every set
+    and adding $V$ obtained from \myintref{suspension::sharper}.
+    Since $a_0 \in V$, the resulting collection is still a
+    locally finite open cover of $A$.
     
-    This has the effect that the mapping
+    In the following, we will denote constructions over $V$
+    with subscript $V$ and constructions over the other sets
+    from the cover with subscript $\alpha$.
+
+    We continue with the proof of \myintref{homotopy::lemma3}.
+    Note that $\lambda_V(a_0) = 1$.
+    That is because we removed $a_0$ from every other set and hence $\lambda_\alpha(a_0) = 0$.
+
+    Lastly, we construct the extension $R_V$ for $r_V$
+    like in \myintref{section::homotopy_prove},
+    but instead of choosing an arbitrary trivialization
+    $E(\ind{H}\restr{A_V}) \cong A_V \cross \R^n$
+    for the construction we use a representative $r$
+    for the bundle-germ constructed in \myintref{suspension::sharper}.
+    
+    This has the effect that the representative
     \[
         E(\ind{H}\bb[A_V]) \xto{r}
         A_V \cross \R^n \xto{r_V \cross id} (A_V \cap A'_V) \cross \R^n
         \xto{\inv{r}} E(\ind{H}\bb[A_V \cap A'_V])
     \]
-    is the identity on $\ind{H}\bb[\cyldown{a_0}]$ if we consider $a_0 \cross E(\bbb) = b_0 \cross E(\bbb)$.
-
-    This is exactly what we wanted and since
+    for $R_V$ is the identity on $\ind{H}\bb[\cyldown{a_0}]$ if we consider $a_0 \cross E(\bbb) = b_0 \cross E(\bbb)$.
+    \[ (a_0, 0, x) \mapsto (a_0, 1, x) \]
+    Additionally,
     every other $R_\alpha$ leaves $\ind{H}\bb[\cyldown{a_0}]$ unaffected
     because $r_\alpha(a_0, t) = (a_0, \max(\lambda_\alpha(t), t)) = (a_0, t)$.
 
-    Therefore, the pieced together bundle-germ
-    is also the identity on $\ind{H}\bb[\cyldown{a_0}]$, completing the proof.
+    It follows that by piecing together the $R_\alpha$ and $R_V$ like in \myintref{homotopy::lemma3},
+    we obtain a bundle germ that is the identity on $\ind{H}\bb[\cyldown{a_0}]$,
+    completing the proof.
 \end{myproof}

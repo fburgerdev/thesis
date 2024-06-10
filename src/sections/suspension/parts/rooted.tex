@@ -5,14 +5,14 @@
     over $B$ together with an isomorphism-germ
     \[ \germdef{R}{\bbb}{\be{b_0}}. \]
     % isomorphy
-    Two rooted microbundles $\bb$ and $\bb'$ are \defterm{rooted-isomorphic}
+    Two rooted microbundles $\bb$ and $\bb'$ are \defterm{rooted isomorphic}
     if there exists an isomorphism-germ $\germ{\bb}{\bb'}$ extending
-    \[ \germdef{\inv{R'} \circ R}{\bbb}{\bbb'}. \]
+    \[ \germdef{\inv{R'} \circ R}{\bbb}{\bb'\restr{b_0}}. \]
 \end{mystatement}
 
-% afterword
-\begin{myparagraph}
-    Having a rooting is necessary
-    so that the `wedge-sum' of two microbundles is well-defined
-    that we will see later in this chapter.
-\end{myparagraph}
+% remark
+\begin{mystatement}{remark}{suspension::rooting}
+    One can always define a rooting for a given microbundle 
+    by choosing a local trivialization in the base point and restricting
+    it to the fiber of $b_0$.
+\end{mystatement}
