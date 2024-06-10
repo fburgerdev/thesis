@@ -1,0 +1,69 @@
+- introduction
+    - motivation 3-4
+    - microbundles
+        - definition 1 
+        - local triviality (own)
+        - isomorphy
+        - restricting total space (own)
+        - trivial
+        - paracompact triviality
+        - underlying
+        - tangent
+        - equivalence
+- standard constructions
+    - induced microbundle
+        - definition (own)
+        - restricted
+        - trivial (own)
+        - constant (own)
+        - composition (own)
+        - cone
+        - simplex (own)
+    - whitney sum
+        - definition (own)
+        - compatibility with induced microbundle (own)
+        - trivialize
+- homotopy theorem
+    - statement
+    - map-germs
+        - map-germ
+        - homeomorphism-germ
+        - isomorphism-germ
+        - bundle-germ
+        - ball lemma (own)
+        - williamson
+        - corollary
+    - proving the homotopy theorem
+        - glueing lemma
+        - left and right glueing
+        - trivial neighborhood
+        - closed locally finite cover (own)
+        - extend
+        - prove
+- rooted microbundles and suspensions
+    - rooted microbundles and the wedge sum
+        - rooted microbundle 1
+        - induced rooted 1-2
+        - sharper lemma3 (own) 1
+        - rooted homotopy theorem (own) 2-
+        - wedge sum (own) 2-3
+    - suspension and proof of bouquet lemma
+        - trivial wedge
+        - compatibility wedge and induced (own)
+        - reflection
+        - whitney rooted
+        - distributivity wedge and whitney (own)
+        - closed (own)
+        - commutativity with trivial
+        - theorem
+        - corollary + bouquet
+- normal microbundles
+    - normal microbundles
+        - definition
+        - composition (own)
+        - uniqueness
+    - milnors theorem
+        - transitivity
+        - homeomorphy of total spaces
+        - existance normal microbundle
+        - milnors theorem

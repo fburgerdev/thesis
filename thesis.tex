@@ -1,4 +1,4 @@
-\documentclass{report}
+\documentclass{amsart}
 % Packages
 \input{src/packages}
 % Global Definitions
@@ -8,6 +8,7 @@
 \begin{document}
 % Document :: Titlepage
 \input{src/titlepage}
+\maketitle
 % Document :: Abstract
 \input{src/abstract}
 % Document :: Table of Contents
@@ -15,15 +16,15 @@
 % \thispagestyle{empty}
 \clearpage
 % Document :: Introduction
-\chapter{Introduction}\label{chapter::introduction}
+\section{Introduction}\label{chapter::introduction}
 % Document :: Introduction :: Motivation
-\section{Motivation}\label{section::motivation}
+\subsection{Motivation}\label{section::motivation}
 \input{src/introduction}
 % Document :: Introduction :: Microbundle
-\section{Introduction to Microbundles}\label{section::microbundle}
+\subsection{Introduction to Microbundles}\label{section::microbundle}
 \input{src/sections/microbundle/section}
 % Docuement :: Constructions
-\chapter{Standard Constructions}\label{chapter::constructions}
+\section{Standard Constructions}\label{chapter::constructions}
 \begin{myparagraph}
     This chapter introduces two standard constructions for microbundles,
     the `induced microbundle' and the `Whitney sum'.
@@ -31,19 +32,19 @@
     and many results carry over immediatly its microbundle analogue.
 \end{myparagraph}
 % Document :: Constructions :: Induced
-\section{Induced Microbundles}\label{section::induced}
+\subsection{Induced Microbundles}\label{section::induced}
 \input{src/sections/induced/section}
 % Document :: Constructions :: Whitney
-\section{The Whitney Sum}\label{section::whitney}
+\subsection{The Whitney Sum}\label{section::whitney}
 \input{src/sections/whitney/section}
 % Document :: Homotopy
-\chapter{The Homotopy Theorem}\label{chapter::homotopy}
+\section{The Homotopy Theorem}\label{chapter::homotopy}
 \input{src/sections/homotopy/section}
 % Docuemnt :: Suspension
-\chapter{Rooted Microbundles and Suspensions}\label{chapter::suspension}
+\section{Rooted Microbundles and Suspensions}\label{chapter::suspension}
 \input{src/sections/suspension/section}
 % Document :: Normal
-\chapter{Normal Microbundles and Milnors Theorem}\label{chapter::normal}
+\section{Normal Microbundles and Milnors Theorem}\label{chapter::normal}
 \input{src/sections/normal/section}
 % Document :: References
 \input{src/references}
