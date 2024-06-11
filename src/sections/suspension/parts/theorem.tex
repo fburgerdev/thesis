@@ -7,23 +7,25 @@
 
 % proof theorem
 \begin{myproof}
-    The previous lemma yields $\whitney{\bb}{\be{B}} \cong \whitney{\be{B}}{\bb}$.
+    The previous lemma yields rooted isomorphy $\whitney{\bb}{\be{B}} \cong \whitney{\be{B}}{\bb}$.
     Hence
     \[
         \ind{\phi}((\whitney{\ba}{\be{B}}) \vee (\whitney{\bb}{\be{B}}))
         \cong \ind{\phi}((\whitney{\ba}{\be{B}}) \vee (\whitney{\be{B}}{\bb})).
     \]
-    Additionally, we have
+    Furthermore, we have
     \[
+        \ind{\phi}((\whitney{\ba}{\be{B}}) \vee (\whitney{\bb}{\be{B}})) \cong
         \whitney{\ind{\phi}((\ba \vee \bb))}{(\be{B} \vee \be{B})}
         \cong \whitney{\ind{\phi}(\ba \vee \bb)}{\be{B}}
     \]
     for the left side and
     \[
+        \ind{\phi}((\whitney{\ba}{\be{B}}) \vee (\whitney{\be{B}}{\bb})) \cong
         \ind{\phi}(\whitney{(\ba \vee \be{B})}{(\be{B} \vee \bb)})
         \cong \whitney{\ba}{\bb}
     \]
-    for the right side. That completes the proof.
+    for the right side of the isomorphy, which completes the proof.
 \end{myproof}
 
 % corollary
@@ -36,3 +38,11 @@
     This follows directly from the previous theorem and
     the fact that $\ind{\phi}(\whitney{\bb}{\ind{r}\bb})$ is trivial.
 \end{myproof}
+
+% bouquet
+\begin{myparagraph}
+    Now the Bouquet Lemma is just \myintref{suspension::corollary} applied to
+    a microbundle over a bouquet of spheres.
+    Note that a bouquet of $d$-spheres can be regarded
+    as a reduced suspension over a bouquet of $(d-1)$-spheres.
+\end{myparagraph}

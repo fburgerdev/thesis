@@ -48,15 +48,15 @@
         - rooted homotopy theorem (own) 2-
         - wedge sum (own) 2-3
     - suspension and proof of bouquet lemma
-        - trivial wedge
-        - compatibility wedge and induced (own)
-        - reflection
-        - whitney rooted
-        - distributivity wedge and whitney (own)
-        - closed (own)
-        - commutativity with trivial
-        - theorem
-        - corollary + bouquet
+        - trivial wedge 1-
+        - distributivity wedge and induced (own) 2+
+        - reflection (!composition rooted isomorphy) besides 1
+        - whitney rooted 2+
+        - distributivity wedge and whitney (own) 1-2
+        - closed (own) 1-2
+        - commutativity with trivial 2-
+        - theorem 1-2
+        - corollary + bouquet 2-
 - normal microbundles
     - normal microbundles
         - definition

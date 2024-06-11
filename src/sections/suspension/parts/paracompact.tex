@@ -9,26 +9,25 @@
 
 % proof
 \begin{myproof}
-    Let $r: W_r \to b_0 \cross \R^n$ be a representative map for $R$.
+    Let $r: V_r \to b_0 \cross \R^n$ be a representative for $R$.
     
-    Choose a local trivialization $(U, V, \phi)$ for $b_0$ such that $V \cap E(\bbb) \sub W_r$.
-    The argument that such a trivialization exists was already given
-    in the proof that the wedge sum is microbundle.
-
-    Consider the map
-    \[ \psi: V \isomto \psi(V) \sub U \cross \R^n \twith \]
-    \[ \psi(e) = (j(e), r(\inv{\phi}(b_0, \snd{\phi}(e)))) \]
-    which is a representative for an isomorphism-germ $\germ{\bb[U]}{\be{U}}$ extending $R$.
+    Choose a local trivialization $(U, V, \phi)$ for $b_0$ such that $V \cap E(\bbb) \sub V_r$.
+    Such a trivialization can be obtained by subtracting the closed set
+    $E(\bbb) - V_r$ from $E(\bb)$ if necessary
+    and considering the resulting microbundle instead.
     
-    Consider the open covering of $B$ with $U$ and $B - \{b_0\}$.
+    Consider the (locally) finite open covering of $B$ given by $U$ and $B - \{b_0\}$.
     Since $B$ is paracompact, we can apply the concept
-    of partitions of unity that gives us a map
-    \[ \lambda: B \to [0, 1] \twith \supp{\lambda} \sub U \]
-    and $\lambda(b_0) = 1$ (by rescaling and capping to $1$).
+    of partitions of unity which yields a map
+    \[ \lambda: B \to [0, 1] \twith \supp{\lambda} \sub U. \]
+    By rescaling and capping to $1$ if necessary,
+    we may assume that $\lambda(b_0) = 1$.
 
-    Now we can choose $W := \supp{\lambda}$, which is closed by the definition of $\supp$.
-    Restricting the constructed isomorphism-germ over $U$ to $W$
-    yields an isomorphism-germ
-    \[ \germ{\bb[W]}{\be{W}}. \]
+    We choose $W := \supp{\lambda} \sub U$,
+    which is closed by the definition of the support.
+    We are now able to define an isomorphism-germ $\germ{\bb[W]}{\be{W}}$ represented by
+    \[ f: V \isomto f(V) \sub U \cross \R^n \twith f(e) = (j(e), \snd{r}(\inv{\phi}(b_0, \snd{\phi}(e)))), \]
+    which extends $r$.
+
     Together with $\lambda$, this completes the proof.
 \end{myproof}
