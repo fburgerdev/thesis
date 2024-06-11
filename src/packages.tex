@@ -51,3 +51,23 @@
 \usepackage{cite}
 
 \setcounter{tocdepth}{1}
+
+\usepackage{enumitem}
+\newlist{steps}{enumerate}{1}
+\setlist[steps]{label=\textit{\textbf{Step \arabic*:}},wide}
+
+\newlist{caselist}{enumerate}{1}
+\setlist[caselist]{label=\textit{\textbf{Case \arabic*:}},wide}
+
+\newlist{sectionize}{enumerate}{1}
+\setlist[sectionize]{label=\textit{\textbf{\arabic*:}},wide}
+
+\newcommand{\step}[1]{\item #1}
+
+\newlist{properties}{enumerate}{1}
+\setlist[properties]{label=\textit{(\roman*)},leftmargin=*}
+
+\usepackage{etoolbox}
+\AtBeginEnvironment{equation}{\setcounter{equation}{0}} 
+\AtBeginEnvironment{align}{\setcounter{equation}{0}} 
+\AtBeginEnvironment{gather}{\setcounter{equation}{0}} 

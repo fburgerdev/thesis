@@ -1,0 +1,26 @@
+% foreword
+\begin{myparagraph}
+    Let $r: B \isomto B$ denote the `reflection' given by
+    \[ r([x, t]) = [x, 1 - t] \]
+    and let $c: B \vee B \to B$ denote
+    the identity on the first summand and $r$ on the second summand, i.e.
+    \[ c(b, i) = \case{b}{r(b)}{i = 1}. \]
+\end{myparagraph}
+
+% lemma
+\begin{mystatement}{lemma}{suspension::reflection}
+    The induced microbundle $\ind{\phi}(\bb \vee \ind{r}\bb)$ is trivial.
+\end{mystatement}
+
+% proof
+\begin{myproof}
+    The composition $c \circ \phi$ is null-homotopic via
+    the homotopy $H: B \cross \I \to B$ given by
+    \[ H([x, t], s) = f(\phi(x, t \cdot s)). \]
+    Therefore, $\ind{\phi}(\ind{c}\bb) \cong \ind{(c \circ \phi)}\bb \cong \ind{c_{B, b_0}}\bb \cong \be{B}$
+    as rooted-isomorphy (see \myintref{homotopy::theorem}).
+    By applying the previous lemma,
+    it follows that
+    \[ \ind{\phi}(\bb \vee \ind{r}\bb) = \ind{\phi}(\ind{(id \cup r)}(\bb \vee \bb)) = \ind{\phi}(\ind{c}\bb) \]
+    and hence $\ind{\phi}(\bb \vee \ind{r}\bb) \cong \be{B}$.
+\end{myproof}

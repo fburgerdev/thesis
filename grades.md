@@ -1,5 +1,5 @@
 - introduction
-    - motivation 3-4
+    - motivation 2-3
     - microbundles
         - definition 1 
         - local triviality (own)

@@ -75,6 +75,9 @@
 \newcommand{\tand} {%
     \text{ and }%
 }
+\newcommand{\tor} {%
+    \text{ or }%
+}
 \newcommand{\twith} {%
     \text{ with }%
 }
@@ -118,4 +121,12 @@
 % variable
 \newcommand{\eps} {%
     \varepsilon{}%
+}
+
+% newcommand
+\newcommand{\case}[3] {
+    \begin{cases} #1 & \text{if } #3 \\ #2 & \text{else } \end{cases}
+}
+\newcommand{\casenif}[2] {
+    \begin{cases} #1 \\ #2 \end{cases}
 }
