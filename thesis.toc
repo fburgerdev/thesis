@@ -12,5 +12,5 @@
 \contentsline {subsection}{\tocsubsection {}{}{Microbundles over a Suspension}}{31}{section*.9}%
 \contentsline {section}{\tocsection {}{5}{Normal Microbundles and Milnors Theorem}}{35}{section.5}%
 \contentsline {subsection}{\tocsubsection {}{}{The Normal Microbundle}}{35}{section*.10}%
-\contentsline {subsection}{\tocsubsection {}{}{Milnors Theorem}}{37}{section*.11}%
-\contentsline {section}{\tocsection {}{}{References}}{40}{section*.12}%
+\contentsline {subsection}{\tocsubsection {}{}{Milnors Theorem}}{38}{section*.11}%
+\contentsline {section}{\tocsection {}{}{References}}{41}{section*.12}%

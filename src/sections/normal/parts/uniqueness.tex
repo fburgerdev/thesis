@@ -1,8 +1,12 @@
 % foreword
 \begin{myparagraph}
-    It's an unknown question,
-    whether normal microbundles are unique (up to isomorphy).
-    However, we can show that 
+    Unlike the normal vector bundle for smooth manifolds,
+    the normal microbundle is not defined in a constructive manner.
+    Therefore, the question arises in which sense the normal microbundle
+    of a submanifold $N \sub M$ is unique.
+    In fact, it is not yet known whether a normal microbundle is unique up to isomorphy,
+    but we can at least prove a statement about uniqueness,
+    as the following proposition shows.
 \end{myparagraph}
 
 % statement
@@ -14,5 +18,71 @@
 
 % proof
 \begin{myproof}
-    TODO
+    We prove this proposition in multiple steps.
+    \begin{steps}
+        % step 1
+        \item $\bt_M \circ \ind{\pi_2}\bn \cong \bt_N\restr{M}$
+        
+        % total space
+        Consider the two total spaces
+        \[ E(\bt_M \circ \ind{\pi_2}\bn) = E(\ind{\pi_2}\bn) = \set{(m_1, m_2, u) \in (M \cross M) \cross U}{m_2 = r(u)} \]
+        and
+        \[ E(\bt_N\restr{M}) = \set{(m, n_1, n_2) \in M \cross (N \cross N)}{m = n_1}. \]
+
+        % homeomorphy
+        We can easily define a homeomorphism $\psi: E(\bt_M \circ \ind{\pi_2}\bn) \isomto E(\bt_N\restr{M})$ given by
+        \[ \psi(m_1, m_2, u) = (m_1, m_1, u) \tand \inv{\psi}(m, n_1, n_2) = (m, r(n_2), n_2). \]
+        Note that $\psi$ is a homeomorphism since as $\psi$ and $\inv{\psi}$ are component-wise continuous.
+
+        % commutativity
+        It remains to be shown that $\psi$
+        commutes with the injection and projection maps of $\bt_M \circ \ind{\pi_2}\bn$ and $\bt_N\restr{M}$.
+        To check this, consider the following equations:
+        \begin{align}
+            & \psi(i_{\pi_2}(\Delta(m))) = \psi(i_{\pi_2}(m, m)) = \psi(m, m, \iota(m)) = (m, m, m) = (m, \Delta(\iota(m))) \\
+            & \pi_1(j_{\pi_2}(m_1, m_2, u)) = \pi_1(m_1, m_2) = m_1 = j_\iota(m_1, m_1, u) = j_\iota(\psi(m_1, m_2, u)) 
+        \end{align}
+        
+        % step 2
+        \item $\bt_M \circ \ind{\pi_1}\bn \cong \whitney{\bt_M}{\bn}$
+        
+        % total space
+        In this case, the two total spaces
+        \[ E(\bt_M \circ \ind{\pi_1}\bn) = E(\ind{\pi_1}\bn) = \set{(m_1, m_2, u) \in (M \cross M) \cross U}{m_1 = r(u)} \]
+        and
+        \[ E(\whitney{\bt_M}{\bn}) = \set{(m_1, m_2, u) \in (M \cross M) \cross U}{m_1 = r(u)}, \]
+        are even equal.
+        % homeomorphy + commutativity
+        Additionally, the injection and projection maps agree as the following equations show:
+        \begin{align}
+            & i_{\pi_1}(\Delta(m)) = i_{\pi_1}(m, m) = (m, m, \iota(m)) = (\Delta(m), \iota(m)) \\
+            & \pi_1(j_{\pi_1}(m_1, m_2, u)) = \pi_1(m_1, m_2) = m_1 = r(u) = j_{\oplus}(m_1, m_2, u)
+        \end{align}
+
+        % step 3
+        \item $\bt_M \circ \ind{\pi_1}\bn \cong \bt_M \circ \ind{\pi_2}\bn$
+        
+        We show that there exists a neighborhood $D \sub N \cross N$ of $\Delta(M)$ such that
+        $\pi_1\restr{D}$ is homotopic to $\pi_2\restr{D}$:
+
+        Firstly, we assume that $N$ is embedded in euclidean space by applying the Whitney Embedding Theorem.
+        Let $V$ be a neighborhood of $M$ in that euclidean space (see ANR).
+        We define $D$ as follows:
+        \[ D = \set{(m, m') \in M \cross M}{ tm + (1 - t)m' \in V, \forall t \in \I} \]
+        We are given a homotopy $H: \cyl{D} \to N$ between $\pi_1$ and $\pi_2$ with
+        \[ H((m, m'), t) = tm + (1 - t)m'. \]
+
+        Applying the Homotopy Theorem yields $\ind{\pi_1}\bn\restr{D} \cong \ind{\pi_2}\bn\restr{D}$, and
+        by restricting the total spaces accordingly we get
+        $\bt_M \circ \ind{\pi_1}\bn \cong \bt_M \circ \ind{\pi_2}\bn$.
+    \end{steps}
+    The claim follows by Step 1, 2 and 3.
 \end{myproof}
+
+% afterword
+\begin{myparagraph}
+    This proposition also shows that the normal microbundle
+    underlies the same intuition as the normal vector bundle. 
+    The sum of the tangent- and normal microbundle of the submanifold
+    equals the tangent microbundle of the surrounding space.
+\end{myparagraph}
