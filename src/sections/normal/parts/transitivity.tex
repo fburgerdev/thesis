@@ -1,6 +1,6 @@
 % lemma
 \begin{mystatement}{lemma}{normal::transitivity}
-    Let $P \sub N \sub M$ be a chain of topological manifolds.
+    Let $P \sub N \sub M$ be a chain of topological submanifolds.
     There exists a normal microbundle
     \[ \bundledef{\bn}{P}{U}{\iota}{r} \]
     of $P$ in $M$ if there exist normal microbundles
@@ -11,7 +11,7 @@
 
 % proof
 \begin{myproof}
-    Considering the composition $\bn_p \circ \bn_n\restr{U_N}$,
-    we have a normal microbundle $\bn$ of $P$ in $M$
-    since $\iota_N \circ \iota_P$ is just the inclusion $P \incl U_M$.
+    We are given a normal microbundle $\bn$ of $P$ in $M$ by
+    \[ \bn_p \circ \bn_n\restr{U_N}. \]
+    Note that $\iota_N \circ \iota_P$ is just the inclusion $P \incl U_M$.
 \end{myproof}

@@ -19,31 +19,34 @@
 
     % proof
     \begin{myproof}
-        We show the theorem in multiple steps:
-        \begin{enumerate}
-            % first
-            \item There exists a microbundle $\eta$ over $N$ such that $\whitney{\bt_N}{\eta} \cong \be[q]{N}$:
+        We assume that $M$ is embedded in euclidean space $\R^{2m + 1}$ \cite[p.60]{dimension}.
+        Additionally, let $V$ be an open neighborhood of $N$ in $M$ together with a retraction $r: V \to N$.
+
+        We show the theorem in multiple steps.
+        \begin{steps}
+            % step 1
+            \item $N$ has a normal microbundle $\eta$ in $M$ such that $\whitney{\bt_N}{\eta} \cong \be[q]{N}$
             
-            From the \extref{Whitney Embedding Thereom} it follows that
-            we can embed $M$ in euclidean space $\R^{2m + 1}$.
+            Consider the extension $\ind{r}\bt_N$.
+            Since $V$ is an open set, it's a simplicial complex.
+            Hence, we can apply \myintref{whitney::theorem} to the extended microbundle $\ind{r}\bt_N$
+            to obtain a microbundle $\eta'$ such that $\whitney{\ind{r}\bt_N}{\eta} \cong \be[q]{V}$.
 
-            Additionally, since there exists a retraction $r: V \to N$
-            where $V$ is an open neighborhood of $N$ in $M$ we can extend $\bt_N$
-            to a microbundle $\bt_N'$ over $V$.
-            Since $V$ is an open subset of euclidean space, it's a simplicial complex.
+            We conclude that $\whitney{\bt_N}{\eta'\restr{N}} = \whitney{\ind{r}\bt_N\restr{N}}{\eta'\restr{N}} = (\whitney{\ind{r}\bt_N}{\eta'})\restr{N} = \be[q]{N}$.
 
-            Hence, we can apply \myintref{whitney::theorem} to the extended microbundle $\bt_N'$
-            to obtain a microbundle $\eta'$ such that $\whitney{\bt_N'}{\eta} \cong \be[q]{V}$.
+            % step 2
+            \item $E(\rtn)$ has a normal microbundle in $E(\rwhitney)$
 
-            We conclude that
-            \[
-                \whitney{\bt_N}{\eta'\restr{N}}
-                = \whitney{\bt_N'\restr{N}}{\eta'\restr{N}}
-                = (\whitney{\bt_N'}{\eta'})\restr{N} = \be[q]{N}.
-            \]
+            We denote the injection and projection of $\rtn$ with $i_r$ and $j_r$,
+            and the injection and projection of $\rwhitney$ with $i_\oplus$ and $j_\oplus$.
 
-            % second
-            \item $E(\rtn) \sub E(\rwhitney)$ has a normal microbundle:
+            Note that $\rwhitney \cong \ind{r}(\whitney{\bt_N}{\eta})$ is trivial, so
+            $E(\rwhitney)$ is an open subset of $\R^qn$ and hence a manifold.
+
+            We consider $E(\rtn)$ to be a subset of $E(\rwhitney)$ via
+            \[ (v, e) \mapsto ((v, e), (v, i_{\eta}(v))). \]
+
+            We are given a normal microbundle of $E(\rtn)$ in $E(\rwhitney)$ by $\ind{j_r}(\ind{r}\eta)$.
 
             Since the total space
             \[ E(\rwhitney) = \set{(e, e') \in E(\rtn) \cross E(\ind{r}\eta)}{j(e) = j'(e)} \]
@@ -77,17 +80,19 @@
             \[ \phi'(\iota(e)) = \phi'(e, i'(j(e))) = (e, \snd{\phi}(i'(j(e)))) = (e, 0) = (id \cross 0)(e) \]
             and projection maps
             \[ \pi_1(e, e') = \pi_1(e, \snd{\phi'}(e, e')) = \pi_1(\phi'(e, e')). \]
-        \end{enumerate}
-        % transitivity
-        Since $N \sub M \sub E(\rtn)$ has a normal microbundle (using \myintref{normal::total}),
-        it follows from \myintref{normal::transitivity} that
-        $N \sub E(\whitney{\ind{r}\bt_N}{\ind{r}\bt'})$ has a normal microbundle.
-
-        By restricting $E(\rwhitney)$ to an open subset if necessary, we may assume that
-         \[ E(\rwhitney) = M \cross \R^q \]
-        for some $q \in \N$ using \myintref{induced::trivial}.
-
-        This completes the proof.
+            
+            % step 3
+            \item $N$ has a normal microbundle in $M \times \R^q$
+            
+            Since $N \sub M \sub E(\rtn)$ has a normal microbundle (using \myintref{normal::total}),
+            it follows from \myintref{normal::transitivity} that
+            $N \sub E(\whitney{\ind{r}\bt_N}{\ind{r}\bt'})$ has a normal microbundle.
+    
+            By restricting $E(\rwhitney)$ to an open subset if necessary, we may assume that
+             \[ E(\rwhitney) = M \cross \R^q \]
+            for some $q \in \N$ using \myintref{induced::trivial}.
+        \end{steps}
+        Applying \myintref{normal::transitivity} and $E(\rwhitney) = M \cross \R^q$ completes the proof.
     \end{myproof}
 
     % afterword

@@ -4,15 +4,15 @@
     the normal microbundle is not defined in a constructive manner.
     Therefore, the question arises in which sense the normal microbundle
     of a submanifold $N \sub M$ is unique.
-    In fact, it is not yet known whether a normal microbundle is unique up to isomorphy,
-    but we can at least prove a statement about uniqueness,
-    as the following proposition shows.
+    In fact, it is unkown whether a such normal microbundle is unique up to isomorphy.
+    Instead, we have the following statement about uniqueness.
 \end{myparagraph}
 
 % statement
 \begin{mystatement}{proposition}{normal::uniqueness}
     Let $N \sub M$ be an embedded submanifold.
-    Suppose there exists a normal microbundle $\bn$ of $N$ in $M$.
+    Suppose there exists a normal microbundle
+    $\bundledef{\bn}{N}{U}{\iota}{r}$ in $M$.
     Then $\bt_N \oplus \bn \cong \bt_M\restr{N}$.
 \end{mystatement}
 
@@ -21,13 +21,13 @@
     We prove this proposition in multiple steps.
     \begin{steps}
         % step 1
-        \item $\bt_M \circ \ind{\pi_2}\bn \cong \bt_N\restr{M}$
+        \item $\bt_N \circ \ind{\pi_2}\bn \cong \bt_M\restr{N}$
         
         % total space
         Consider the two total spaces
-        \[ E(\bt_M \circ \ind{\pi_2}\bn) = E(\ind{\pi_2}\bn) = \set{(m_1, m_2, u) \in (M \cross M) \cross U}{m_2 = r(u)} \]
+        \[ E(\bt_N \circ \ind{\pi_2}\bn) = E(\ind{\pi_2}\bn) = \set{(n_1, n_2, u) \in (N \cross N) \cross U}{n_2 = r(u)} \]
         and
-        \[ E(\bt_N\restr{M}) = \set{(m, n_1, n_2) \in M \cross (N \cross N)}{m = n_1}. \]
+        \[ E(\bt_M\restr{N}) = \set{(n, m_1, m_2) \in N \cross (M \cross M)}{n = m_1}. \]
 
         % homeomorphy
         We can easily define a homeomorphism $\psi: E(\bt_M \circ \ind{\pi_2}\bn) \isomto E(\bt_N\restr{M})$ given by
@@ -53,7 +53,8 @@
         \[ E(\whitney{\bt_M}{\bn}) = \set{(m_1, m_2, u) \in (M \cross M) \cross U}{m_1 = r(u)}, \]
         are even equal.
         % homeomorphy + commutativity
-        Additionally, the injection and projection maps agree as the following equations show:
+        Additionally,
+        the injection and projection maps agree as the following equations show:
         \begin{align}
             & i_{\pi_1}(\Delta(m)) = i_{\pi_1}(m, m) = (m, m, \iota(m)) = (\Delta(m), \iota(m)) \\
             & \pi_1(j_{\pi_1}(m_1, m_2, u)) = \pi_1(m_1, m_2) = m_1 = r(u) = j_{\oplus}(m_1, m_2, u)
@@ -65,8 +66,8 @@
         We show that there exists a neighborhood $D \sub N \cross N$ of $\Delta(M)$ such that
         $\pi_1\restr{D}$ is homotopic to $\pi_2\restr{D}$:
 
-        Firstly, we assume that $N$ is embedded in euclidean space by applying the Whitney Embedding Theorem.
-        Let $V$ be a neighborhood of $M$ in that euclidean space (see ANR).
+        Firstly, we assume that $N$ is embedded in euclidean space (see\cite[p.60]{dimension}).
+        Let $V \sub N$ be a neighborhood retract of $M$.
         We define $D$ as follows:
         \[ D = \set{(m, m') \in M \cross M}{ tm + (1 - t)m' \in V, \forall t \in \I} \]
         We are given a homotopy $H: \cyl{D} \to N$ between $\pi_1$ and $\pi_2$ with
@@ -84,5 +85,5 @@
     This proposition also shows that the normal microbundle
     underlies the same intuition as the normal vector bundle. 
     The sum of the tangent- and normal microbundle of the submanifold
-    equals the tangent microbundle of the surrounding space.
+    `span' the tangent microbundle of the surrounding space.
 \end{myparagraph}

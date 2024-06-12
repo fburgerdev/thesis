@@ -1,24 +1,24 @@
 % lemma
 \begin{mystatement}{lemma}{normal::homeomorphy}
-    Let $\bt_N$ and $\bt_M$ be two tangent microbundles of $N$ and $M$.
-    The total spaces $E(\ind{\iota}\bt_M)$ and $E(\ind{r}\bt_N)$ are homeomorphic.
+    Let $N \sub M$ be an embedded submanifold and let $r: V \to N$ be a retraction.
+    Then the following isomorphy holds:
+    \[ \ind{\iota}\bt_V \cong \ind{r}\bt_N\restr{N} \]
 \end{mystatement}
 
 % proof
 \begin{myproof}
     The total space
-    \[ E(\ind{\iota}\bt_M) = \{ (n, m_1, m_2) \in N \cross (M \cross M) \mid \iota(n) = m_1\} \]
-    is homeomorphic to $N \cross M$ via
-    \[ (n, m_1, m_2) \mapsto (n, m_2) \]
-    with inverse $(n, m) \mapsto (n, \iota(n), m)$.
+    \[ E(\ind{\iota}\bt_V) = \set{(n, v_1, v_2) \in N \cross (V \cross V)}{n = v_1} \]
+    is homeomorphic to $N \cross V$ via
+    \[ (n, v_1, v_2) \mapsto (n, v_2) \tand (n, v) \mapsto (n, \iota(n), v). \]
     Similarly, the total space
-    \[ E(\ind{r}\bt_N) = \{ (m, n_1, n_2) \in M \cross (N \cross N) \mid r(m) = n_1\} \]
-    is homeomorphic to $M \cross N$ via
-    \[ (m, n_1, n_2) \mapsto (m, n) \]
-    with inverse $(m, n) \mapsto (m, r(m), n)$.
+    \[ E(\ind{r}\bt_N\restr{N}) = \set{ (n, v, n_1, n_2) \in N \cross (V \cross (N \cross N))}{n = v \tand r(v) = n_1} \]
+    is homeomorphic to $V \cross N$ via
+    \[ (n, v, n_1, n_2) \mapsto (v, n_2) \tand (v, n) \mapsto (v, v, r(v), n). \]
     
-    Composed with the canonic homeomorphism $N \cross M \cong M \cross N$, this yields a homeomorphism
-    \[ \psi: E(\ind{\iota}\bt_M) \isomto E(\ind{r}\bt_N) \twith \psi(n, m_1, m_2) := (m_2, r(m_2), n). \]
+    Together with the obvious homeomorphism $N \cross V \cong V \cross N$,
+    this yields a homeomorphism
+    \[ \psi: E(\ind{\iota}\bt_V) \isomto E(\ind{r}\bt_N) \twith \psi(n, v_1, v_2) = (v_2, r(v_2), n). \]
 \end{myproof}
 
 % remark
@@ -26,8 +26,8 @@
     The following diagram commutes:
     \[
         \begin{tikzcd}
-            N \ar[r, "i_\iota"] \ar[hookrightarrow, "\iota"']{d} & E(\ind{\iota}\bt_M) \ar[d, "\psi"] \\
-            M \ar[r, "i_r"] & E(\ind{r}\bt_N)
+            N \ar[r, "i_\iota"] \ar[hookrightarrow, "\iota"']{d} & E(\ind{\iota}\bt_V) \ar[d, "\psi"] \\
+            V \ar[r, "i_r"] & E(\ind{r}\bt_N)
         \end{tikzcd}
     \]
 \end{mystatement}

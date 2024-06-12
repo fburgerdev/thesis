@@ -1,28 +1,28 @@
 % definition
 \begin{mystatement}{definition}[composition microbundle]{normal::composition}
-    Let $\ba$ be a $n$-dimensional microbundle with
+    Let $\ba$ be a $n$-dimensional microbundle
     \[ \bundledef{\ba}{A}{E(\ba)}{i_a}{j_a} \]
-    and let $\bb$ be a $n'$-dimensional microbundle with
+    and let $\bb$ be a $n'$-dimensional microbundle
     \[ \bundledef{\bb}{E(\ba)}{E(\bb)}{i_b}{j_b}. \]
     The \defterm{composition microbundle} $\ba \circ \bb$ is a $(n + n')$-dimensional microbundle
     \[ \bundle{A}{E(\bb)}{i}{j} \]
-    where $i := i_b \circ i_a$ and $j := j_a \circ j_b$.
+    where $i = i_b \circ i_a$ and $j = j_a \circ j_b$.
 \end{mystatement}
 
 % proof
-\begin{myproof}[that $\ba \circ \bb$ is a $(n + n')$-dimensional microbundle]
-    Both injection and projection maps are continuous being composed by continuous maps.
+\begin{myproof}[that $\ba \circ \bb$ is a microbundle]
+    % continuity and compatibility
+    Both injection and projection maps are continuous as being composed by continuous maps.
     Additionally, $j \circ i = j_a \circ (j_b \circ i_b) \circ i_a = j_a \circ i_a = id_A$.
 
     It remains to be shown that $\ba \circ \bb$ is locally trivial.
 
+    % without loss
     For an arbitrary $a \in A$, choose local trivializations
-    \begin{center}
-        $(U_a, V_a, \phi_a)$ of $a$ and $(U_b, V_b, \phi_b)$ of $i_a(a)$.
-    \end{center}
+    $(U_a, V_a, \phi_a)$ of $a$ in $\ba$ and $(U_b, V_b, \phi_b)$ of $i_a(a)$ in $\bb$.
     Note that both $U_b$ and $V_a$ are open neighborhoods of $i_a(a)$.
     
-    Without loss of generality, we may assume that $V_a = U_b$, because:
+    Without loss of generality, we may assume that $V_a = U_b$:
     
     `$\sub$':
     Modify $U_a$ such that
@@ -30,24 +30,29 @@
     for a sufficiently small $\eps > 0$ and let
     \[ V_a = \inv{\phi_a}(U_a \cross \ball[\eps]) \sub V_a \cap U_b. \]
     Composing $\phi_a$ with $\mu_\eps: \ball[\eps] \isomto \R^n$
-    yields a local trivialization of $a$ in $\ba$ that $V_a \sub U_a$.
+    yields a local trivialization of $a$ in $\ba$ such that $V_a \sub U_a$.
 
     `$\bus$': Restrict $U_b$ to $V_a \cap U_b$ and $V_b$ to $\inv{\phi_b}((V_a \cap U_b) \cross \R^{n'})$.
 
-    It follows that have a local trivialization
-    $(U_a, V_b, \phi)$ of $a$ in $\ba \circ \bb$ where
+    % homeomorphy
+    We have local-trivialization $(U_a, V_b, \phi)$ of $a$ in $\ba \circ \bb$ given by
     \[ 
         \phi: V_b \xto{\phi_b} U_b \cross \R^{n'}
         = V_a \cross \R^{n'}
-        \xto{\phi_a \cross id_{\R^{n'}}} U_a \cross \R^{n} \cross \R^{n'}
-        = U_a \cross \R^{n + n'}.
+        \xto{\phi_a \cross id} (U_a \cross \R^{n}) \cross \R^{n'}
+        = U_a \cross \R^{n + n'},
     \]
-    The map $\phi$ is an homeomorphism since it's composed by homeomorphisms.
+    which is a homeomorphism since it's composed by homeomorphisms.
 
-    Additionally, $\phi$ commutes with injection
-    \[ \phi(i(a)) = \phi(i_b(i_a(a))) = (\phi_a(i_a(a)), \snd{\phi_b}(i_b(i_a(a)))) \]
-    \[ = (\snd{\phi_a}(i_a(a)), 0) = (a, (0, 0)) = (id_{U_a} \cross 0)(a) \]
-    and projection maps
-    \[ j(e) = j_a(j_b(e)) = \pi_1(j_a(j_b(e)), \snd{\phi}(e)) = \pi_1(\phi(e)) \]
-    which completes the proof.
+    % commutativity
+    Furthermore, $\phi$ commutes with the injection and projection maps,
+    as the following equations show:
+    \begin{gather}
+        \begin{split}
+            \phi(i(a)) = \phi(i_b(i_a(a))) = (\phi_a(i_a(a)), \snd{\phi_b}(i_b(i_a(a)))) \\
+            = (\snd{\phi_a}(i_a(a)), 0) = (a, (0, 0)) = (id_{U_a} \cross 0)(a)    
+        \end{split} \\
+        j(e) = j_a(j_b(e)) = \pi_1(j_a(j_b(e)), \snd{\phi}(e)) = \pi_1(\phi(e))
+    \end{gather}
+    This completes the proof.
 \end{myproof}
