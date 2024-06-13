@@ -1,12 +1,12 @@
 % foreword
 \begin{myparagraph}
     The following statement is fundamental for the theory of microbundles.
-    It justifies that the tangent microbundle
-    is a generalization of the tangent vector bundle.
+    It justifies that the tangent microbundle can be considered
+    as a generalization of the tangent vector bundle.
 \end{myparagraph}
 
 % theorem
-\begin{mystatement}{theorem}{microbundle::equivalence}
+\begin{mystatement}{theorem}{microbundle::equivalence}[56]
     Let $M$ be a smooth $d$-manifold.
     Then the underlying microbundle of $\xi: TM \to M$ and the tangent microbundle $\bt_M$
     are isomorphic. 
@@ -14,5 +14,23 @@
 
 % proof
 \begin{myproof}
-    TODO
+    We equip $M$ with a Riemannian metric,
+    which allows us to define the usual 
+    exponential map $\exp: V \to M$ where $V$ is a neighborhood
+    of the zero-cross section of $M$.
+    % IFT
+    Using the Inverse Function Theorem for smooth manifolds (see\cite[thm.4.5]{lee})
+    for an arbitrary $(m, v) \in V$ it follows that $\exp$ is a local homeomorphism.
+    Furthermore,
+    % local homeomorphism -> homeomorphism
+    $\exp$ maps $\set{(p, 0)}{0 \in T_pM}$ homeomorphically to $\Delta(M)$.
+    Using the statement from \cite[lm.4.1]{whitehead} (manifolds are locally compact and seperable),
+    it follows that $\exp$ maps a neighborhood
+    of the zero-cross section to a neighborhood of the diagonal.
+    % commutativity
+    Commutativity between injection maps is given by
+    \[ \exp(i_{\abs{\eta}}(p)) = \exp(p, 0) = (m, m) = \Delta(m) \]
+    and between projection maps by
+    \[ j_{\abs{\eta}}(p, v) = p = \pi_1(p, \snd{\exp}(p, v)) = \pi_1(\exp(p, v)), \]
+    which concludes the proof.
 \end{myproof}

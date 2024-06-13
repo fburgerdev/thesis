@@ -7,15 +7,15 @@
     microbundles and vector bundles.
     The following proposition makes this even clearer.
     
-    Throughout the paper we will often take use of homeomorphisms
-    \[ \mu_\eps: \ball[\eps] \isomto \R^n \twith \mu_\eps(0) = 0 \]
-    for example given by
-    \[ x \mapsto \tan(\frac{\abs{x}\cdot\pi}{2\eps}) x \]
-    in order to show properties like local triviality.
+    % Throughout the paper we will often take use of homeomorphisms
+    % \[ \mu_\eps: \ball[\eps] \isomto \R^n \twith \mu_\eps(0) = 0 \]
+    % for example given by
+    % \[ x \mapsto \tan(\frac{\abs{x}\cdot\pi}{2\eps}) x \]
+    % in order to show properties like local triviality.
 \end{myparagraph}
 
 % proposition
-\begin{mystatement}{proposition}{microbundle::total}
+\begin{mystatement}{proposition}{microbundle::total}[54]
     Given a microbundle $\bundledef{\bb}{B}{E}{i}{j}$ over $B$,
     restricting the total space $E$ to an
     arbitrary neighborhood $E' \sub E$ of $i(B)$ leaves the microbundle unchanged.
@@ -27,7 +27,7 @@
 % proof
 \begin{myproof}
     We prove the proposition in two steps.
-    \begin{enumerate}
+    \begin{steps}
         % microbundle
         \item $\bb'$ is a microbundle:
         
@@ -35,30 +35,16 @@
 
         So we only need to show that $\bb'$ is locally trivial.
         For an arbitrary $b \in B$, choose a local trivialization $(U, V, \phi)$ of $b$ in $\bb$.
-        
-        The image $\phi(V \cap E')$ is a neighborhood of $(b, 0)$.
-        This follows from $\phi(i(b)) = (b, 0)$ and $V \cap E'$ being a neighborhood of $i(b)$.
-
-        Hence, for a sufficiently small $\eps > 0$ there
-        exists a $U' \cross \ball[\eps] \sub \phi(V \cap E')$ such that
-        $U'$ is an open neighborhood of $b$.
-
-        Utilizing a homeomorphism $\mu_\eps: \ball[\eps] \isomto \R^n$,
-        we have a local trivialization $(U', V', \phi')$ with
-        \[ \phi': V' \xto{\phi} U' \cross \ball[\eps] \xto{id \cross \mu_\eps} U' \cross \R^n \]
-        and $V' := \inv{\phi}(U' \cross \ball[\eps])$.
-
-        That is because $\phi'$ commutes with the injection
-        \[ \phi'(i(b)) =  (id \cross \mu_\eps)(\phi(i(b))) = (id \cross \mu_\eps)(b, 0) = (b, 0) = (id \cross 0)(b)\]
-        and projection maps
-        \[ j(e) = \pi_1(\phi(e)) = \pi_1((id \cross \mu_\eps)(\phi(e))) = \pi_1(\phi'(e)). \]
+        By restricting $\phi$ to $V \cap E'$,
+        we obtain a homeomorphism on its image as required in \myintref{microbundle::local}.
         
         % isomorphy
         \item $\bb'$ is isomorphic to $\bb$:
 
-        Since $E' \sub E$, we can simply take the identity $E' \to E' \sub E$
+        Since $E'$ is a subset of $E$,
+        we can simply use the identity $E' \to E' \sub E$
         as our homeomorphism between neighborhoods of $i(B)$.
         Furthermore, the injection and projection maps for $\bb$ and $\bb'$ are the same,
         so they clearly commute with the identity.
-    \end{enumerate}
+    \end{steps}
 \end{myproof}

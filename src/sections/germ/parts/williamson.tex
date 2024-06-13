@@ -1,46 +1,8 @@
-
-% foreword williamson
-\begin{myparagraph}
-    The bundle-germ is indeed a generalization of the isomorphism-germ,
-    as the following proposition shows.
-\end{myparagraph}
-
-% williamson
-\begin{mystatement}{proposition}[Williamson]{homotopy::williamson}
-    Let $\bb$ and $\bb'$ be two microbundles over $B$.
-    A bundle-germ $\germdef{F}{\bb}{\bb'}$ covering
-    the identity map is an isomorphism-germ.
-\end{mystatement}
-
-% foreword lemma
-\begin{myparagraph}
-    Firstly, we show a lemma that is necessary for the proof of the proposition.
-\end{myparagraph}
-
-% lemma
-\begin{mystatement}{lemma}{homotopy::ball}
-    If a homeomorphism $\phi: \clball[2] \isomto \phi(\R^n) \sub \R^n$ satisfies
-    \[ \abs{\phi(x) - x} < 1, \forall x \in \clball[2] \]
-    then $\clball[1] \sub \phi(\clball[2])$.
-\end{mystatement}
-
-% proof lemma
-\begin{myproof}[of the lemma]
-    % TODO: check proof
-    Consider $\phi(2S^n)$ where $2S^n$ denotes the $n$-sphere of radius $2$.
-    The condition for $\phi$ yields $1 < \abs{\phi(s)}, \forall s \in 2S^n$.
-    Since $\clball[2]$ has trivial homology groups which are preserved under homeomorphisms,
-    $\phi(\clball[2])$ must have trivial homology groups as well.
-
-    From this we can conclude that $\clball[1]$ must be contained in $\phi(\clball[2])$,
-    because otherwise `holes' would form which would result in non-trivial homology groups of $\phi(\clball[2])$.
-\end{myproof}
-
-% proof williamson
+% proof
 \begin{myproof}[of the proposition]
     Let $f$ be a representative for $F$.
     First we assume a special and then generalize the result to show the proposition.
-    \begin{enumerate}
+    \begin{steps}
         % special case
         \item Let $f$ map from $B \cross \R^n$ to $B \cross \R^n$:
         
@@ -48,7 +10,7 @@
         \[ f(b, x) = (b, g_b(x)) \]
         where $g_b: \R^n \to \R^n$ are individual maps.
         Since the $g_b$ are continuous and injective,
-        it follows from the \extref{domain invariance theorem} that the $g_b$ are open maps.
+        it follows from the Invariance of Domain Theorem (\cite[cor.19.9]{brendon}) that the $g_b$ are open maps.
         
         Let $(b_0, x_0) \in B \cross \R^n$ and let $\eps > 0$.
         Since $g_{b_0}$ is an open map, there exists a $\delta > 0$ such that
@@ -102,7 +64,7 @@
         It follows that $f: \inv{\phi}(\tilde{U} \cross \ball[\eps]) \to V'$ must be an open map as well since the other composing maps are homeomorphisms.
 
         By glueing the $\inv{\phi}(\tilde{U} \cross \ball[\eps])$ together over all $b \in B$, we see that $f$ is an open map.
-    \end{enumerate}
+    \end{steps}
 \end{myproof}
 
 % foreword corollary
@@ -111,7 +73,7 @@
 \end{myparagraph}
 
 % corollary
-\begin{mystatement}{corollary}{homotopy::corollary}
+\begin{mystatement}{corollary}{homotopy::corollary}[67]
     If a map $g: B \to B'$ is covered by a bundle-germ $\germdef{F}{\bb}{\bb'}$, then $\bb$ is isomorphic to the induced microbundle $\ind{g}\bb'$.
 \end{mystatement}
 

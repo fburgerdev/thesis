@@ -58,6 +58,10 @@
     \vert_{#1}%
 }
 
+% topology
+\newcommand{\inner}[1]{\overset{\circ}{#1}}
+\newcommand{\closure}[1]{\overline{#1}}
+
 % calculus
 % calculus :: absolute
 \newcommand{\abs}[1] {%
@@ -65,7 +69,7 @@
 }
 % calculus :: ball
 \NewDocumentCommand{\ball}{O{1}O{0}}{%
-    B_{#1} (0)%
+    B_{#1} (#2)%
 }
 \NewDocumentCommand{\clball}{O{1}O{0}}{%
     \overline{\ball[#1][#2]}%

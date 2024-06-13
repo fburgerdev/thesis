@@ -1,9 +1,5 @@
 \begin{myparagraph}
-    % smooth
-    % In differential geometry,
-    % the tangent bundle of a smooth manifold
-    % is a fundamental concept in understanding its underlying geometry.
-    
+    % smootg
     % smooth :: tangent space
     Given a smooth manifold $M$,
     one can define the tangent space
@@ -11,12 +7,13 @@
     \[
         T_p M = \set{\nu: C^\infty(M) \to \R^n \text{ linear}}{\nu(fg)
         = f(p)\nu(g) + \nu(f)g(p)}
-    \]    
+    \]
     or using `tangent curves'
     \[ T_p M = \set{\gamma \in C^\infty((-1, 1), M)}{\gamma(0) = p } / \sim \]
     where $\gamma \sim \gamma' \iff \frac{d}{dx}(\psi \circ \gamma)(0) = \frac{d}{dx}(\psi \circ \gamma')(0)$
     and $\psi$ is a chart for $p$.
-    
+    % ? omit
+
     % smooth :: tangent bundle
     The tangent space allows for the definition of the tangent bundle
     \[ TM := \bigsqcup_{p \in M} T_p M\]
@@ -24,7 +21,7 @@
     \[ TM \xto{\pi} M, \pi(p, \nu) = p. \]
 
     % topological
-    Lets say one wants to define the tangent bundle over a topological manifold.
+    Suppose we want to define the tangent bundle over a topological manifold $M$.
     % topological :: problem
     As we see from the two definitions of the tangent space,
     the tangent bundle requires the notion of differentiability.
@@ -32,6 +29,7 @@
     that does not admit a differentiable structure (see\cite{kervaire}).
     Furthermore, even if there exists such a structure for a topological manifold,
     it is generally not unique (e.g. the $7$-sphere\cite{milnor7sphere}).
+    % TODO: elaborate
 
     Therefore,
     we need a different construction than the one for the smooth case.
@@ -49,9 +47,7 @@
     invariant if it depends on specific choices of neighborhoods $U_p$.
 
     % topological :: solution
-    In 1964,
-    the well-known mathematician John Milnor
-    published ``Microbundles, Part I'',
+    In 1964, John Milnor published `Microbundles, Part I',
     introducing a unique way to think
     about tangent bundles over topological manifolds:
 
@@ -61,6 +57,7 @@
     every fiber must be homeomorphic to euclidean spaces.
     Instead, we require that the fibers are a `germ' of euclidean space,
     i.e. a topological space with an open subset homeomorphic to euclidean space.
+    % TODO: rephrase to make clearer that fibers don't have to be static
     In contrast to the above approach,
     we can now choose the neighborhoods $U_p$ of $p$ regardless of any corresponding charts.
     That is because we can always find
@@ -95,13 +92,14 @@
     embedded in $S^{29}$ that does not admit a normal microbundles (see\cite{rourke}).
     Instead, Milnor could show that there always exists a normal microbundle
     of an embedded manifold
-    in a stabilized surrounding manifold $M \times \R^q$ for some $q \in \N$. 
+    in a stabilized surrounding manifold $M \times \R^q$ for some $q \in \N$.
 
     % applications
     Milnors studies on microbundles allowed R. Williamson
     to transfer fundamental results of cobordism theory from the smooth case
     over to the topological case, particulary by utilising the existence
     of a normal microbundle in a stabilized surrounding manifold.
+    % TODO: cite williamson
 
     % thesis structure
     This thesis introduces the concept of microbundles and presents

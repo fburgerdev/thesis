@@ -1,5 +1,5 @@
 % lemma
-\begin{mystatement}{lemma}{suspension::triviality}
+\begin{mystatement}{lemma}{suspension::triviality}[70]
     The following (non-rooted) isomorphy holds:
     \[ \ind{\phi}(\bb \vee \be{B}) \cong \bb \cong \ind{\phi}(\be{B} \vee \bb) \]
 \end{mystatement}
@@ -9,7 +9,7 @@
     We prove the lemma in two steps.
     \begin{steps}
         % step 1
-        \step{$\ind{c_1}\bb \cong \bb \vee \be{B}$}
+        \item $\ind{c_1}\bb \cong \bb \vee \be{B}$
         
         % representative
         Let $E(\bb \vee \be{B})$ be constructed via 
@@ -36,7 +36,7 @@
         \end{align}
         
         % step 2
-        \step{$\ind{\phi}(\bb \vee \be{B}) \cong \bb$}
+        \item $\ind{\phi}(\bb \vee \be{B}) \cong \bb$
 
         Using the fact that $c_1 \circ \phi = id_{B \vee B}$, we conclude that
         \[ \ind{\phi}(\bb \vee \be{B}) \cong \ind{\phi}(\ind{c_1}\bb) \cong \ind{(c_1 \circ \phi)}\bb \cong \bb. \]

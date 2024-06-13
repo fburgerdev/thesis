@@ -13,7 +13,7 @@
     \end{myparagraph}
 
     % theorem
-    \begin{mystatement}{theorem}[Milnors Theorem]{normal::milnor}
+    \begin{mystatement}{theorem}[Milnors Theorem]{normal::milnor}[62]
         For a sufficently large $q \in \N$, $N = \cyldown{N}$ has a normal microbundle in $M \cross \R^q$.
     \end{mystatement}
 
@@ -29,74 +29,49 @@
             
             Consider the extension $\ind{r}\bt_N$.
             Since $V$ is an open set, it's a simplicial complex.
-            Hence, we can apply \myintref{whitney::theorem} to the extended microbundle $\ind{r}\bt_N$
-            to obtain a microbundle $\eta'$ such that $\whitney{\ind{r}\bt_N}{\eta} \cong \be[q]{V}$.
+            Hence, we can apply \myintref{whitney::theorem} to $\ind{r}\bt_N$
+            to obtain a microbundle $\eta'$ such that $\whitney{\ind{r}\bt_N}{\eta'} \cong \be[q]{V}$.
 
             We conclude that $\whitney{\bt_N}{\eta'\restr{N}} = \whitney{\ind{r}\bt_N\restr{N}}{\eta'\restr{N}} = (\whitney{\ind{r}\bt_N}{\eta'})\restr{N} = \be[q]{N}$.
 
             % step 2
             \item $E(\rtn)$ has a normal microbundle in $E(\rwhitney)$
 
-            We denote the injection and projection of $\rtn$ with $i_r$ and $j_r$,
-            and the injection and projection of $\rwhitney$ with $i_\oplus$ and $j_\oplus$.
+            We denote the injection and projection of $\rtn$ by $i_{\bt}$ and $j_{\bt}$,
+            and the injection and projection of $\ind{r}\eta$ by $i_{\eta}$ and $j_{\eta}$.
 
-            Note that $\rwhitney \cong \ind{r}(\whitney{\bt_N}{\eta})$ is trivial, so
-            $E(\rwhitney)$ is an open subset of $\R^qn$ and hence a manifold.
+            Firstly, note that $\rwhitney \cong \ind{r}(\whitney{\bt_N}{\eta})$ is trivial, so
+            $E(\rwhitney)$ is an open subset of $\R^q$ (for some $q \in \N$) and hence a manifold.
 
-            We consider $E(\rtn)$ to be a subset of $E(\rwhitney)$ via
+            We consider $E(\rtn)$ to be a subset of $E(\rwhitney)$ embedded via
             \[ (v, e) \mapsto ((v, e), (v, i_{\eta}(v))). \]
 
-            We are given a normal microbundle of $E(\rtn)$ in $E(\rwhitney)$ by $\ind{j_r}(\ind{r}\eta)$.
-
-            Since the total space
-            \[ E(\rwhitney) = \set{(e, e') \in E(\rtn) \cross E(\ind{r}\eta)}{j(e) = j'(e)} \]
-            we can consider $E(\rtn) \sub E(\rwhitney)$ embedded via
-            \[ \iota: e \mapsto (e, i'(j(e))) \]
-            with the inverse $\pi_1: (e, e') \mapsto e$.
-
-            Because $\rwhitney \cong \ind{r}(\whitney{\bt_N}{\eta})$ is trivial,
-            it follows that $E(\rwhitney) \sub M \cross \R^k$ open and hence being a manifold.
-
-            We have a normal microbundle of $E(\rtn)$ in $E(\rwhitney)$ via
-            \[ \bundledef{\bn}{E(\rtn)}{E(\rwhitney)}{\iota}{\pi_1}. \]
-
-            To show local triviality,
-            let $(U, V, \phi)$ be a local trivialization of $i'(j(e))$ in $\ind{r}\eta$
-            for an arbitrary $e \in E(\rtn)$.
-
-            By choosing
-            \begin{itemize}
-                \item $U' := \inv{j}(U)$
-                \item $V' := (U' \cross V) \cap E(\rwhitney)$
-                \item $\phi': V' \isomto U' \cross \R^{n_\eta}$ with $\phi'(e, e') = (e, \snd{\phi}(e'))$
-            \end{itemize}
-            we have a local trivialization of $e$ in $\bn$.
-
-            That is because both $U' \sub E(\rtn)$ and $V' \sub E(\rwhitney)$ are open sets
-            and $\phi'$ is a homeomorphism with its inverse
-            $\inv{\phi'}(e, x) = (e, \inv{\phi}(j(e), x))$.
-            
-            Also, $\phi'$ commutes with injection
-            \[ \phi'(\iota(e)) = \phi'(e, i'(j(e))) = (e, \snd{\phi}(i'(j(e)))) = (e, 0) = (id \cross 0)(e) \]
-            and projection maps
-            \[ \pi_1(e, e') = \pi_1(e, \snd{\phi'}(e, e')) = \pi_1(\phi'(e, e')). \]
+            We are given a normal microbundle of $E(\rtn)$ in $E(\rwhitney)$ by $\ind{j_{\bt}}(\ind{r}\eta)$.
+            That is because the total space
+            \[ E(\ind{j_r}(\ind{r}\eta)) = \set{(e, e') \in E(\rtn) \cross E(\ind{r}\eta)}{j_{\bt}(e) = j_\eta(e')} \]
+            equals $E(\rwhitney)$ and because its inclusion is the above embedding
+            \[ ((v, e), i_\eta(j_{\bt}(v, e))) = ((v, e), i_\eta(v)). \]
             
             % step 3
             \item $N$ has a normal microbundle in $M \times \R^q$
             
-            Since $N \sub M \sub E(\rtn)$ has a normal microbundle (using \myintref{normal::total}),
+            Since $N$ has a normal microbundle in $E(\rtn)$ using \myintref{microbundle::total},
             it follows from \myintref{normal::transitivity} that
-            $N \sub E(\whitney{\ind{r}\bt_N}{\ind{r}\bt'})$ has a normal microbundle.
-    
-            By restricting $E(\rwhitney)$ to an open subset if necessary, we may assume that
+            $N$ has a normal microbundle in $E(\rwhitney)$.
+     
+            By restricting $E(\rwhitney)$ to an open neighborhood of $i_{\oplus}(V)$ if necessary, we may assume that
              \[ E(\rwhitney) = M \cross \R^q \]
-            for some $q \in \N$ using \myintref{induced::trivial}.
+            using \myintref{induced::trivial}.
         \end{steps}
         Applying \myintref{normal::transitivity} and $E(\rwhitney) = M \cross \R^q$ completes the proof.
     \end{myproof}
 
-    % afterword
+    % dimension
     \begin{myparagraph}
-        
+        With the proof of \myintref{whitney::theorem} and of \myintref{normal::milnor},
+        we can calculate an upper bound $m(2^{2m + 2} - 2)$ for $q$ where $m$ is the dimension of $M$ (\cite[p.63]{milnor}).
+        However with slightly sharper proofs,
+        one can substantially reduce the upper bound
+        to a quadratic upper bound $(m + 1)^2 - 1$ (see \cite[p.232]{hirsch}). 
     \end{myparagraph}
 \end{scope}

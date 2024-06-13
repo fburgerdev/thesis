@@ -1,4 +1,4 @@
-\documentclass{amsart}
+\documentclass{article}
 % Packages
 \input{src/packages}
 % Global Definitions
@@ -8,44 +8,72 @@
 \begin{document}
 % Document :: Titlepage
 \input{src/titlepage}
-\maketitle
+% Document :: MAKETITLE
+% \maketitle
+% \clearpage
 % Document :: Abstract
 \input{src/abstract}
 % Document :: Table of Contents
 \tableofcontents
-% \thispagestyle{empty}
 \clearpage
 % Document :: Introduction
 \section{Introduction}\label{chapter::introduction}
 % Document :: Introduction :: Motivation
-\subsection*{Motivation}\label{section::motivation}
+\subsection*{Motivation}\label{section::motivation}{\blankbreak}
 \input{src/introduction}
 % Document :: Introduction :: Microbundle
-\subsection*{Introduction to Microbundles}\label{section::microbundle}
+\subsection*{Introduction to Microbundles}\label{section::microbundle}{\blankbreak}
 \input{src/sections/microbundle/section}
 % Docuement :: Constructions
 \section{Standard Constructions}\label{chapter::constructions}
 \begin{myparagraph}
-    This chapter introduces two standard constructions for microbundles,
+    This section introduces two standard constructions for microbundles,
     the `induced microbundle' and the `Whitney sum'.
-    These constructions already exist for vector bundles
-    and many results carry over immediatly its microbundle analogue.
+    Both constructions have their vector bundle analogue,
+    where many results carry over immediatly to microbundles.
 \end{myparagraph}
 % Document :: Constructions :: Induced
-\subsection*{Induced Microbundles}\label{section::induced}
+\subsection*{Induced Microbundles}\label{section::induced}{\blankbreak}
 \input{src/sections/induced/section}
 % Document :: Constructions :: Whitney
 \subsection*{The Whitney Sum}\label{section::whitney}
 \input{src/sections/whitney/section}
 % Document :: Homotopy
 \section{The Homotopy Theorem}\label{chapter::homotopy}
+\begin{myparagraph}
+    In this chapter we will prove the Homotopy Theorem,
+    which is a fundamental result for microbundles.
+    It states the following.
+\end{myparagraph}
+\input{src/sections/homotopy/parts/statement}
+\begin{myparagraph}
+    In order to prove this theorem,
+    we first introduce the concept of map-germs
+    on microbundles which allows us to classify
+    isomorphisms between microbundles.
+\end{myparagraph}
+\input{src/sections/germ/section}
 \input{src/sections/homotopy/section}
 % Docuemnt :: Suspension
 \section{Rooted Microbundles and Suspensions}\label{chapter::suspension}
+\begin{myparagraph}
+    In the following,
+    we provide a proof for the Bouquet Lemma presented in \myintref{section::whitney}.
+    To this end, we introduce the concept of `rooted microbundles',
+    which allows us to define the wedge sum of two microbundles in a precise manner.
+    Additionally, we show a version of the Homotopy Theorem
+    that is compatible with rooted-microbundles.
+
+    In this section,
+    we assume that every topological space is equipped with an arbitrary base point
+    which we will denote with subscript $0$.
+\end{myparagraph}
+\input{src/sections/rooted/section}
 \input{src/sections/suspension/section}
 % Document :: Normal
 \section{Normal Microbundles and Milnors Theorem}\label{chapter::normal}
 \input{src/sections/normal/section}
 % Document :: References
 \input{src/references}
+\addcontentsline{toc}{section}{References}
 \end{document}

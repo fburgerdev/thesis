@@ -1,0 +1,50 @@
+% foreword williamson
+\begin{myparagraph}
+    The bundle-germ is indeed a generalization of the isomorphism-germ,
+    as the following proposition shows.
+\end{myparagraph}
+
+% williamson
+\begin{mystatement}{proposition}[Williamson]{homotopy::williamson}[66]
+    Let $\bb$ and $\bb'$ be two microbundles over $B$.
+    A bundle-germ $\germdef{F}{\bb}{\bb'}$ covering
+    the identity map is an isomorphism-germ.
+\end{mystatement}
+
+% foreword
+\begin{myparagraph}
+    The following lemma is necessary for the proof of the proposition.    
+\end{myparagraph}
+
+% lemma
+\begin{mystatement}{lemma}{homotopy::ball}
+    If a homeomorphism $f: \clball[2] \isomto V \sub \R^n$ satisfies
+    \[ \abs{f(x) - x} < 1, \forall x \in \clball[2], \]
+    then $\clball[1] \sub V$.
+\end{mystatement}
+
+% proof lemma
+\begin{myproof}[of the lemma]
+    We provide a proof by contradiction:
+
+    Suppose $v \in \clball[1] - V$.
+    Let $[f(0), v]$ denote the line-segment
+    \[ \set{\lambda f(0) + (1 - \lambda) v}{\lambda \in \I} \sub \R^n. \]
+    The intersection $[f(0), v] \cap V$ is compact
+    as $[f(0), v]$ is compact and $V$ is closed.
+    Hence, the intersection has a maximum $v'$ when ordered via $\lambda$.
+    Note that the intersection is non-empty since $f(0) \in V$.
+
+    The maximum $v'$ is contained in $\partial V$:
+    \begin{enumerate}
+        \item $v' \in [f(0), v] \cap V \sub V = \overline{V}$
+        \item $v' \notin \inner{V}$, because otherwise
+        $\ball[\eps][v'] \sub \inner{V}$ for some $\eps > 0$
+        contradicting the maximum condition for $v'$.
+    \end{enumerate}
+
+    From $\abs{f(0) - 0} < 1$ and $v \in \clball[1]$ it follows that $\abs{v'} < 1$. 
+
+    This leads to a contradiction, because
+    \[ \inv{f}(v') \in \partial\clball[2] \implies \abs{\inv{f}(v') - v'} = 2 - \abs{v'} > 2 - 1 = 1. \]
+\end{myproof}
