@@ -6,7 +6,7 @@
         \item $B$ is a topological space (\defterm{base space})
         \item $E$ is a topological space (\defterm{total space})
         \item $i: B \to E$ (\defterm{injection}) and $j: E \to B$ (\defterm{projection})
-        are maps such that $id_B = j \circ i$
+        are maps such that $j \circ i = id_B$
         \item Every $b \in B$ is \defterm{locally trivializable},
         that is there exist open neighborhoods $U \sub B$ of $b$ and $V \sub E$ of $i(U)$
         together with a homeomorphism $\phi: V \isomto U \cross \R^n$ such that the following diagram commutes:
@@ -21,6 +21,7 @@
     \end{properties}
 \end{mystatement}
 
+As usual, the fiber dimension is well-defined due to the Invariance of Dimension Theorem (see\cite[cor.19.10]{brendon}).
 % remark
 \begin{mystatement}{remark}{microbundle::dimension}
     In the following, unless explicitly stated otherwise,

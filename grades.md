@@ -65,5 +65,5 @@
     - milnors theorem
         - transitivity
         - homeomorphy of total spaces
-        - existance normal microbundle
+        - existence normal microbundle
         - milnors theorem

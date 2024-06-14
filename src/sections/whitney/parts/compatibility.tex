@@ -19,27 +19,24 @@
     % proof
     \begin{myproof}
         % total space
-        The total space $E(\wleft)$ is of the form
+        The total space $E(\wleft)$ is defined as
         \[ \{(a, (e_1, e_2)) \in A \cross (E(\bb_1) \cross E(\bb_2)) \mid j_1(e_1) = j_2(e_2) = f(a) \} \]
-        and $E(\wright)$ is of the form
+        and $E(\wright)$ as
         \[ \set{((a_1, e_1), (a_2, e_2)) \in E(\ind{f}\bb_1) \cross E(\ind{f}\bb_2)}{j_1(a_1, e_1) = j(a_2, e_2)}. \]
 
         % homeomorphism
-        We have a homeomorphsim $\phi: E(\wleft) \isomto E(\wright)$ with
-        \[ \phi(a, (e_1, e_2)) = ((a, e_1), (a, e_2)) \]
-        and its inverse
-        \[ \inv{\phi}((a, e_1), (a, e_2)) = (a, (e_1, e_2)). \]
-        The two total spaces are homeomorphic via
-        $\phi(a, (e_1, e_2)) := ((a, e_1), (a, e_2))$ with $\inv{\phi}((a, e_1), (a, e_2)) = (a, (e_1, e_2))$.
-        Homeomorphy of $\phi$ follows from the continuity of $\phi$ and $\inv{\phi}$,
-        which is given since both $\phi$ and $\inv{\phi}$ are composed by identity maps.
+        We have a homeomorphsim $\psi: E(\wleft) \isomto E(\wright)$ given by
+        \[ \psi(a, (e_1, e_2)) = ((a, e_1), (a, e_2)) \]
+        with the inverse $\inv{\psi}((a, e_1), (a, e_2)) = (a, (e_1, e_2))$.
+        Since both $\psi$ and $\inv{\psi}$ are component-wise continuous,
+        $\psi$ is a homeomorphism.
         
         % commutativity
-        Commutativity between the injection maps is given by
-        \[ \phi(i_f(a)) = \phi(a, (i_1(f(a)), i_2(f(a)))) = ((a, i_1(f(a))), (a, i_2(f(a)))) = i_\oplus(a) \]
-        and between the projection maps by
-        \[ j_f(a, (e_1, e_2)) = a = j_\oplus((a, e_1), (a, e_2)) = j_\oplus(\phi(a, (e_1, e_2))), \]
-        where $i_f$ and $j_f$ denote the injection and projection for $\wleft$
-        and $i_\oplus$ and $j_\oplus$ denote the injection and projection for $\wright$.
+        Commutativity with the injection maps is given by
+        \[ \psi(i_f(a)) = \psi(a, (i_1(f(a)), i_2(f(a)))) = ((a, i_1(f(a))), (a, i_2(f(a)))) = i_\oplus(a) \]
+        and with the projection maps by
+        \[ j_f(a, (e_1, e_2)) = a = j_\oplus((a, e_1), (a, e_2)) = j_\oplus(\psi(a, (e_1, e_2))). \]
+        Here, $i_f$ and $j_f$ denote the injection and projection for $\wleft$
+        and $i_\oplus$ and $j_\oplus$ the injection and projection for $\wright$.
     \end{myproof}
 \end{scope}

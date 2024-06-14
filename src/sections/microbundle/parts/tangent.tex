@@ -1,14 +1,9 @@
-% foreword
-\begin{myparagraph}
-    The following definition is the microbundle analog
-    to the tangent vector bundle.
-\end{myparagraph}
-
 % definition
 \begin{mystatement}{definition}[tangent microbundle]{microbundle::tangent}[55]
-    The \defterm{tangent microbundle} $\bt_M$ over a topological $d$-manifold $M$ is a diagram
+    The \defterm{tangent microbundle} $\bt_M$ over
+    a topological $d$-manifold $M$ is a manifold
     \[ \bundle{M}{M \cross M}{\Delta}{\pi_1} \]
-    where $\Delta(m) := (m, m)$ denotes the diagonal map.
+    where $\Delta(m) = (m, m)$ denotes the diagonal map.
 \end{mystatement}
 
 % proof
@@ -19,18 +14,17 @@
     % local triviality
     % local triviality :: homeomorphism
     For an arbitrary $p \in M$,
-    choose a chart $(U, \psi)$ over $p$.
+    choose a chart $(U, \varphi)$ over $p$.
     We have a local trivialization $(U, U \cross U, \phi)$ of $p$ in $\bt_M$ given by
-    \[ \phi: U \cross U \isomto U \cross \R^n \twith \phi(u, u') = (u, \psi(u) - \psi(u')). \]
-    Homeomorphy of $\phi$ follows from homeomorphy of $\psi$.
+    \[ \phi: U \cross U \isomto U \cross \R^n \twith \phi(u, u') = (u, \varphi(u) - \varphi(u')). \]
+    Since $\psi$ is a homeomorphism, $\phi$ is a homeomorphism as well.
     
     % local triviality :: commutativity
-    Commutativity between the injection and $id \times 0$ is given by
-    \[ \phi(\Delta(m)) = \phi(m, m) = (m, \psi(m) - \psi(m)) = (m, 0) = (id \cross 0)(m)\]
-    and between the projection and $\pi_1$ by
+    Commutativity with $i$ and $id \times 0$ is given by
+    \[ \phi(\Delta(m)) = \phi(m, m) = (m, \varphi(m) - \varphi(m)) = (m, 0) = (id \cross 0)(m)\]
+    and with $\pi_1$ by
     \[ \pi_1(u, u') = u = \pi_1(u, \snd{\phi}(u, u')) = \pi_1(\phi(u, u')). \]
-    Note that $\snd{\phi}$ denotes the map on
-    the second component of $\phi$, i.e. $\pi_2 \circ \phi$.
+    Note that $\snd{\phi}$ denotes $\pi_2 \circ \phi$.
 \end{myproof}
 
 % remark

@@ -22,7 +22,7 @@
     Choose representative maps $f_\alpha: U_\alpha \to E(\bb')$ for $F_\alpha$ such that the $U_\alpha$ are open.
     For every $\alpha$ and $\beta$, choose an open neighborhood $U_{\alpha\beta}$ of $i(B_\alpha \cap B_\beta)$ on which the representative maps $f_\alpha$ and $f_\beta$ agree.
     Now consider
-    \[ U := \set{ e \in E}{j(e) \in B_\alpha \cap B_\beta \implies e \in U_{\alpha\beta}} \]
+    \[ U = \set{ e \in E}{j(e) \in B_\alpha \cap B_\beta \implies e \in U_{\alpha\beta}} \]
     which is an open neighborhood of $i(B)$ because
     \begin{enumerate}
         % open
@@ -46,7 +46,7 @@
         \[ j(i(b)) = b \in B_\alpha \cap B_\beta \implies i(b) \in i(B_\alpha \cap B_\beta) \sub U_{\alpha\beta}. \]
     \end{enumerate}
     Now we can define $f: U \to E(\bb')$ in the obvious way
-    \[ f(u \in U_{\alpha\beta}) := f_\alpha(u) = f_\beta(u) \]
+    \[ f(u \in U_{\alpha\beta}) = f_\alpha(u) = f_\beta(u) \]
     which is continuous according to the \extref{glueing lemma}.
     In particular, $f$ agrees with $f_\alpha$ on $U_{\alpha\alpha}$
     and hence $f$ is a representative for a bundle-germ $\germdef{F}{\bb}{\bb'}$ extending $\coll{F_\alpha}$.

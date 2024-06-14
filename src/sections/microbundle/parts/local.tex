@@ -16,7 +16,7 @@
 % proof
 \begin{myproof}
     It suffices to show that we can derive local triviality in $b$
-    assuming only a homeomorphism $\phi: V \isomto \phi(V)$ with the properties stated above.
+    assuming only a homeomorphism $\phi: V \isomto \phi(V)$ with the properties required above.
 
     % restrict
     Since $\phi(V)$ is a neighborhood of $(b, 0)$,
@@ -26,19 +26,17 @@
     % ball
     Note that there exists a homeomorphism
     \[ \mu_\eps: \ball[\eps] \isomto \R^n \twith \mu_\eps(0) = 0, \]
-    for example given by
-    \[ x \mapsto \tan(\frac{\abs{x}\cdot\pi}{2\eps}) x. \]
+    for example given by $\mu_\eps(x) = \tan(\frac{\abs{x}\cdot\pi}{2\eps}) x$.
 
     % construct
     We construct a local trivialization
     $\phi': \inv{\phi}(U \times \ball[\eps]) \isomto U \times \R^n$
-    given by
-    \[ \phi' = \mu_\eps \circ \phi. \]
+    given by $\phi' = \mu_\eps \circ \phi$.
 
     % commutativity
-    Commutativity between $i$ and $id \cross 0$ is given by
+    Commutativity with $i$ and $id \cross 0$ is given by
     \[ \phi'(i(b)) = \mu_\eps(\phi(i(b))) = \mu_\eps(b, 0) = (b, 0) = (id \cross 0)(b) \]
-    and between $j$ and $\pi_1$ by
+    and with $j$ and $\pi_1$ by
     \[ j(e) = \pi_1(\phi(e)) = \pi_1(\mu_\eps(\phi(e))) = \pi_1(\phi'(e)), \]
     which concludes the proof.
 \end{myproof}

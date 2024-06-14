@@ -1,36 +1,38 @@
 % extend
 \begin{myparagraph}
-    The rest of the section deals with the question
-    of whether a microbundle can be extended
-    over a particular base space.
+    In the remainder of this subsection,
+    we study whether microbundles can be extended
+    over particular base spaces.
 
-    Here \defterm{extended} means that when restricting
+    Here, the term \defterm{extended} means that when restricting
     such a microbundle
-    to the initial base space we obtain a microbundle that
+    to the initial base space, we obtain a microbundle that
     is isomorphic to the initial microbundle.
 \end{myparagraph}
 
 % foreword cone / cylinder
 \begin{myparagraph}
     % cone
-    For a topological space $X$, we define the \defterm{cone} of $X$ to be 
-    \[ CX = \cyl{X} / X \cross \{1\} \]
-    and the \defterm{mapping cone} of a map $f: A \to B$ to be
-    \[ B \sqcup_f CA = B \sqcup CA / \sim \]
+    For a topological space $X$, we define the \defterm{cone} $CX$ of $X$ by
+    \[ \cyl{X} / X \cross \{1\} \]
+    and the \defterm{mapping cone} $B \sqcup_f CA$ over a map $f: A \to B$ by
+    \[ B \sqcup CA / \sim \]
     where $(a, 0) \sim b \iff f(a) = b$.
-    
+
     % cylinder
-    Similarly, we define the \defterm{cylinder} of $X$ to be
-    \[ MX = \cyl{X} \]
-    and the \defterm{mapping cylinder} of a map $f: A \to B$ to be
-    \[ B \sqcup_f MA = B \sqcup MA / \sim \]
+    Similarly, we define the \defterm{cylinder} $MX$ of $X$ by
+    \[ \cyl{X} \]
+    and the \defterm{mapping cylinder} $B \sqcup_f MA$ over a map $f: A \to B$ by
+    \[ B \sqcup MA / \sim \]
     where $(a, 0) \sim b \iff f(a) = b$.
+
+    % ? rephrase
 \end{myparagraph}
 
 % lemma cone
 \begin{mystatement}{lemma}{induced::cone}[58]
     Let $A$ be a paracompact hausdorff space.
-    A microbundle $\bb$ over $B$ can be extended to a microbundle
+    A microbundle $\bb$ over $B$ can be extended
     over the mapping cone $B \sqcup_f CA$ if and only if $\ind{f}\bb$ is trivial.
 \end{mystatement}
 
@@ -46,10 +48,10 @@
     % homotopy
     The composition $A \xto{f} B \incl B \sqcup_f CA$ is
     null-homotopic via the homotopy
-    \[ H(a, t) := [a, t] \]
+    \[ H(a, t) = [a, t], \]
     because $H(a, 0) = [a, 0] = [f(a)] = (\iota \circ f)(a)$
     and $H(a, 1) = [a, 1] = [\tilde{a}, 1] = H(\tilde{a}, 1)$.
-    
+
     % theorem
     The Homotopy Theorem, which will be proved in \myintref{chapter::homotopy},
     yields that
@@ -59,7 +61,7 @@
     it follows that $\ind{(\iota \circ f)}\bb'$ is trivial.
 
     % conclusion
-    Because $\ind{(\iota \circ f)}\bb' \cong \ind{f}(\ind{\iota}\bb') \cong \ind{f}\bb$,
+    Together with $\ind{(\iota \circ f)}\bb' \cong \ind{f}(\ind{\iota}\bb') \cong \ind{f}\bb$,
     we conclude that $\ind{f}\bb$ is trivial.
 
     % <=
@@ -74,25 +76,24 @@
     The diagram
     \[ A \cross \{1\} \incl B \sqcup_f MA \xto{r} B \]
     is equal to $f$ if we consider $A = \cylup{A}$.
-    It follows from
-    \[ \ind{r}\bb[A \cross \{1\}] = \ind{(r \circ \iota)}\bb = \ind{f}\bb \]
-    and the assumption that $\ind{r}\bb[A \cross \{1\}]$ is trivial.
-    Using \myintref{induced::trivial} and the retraction $(a, t) \mapsto (a, 1)$,
-    we even see that $\ind{r}\bb[A \cross [\half, 1]]$ is trivial.
+    From $\ind{r}\bb[A \cross \{1\}] = \ind{(r \circ \iota)}\bb = \ind{f}\bb$ it follows that
+    $\ind{r}\bb[A \cross \{1\}]$ is trivial.
+    Furthermore, $\ind{r}\bb[A \cross [\half, 1]]$ is trivial as well
+    due to \myintref{induced::trivial} and the retraction
+    $A \cross [\half, 1] \to \cylup{A}$ with $(a, t) \mapsto (a, 1)$.
 
     % homeomorpism
-    Since $A$ is paracompact hausdorff we can apply \myintref{microbundle::paracompact}.
+    Since $A$ is paracompact hausdorff, we can apply \myintref{microbundle::paracompact}.
     Hence, there exists a homeomorphism
-    \[ \psi: V \isomto A \cross [\half, 1] \cross \R^n \]
-    where $V$ is a neighborhood of $i_r(B)$ in $E(\ind{r}\bb[A \cross [\half, 1]])$.
+    \[ \psi: W \isomto A \cross [\half, 1] \cross \R^n \]
+    where $W$ is a neighborhood of $i_r(A)$ in $E(\ind{r}\bb[A \cross [\half, 1]])$.
     Without loss of generality,
-    we may assume that $V = E(\ind{r}\bb[A \cross [\half, 1]])$
+    we may assume that $W = E(\ind{r}\bb[A \cross [\half, 1]])$
     by removing a closed subset of $E(\ind{r}\bb[A \cross [\half, 1]])$
     if necessary and applying \myintref{microbundle::total}.
 
     % extension
-    Now we define an extended microbundle
-    \[ \bundledef{\bb'}{B \sqcup_f CA}{E'}{i'}{j'} \twith \]
+    We define an extended microbundle $\bundledef{\bb'}{B \sqcup_f CA}{E'}{i'}{j'}$ by
     \begin{itemize}
         \item $E' = E(\ind{r}\bb) / \inv{\psi}(A \cross \{1\} \cross \{x\})$ (for every $x \in \R^n$)
         \item $i'([a, t]) = [i_r([a, t])]$
@@ -102,33 +103,37 @@
     representative $[a, 1]$ to the same equivalence
     class of $E'$ due to its construction.
     Similarly, the projection $j'$ is well-defined because
-    \[ [[a, t], e] = [[a', t'], e'] \implies  [a, t] = [a, t']. \]
+    \[ [[a, t], e] = [[a', t'], e'] \implies  [a, t] = [a', t']. \]
 
     % extension :: continuity and commutativity
     Both $i'$ and $j'$ are continuous
     due to the definition of the quotient space topology.
     Also, $j' \circ i' = id_{B \sqcup_f CA}$ because
     \[ j'(i'([a, t])) = j'([i_r(a, t)]) = [j_r(i_r(a, t))] = [a, t]. \]
-    
+
     % extension :: local triviality
-    It remains to be shown that $\bb'$ is locally trivial:
-
+    It remains to be shown that $\bb'$ is locally trivial.
     Let $[a, t] \in B \sqcup_f CA$ be arbitrary.
+    Note that, by construction,
+    the cone and the cylinder differ only
+    in an arbitrary small neighborhood of $\set{[a, 1]}{a \in A}$.
 
-    Note that the cone and the cylinder differ only
-    around an arbitrary small neighborhood of $[a, 1]$.
+    We consider two cases.
+    \begin{caselist}
+        % case 1
+        \item $t \le \half$
 
-    % TODO: make the following part more rigorous
-    % far away
-    If $[a, t]$ is `far away' from the critical point $[a, 1]$,
-    say $t \le \half$, we can simply take a local trivialization of $[a, t]$ in $\ind{r}\bb$
-    to serve as a local trivialization of $[a, t]$ in $\bb'$,
-    by restricting such a local trivialization to $A \times [0, \half)$ if necessary.
+        We simply use a local trivialization $(U, V, \phi)$ of $[a, t]$ in $\ind{r}\bb$
+        by restricting $U$ to $A \times [0, \half)$ if necessary.
+        This is valid since the cone and the cylinder equal if restricted to $A \times [0, \half)$.
 
-    % close
-    If $[a, t]$ is `close' to the critical point, say $t > \half$,
-    we can take $\psi$ to be the homeomorphism for our local trivialization.
-    By construction, $\psi$ respects the quotient $\pi: E(\ind{r}\bb) \subm E'$.
-    It follows that $(\frst{\psi}(\pi(V)), \pi(V), \psi)$
-    is a local trivialization for $[a, t]$ in $\bb'$.
+        % case 2
+        \item $t > \half$
+        
+        In this case, we can use $\psi$ to serve as the homeomorphism for our local trivialization.
+        By construction, $\psi$ respects the projection $\pi: E(\ind{r}\bb) \subm E'$.
+        It follows that $(\frst{\psi}(\pi(W)), \pi(W), \psi)$
+        is a local trivialization for $[a, t]$ in $\bb'$.
+    \end{caselist}
+    This completes the proof.
 \end{myproof}

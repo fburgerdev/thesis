@@ -1,7 +1,8 @@
 % foreword
 \begin{myparagraph}
-    The following statement is fundamental for the theory of microbundles.
-    It justifies that the tangent microbundle can be considered
+    The following statement is fundamental for the theory of
+    microbundles over topological manifolds.
+    It justifies that the tangent microbundle can be regarded
     as a generalization of the tangent vector bundle.
 \end{myparagraph}
 
@@ -16,21 +17,24 @@
 \begin{myproof}
     We equip $M$ with a Riemannian metric,
     which allows us to define the usual 
-    exponential map $\exp: V \to M$ where $V$ is a neighborhood
+    exponential map $\exp: V \to M$ where $V \sub TM$ is a neighborhood
     of the zero-cross section of $M$.
+
+    Consider $id \cross \exp$.
     % IFT
     Using the Inverse Function Theorem for smooth manifolds (see\cite[thm.4.5]{lee})
-    for an arbitrary $(m, v) \in V$ it follows that $\exp$ is a local homeomorphism.
-    Furthermore,
+    for arbitrary $(p, \nu) \in V$, it follows that $id \cross \exp$ is a local diffeomorphism
+    and hence a local homeomorphism.
     % local homeomorphism -> homeomorphism
-    $\exp$ maps $\set{(p, 0)}{0 \in T_pM}$ homeomorphically to $\Delta(M)$.
-    Using the statement from \cite[lm.4.1]{whitehead} (manifolds are locally compact and seperable),
-    it follows that $\exp$ maps a neighborhood
+    Furthermore,
+    the zero-cross section is mapped homeomorphically to the diagonal.
+    By applying Lemma 4.1 from \cite[lm.4.1]{whitehead} (manifolds are locally compact and seperable),
+    it follows that $id \cross \exp$ maps a neighborhood
     of the zero-cross section to a neighborhood of the diagonal.
     % commutativity
-    Commutativity between injection maps is given by
-    \[ \exp(i_{\abs{\eta}}(p)) = \exp(p, 0) = (m, m) = \Delta(m) \]
-    and between projection maps by
-    \[ j_{\abs{\eta}}(p, v) = p = \pi_1(p, \snd{\exp}(p, v)) = \pi_1(\exp(p, v)), \]
+    Commutativity with the injection maps is given by
+    \[ (id \cross \exp)(i_{\abs{\eta}}(p)) = (id \cross \exp)(p, 0) = (p, p) = \Delta(p) \]
+    and with the projection maps by
+    \[ j_{\abs{\eta}}(p, \nu) = p = \pi_1(p, \exp(\nu)) = \pi_1((id \cross \exp)(p, \nu)), \]
     which concludes the proof.
 \end{myproof}

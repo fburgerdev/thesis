@@ -1,10 +1,8 @@
 % foreword
 \begin{myparagraph}
-    As the definition of isomorphy already implies, when studying microbundles,
+    As the definition of isomorphy already indicates, when studying microbundles,
     we are not interested in the entire total space
     but only in an arbitrary small neighborhood of the base space (more precise, the image $i(B)$).
-    This is one of the biggest conceptual differences between
-    microbundles and vector bundles.
     The following proposition makes this even clearer.
     
     % Throughout the paper we will often take use of homeomorphisms
@@ -29,17 +27,18 @@
     We prove the proposition in two steps.
     \begin{steps}
         % microbundle
-        \item $\bb'$ is a microbundle:
+        \item $\bb'$ is a microbundle
         
-        Continuity and $id_B = j\restr{E'} \circ i$ are already given since $\bb$ is a microbundle.
+        Continuity for $i$ and $j$ as well as $j\restr{E'} \circ i = id_B$ are already given since $\bb$ is a microbundle.
 
         So we only need to show that $\bb'$ is locally trivial.
         For an arbitrary $b \in B$, choose a local trivialization $(U, V, \phi)$ of $b$ in $\bb$.
         By restricting $\phi$ to $V \cap E'$,
-        we obtain a homeomorphism on its image as required in \myintref{microbundle::local}.
+        we obtain a homeomorphism on its image as required in \myintref{microbundle::local},
+        hence showing local triviality.
         
         % isomorphy
-        \item $\bb'$ is isomorphic to $\bb$:
+        \item $\bb'$ is isomorphic to $\bb$
 
         Since $E'$ is a subset of $E$,
         we can simply use the identity $E' \to E' \sub E$
@@ -47,4 +46,5 @@
         Furthermore, the injection and projection maps for $\bb$ and $\bb'$ are the same,
         so they clearly commute with the identity.
     \end{steps}
+    This completes the proof.
 \end{myproof}

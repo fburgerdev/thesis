@@ -1,6 +1,6 @@
 % foreword williamson
 \begin{myparagraph}
-    The bundle-germ is indeed a generalization of the isomorphism-germ,
+    The bundle-germ is indeed a generalization for the isomorphism-germ,
     as the following proposition shows.
 \end{myparagraph}
 
@@ -13,7 +13,7 @@
 
 % foreword
 \begin{myparagraph}
-    The following lemma is necessary for the proof of the proposition.    
+    The following lemma will be necessary for the proof of the proposition.    
 \end{myparagraph}
 
 % lemma
@@ -25,22 +25,23 @@
 
 % proof lemma
 \begin{myproof}[of the lemma]
-    We provide a proof by contradiction:
+    We provide a proof by contradiction.
 
     Suppose $v \in \clball[1] - V$.
     Let $[f(0), v]$ denote the line-segment
     \[ \set{\lambda f(0) + (1 - \lambda) v}{\lambda \in \I} \sub \R^n. \]
     The intersection $[f(0), v] \cap V$ is compact
-    as $[f(0), v]$ is compact and $V$ is closed.
+    since both $[f(0), v]$ and $V$ are compact.
     Hence, the intersection has a maximum $v'$ when ordered via $\lambda$.
-    Note that the intersection is non-empty since $f(0) \in V$.
+    Note that the intersection is non-empty since $f(0) \in V$
+    and that $v' \neq v$ since $v \notin V$ by definition.
 
     The maximum $v'$ is contained in $\partial V$:
     \begin{enumerate}
         \item $v' \in [f(0), v] \cap V \sub V = \overline{V}$
         \item $v' \notin \inner{V}$, because otherwise
         $\ball[\eps][v'] \sub \inner{V}$ for some $\eps > 0$
-        contradicting the maximum condition for $v'$.
+        which contradicts with $v'$ being the maximum in $[f(0), v] \cap V$.
     \end{enumerate}
 
     From $\abs{f(0) - 0} < 1$ and $v \in \clball[1]$ it follows that $\abs{v'} < 1$. 

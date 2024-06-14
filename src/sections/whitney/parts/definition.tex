@@ -34,23 +34,29 @@
         $i(U) \sub (i_1(U) \times i_2(U)) \cap E \sub (V_1 \cross V_2) \cap E$.
         \item $\phi: V \isomto U \cross \R^{n_1 + n_2}$ with
         $\phi(e_1, e_2) = (j_1(e_1), (\snd{\phi_1}(e_1),  \snd{\phi_2}(e_2)))$,
-        which is a homeomorphism together with the inverse
+        which is a homeomorphism with the inverse
         \[ \inv{\phi}(b, (x_1, x_2)) = (\inv{\phi_1}(b, x_1), \inv{\phi_2}(b, x_2)) \]
         since both $\phi$ and $\inv{\phi}$ are component-wise continuous.
     \end{itemize}
     
     % local triviality :: commutativity
-    Commutativity between the injection and $id \times 0$ is given by
+    Commutativity with $i$ and $id \times 0$ is given by
     \[ \phi(i(b)) = \phi(i_1(b), i_2(b)) = (b, (\snd{\phi_1}(i_1(b)), \snd{\phi_2}(i_2(b)))) = (b, (0, 0)) = (id \cross 0)(b) \]
-    and between the projection and $\pi_1$ by
+    and with $j$ and $\pi_1$ by
     \[ j(e_1, e_2) = j_1(e_1) = \pi_1(j_1(e_1), \snd{\phi}(e_1, e_2)) = \pi_1(\phi(e_1, e_2)), \]
     which completes the proof. 
 \end{myproof}
+
+% remark
+\begin{mystatement}{remark}{whitney::remark}
+    The Whitney sum is associative and commutative.
+    % ? proof
+\end{mystatement}
 
 % equivalent definition
 \begin{myparagraph}
     Alternatively, one could define the Whitney sum between $\bb_1$ and $\bb_2$
     to be the induced microbundle $\ind{\Delta}(\bb_1 \cross \bb_2)$
     where $\Delta$ denotes the diagonal map and $\bb_1 \cross \bb_2$
-    denotes the literal cross-product between the two microbundles.
+    denotes the intuitive cross-product between the two microbundles.
 \end{myparagraph}
