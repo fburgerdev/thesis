@@ -34,8 +34,8 @@
         - williamson
         - corollary
     - proving the homotopy theorem
-        - glueing lemma
-        - left and right glueing
+        - gluing lemma
+        - left and right gluing
         - trivial neighborhood
         - closed locally finite cover (own)
         - extend
