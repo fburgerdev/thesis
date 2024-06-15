@@ -9,7 +9,7 @@
 
     % foreword
     \begin{myparagraph}
-        Finally, we gathered all the tools to prove Milnor's theorem.
+        Finally, we gathered all the tools to prove Milnors theorem.
     \end{myparagraph}
 
     % theorem
@@ -27,51 +27,53 @@
             % step 1
             \item $N$ has a normal microbundle $\eta$ in $M$ such that $\whitney{\bt_N}{\eta} \cong \be[q]{N}$
             
-            Consider the extension $\ind{r}\bt_N$.
+            Consider the extension $\ind{r}\bt_N$ for $\bt_N$.
             Since $V$ is an open set, it's a simplicial complex.
             Hence, we can apply \myintref{whitney::theorem} to $\ind{r}\bt_N$
             to obtain a microbundle $\eta'$ such that $\whitney{\ind{r}\bt_N}{\eta'} \cong \be[q]{V}$.
 
-            We conclude that $\whitney{\bt_N}{\eta'\restr{N}} = \whitney{\ind{r}\bt_N\restr{N}}{\eta'\restr{N}} = (\whitney{\ind{r}\bt_N}{\eta'})\restr{N} = \be[q]{N}$.
+            We conclude that $\whitney{\bt_N}{\eta'\restr{N}} = \whitney{\ind{r}\bt_N\restr{N}}{\eta'\restr{N}} \cong (\whitney{\ind{r}\bt_N}{\eta'})\restr{N} \cong \be[q]{N}$.
 
             % step 2
             \item $E(\rtn)$ has a normal microbundle in $E(\rwhitney)$
 
+            Note that $\rwhitney \cong \ind{r}(\whitney{\bt_N}{\eta})$ is trivial.
+            Hence, by restricting the total space $E(\rwhitney)$ if necessary,
+            we may assume that
+            \[ E(\rwhitney) = V \cross \R^q \]
+            for some $q \in \N$.
+            In particular, we derive that $E(\rwhitney)$ is a manifold.
+
             We denote the injection and projection of $\rtn$ by $i_{\bt}$ and $j_{\bt}$,
             and the injection and projection of $\ind{r}\eta$ by $i_{\eta}$ and $j_{\eta}$.
 
-            Firstly, note that $\rwhitney \cong \ind{r}(\whitney{\bt_N}{\eta})$ is trivial, so
-            $E(\rwhitney)$ is an open subset of $\R^q$ (for some $q \in \N$) and hence a manifold.
-
-            We consider $E(\rtn)$ to be a subset of $E(\rwhitney)$ embedded via
-            \[ (v, e) \mapsto ((v, e), (v, i_{\eta}(v))). \]
-
-            We are given a normal microbundle of $E(\rtn)$ in $E(\rwhitney)$ by $\ind{j_{\bt}}(\ind{r}\eta)$.
+            We consider $E(\rtn)$ to be a submanifold of $E(\rwhitney)$ embedded by
+            \[ e \mapsto (e, j_{r}(i_{\eta}(e))). \]
+            We have a normal microbundle of $E(\rtn)$ in $E(\rwhitney)$ given by $\ind{j_{\bt}}(\ind{r}\eta)$.
             That is because the total space
             \[ E(\ind{j_r}(\ind{r}\eta)) = \set{(e, e') \in E(\rtn) \cross E(\ind{r}\eta)}{j_{\bt}(e) = j_\eta(e')} \]
-            equals $E(\rwhitney)$ and because its inclusion is the above embedding
-            \[ ((v, e), i_\eta(j_{\bt}(v, e))) = ((v, e), i_\eta(v)). \]
+            equals $E(\rwhitney)$ and because its inclusion matches the above embedding.
             
             % step 3
             \item $N$ has a normal microbundle in $M \times \R^q$
             
-            Since $N$ has a normal microbundle in $E(\rtn)$ using \myintref{microbundle::total},
-            it follows from \myintref{normal::transitivity} that
+            Since $N$ has a normal microbundle in $E(\rtn)$ (\myintref{microbundle::total})
+            and $E(\rtn)$ has a normal microbundle in $E(\rwhitney)$,
+            we conclude with \myintref{normal::transitivity} that
             $N$ has a normal microbundle in $E(\rwhitney)$.
-     
-            By restricting $E(\rwhitney)$ to an open neighborhood of $i_{\oplus}(V)$ if necessary, we may assume that
-             \[ E(\rwhitney) = M \cross \R^q \]
-            using \myintref{induced::trivial}.
+            
+            As elaborated in Step 2, we may assume that $E(\rwhitney) = V \cross \R^n$.
+            Since $V$ is open in $M$, $V \cross \R^n$ is open in $M \cross \R^n$.
         \end{steps}
-        Applying \myintref{normal::transitivity} and $E(\rwhitney) = M \cross \R^q$ completes the proof.
+        We conclude that $N$ has a normal microbundle in $M \cross \R^n$.
     \end{myproof}
 
     % dimension
     \begin{myparagraph}
-        With the proof of \myintref{whitney::theorem} and of \myintref{normal::milnor},
-        we can calculate an upper bound $m(2^{2m + 2} - 2)$ for $q$ where $m$ is the dimension of $M$ (\cite[p.63]{milnor}).
-        However with slightly sharper proofs,
+        With the provided proofs for \myintref{whitney::theorem} and \myintref{normal::milnor},
+        we can calculate an upper bound $m(2^{2m + 2} - 2)$ for $q$, where $m$ is the dimension of $M$ \cite[p.63]{milnor}.
+        However, when provided with sharper proofs,
         one can substantially reduce the upper bound
-        to a quadratic upper bound $(m + 1)^2 - 1$ (see \cite[p.232]{hirsch}). 
+        to a quadratic $(m + 1)^2 - 1$ (see \cite[p.232]{hirsch}). 
     \end{myparagraph}
 \end{scope}

@@ -1,42 +1,20 @@
-% foreword
-\begin{myparagraph}
-    The total space $E(\ind{r}\bt_N)$ is a topological manifold.
-    This can be seen with
-    \[ E(\ind{r}\bt_N) = \set{(v, n_1, n_2) \in V \cross (N \cross N)}{r(v) = n_1} \cong V \cross N. \]
-
-    Together with $N \incl M \xto{i_{\bt}} E(\ind{r}\bt_N)$, we can assume that
-    $N$ is an embedded submanifold of $E(\ind{r}\bt_N)$.
-    Note that $i_{\bt}$ is an embedding due to the construction of the induced microbundle.
-\end{myparagraph}
-
 % lemma
-\begin{mystatement}{lemma}{normal::total}[62]
-    Let $N \sub M$ be an embedded submanifold and let $r: V \to N$ be a retraction.
+\begin{mystatement}{lemma}{normal::total}
+    Let $N \sub M$ be a submanifold and let $r: V \sub M \to N$ be a retraction.
     Then there exists a normal microbundle $\bn$ of $N$ in $E(\ind{r}\bt_N)$. % such that $\bn \cong \ind{\iota}\bt_V$.
 \end{mystatement}
 
 % proof
 \begin{myproof}
+    First, note that the total space $E(\ind{r}\bt_N)$ is a topological manifold.
+    This can be seen with
+    \[ E(\ind{r}\bt_N) = \set{(v, n_1, n_2) \in V \cross (N \cross N)}{r(v) = n_1} \cong V \cross N. \]
+
+    Together with $N \incl V \xto{i_r} E(\ind{r}\bt_N)$, we may assume that
+    $N$ is a submanifold of $E(\ind{r}\bt_N)$.
+    Note that $i_{r}$ is an embedding due to the construction of the induced microbundle.
+
     We are given a normal microbundle of $N$ in $E(\ind{r}\bt_N)$ by $\ind{r}\bt_N\restr{N}$.
-    
-    Since $\ind{r}\bt_N\restr{N} \cong \ind{(r \circ \iota)}\bt_N = \ind{id}\bt_N \cong \bt_N$,
-    it suffices to show that $\bt_N \cong \ind{\iota}\bt_V$.
-    % homoemorphism
-    We define a homeomorphism $\psi: E(\bt_N) \isomto E(\ind{\iota}\bt_V)$ with
-    \[ \psi(n_1, n_2) = (n_1, n_1, n_2) \tand \inv{\psi}(n, v_1, v_2) = (n, v_2) \]
-    for which homeomorphy follows from component-wise
-    continuity of both $\psi$ and $\inv{\psi}$.
-    
-    % commutativity
-    Commutativity with the injection maps is given by
-    \[ \psi(\Delta(n)) = \psi(n, n) = (n, n, n) = (n, \Delta(n)) = i_\iota(n) \]
-    and with the projection maps by
-    \[ \pi_1(n_1, n_2) = n_1 = j_\iota(n_1, n_1, n_2) = j_\iota(\psi(n_1, n_2)), \]
-    which concludes the proof.
-    
-    % Furthermore, $\ind{r}\bt_N\restr{N}$ is isomorphic to $\ind{\iota}\bt_V$ is given by
-    % \[ \psi: E(\ind{\iota}\bt_V) \isomto E(\ind{r}\bt_N). \]
-    % where commutativity with the injection and projection maps
-    % follow from the diagram in \myintref{normal::commute} and from the following equation:
-    % \[ j_\iota(n, v_1, v_2) = n = j_r(v_2) \]
+    Note that the injection of $\ind{r}\bt_N\restr{N}$ matches the above embedding.
+    This completes the proof.
 \end{myproof}

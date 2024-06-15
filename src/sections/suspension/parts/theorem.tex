@@ -2,13 +2,13 @@
 \begin{mystatement}{theorem}{suspension::theorem}[71]
     If $\ba$ and $\bb$ are rooted microbundles
     over a paracompact hausdorff space $B$, then
-    \[ \whitney{\ind{\phi}(\ba \vee \bb)}{\be{B}} = \whitney{\ba}{\bb}. \]
+    \[ \whitney{\ind{\phi}(\ba \vee \bb)}{\be{B}} \cong \whitney{\ba}{\bb}. \]
 \end{mystatement}
 
 % proof theorem
 \begin{myproof}
     The previous lemma yields rooted isomorphy $\whitney{\bb}{\be{B}} \cong \whitney{\be{B}}{\bb}$.
-    Hence
+    Hence,
     \[
         \ind{\phi}((\whitney{\ba}{\be{B}}) \vee (\whitney{\bb}{\be{B}}))
         \cong \ind{\phi}((\whitney{\ba}{\be{B}}) \vee (\whitney{\be{B}}{\bb})).
@@ -41,7 +41,7 @@
 
 % bouquet
 \begin{myparagraph}
-    Now the Bouquet Lemma is just \myintref{suspension::corollary} applied to
+    Finally, the Bouquet Lemma is just \myintref{suspension::corollary} applied to
     a microbundle over a bouquet of spheres.
     Note that a bouquet of $d$-spheres can be regarded
     as a reduced suspension over a bouquet of $(d-1)$-spheres.

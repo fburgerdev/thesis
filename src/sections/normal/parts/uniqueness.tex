@@ -32,15 +32,15 @@
         % homeomorphy
         We can easily define a homeomorphism $\psi: E(\bt_M \circ \ind{\pi_2}\bn) \isomto E(\bt_N\restr{M})$ given by
         \[ \psi(m_1, m_2, u) = (m_1, m_1, u) \tand \inv{\psi}(m, n_1, n_2) = (m, r(n_2), n_2). \]
-        Note that $\psi$ is a homeomorphism since as $\psi$ and $\inv{\psi}$ are component-wise continuous.
+        Note that $\psi$ is a homeomorphism since $\psi$ and $\inv{\psi}$ are component-wise continuous.
 
         % commutativity
         It remains to be shown that $\psi$
         commutes with the injection and projection maps of $\bt_M \circ \ind{\pi_2}\bn$ and $\bt_N\restr{M}$.
-        To check this, consider the following equations:
+        This can be seen with the following equations:
         \begin{align}
-            & \psi(i_{\pi_2}(\Delta(m))) = \psi(i_{\pi_2}(m, m)) = \psi(m, m, \iota(m)) = (m, m, m) = (m, \Delta(\iota(m))) \\
-            & \pi_1(j_{\pi_2}(m_1, m_2, u)) = \pi_1(m_1, m_2) = m_1 = j_\iota(m_1, m_1, u) = j_\iota(\psi(m_1, m_2, u)) 
+            \psi(i_{\pi_2}(\Delta(m))) = \psi(m, m, \iota(m)) = (m, m, m) = (m, \Delta(\iota(m))) \\
+            \pi_1(j_{\pi_2}(m_1, m_2, u)) = m_1 = j_\iota(m_1, m_1, u) = j_\iota(\psi(m_1, m_2, u)) 
         \end{align}
         
         % step 2
@@ -50,8 +50,8 @@
         In this case, the two total spaces
         \[ E(\bt_M \circ \ind{\pi_1}\bn) = E(\ind{\pi_1}\bn) = \set{(m_1, m_2, u) \in (M \cross M) \cross U}{m_1 = r(u)} \]
         and
-        \[ E(\whitney{\bt_M}{\bn}) = \set{(m_1, m_2, u) \in (M \cross M) \cross U}{m_1 = r(u)}, \]
-        are even equal.
+        \[ E(\whitney{\bt_M}{\bn}) = \set{(m_1, m_2, u) \in (M \cross M) \cross U}{m_1 = r(u)} \]
+        are equal.
         % homeomorphy + commutativity
         Additionally,
         the injection and projection maps agree as the following equations show:
@@ -66,11 +66,11 @@
         We show that there exists a neighborhood $D \sub N \cross N$ of $\Delta(M)$ such that
         $\pi_1\restr{D}$ is homotopic to $\pi_2\restr{D}$:
 
-        Firstly, we assume that $N$ is embedded in euclidean space (see\cite[p.60]{dimension}).
+        Firstly, we assume that $M$ is embedded in euclidean space (see\cite[p.60]{dimension}).
         Let $V \sub N$ be a neighborhood retract of $M$.
         We define $D$ as follows:
         \[ D = \set{(m, m') \in M \cross M}{ tm + (1 - t)m' \in V, \forall t \in \I} \]
-        We are given a homotopy $H: \cyl{D} \to N$ between $\pi_1$ and $\pi_2$ with
+        We are given a homotopy $H: \cyl{D} \to N$ between $\pi_1$ and $\pi_2$ by
         \[ H((m, m'), t) = tm + (1 - t)m'. \]
 
         Applying the Homotopy Theorem yields $\ind{\pi_1}\bn\restr{D} \cong \ind{\pi_2}\bn\restr{D}$, and
@@ -84,6 +84,6 @@
 \begin{myparagraph}
     This proposition also shows that the normal microbundle
     underlies the same intuition as the normal vector bundle. 
-    The sum of the tangent- and normal microbundle of the submanifold
-    `span' the tangent microbundle of the surrounding space.
+    The sum of the tangent- and the normal microbundle of the submanifold
+    `span' the tangent microbundle of its surrounding space.
 \end{myparagraph}

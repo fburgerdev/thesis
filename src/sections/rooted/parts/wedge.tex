@@ -67,7 +67,7 @@
             Note that $\{a_0\}$ is closed since $A$ is hausdorff.
             
             % show
-            Now we can simply use this trivialization for $\ba \vee \bb$, because
+            Now we can simply use this trivialization for $\ba \vee \bb$ because
             $U \sub A$ is open in $A \vee B$ and
             $V \sub E(\ba)$ is open in $E(\ba \vee \bb)$.
             Furthermore, since $i$ and $j$ reduce to $i_a$ and $j_a$,
@@ -86,25 +86,20 @@
             $W_a' \sub E(\ba)$ such that $W_a = W_a' \cap E(\bab)$.
 
             Let $U_a' \sub A$ be an open neighborhood of $a_0$ and $\eps > 0$ such that
-            \[ V_a' = U_a' \cross \ball[\eps] \sub \phi_a(W_a'). \]
-            This allows us to define the map
-            \[ \phi_a': V_a' \isomto \phi_a'(V_a') \sub A \cross \R^n \twith \]
+            \[ U_a' \cross \ball[\eps] \sub \phi_a(W_a' \cap V_a) \]
+            and define $V_a' = \inv{\phi_a}(U_a' \cross \ball[\eps])$.
+            This allows us to construct a homeomorphism
+            $\phi_a': V_a' \isomto \phi_a'(V_a') \sub A \cross \R^n$ given by
             \[ \phi_a'(e) = (j_a(e), (\snd{\phi_b} \circ f \circ \inv{\phi_a})(a_0, \snd{\phi_a}(e))). \]
-
-            Now we can show local triviality in $a_0$ using the homeomorphism
-            \[ \phi_a' \cup \phi_b: V_a' \cup V_b \isomto \phi_a'(V_a' \cup V_b) \sub (A \vee B) \cross \R^n \]
-
-            This map is well-defined, because
+            We can now show local triviality in $a_0$ using the homeomorphism
+            \[ \phi_a' \cup \phi_b: V_a' \cup V_b \isomto \phi_a'(V_a' \cup V_b) \sub (A \vee B) \cross \R^n. \]
+            This map is well-defined because
             \[ \phi_a'(e) = (a_0, (\snd{\phi_b} \circ f \circ \inv{\phi_a})(a_0, \snd{\phi_a}(e))) \]
             \[ = (b_0, \snd{\phi_b}(f(e))) = (j_b(f(e)), \snd{\phi_b}(f(e))) = \phi_b(f(e)). \]
 
-            Homeomorphy follows from the fact
-            that both $\phi_a'$ and $\phi_b$ are homeomorphisms,
-            and that $\phi_a'(e_a) = \phi(e_b) \implies f(e_a) = e_b$. 
-
             Commutativity with $i_a \cup i_b$ and $id \cross 0$
             as well as between $j_a \cup j_b$ and $\pi_1$
-            is inherited from $\phi_a$ and $\phi_b$.
+            are inherited from $\phi_a$ and $\phi_b$.
             Note that $\phi_a(i_a(a)) = (a, 0) = \phi_a'(i_a(a))$.
 
             Applying \myintref{microbundle::local} yields that $\ba \vee \bb$ is locally trivial.
@@ -126,14 +121,13 @@
         
         But now the total spaces $E(\ba \vee \bb)$ and $E((\ba \vee \bb)')$ are the same.
         That is because $E(\ba \vee \bb)$ and $E((\ba \vee \bb)')$
-        could only differ in $\inv{j_a}(a_0) - V$.
-
+        could only possibly differ in $\inv{j_a}(a_0) - V$.
         
-        Furthermore, since injection and projection are defined exactly the same,
+        Furthermore, since injection and projection are defined the same,
         it follows that the identity $\germ{(\ba \vee \bb)}{(\ba \vee \bb)'}$
         is an isomorphism-germ.
         Together with
         \[ \inv{R'} \circ R = \inv{R} \circ R = I, \]
-        which completes the proof.
+        this completes the proof.
     \end{sectionize}
 \end{myproof}
