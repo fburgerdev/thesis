@@ -33,12 +33,13 @@
         Now we define a retraction $r_\alpha: \cyl{B} \to \cyl{B}$ with
         \[ r_\alpha(b, t) = (b, \max(t, \lambda_\alpha(b))). \]
 
-        In the following,
+        In the remainder of this proof,
         we construct bundle-germs $\germdef{R_\alpha}{\bb}{\bb}$
-        covering $r_\alpha$ and `compose' them to obtain the required bundle-germ.
-        \begin{enumerate}
+        covering $r_\alpha$ in order to `compose' them to our required bundle-germ.
+        \begin{sectionize}
             % local bundle-germ
-            \item 
+            \item Constructing bundle-germs $R_\alpha$ covering $r_\alpha$
+
             We can divide $B \cross \I$ into two subsets
             \[
                 A_\alpha = \cyl{\supp{\lambda_\alpha}} \sub \cyl{V_\alpha} \tand
@@ -48,26 +49,25 @@
             analogous to the proof of \myintref{homotopy::lemma1},
             extend the identity bundle-germ on $\bb[\A \cap \A']$ to a bundle-germ
             \[ \germ{\bb[\A]}{\bb[\A \cap \A']} \]
-            using the bundle-germ
-            \[ \germ{\be{\A}}{\be{\A \cap \A'}} \twith (a, x) \mapsto (r_\alpha(a), x). \]
+            using the bundle-germ $\germ{\be{\A}}{\be{\A \cap \A'}}$ represented by
+            \[ (a, x) \mapsto (r_\alpha(a), x). \]
             Pieced together with the identity bundle-germ $\bb[\A']$
-            (note that $\A$ and $\A'$ are both closed),
+            ($\A$ and $\A'$ are both closed),
             we obtain a bundle-germ $R_\alpha$ covering $r_\alpha$.
             
             % glue together
-            \item
-            Lastly, we construct a bundle-germ $R$ using the $R_\alpha$.
+            \item Constructing a bundle-germ $R$ covering $(b, t) \mapsto (b, 1)$
 
             Applying the well-ordering theorem,
             which is equivalent to the axiom of choice (see\cite[p.14]{kuczma}),
-            we can assume an ordering of $\coll{V_\alpha}$.
+            we can assume an ordering for $\coll{V_\alpha}$.
 
             Let $\coll{B_\beta}$ be a locally finite closed cover of $B$
             such that $B_\beta$ intersects only
             finitely many $V_{\alpha_1} < \cdots < V_{\alpha_k}$
             obtained by \myintref{homotopy::paracompact}.
 
-            Now the composition
+            The composition
             $R_{\alpha_1} \circ \ldots \circ R_{\alpha_k}$ restricts to a bundle-germ 
             \[ \germdef{R(\beta)}{\bb[\cyl{B_\beta}]}{\bb[\cylup{B_\beta}]} \]
             covering the retraction $(b, t) \mapsto (b, 1)$.
@@ -79,6 +79,6 @@
             we obtain a bundle-germ
             \[ R: \bb[\cyl{B}] \to \bb[\cylup{B}] \]
             covering $(b, t) \mapsto (b, 1)$.
-        \end{enumerate}    
+        \end{sectionize}    
     \end{myproof}
 \end{scope}

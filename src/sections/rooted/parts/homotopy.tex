@@ -10,7 +10,7 @@
 
 % theorem
 \begin{mystatement}{theorem}[Rooted Homotopy Theorem]{suspension::homotopy}[69]
-    Let $\bb$ be a rooted microbundle over $B$ and $f, g: A \to B$ be two based maps
+    Let $\bb$ be a rooted microbundle over $B$ and let $f, g: A \to B$ be two based maps
     where $A$ is paracompact hausdorff.
     If there exists a homotopy $H: \cyl{A} \to B$ between $f$ and $g$ that leaves the base point fixed,
     then the two rooted microbundles $\ind{f}\bb$ and $\ind{g}\bb$ are rooted isomorphic.
@@ -18,7 +18,7 @@
 
 % foreword lemma
 \begin{myparagraph}
-    In order to proof this,
+    In order to prove this,
     we need to show a `rooted version' of \myintref{homotopy::lemma2}.
     
     First, note that 
@@ -28,12 +28,12 @@
     \]
     whose total space is of the form $(a_0 \cross [0, 1]) \cross E(\bb)$.
     Based on this, we can define an isomorphism-germ
-    \[ \germdef{\overline{R}}{\ind{H}\bb[\cyl{a_0}]}{\be{\cyl{a_0}}} \]
+    $\germdef{\overline{R}}{\ind{H}\bb[\cyl{a_0}]}{\be{\cyl{a_0}}}$
     represented by
     \[ \overline{r}(a_0, t, v) = (a_0, t, \snd{r}(v)), \]
     where $r: V \to b_0 \cross \R^n$ is a representative for $R$.
-    The representative $\overline{r}$ is a homeomorphism on its image,
-    as its components are homeomorphisms on their image. 
+    Note that $\overline{r}$ is a homeomorphism on its image,
+    since its components are homeomorphisms on their image. 
 \end{myparagraph}
 
 % lemma

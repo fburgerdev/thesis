@@ -48,7 +48,7 @@
         it follows that $f$ is an open map.
 
         % general case
-        \item Glue together $f: U_f \to E(\bb')$ along local trivializations
+        \item Glueing together $f: U_f \to E(\bb')$ along local trivializations
 
         For an arbitrary $b \in B$, choose local trivializations $(U, V, \phi)$ and $(U', V', \phi')$ of $b$ in $\bb$ and $\bb'$.
         Without loss of generality,
@@ -57,15 +57,17 @@
         
         First, we restrict $f$ to $V \cap \inv{f}(V')$.
         Since $V \cap \inv{f}(V')$ is an open neighborhood of $i(b)$, we can choose
-        an open neighborhood $\tilde{U} \sub U$ of $i(b)$ and $\eps > 0$ such that $\inv{\phi}(\tilde{U} \cross \ball[\eps]) \sub V \cap \inv{f}(V')$.
+        an open neighborhood $U_b \sub U$ of $i(b)$ and $\eps > 0$ such that $\inv{\phi}(U_b \cross \ball[\eps]) \sub V \cap \inv{f}(V')$.
         
-        We define a map $\tilde{U} \cross \R^n \to \tilde{U} \cross \R^n$ given by
-        \[ \tilde{U} \cross \R^n \cong  \tilde{U} \cross \ball[\eps] \xto{\phi \circ f \circ \inv{\phi}} \tilde{U} \cross \R^n \]
+        We define a map $U_b \cross \R^n \to U_b \cross \R^n$ given by
+        \[ U_b \cross \R^n \cong  U_b \cross \ball[\eps] \xto{\phi \circ f \circ \inv{\phi}} U_b \cross \R^n \]
         that is injective and fiber-preserving and hence an open map (Step 1).
-        It follows that $f: \inv{\phi}(\tilde{U} \cross \ball[\eps]) \to V'$
+        It follows that $f: \inv{\phi}(U_b \cross \ball[\eps]) \to V'$
         must be an open map as the other composing maps are homeomorphisms.
 
-        By glueing the $\inv{\phi}(\tilde{U} \cross \ball[\eps])$ together over all $b \in B$, we see that $f$ is an open map.
+        We conclude from 
+        \[ f = \bigcup_{b \in B}f\restr{\inv{\phi}(U_b \cross \ball[\eps])} \]
+        that $f$ is an open map.
     \end{steps}
     This completes the proof.
 \end{myproof}

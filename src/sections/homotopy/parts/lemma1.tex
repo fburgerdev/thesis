@@ -27,7 +27,7 @@
     % proof
     \begin{myproof}
         Consider the identity bundle-germ over $\bbhalf$,
-        defined as the bundle-germ represented by the identity on $E(\bbhalf)$.
+        which is defined as the bundle-germ represented by the identity map on $E(\bbhalf)$.
         
         Since $\bbright$ and $\bbhalf$ are both trivial,
         there exist isomorphism-germs
@@ -35,27 +35,23 @@
             \germdef{R}{\bbright}{\be{B {\cross} [\half, 1]}} \tand
             \germdef{L}{\bbhalf}{\be{B {\cross} \coll{\half}}}.
         \]
+        We define a bundle-germ $\germdef{M}{\be{B \cross [\half, 1]}}{\be{B \cross \coll{\half}}}$
+        represented by
+        \[ (b, t, x) \mapsto (b, \half, x). \]
+        The composition $\inv{L} \circ M \circ R$ then yields a bundle-germ $\germ{\bbright}{\bbhalf}$
+        that extends the identity on $\bbhalf$.
 
-        We can define a bundle-germ $\germ{\bbright}{\bbhalf}$
-        extending the identity on $\bbhalf$ using
-        \[
-            \germdef{M}{\be{B \cross [\half, 1]}}{\be{B \cross \coll{\half}}} \twith
-            (b, t, x) \mapsto (b, \half, x)
-        \]
-        to form the composition $\inv{L} \circ M \circ R$.
-
-        Using the previous lemma, we can piece this together with the
-        identity bundle-germ on $\bbleft$
-        (note that the bundle-germs agree on their intersection)
-        resulting in a bundle-germ
-        \[ \germ{\bb}{\bbleft}. \]
+        Using the previous lemma, we can glue this together with the
+        identity over $\bbleft$
+        (note that the bundle-germs agree on $\bbhalf$)
+        resulting in a bundle-germ $\germ{\bb}{\bbleft}$.
 
         \myintref{homotopy::corollary} infers that $\bb$
         is isomorphic to $\ind{r}\bbleft$
-        where $r: B \cross [0, 1]$ is the
-        retraction $(b, t) \mapsto (b, \min(t, \half))$.
+        where
+        \[ r: \cyl{B} \to B \cross [0, \half] \twith r(b, t) = (b, \min(t, \half)). \]
         But $\bbleft$ is trivial, hence $\ind{r}\bbleft$ is
-        trivial as well (see \myintref{induced::trivial}),
-        which concludes the proof.
+        trivial as well (see \myintref{induced::trivial}).
+        We conclude that $\bb$ is trivial.
     \end{myproof}
 \end{scope}

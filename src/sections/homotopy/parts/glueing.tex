@@ -1,20 +1,20 @@
 % foreword
-\begin{myparagraph}
-    The following lemma will allow us to glue
-    together bundle-germs over locally finite, closed domains if they agree on their intersection.
-\end{myparagraph}
+% \begin{myparagraph}
+%     The following lemma will allow us to glue
+%     together bundle-germs over locally finite, closed domains if they agree on their intersection.
+% \end{myparagraph}
 
 % lemma
 \begin{mystatement}{lemma}{homotopy::glueing}[67]
     % conditions
-    Let $\bb$ be a microbundle over $B$ and $\coll{B_\alpha}$
-    a locally finite collection of closed sets covering $B$.
+    Let $\bb$ be a microbundle over $B$ and let $\coll{B_\alpha}$
+    be a locally finite collection of closed sets covering $B$.
     Additionally, we are given a collection
     of bundle-germs $\germdef{F_\alpha}{\bb[B_\alpha]}{\bb'}$
     such that $F_\alpha = F_\beta$ on $\bb[B_\alpha \cap B_\beta]$.
     % conclusion
     Then there exists a bundle-germ $\germdef{F}{\bb}{\bb'}$ extending $F_\alpha$,
-    that is $F$ and $F_\alpha$ agree on a sufficiently small neighborhood of $i(B_\alpha)$.
+    that is representatives for $F$ and $F_\alpha$ agree on a sufficiently small neighborhood of $i(B_\alpha)$.
 \end{mystatement}
 
 % proof
@@ -22,32 +22,35 @@
     Choose representative maps $f_\alpha: U_\alpha \to E(\bb')$ for $F_\alpha$ such that the $U_\alpha$ are open.
     For every $\alpha$ and $\beta$, choose an open neighborhood $U_{\alpha\beta}$ of $i(B_\alpha \cap B_\beta)$ on which the representative maps $f_\alpha$ and $f_\beta$ agree.
     Now consider
-    \[ U = \set{ e \in E}{j(e) \in B_\alpha \cap B_\beta \implies e \in U_{\alpha\beta}} \]
-    which is an open neighborhood of $i(B)$ because
+    \[ U = \set{ e \in E(\bb)}{j(e) \in B_\alpha \cap B_\beta \implies e \in U_{\alpha\beta}} \]
+    which is an open neighborhood of $i(B)$:
     \begin{enumerate}
         % open
-        \item $U$ is open:
+        \item $U$ is open
 
         Let $e \in U$ be arbitrary.
 
         Since $\coll{B_\alpha}$ is locally finite,
         there exists an open neighborhood $V$ of $j(e)$
         that intersects with only finitely many $B_{\alpha_1}, \dots, B_{\alpha_n}$.
-        Note that with $e \in U$ it follows that $e \in U_{\alpha_i\alpha_j}, \forall 1 \le i, j \le n$.
+        Note that from $e \in U$ it follows that $e \in U_{\alpha_i\alpha_j}, \forall 1 \le i, j \le n$.
 
-        Now we have an open neighborhood of $e$
-        \[ \bigcap_{1 \le i, j \le n} U_{\alpha_i\alpha_j} \cap \inv{j}(V) \]
+        We are given an open neighborhood of $e$ by
+        \[ \bigcap_{1 \le i, j \le n} U_{\alpha_i\alpha_j} \cap \inv{j}(V), \]
         which is contained in $U$ by construction.
 
         % subset
-        \item $i(B) \sub U$:
+        \item $i(B) \sub U$
         
         This follows from
-        \[ j(i(b)) = b \in B_\alpha \cap B_\beta \implies i(b) \in i(B_\alpha \cap B_\beta) \sub U_{\alpha\beta}. \]
+        $j(i(b)) = b \in B_\alpha \cap B_\beta \implies i(b) \in i(B_\alpha \cap B_\beta) \sub U_{\alpha\beta}$.
     \end{enumerate}
-    Now we can define $f: U \to E(\bb')$ in the obvious way
-    \[ f(u \in U_{\alpha\beta}) = f_\alpha(u) = f_\beta(u) \]
-    which is continuous according to the \extref{glueing lemma}.
-    In particular, $f$ agrees with $f_\alpha$ on $U_{\alpha\alpha}$
-    and hence $f$ is a representative for a bundle-germ $\germdef{F}{\bb}{\bb'}$ extending $\coll{F_\alpha}$.
+    We define a map $f: U \to E(\bb')$ by
+    \[ f(e \in U_{\alpha\beta}) = f_\alpha(e) = f_\beta(e) \]
+    which is well-defined due to the construction of $U$.
+    Note that $f$ agrees with every $f_\alpha$ on their intersection
+    and is continuous as
+    \[ \inv{f}(V) = \bigcup_{\alpha} \inv{f_\alpha\restr{U}}(V). \]
+    Taking $f$ as a representative for a bundle-germ $\germdef{F}{\bb}{\bb'}$
+    completes the proof.
 \end{myproof}

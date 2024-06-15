@@ -3,13 +3,12 @@
     Now that we introduced rooted-microbundles,
     we are able to define the wedge sum.
     As we will see in the subsequent proof,
-    the definition of the wedge sum
-    it is necessary to have a fixed rooting given because otherwise
-    one would have to choose a rooting which the resuling microbundle depends on,
-    hence not being well-defined.
+    we require rootings for its definition.
+    Particulary, the wedge sum depends on the specific choices of these rootings,
+    justifying the requirement for rooted-microbundles.
 
     Given a quotient space $A \sqcup B / \sim$ and maps $f: A \to C$ and $g: B \to C$, we define
-    \[ f \cup g: (A \sqcup B / \sim) \to C \twith \]
+    $f \cup g: (A \sqcup B / \sim) \to C$ by
     \[ x \mapsto \begin{cases} f(x) & \text{if } x \in A \\ g(x) &\text{if } x \in B \end{cases}.\]
     Clearly, this map is only well-defined if $a \sim b \implies f(a) = g(b)$.
 \end{myparagraph}
@@ -31,7 +30,7 @@
 \end{mystatement}
 
 % proof
-\begin{myproof}[that $\ba \vee \bb$ is a rooted microbundle]
+\begin{myproof}[that $\ba \vee \bb$ is a (rooted) microbundle]
     Let $f: W_a \isomto W_b$ be a representative for $\inv{R_b} \circ R_a$.
 
     % rooted microbundle
