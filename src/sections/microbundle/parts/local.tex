@@ -1,37 +1,12 @@
-% lemma
-\begin{mystatement}{lemma}{microbundle::local}
-    The diagram $\bundle{B}{E}{i}{j}$ is locally trivial in $b \in B$
-    if and only if there exists a homeomorphism
-    \[ \phi: V \isomto \phi(V) \sub B \times \R^n \]
-    where $V$ is a neighborhood of $i(b)$ and $\phi(V)$
-    is neighborhood of $(b, 0)$ such that $\phi$ commutes
-    as in \myintref{microbundle::definition}.
-\end{mystatement}
 
-% proof
-\begin{myproof}
-    It suffices to show that we can derive local triviality in $b$
-    assuming only a homeomorphism $\phi: V \isomto \phi(V)$ with the properties required above.
+\begin{mystatement}{lemma}{microbundle::local} The diagram $\bundle{B}{E}{i}{j}$ is locally trivial in $b \in B$ if and only if there exists a homeomorphism \[ \phi: V \isomto \phi(V) \sub B \times \R^n \] where $V$ is a neighborhood of $i(b)$ and $\phi(V)$ is neighborhood of $(b, 0)$ such that $\phi$ commutes as in \myintref{microbundle::definition}. \end{mystatement}
 
-    % restrict
-    Since $\phi(V)$ is a neighborhood of $(b, 0)$,
-    there exists an open subset $U \sub B$ and $\eps > 0$ such
-    that $U \times \ball[\eps] \sub \phi(V)$.
+\begin{myproof} It suffices to show that we can derive local triviality in $b$ assuming only a homeomorphism $\phi: V \isomto \phi(V)$ with the properties required above.
 
-    % ball
-    Note that there exists a homeomorphism
-    \[ \mu_\eps: \ball[\eps] \isomto \R^n \twith \mu_\eps(0) = 0, \]
-    for example given by $\mu_\eps(x) = \tan(\frac{\abs{x}\cdot\pi}{2\eps}) x$.
+Since $\phi(V)$ is a neighborhood of $(b, 0)$, there exists an open subset $U \sub B$ and $\eps > 0$ such that $U \times \ball[\eps] \sub \phi(V)$.
 
-    % construct
-    We construct a local trivialization
-    $\phi': \inv{\phi}(U \times \ball[\eps]) \isomto U \times \R^n$
-    given by $\phi' = \mu_\eps \circ \phi$.
+Note that there exists a homeomorphism \[ \mu_\eps: \ball[\eps] \isomto \R^n \twith \mu_\eps(0) = 0, \] for example given by $\mu_\eps(x) = \tan(\frac{\abs{x}\cdot\pi}{2\eps}) x$.
 
-    % commutativity
-    Commutativity with $i$ and $id \cross 0$ is given by
-    \[ \phi'(i(b)) = \mu_\eps(\phi(i(b))) = \mu_\eps(b, 0) = (b, 0) = (id \cross 0)(b) \]
-    and with $j$ and $\pi_1$ by
-    \[ j(e) = \pi_1(\phi(e)) = \pi_1(\mu_\eps(\phi(e))) = \pi_1(\phi'(e)), \]
-    which concludes the proof.
-\end{myproof}
+We construct a local trivialization $\phi': \inv{\phi}(U \times \ball[\eps]) \isomto U \times \R^n$ given by $\phi' = \mu_\eps \circ \phi$.
+
+Commutativity with $i$ and $id \cross 0$ is given by \[ \phi'(i(b)) = \mu_\eps(\phi(i(b))) = \mu_\eps(b, 0) = (b, 0) = (id \cross 0)(b) \] and with $j$ and $\pi_1$ by \[ j(e) = \pi_1(\phi(e)) = \pi_1(\mu_\eps(\phi(e))) = \pi_1(\phi'(e)), \] which concludes the proof. \end{myproof}

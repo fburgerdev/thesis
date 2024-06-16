@@ -1,40 +1,8 @@
-% foreword
-\begin{myparagraph}
-    The following statement is fundamental for the theory of
-    microbundles over topological manifolds.
-    It justifies that the tangent microbundle can be regarded
-    as a generalization of the tangent vector bundle.
-\end{myparagraph}
 
-% theorem
-\begin{mystatement}{theorem}{microbundle::equivalence}[56]
-    Let $M$ be a smooth $d$-manifold.
-    Then the underlying microbundle of $\xi: TM \to M$ and the tangent microbundle $\bt_M$
-    are isomorphic.
-\end{mystatement}
+\begin{myparagraph} The following statement is fundamental for the theory of microbundles over topological manifolds. It justifies that the tangent microbundle can be regarded as a generalization of the tangent vector bundle. \end{myparagraph}
 
-% proof
-\begin{myproof}
-    We equip $M$ with a Riemannian metric,
-    which allows us to define the usual
-    exponential map $\exp: V \to M$ where $V \sub TM$ is a neighborhood
-    of the zero-cross section of $M$.
+\begin{mystatement}{theorem}{microbundle::equivalence}[56] Let $M$ be a smooth $d$-manifold. Then the underlying microbundle of $\xi: TM \to M$ and the tangent microbundle $\bt_M$ are isomorphic. \end{mystatement}
 
-    Consider $id \cross \exp$.
-    % IFT
-    Using the Inverse Function Theorem for smooth manifolds (see\cite[thm.4.5]{lee})
-    for arbitrary $(p, \nu) \in V$, it follows that $id \cross \exp$ is a local diffeomorphism
-    and hence a local homeomorphism.
-    % local homeomorphism -> homeomorphism
-    Furthermore,
-    the zero-cross section is mapped homeomorphically to the diagonal.
-    By applying Lemma 4.1 from \cite[lm.4.1]{whitehead} (manifolds are locally compact and separable),
-    it follows that $id \cross \exp$ maps a neighborhood
-    of the zero-cross section to a neighborhood of the diagonal.
-    % commutativity
-    Commutativity with the injection maps is given by
-    \[ (id \cross \exp)(i_{\abs{\eta}}(p)) = (id \cross \exp)(p, 0) = (p, p) = \Delta(p) \]
-    and with the projection maps by
-    \[ j_{\abs{\eta}}(p, \nu) = p = \pi_1(p, \exp(\nu)) = \pi_1((id \cross \exp)(p, \nu)), \]
-    which concludes the proof.
-\end{myproof}
+\begin{myproof} We equip $M$ with a Riemannian metric, which allows us to define the usual exponential map $\exp: V \to M$ where $V \sub TM$ is a neighborhood of the zero-cross section of $M$.
+
+Consider $id \cross \exp$. Using the Inverse Function Theorem for smooth manifolds (see\cite[thm.4.5]{lee}) for arbitrary $(p, \nu) \in V$, it follows that $id \cross \exp$ is a local diffeomorphism and hence a local homeomorphism. Furthermore, the zero-cross section is mapped homeomorphically to the diagonal. By applying Lemma 4.1 from \cite[lm.4.1]{whitehead} (manifolds are locally compact and separable), it follows that $id \cross \exp$ maps a neighborhood of the zero-cross section to a neighborhood of the diagonal. Commutativity with the injection maps is given by \[ (id \cross \exp)(i_{\abs{\eta}}(p)) = (id \cross \exp)(p, 0) = (p, p) = \Delta(p) \] and with the projection maps by \[ j_{\abs{\eta}}(p, \nu) = p = \pi_1(p, \exp(\nu)) = \pi_1((id \cross \exp)(p, \nu)), \] which concludes the proof. \end{myproof}

@@ -1,94 +1,28 @@
-% foreword
-\begin{myparagraph}
-    Unlike the normal vector bundle for smooth manifolds,
-    the normal microbundle is not defined in a constructive manner.
-    Therefore, the question arises in which sense the normal microbundle
-    of a submanifold $N \sub M$ is unique.
-    In fact, it is unknown whether a such normal microbundle is unique up to isomorphy.
-    Instead, we have the following statement about uniqueness.
-\end{myparagraph}
 
-% statement
-\begin{mystatement}{proposition}{normal::uniqueness}[63]
-    Let $N \sub M$ be an embedded submanifold.
-    Suppose there exists a normal microbundle
-    $\bundledef{\bn}{N}{U}{\iota}{r}$ in $M$.
-    Then $\bt_N \oplus \bn \cong \bt_M\restr{N}$.
-\end{mystatement}
+\begin{myparagraph} Unlike the normal vector bundle for smooth manifolds, the normal microbundle is not defined in a constructive manner. Therefore, the question arises in which sense the normal microbundle of a submanifold $N \sub M$ is unique. In fact, it is unknown whether a such normal microbundle is unique up to isomorphy. Instead, we have the following statement about uniqueness. \end{myparagraph}
 
-\begin{myparagraph}
-    In order to prove this, we require another construction over microbundles, the composition.
-\end{myparagraph}
-\input{src/sections/normal/parts/composition}
+\begin{mystatement}{proposition}{normal::uniqueness}[63] Let $N \sub M$ be an embedded submanifold. Suppose there exists a normal microbundle $\bundledef{\bn}{N}{U}{\iota}{r}$ in $M$. Then $\bt_N \oplus \bn \cong \bt_M\restr{N}$. \end{mystatement}
 
-% proof
-\begin{myproof}[of the proposition]
-    We prove this proposition in multiple steps.
-    \begin{steps}
-        % step 1
-        \item $\bt_N \circ \ind{\pi_2}\bn \cong \bt_M\restr{N}$
-        
-        % total space
-        Consider the two total spaces
-        \[ E(\bt_N \circ \ind{\pi_2}\bn) = E(\ind{\pi_2}\bn) = \set{(n_1, n_2, u) \in (N \cross N) \cross U}{n_2 = r(u)} \]
-        and
-        \[ E(\bt_M\restr{N}) = \set{(n, m_1, m_2) \in N \cross (M \cross M)}{n = m_1}. \]
+\begin{myparagraph} In order to prove this, we require another construction over microbundles, the composition. \end{myparagraph} \input{src/sections/normal/parts/composition}
 
-        % homeomorphy
-        We can easily define a homeomorphism $\psi: E(\bt_M \circ \ind{\pi_2}\bn) \isomto E(\bt_N\restr{M})$ given by
-        \[ \psi(m_1, m_2, u) = (m_1, m_1, u) \tand \inv{\psi}(m, n_1, n_2) = (m, r(n_2), n_2). \]
-        Note that $\psi$ is a homeomorphism since $\psi$ and $\inv{\psi}$ are component-wise continuous.
+\begin{myproof}[of the proposition] We prove this proposition in multiple steps. \begin{steps} \item $\bt_N \circ \ind{\pi_2}\bn \cong \bt_M\restr{N}$
 
-        % commutativity
-        It remains to be shown that $\psi$
-        commutes with the injection and projection maps of $\bt_M \circ \ind{\pi_2}\bn$ and $\bt_N\restr{M}$.
-        This can be seen with the following equations:
-        \begin{align}
-            \psi(i_{\pi_2}(\Delta(m))) = \psi(m, m, \iota(m)) = (m, m, m) = (m, \Delta(\iota(m))) \\
-            \pi_1(j_{\pi_2}(m_1, m_2, u)) = m_1 = j_\iota(m_1, m_1, u) = j_\iota(\psi(m_1, m_2, u))
-        \end{align}
-        
-        % step 2
-        \item $\bt_M \circ \ind{\pi_1}\bn \cong \whitney{\bt_M}{\bn}$
-        
-        % total space
-        In this case, the two total spaces
-        \[ E(\bt_M \circ \ind{\pi_1}\bn) = E(\ind{\pi_1}\bn) = \set{(m_1, m_2, u) \in (M \cross M) \cross U}{m_1 = r(u)} \]
-        and
-        \[ E(\whitney{\bt_M}{\bn}) = \set{(m_1, m_2, u) \in (M \cross M) \cross U}{m_1 = r(u)} \]
-        are equal.
-        % homeomorphy + commutativity
-        Additionally,
-        the injection and projection maps agree, as the following equations show:
-        \begin{align}
-            & i_{\pi_1}(\Delta(m)) = i_{\pi_1}(m, m) = (m, m, \iota(m)) = (\Delta(m), \iota(m)) \\
-            & \pi_1(j_{\pi_1}(m_1, m_2, u)) = \pi_1(m_1, m_2) = m_1 = r(u) = j_{\oplus}(m_1, m_2, u)
-        \end{align}
+Consider the two total spaces \[ E(\bt_N \circ \ind{\pi_2}\bn) = E(\ind{\pi_2}\bn) = \set{(n_1, n_2, u) \in (N \cross N) \cross U}{n_2 = r(u)} \] and \[ E(\bt_M\restr{N}) = \set{(n, m_1, m_2) \in N \cross (M \cross M)}{n = m_1}. \]
 
-        % step 3
-        \item $\bt_M \circ \ind{\pi_1}\bn \cong \bt_M \circ \ind{\pi_2}\bn$
-        
-        We show that there exists a neighborhood $D \sub N \cross N$ of $\Delta(M)$ such that
-        $\pi_1\restr{D}$ is homotopic to $\pi_2\restr{D}$:
+We can easily define a homeomorphism $\psi: E(\bt_M \circ \ind{\pi_2}\bn) \isomto E(\bt_N\restr{M})$ given by \[ \psi(m_1, m_2, u) = (m_1, m_1, u) \tand \inv{\psi}(m, n_1, n_2) = (m, r(n_2), n_2). \] Note that $\psi$ is a homeomorphism since $\psi$ and $\inv{\psi}$ are component-wise continuous.
 
-        Firstly, we assume that $M$ is embedded in Euclidean space (see\cite[p.60]{dimension}).
-        Let $V \sub N$ be a neighborhood retract of $M$.
-        We define $D$ as follows:
-        \[ D = \set{(m, m') \in M \cross M}{ tm + (1 - t)m' \in V, \forall t \in \I} \]
-        We are given a homotopy $H: \cyl{D} \to N$ between $\pi_1$ and $\pi_2$ by
-        \[ H((m, m'), t) = tm + (1 - t)m'. \]
+It remains to be shown that $\psi$ commutes with the injection and projection maps of $\bt_M \circ \ind{\pi_2}\bn$ and $\bt_N\restr{M}$. This can be seen with the following equations: \begin{align} \psi(i_{\pi_2}(\Delta(m))) = \psi(m, m, \iota(m)) = (m, m, m) = (m, \Delta(\iota(m))) \\ \pi_1(j_{\pi_2}(m_1, m_2, u)) = m_1 = j_\iota(m_1, m_1, u) = j_\iota(\psi(m_1, m_2, u)) \end{align}
 
-        Applying the Homotopy Theorem yields $\ind{\pi_1}\bn\restr{D} \cong \ind{\pi_2}\bn\restr{D}$, and
-        by restricting the total spaces accordingly, we get
-        $\bt_M \circ \ind{\pi_1}\bn \cong \bt_M \circ \ind{\pi_2}\bn$.
-    \end{steps}
-    The claim follows by Step 1, 2 and 3.
-\end{myproof}
+\item $\bt_M \circ \ind{\pi_1}\bn \cong \whitney{\bt_M}{\bn}$
 
-% afterword
-\begin{myparagraph}
-    This proposition also shows that the normal microbundle
-    underlies the same intuition as the normal vector bundle.
-    The sum of the tangent- and the normal microbundle of the submanifold
-    `span' the tangent microbundle of its surrounding space.
-\end{myparagraph}
+In this case, the two total spaces \[ E(\bt_M \circ \ind{\pi_1}\bn) = E(\ind{\pi_1}\bn) = \set{(m_1, m_2, u) \in (M \cross M) \cross U}{m_1 = r(u)} \] and \[ E(\whitney{\bt_M}{\bn}) = \set{(m_1, m_2, u) \in (M \cross M) \cross U}{m_1 = r(u)} \] are equal. Additionally, the injection and projection maps agree, as the following equations show: \begin{align} & i_{\pi_1}(\Delta(m)) = i_{\pi_1}(m, m) = (m, m, \iota(m)) = (\Delta(m), \iota(m)) \\ & \pi_1(j_{\pi_1}(m_1, m_2, u)) = \pi_1(m_1, m_2) = m_1 = r(u) = j_{\oplus}(m_1, m_2, u) \end{align}
+
+\item $\bt_M \circ \ind{\pi_1}\bn \cong \bt_M \circ \ind{\pi_2}\bn$
+
+We show that there exists a neighborhood $D \sub N \cross N$ of $\Delta(M)$ such that $\pi_1\restr{D}$ is homotopic to $\pi_2\restr{D}$:
+
+Firstly, we assume that $M$ is embedded in Euclidean space (see\cite[p.60]{dimension}). Let $V \sub N$ be a neighborhood retract of $M$. We define $D$ as follows: \[ D = \set{(m, m') \in M \cross M}{ tm + (1 - t)m' \in V, \forall t \in \I} \] We are given a homotopy $H: \cyl{D} \to N$ between $\pi_1$ and $\pi_2$ by \[ H((m, m'), t) = tm + (1 - t)m'. \]
+
+Applying the Homotopy Theorem yields $\ind{\pi_1}\bn\restr{D} \cong \ind{\pi_2}\bn\restr{D}$, and by restricting the total spaces accordingly, we get $\bt_M \circ \ind{\pi_1}\bn \cong \bt_M \circ \ind{\pi_2}\bn$. \end{steps} The claim follows by Step 1, 2 and 3. \end{myproof}
+
+\begin{myparagraph} This proposition also shows that the normal microbundle underlies the same intuition as the normal vector bundle. The sum of the tangent- and the normal microbundle of the submanifold `span' the tangent microbundle of its surrounding space. \end{myparagraph}

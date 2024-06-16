@@ -1,50 +1,41 @@
-% foreword
+
 \begin{myparagraph}
-    As the definition of isomorphy already indicates, when studying microbundles,
-    we are not interested in the entire total space
-    but only in an arbitrary small neighborhood of the base space (more precise, the image $i(B)$).
-    The following proposition makes this even clearer.
-    
-    % Throughout the paper we will often take use of homeomorphisms
-    % \[ \mu_\eps: \ball[\eps] \isomto \R^n \twith \mu_\eps(0) = 0 \]
-    % for example given by
-    % \[ x \mapsto \tan(\frac{\abs{x}\cdot\pi}{2\eps}) x \]
-    % in order to show properties like local triviality.
+As the definition of isomorphy already indicates, when studying microbundles,
+we are not interested in the entire total space
+but only in an arbitrary small neighborhood of the base space (more precise, the image $i(B)$).
+The following proposition makes this even clearer.
+
 \end{myparagraph}
 
-% proposition
 \begin{mystatement}{proposition}{microbundle::total}[54]
-    Given a microbundle $\bundledef{\bb}{B}{E}{i}{j}$ over $B$,
-    restricting the total space $E$ to an
-    arbitrary neighborhood $E' \sub E$ of $i(B)$ leaves the microbundle unchanged.
-    That is, the microbundle
-    \[ \bundledef{\bb'}{B}{E'}{i}{j\restr{E'}} \]
-    is isomorphic to $\bb$.
+Given a microbundle $\bundledef{\bb}{B}{E}{i}{j}$ over $B$,
+restricting the total space $E$ to an
+arbitrary neighborhood $E' \sub E$ of $i(B)$ leaves the microbundle unchanged.
+That is, the microbundle
+\[ \bundledef{\bb'}{B}{E'}{i}{j\restr{E'}} \]
+is isomorphic to $\bb$.
 \end{mystatement}
 
-% proof
 \begin{myproof}
-    We prove the proposition in two steps.
-    \begin{steps}
-        % microbundle
-        \item $\bb'$ is a microbundle
-        
-        Continuity for $i$ and $j$ as well as $j\restr{E'} \circ i = id_B$ are already given since $\bb$ is a microbundle.
+We prove the proposition in two steps.
+\begin{steps}
+\item $\bb'$ is a microbundle
 
-        So we only need to show that $\bb'$ is locally trivial.
-        For an arbitrary $b \in B$, choose a local trivialization $(U, V, \phi)$ of $b$ in $\bb$.
-        By restricting $\phi$ to $V \cap E'$,
-        we obtain a homeomorphism on its image as required in \myintref{microbundle::local},
-        hence showing local triviality.
-        
-        % isomorphy
-        \item $\bb'$ is isomorphic to $\bb$
+Continuity for $i$ and $j$ as well as $j\restr{E'} \circ i = id_B$ are already given since $\bb$ is a microbundle.
 
-        Since $E'$ is a subset of $E$,
-        we can simply use the identity $E' \to E' \sub E$
-        as our homeomorphism between neighborhoods of $i(B)$.
-        Furthermore, the injection and projection maps of $\bb$ and $\bb'$ are the same,
-        so they clearly commute with the identity.
-    \end{steps}
-    This completes the proof.
+So we only need to show that $\bb'$ is locally trivial.
+For an arbitrary $b \in B$, choose a local trivialization $(U, V, \phi)$ of $b$ in $\bb$.
+By restricting $\phi$ to $V \cap E'$,
+we obtain a homeomorphism on its image as required in \myintref{microbundle::local},
+hence showing local triviality.
+
+\item $\bb'$ is isomorphic to $\bb$
+
+Since $E'$ is a subset of $E$,
+we can simply use the identity $E' \to E' \sub E$
+as our homeomorphism between neighborhoods of $i(B)$.
+Furthermore, the injection and projection maps of $\bb$ and $\bb'$ are the same,
+so they clearly commute with the identity.
+\end{steps}
+This completes the proof.
 \end{myproof}

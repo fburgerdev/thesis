@@ -1,48 +1,16 @@
-% foreword
-\begin{myparagraph}
-    Next, we show that vector bundles can be regarded as microbundles.
-\end{myparagraph}
 
-% example
-\begin{mystatement}{example}[underlying microbundle]{microbundle::underlying}[55]
-    Let $\xi: E \xto{\pi} B$ be a $n$-dimensional vector bundle.
-    The \defterm{underlying microbundle} $\abs{\xi}$ of $\xi$ is a microbundle
-    \[ \bundledef{\abs{\xi}}{B}{E}{i}{\pi} \]
-    where $i: B \to E$ denotes the \defterm{zero-cross section} of $\xi$, that is,
-    the section that maps every $b \in B$ to the neutral element $0_b$
-    of its fiber $\inv{\pi}(b) \cong \R^n$.
-\end{mystatement}
+\begin{myparagraph} Next, we show that vector bundles can be regarded as microbundles. \end{myparagraph}
 
-% proof
-\begin{myproof}[that $\abs{\xi}$ is a microbundle]
-    % open
-    First, $\pi$ is an open map:
+\begin{mystatement}{example}[underlying microbundle]{microbundle::underlying}[55] Let $\xi: E \xto{\pi} B$ be a $n$-dimensional vector bundle. The \defterm{underlying microbundle} $\abs{\xi}$ of $\xi$ is a microbundle \[ \bundledef{\abs{\xi}}{B}{E}{i}{\pi} \] where $i: B \to E$ denotes the \defterm{zero-cross section} of $\xi$, that is, the section that maps every $b \in B$ to the neutral element $0_b$ of its fiber $\inv{\pi}(b) \cong \R^n$. \end{mystatement}
 
-    Let $V \sub E$ be open.
-    For every $b \in \pi(V)$, there exists a neighborhood $U_b$
-    together with a homeomorphism $\phi_b: \inv{\pi}(U_b) \isomto U_b \times \R^n$.
-    It follows that $\pi\restr{\inv{\pi}(U_b)} = \pi_1 \circ \phi_b$.
-    Hence, $\pi\restr{\inv{\pi}(U_b)}$ is open due to openness of $\pi_1$ and $\phi_b$.
+\begin{myproof}[that $\abs{\xi}$ is a microbundle] First, $\pi$ is an open map:
 
-    We conclude from
-    \[ \pi(V) = \bigcup_{b \in B} \pi\restr{\inv{\pi}(U_b)}(V) \]
-    that $\pi$ is open.
+Let $V \sub E$ be open. For every $b \in \pi(V)$, there exists a neighborhood $U_b$ together with a homeomorphism $\phi_b: \inv{\pi}(U_b) \isomto U_b \times \R^n$. It follows that $\pi\restr{\inv{\pi}(U_b)} = \pi_1 \circ \phi_b$. Hence, $\pi\restr{\inv{\pi}(U_b)}$ is open due to openness of $\pi_1$ and $\phi_b$.
 
-    % continuity and compatibility
-    Now from $\inv{i}(V) = \pi(V)$ it follows that $i$ is continuous.
-    Additionally, $\pi \circ i = id_B$ since $\pi(i(b)) = \pi(0_b) = b$.
+We conclude from \[ \pi(V) = \bigcup_{b \in B} \pi\restr{\inv{\pi}(U_b)}(V) \] that $\pi$ is open.
 
-    % local triviality
-    Local triviality is immediately inherited from
-    the local triviality condition for vector bundles.
-\end{myproof}
+Now from $\inv{i}(V) = \pi(V)$ it follows that $i$ is continuous. Additionally, $\pi \circ i = id_B$ since $\pi(i(b)) = \pi(0_b) = b$.
 
-% afterword
-\begin{myparagraph}
-    This illustrates why we explicitly require an injection for the definition of the microbundle,
-    in contrast to the vector bundle.
-    For vector bundles,
-    we have a canonical section from the base space to the total space given by the zero cross section.
-    For microbundles, the fibers are not associated with a specific chart,
-    hence the neutral element of some underlying Euclidean space is not well-defined.
-\end{myparagraph}
+Local triviality is immediately inherited from the local triviality condition for vector bundles. \end{myproof}
+
+\begin{myparagraph} This illustrates why we explicitly require an injection for the definition of the microbundle, in contrast to the vector bundle. For vector bundles, we have a canonical section from the base space to the total space given by the zero cross section. For microbundles, the fibers are not associated with a specific chart, hence the neutral element of some underlying Euclidean space is not well-defined. \end{myparagraph}

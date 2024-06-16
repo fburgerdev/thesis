@@ -1,33 +1,8 @@
-% lemma
-\begin{mystatement}{lemma}{suspension::distributivity}
-    Let $\ba$ and $\bb$ be two rooted microbundles over $A$ and $B$.
-    Given two based maps $f: A' \to A$ and $g: B' \to B$,
-    the following equality holds:
-    \[ \ind{(f \cup g)}(\ba \vee \bb) = \ind{f}\ba \vee \ind{g}\bb \]
-\end{mystatement}
 
-% proof
-\begin{myproof}
-    % total space
-    Consider the following equation:
-    \begin{gather*}
-        E(\ind{(f \cup g)}(\ba \vee \bb)) \\
-        = \set{(x, e) \in (A' \vee B') \cross E(\ba \vee \bb)}{(f \cup g)(x) = j(e)} \\
-        = \set{(x, e) \in ((A' \cross E(\ba)) \sqcup (B' \cross E(\bb)) / \sim)}{(f \cup g)(x) = j(e)} \\
-        = (\set{(x, e) \in A' \cross E(\ba)}{f(x) = j_a(e)} \sqcup \set{(x, e) \in B' \cross E(\bb)}{g(x) = j_b(e)}) / \sim\\
-        = (E(\ind{f}\ba) \sqcup E(\ind{g}\bb) / \sim)
-        = E(\ind{f}\ba \vee \ind{g}\bb)
-    \end{gather*}
-    Here, $(a, e_a) \sim (b, e_b) \iff a = a_0 = b_0 = b \tand [e_a] = [e_b] \in E(\ba \vee \bb)$.
+\begin{mystatement}{lemma}{suspension::distributivity} Let $\ba$ and $\bb$ be two rooted microbundles over $A$ and $B$. Given two based maps $f: A' \to A$ and $g: B' \to B$, the following equality holds: \[ \ind{(f \cup g)}(\ba \vee \bb) = \ind{f}\ba \vee \ind{g}\bb \] \end{mystatement}
 
-    % injection and projection
-    Furthermore, the injection and projection maps agree.
-    This can be seen with the following equations:
-    \begin{gather}
-        i_{\cup}(a) = i_f(a) = i_{\vee}(a) \tand i_{\cup}(b) = i_g(b) = i_{\vee}(b)\\
-        j_{\cup}(a, e) = a = j_f(a, e) = i_{\vee}(a, e) \tand j_{\cup}(b, e) = b = j_g(b, e) = i_{\vee}(b, e)
-    \end{gather}
+\begin{myproof} Consider the following equation: \begin{gather*} E(\ind{(f \cup g)}(\ba \vee \bb)) \\ = \set{(x, e) \in (A' \vee B') \cross E(\ba \vee \bb)}{(f \cup g)(x) = j(e)} \\ = \set{(x, e) \in ((A' \cross E(\ba)) \sqcup (B' \cross E(\bb)) / \sim)}{(f \cup g)(x) = j(e)} \\ = (\set{(x, e) \in A' \cross E(\ba)}{f(x) = j_a(e)} \sqcup \set{(x, e) \in B' \cross E(\bb)}{g(x) = j_b(e)}) / \sim\\ = (E(\ind{f}\ba) \sqcup E(\ind{g}\bb) / \sim) = E(\ind{f}\ba \vee \ind{g}\bb) \end{gather*} Here, $(a, e_a) \sim (b, e_b) \iff a = a_0 = b_0 = b \tand [e_a] = [e_b] \in E(\ba \vee \bb)$.
 
-    % conclusion
-    It follows that the two microbundles are equal.
-\end{myproof}
+Furthermore, the injection and projection maps agree. This can be seen with the following equations: \begin{gather} i_{\cup}(a) = i_f(a) = i_{\vee}(a) \tand i_{\cup}(b) = i_g(b) = i_{\vee}(b)\\ j_{\cup}(a, e) = a = j_f(a, e) = i_{\vee}(a, e) \tand j_{\cup}(b, e) = b = j_g(b, e) = i_{\vee}(b, e) \end{gather}
+
+It follows that the two microbundles are equal. \end{myproof}

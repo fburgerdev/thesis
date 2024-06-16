@@ -1,33 +1,26 @@
-% definition
-\begin{mystatement}{definition}[tangent microbundle]{microbundle::tangent}[55]
-    The \defterm{tangent microbundle} $\bt_M$ over
-    a topological $d$-manifold $M$ is a manifold
-    \[ \bundle{M}{M \cross M}{\Delta}{\pi_1} \]
-    where $\Delta(m) = (m, m)$ denotes the diagonal map.
+
+\begin{mystatement}{definition}[tangent
+microbundle]{microbundle::tangent}[55]
+where $\Delta(m) = (m, m)$ denotes the diagonal map.
 \end{mystatement}
 
-% proof
-\begin{myproof}[that $\bt_M$ is a microbundle]
-    % continuity and compatibility
-    The maps $\Delta$ and $\pi_1$ are continuous and clearly $\pi_1 \circ \Delta = id_M$.
+\begin{myproof}[that
+$\bt_M$ is a microbundle]
+The maps $\Delta$ and $\pi_1$ are continuous and clearly $\pi_1 \circ \Delta = id_M$.
 
-    % local triviality
-    % local triviality :: homeomorphism
-    For an arbitrary $p \in M$,
-    choose a chart $(U, \varphi)$ over $p$.
-    We have a local trivialization $(U, U \cross U, \phi)$ of $p$ in $\bt_M$ given by
-    \[ \phi: U \cross U \isomto U \cross \R^n \twith \phi(u, u') = (u, \varphi(u) - \varphi(u')). \]
-    Since $\psi$ is a homeomorphism, $\phi$ is a homeomorphism as well.
-    
-    % local triviality :: commutativity
-    Commutativity with $i$ and $id \times 0$ is given by
-    \[ \phi(\Delta(m)) = \phi(m, m) = (m, \varphi(m) - \varphi(m)) = (m, 0) = (id \cross 0)(m)\]
-    and with $\pi_1$ by
-    \[ \pi_1(u, u') = u = \pi_1(u, \snd{\phi}(u, u')) = \pi_1(\phi(u, u')). \]
-    Note that $\snd{\phi}$ denotes $\pi_2 \circ \phi$.
+For an arbitrary $p \in M$,
+choose a chart $(U, \varphi)$ over $p$.
+We have a local trivialization $(U, U \cross U, \phi)$ of $p$ in $\bt_M$ given by
+\[ \phi: U \cross U \isomto U \cross \R^n \twith \phi(u, u') = (u, \varphi(u) - \varphi(u')). \]
+Since $\psi$ is a homeomorphism, $\phi$ is a homeomorphism as well.
+
+Commutativity with $i$ and $id \times 0$ is given by
+\[ \phi(\Delta(m)) = \phi(m, m) = (m, \varphi(m) - \varphi(m)) = (m, 0) = (id \cross 0)(m)\]
+and with $\pi_1$ by
+\[ \pi_1(u, u') = u = \pi_1(u, \snd{\phi}(u, u')) = \pi_1(\phi(u, u')). \]
+Note that $\snd{\phi}$ denotes $\pi_2 \circ \phi$.
 \end{myproof}
 
-% remark
 \begin{mystatement}{remark}{microbundle::tangentdim}
-    The tangent microbundle $\bt_M$ has fiber dimension $d$.
+The tangent microbundle $\bt_M$ has fiber dimension $d$.
 \end{mystatement}

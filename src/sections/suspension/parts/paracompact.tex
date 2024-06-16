@@ -1,31 +1,30 @@
-% lemma
+
 \begin{mystatement}{lemma}{suspension::paracompact}
-    Let $\bb$ be a rooted microbundle over a paracompact hausdorff space $B$.
-    Then there exists a closed neighborhood $W$ of $b_0$ and an isomorphism-germ
-    \[ \germ{\bb[W]}{\be{W}} \]
-    extending $R$ (rooting of $\bb$) together with a map $\lambda: B \to [0, 1]$ with
-    \[ \supp{\lambda} \sub W \tand \lambda(b_0) = 1. \]
+Let $\bb$ be a rooted microbundle over a paracompact hausdorff space $B$.
+Then there exists a closed neighborhood $W$ of $b_0$ and an isomorphism-germ
+\[ \germ{\bb[W]}{\be{W}} \]
+extending $R$ (rooting of $\bb$) together with a map $\lambda: B \to [0, 1]$ with
+\[ \supp{\lambda} \sub W \tand \lambda(b_0) = 1. \]
 \end{mystatement}
 
-% proof
 \begin{myproof}
-    Let $r: V_r \to b_0 \cross \R^n$ be a representative for $R$.
-    
-    Choose a local trivialization $(U, V, \phi)$ for $b_0$ such that $V \cap E(\bbb) \sub V_r$.
-    Such a trivialization can be obtained by subtracting the closed set
-    $E(\bbb) - V_r$ from $E(\bb)$ if necessary
-    and choosing a local trivialization for $b_0$ in the resulting microbundle instead.
-    
-    Consider the (locally) finite open cover of $B$ given by $U$ and $B - \{b_0\}$.
-    Since $B$ is paracompact, we can apply the theory
-    of Partitions of Unity, which yields a map
-    $\lambda: B \to [0, 1] \twith \supp{\lambda} \sub U$ and $\lambda(b_0) = 1$.
+Let $r: V_r \to b_0 \cross \R^n$ be a representative for $R$.
 
-    We choose $W = \supp{\lambda} \sub U$,
-    which is closed by the definition of the support.
-    We are now able to define an isomorphism-germ $\germ{\bb[W]}{\be{W}}$ represented by
-    \[ f: V \isomto f(V) \sub U \cross \R^n \twith f(e) = (j(e), \snd{r}(\inv{\phi}(b_0, \snd{\phi}(e)))), \]
-    which extends $r$.
+Choose a local trivialization $(U, V, \phi)$ for $b_0$ such that $V \cap E(\bbb) \sub V_r$.
+Such a trivialization can be obtained by subtracting the closed set
+$E(\bbb) - V_r$ from $E(\bb)$ if necessary
+and choosing a local trivialization for $b_0$ in the resulting microbundle instead.
 
-    Together with $\lambda$, this completes the proof.
+Consider the (locally) finite open cover of $B$ given by $U$ and $B - \{b_0\}$.
+Since $B$ is paracompact, we can apply the theory
+of Partitions of Unity, which yields a map
+$\lambda: B \to [0, 1] \twith \supp{\lambda} \sub U$ and $\lambda(b_0) = 1$.
+
+We choose $W = \supp{\lambda} \sub U$,
+which is closed by the definition of the support.
+We are now able to define an isomorphism-germ $\germ{\bb[W]}{\be{W}}$ represented by
+\[ f: V \isomto f(V) \sub U \cross \R^n \twith f(e) = (j(e), \snd{r}(\inv{\phi}(b_0, \snd{\phi}(e)))), \]
+which extends $r$.
+
+Together with $\lambda$, this completes the proof.
 \end{myproof}
