@@ -1,9 +1,3 @@
-% foreword
-% \begin{myparagraph}
-%     The following lemma will allow us to glue
-%     together bundle-germs over locally finite, closed domains if they agree on their intersection.
-% \end{myparagraph}
-
 % lemma
 \begin{mystatement}{lemma}{homotopy::gluing}[67]
     % conditions
@@ -24,7 +18,7 @@
     Now consider
     \[ U = \set{ e \in E(\bb)}{j(e) \in B_\alpha \cap B_\beta \implies e \in U_{\alpha\beta}} \]
     which is an open neighborhood of $i(B)$:
-    \begin{enumerate}
+    \begin{sectionize}
         % open
         \item $U$ is open
 
@@ -44,7 +38,7 @@
         
         This follows from
         $j(i(b)) = b \in B_\alpha \cap B_\beta \implies i(b) \in i(B_\alpha \cap B_\beta) \sub U_{\alpha\beta}$.
-    \end{enumerate}
+    \end{sectionize}
     We define a map $f: U \to E(\bb')$ by
     \[ f(e \in U_{\alpha\beta}) = f_\alpha(e) = f_\beta(e) \]
     which is well-defined due to the construction of $U$.

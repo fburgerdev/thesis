@@ -1,7 +1,8 @@
 % proof
 \begin{myproof}[of the proposition]
-    Let $f$ be a representative for $F$.
-    First we assume a special and then generalize the result to show the proposition.
+    Let $f: U_f \to E(\bb')$ be a representative for $F$.
+    First we assume a special case. Then we use this result show that $f$
+    is open in some neighborhood of every $v \in U_f$, hence $f$ being open.
     \begin{steps}
         % special case
         \item Let $f$ map from $B \cross \R^n$ to $B \cross \R^n$
@@ -57,16 +58,16 @@
         
         First, we restrict $f$ to $V \cap \inv{f}(V')$.
         Since $V \cap \inv{f}(V')$ is an open neighborhood of $i(b)$, we can choose
-        an open neighborhood $U_b \sub U$ of $i(b)$ and $\eps > 0$ such that $\inv{\phi}(U_b \cross \ball[\eps]) \sub V \cap \inv{f}(V')$.
+        an open neighborhood $U_b \sub U$ of $i(b)$ and $\eps_b > 0$ such that $\inv{\phi}(U_b \cross \ball[\eps_b]) \sub V \cap \inv{f}(V')$.
         
         We define a map $U_b \cross \R^n \to U_b \cross \R^n$ given by
-        \[ U_b \cross \R^n \cong  U_b \cross \ball[\eps] \xto{\phi \circ f \circ \inv{\phi}} U_b \cross \R^n \]
+        \[ U_b \cross \R^n \cong  U_b \cross \ball[\eps_b] \xto{\phi \circ f \circ \inv{\phi}} U_b \cross \R^n \]
         that is injective and fiber-preserving, and hence an open map (Step 1).
-        It follows that $f: \inv{\phi}(U_b \cross \ball[\eps]) \to V'$
+        It follows that $f: \inv{\phi}(U_b \cross \ball[\eps_b]) \to V'$
         must be an open map, as the other composing maps are homeomorphisms.
 
         We conclude from 
-        \[ f = \bigcup_{b \in B}f\restr{\inv{\phi}(U_b \cross \ball[\eps])} \]
+        \[ f = \bigcup_{b \in B}f\restr{\inv{\phi}(U_b \cross \ball[\eps_b])} \]
         that $f$ is an open map.
     \end{steps}
     This completes the proof.
@@ -74,7 +75,7 @@
 
 % foreword corollary
 \begin{myparagraph}
-    We can easily generalize this result to bundle-germs between microbundles over different base spaces:
+    We can easily generalize this result to bundle-germs between microbundles over different base spaces.
 \end{myparagraph}
 
 % corollary

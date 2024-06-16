@@ -1,7 +1,7 @@
 \begin{myparagraph}
     % smootg
     % smooth :: tangent space
-    Given a smooth manifold $M$,
+    Given a smooth (=$C^\infty$) manifold $M$,
     one can define the tangent space
     in a point $p \in M$ over `derivations' in $\mathcal{L}(C^\infty(M), \R^n)$
     or over `tangent curves' in $C^\infty((-1, 1), M)$.
@@ -16,10 +16,11 @@
     Suppose we want to define the tangent bundle over a topological manifold $M$.
     % topological :: problem
     As we can see from the two ways of defining the tangent space,
-    the classic tangent bundle requires the notion of differentiability.
-    One intuitive approach would be to equip the topological manifold
+    the tangent bundle requires the notion of differentiability.
+    One could try to equip the given topological manifold
     with a differentiable structure and use the same construction as for smooth manifolds.
-    However, M. Kervaire showed in 1960 that there exists a $10$-dimensional manifold
+    However, M. Kervaire showed in 1960 that there exists a $10$-dimensional topological manifold
+    (even piecewise-linear manifold)
     that does not admit a differentiable structure \cite{kervaire}.
     Furthermore, even if there existed a differentiable structure for our topological manifold,
     it is generally not unique. The $7$-sphere for example admits
@@ -29,7 +30,7 @@
     we need to take a different approach than the one for the smooth case.
     
     % topological :: naive
-    Another plausible approach would be to define the fibers of the tangent bundle
+    One plausible approach would be to define the fibers of the tangent bundle
     to be of the form $\coll{p} \cross U_p$,
     where $U_p$ is a neighborhood of $p$ which is
     homeomorphic to $\R^d$ via a chart.
@@ -50,7 +51,7 @@
     that the tangent bundle is a vector bundle and hence
     every fiber must be homeomorphic to Euclidean space.
     Instead, we require that the fibers are `germs' of Euclidean space,
-    i.e. topological spaces with an open subset homeomorphic to Euclidean space.
+    i.e, topological spaces that have an open subset homeomorphic to Euclidean space.
     In contrast to the previous approach,
     we can now choose the neighborhoods $U_p$ of $p$ regardless of any corresponding charts.
     That is because we do not require anymore that these neighborhoods are Euclidean spaces.
@@ -73,7 +74,7 @@
     e.g. induced microbundles or the Whitney sum (see \myintref{chapter::constructions}).
     Moreover, Milnor shows that if a manifold can be equipped with a smooth structure,
     then the tangent vector bundle regarded as a microbundle is isomorphic to the
-    tangent microbundle.
+    tangent microbundle (see \myintref{microbundle::equivalence}).
 
     % topological :: normal bundle
     The theory of microbundles over topological manifolds reaches even further,
@@ -86,16 +87,18 @@
     embedded in $S^{29}$ that does not admit a normal microbundle \cite{rourke}.
     So the existence of a normal microbundle of a submanifold $N \sub M$ is not guaranteed.
     Instead, Milnor could show that there always exists a normal microbundle
-    of $N$ in a stabilization $M \cross \R^q$ for some $q \in \N$.
+    of $N$ in a stabilization $M \cross \R^q$ for some $q \in \N$ (see \myintref{normal::milnor}).
 
     % applications
+    The question of an analogue to the tangent bundle for
+    topological manifolds is not only of theoretical interest.
     Milnors studies on microbundles allowed Robert Williamson
     to transfer results in cobordism theory developed by Réne Thom,
     in particular the concept of transverse regularity, from the smooth category
-    over to the piecewise category (see \cite{williamson}).
+    over to the piecewise category (see \cite[§3]{williamson}).
 
     % thesis structure
     This thesis presents the concept of microbundles as introduced in 1964 by John Milnor,
-    providing a proof for the above theorem.
+    providing a proof for the above theorem about the existence of normal microbundles.
     It is based on Milnors paper `Microbundles, Part I'.
 \end{myparagraph}
