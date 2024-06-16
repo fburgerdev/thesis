@@ -1,4 +1,3 @@
-
 \begin{myparagraph} We are primarily interested in microbundles over topological manifolds. In this case, as topological manifolds are paracompact and hausdorff, triviality has stronger implications for the total space. \end{myparagraph}
 
 \begin{mystatement}{lemma}{microbundle::paracompact}[57] A microbundle $\bb$ over a paracompact hausdorff space $B$ is trivial if and only if there exists an open neighborhood $V$ of $i(B)$ such that $V \cong B \cross \R^n$ with injection and projection maps being compatible with this homeomorphism. \end{mystatement}
@@ -13,7 +12,7 @@ By restricting $E(\bb)$ to an open neighborhood and applying \myintref{microbund
 
 Hence, there exist $B_i \sub B$ open and $0 < \eps_i < 1$ with $\bigcup_{i \in I} B_i = B$ such that \[ \bigcup_{i \in I } B_i \cross \ball[\eps_i] \sub E(\bb). \] Without loss of generality, we may assume that the collection $\{B_i\}$ is locally finite by refining this collection if necessary, utilizing the fact that $B$ is paracompact.
 
-Furthermore, $B$ being paracompact hausdorff yields a partition of unity \[ f_i: B \to [0, 1] \twith \supp{f_i} \sub B_i\] such that $\sum_{i \in J}f_i = 1$.
+Furthermore, $B$ being paracompact hausdorff yields a Partition of Unity \[ f_i: B \to [0, 1] \twith \supp{f_i} \sub B_i\] such that $\sum_{i \in J}f_i = 1$.
 
 We define a map $\lambda: B \to (0, \infty)$ with $\lambda = \sum_{i \in J} \eps_i f_i$, which has the property that $\abs{x} < \lambda(b) \implies (b, x) \in E(\bb)$ because \[ \abs{x} < \lambda(b) \] \[ \iff \abs{x} < \eps_{i_1} f_{i_1}(b) + \cdots + \eps_{i_n} f_{i_n}(b) \] \[ \iff 0 < (\eps_{i_1} - \abs{x}) f_{i_1}(b) + \cdots + (\eps_{i_n} - \abs{x}) f_{i_n}(b) \] \[ \implies \exists i \in J: 0 < (\eps_{i} - \abs{x}) f_{i}(b) \] \[ \implies (b, x) \in B_i \cross \ball[\eps_i] \implies (b, x) \in E(\bb). \]
 

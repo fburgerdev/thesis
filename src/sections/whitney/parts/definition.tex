@@ -1,4 +1,3 @@
-
 \begin{mystatement}{definition}{whitney::definition}[59] Let $\bb_1$ and $\bb_1$ be two microbundles over $B$ with fiber dimensions $n_1$ and $n_2$. The \defterm{Whitney sum} $\whitney{\bb_1}{\bb_2}$ is a microbundle $\bundle{B}{E}{i}{j}$ where \begin{itemize} \item $E = \set{ (e_1, e_2) \in E(\bb_1) \cross E(\bb_2)}{j_1(e_1) = j_2(e_2)}$ \item $i(b) = (i_1(b), i_2(b))$ \item $j(e_1, e_2) = j_1(e_1) = j_2(e_2)$ \end{itemize} with fiber dimension $n_1 + n_2$. \end{mystatement}
 
 \begin{myproof}[that $\whitney{\bb_1}{\bb_2}$ is a microbundle] Both $i$ and $j$ are continuous since they are composed by continuous functions. Additionally, $j(i(b)) = j(i_1(b), i_2(b)) = j_1(i_1(b)) = b$ and hence $j \circ i = id_B$.

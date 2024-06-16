@@ -1,4 +1,3 @@
-
 \begin{mystatement}{definition}[composition microbundle]{normal::composition}[63] Let $\ba$ be a $n$-dimensional microbundle \[ \bundledef{\ba}{A}{E(\ba)}{i_a}{j_a} \] and let $\bb$ be a $n'$-dimensional microbundle \[ \bundledef{\bb}{E(\ba)}{E(\bb)}{i_b}{j_b}. \] The \defterm{composition microbundle} $\ba \circ \bb$ is a $(n + n')$-dimensional microbundle \[ \bundle{A}{E(\bb)}{i}{j} \] where $i = i_b \circ i_a$ and $j = j_a \circ j_b$. \end{mystatement}
 
 \begin{myproof}[that $\ba \circ \bb$ is a microbundle] Both injection and projection maps are continuous as being composed by continuous maps. Additionally, $j \circ i = j_a \circ (j_b \circ i_b) \circ i_a = j_a \circ i_a = id_A$.

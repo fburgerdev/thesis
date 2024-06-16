@@ -1,123 +1,47 @@
+\newcommand{\N} { \mathbb{N} }
+\newcommand{\Z} { \mathbb{Z} }
+\newcommand{\Q} { \mathbb{Q} }
+\newcommand{\R} { \mathbb{R} }
+\newcommand{\C} { \mathbb{C} }
 
-\newcommand{\N} {
-\mathbb{N}
-}
-\newcommand{\Z} {
-\mathbb{Z}
-}
-\newcommand{\Q} {
-\mathbb{Q}
-}
-\newcommand{\R} {
-\mathbb{R}
-}
-\newcommand{\C} {
-\mathbb{C}
-}
+\newcommand{\xto}[1] { \xrightarrow{#1} }
+\newcommand{\isomto} { \xto{\sim} }
+\newcommand{\incl} { \hookrightarrow{} }
+\newcommand{\xincl}[1] { \overset{#1}{\incl} }
+\newcommand{\subm} { \twoheadrightarrow{} }
+\newcommand{\xsubm}[1] { \overset{#1}{\subm} }
 
-\newcommand{\xto}[1] {
-\xrightarrow{#1}
-}
-\newcommand{\isomto} {
-\xto{\sim}
-}
-\newcommand{\incl} {
-\hookrightarrow{}
-}
-\newcommand{\xincl}[1] {
-\overset{#1}{\incl}
-}
-\newcommand{\subm} {
-\twoheadrightarrow{}
-}
-\newcommand{\xsubm}[1] {
-\overset{#1}{\subm}
-}
+\newcommand{\set}[2] { \{#1:#2\} }
+\newcommand{\coll}[1] { \{#1\} }
+\newcommand{\cross}{\times} \newcommand{\cmpl}[1]{#1^c} \newcommand{\sub} { \subseteq{} }
+\newcommand{\bus} { \supseteq{} }
 
-\newcommand{\set}[2] {
-\{#1:#2\}
-}
-\newcommand{\coll}[1] {
-\{#1\}
-}
-\newcommand{\cross}{\times}
-\newcommand{\cmpl}[1]{#1^c}
-\newcommand{\sub} {
-\subseteq{}
-}
-\newcommand{\bus} {
-\supseteq{}
-}
+\newcommand{\restr}[1] { \vert_{#1} }
 
-\newcommand{\restr}[1] {
-\vert_{#1}
-}
+\newcommand{\inner}[1]{\overset{\circ}{#1}} \newcommand{\closure}[1]{\overline{#1}}
 
-\newcommand{\inner}[1]{\overset{\circ}{#1}}
-\newcommand{\closure}[1]{\overline{#1}}
+\newcommand{\abs}[1] { \vert{} #1 \vert{} }
+\NewDocumentCommand{\ball}{O{1}O{0}}{ B_{#1} (#2) }
+\NewDocumentCommand{\clball}{O{1}O{0}}{ \overline{\ball[#1][#2]} }
 
-\newcommand{\abs}[1] {
-\vert{} #1 \vert{}
-}
-\NewDocumentCommand{\ball}{O{1}O{0}}{
-B_{#1} (#2)
-}
-\NewDocumentCommand{\clball}{O{1}O{0}}{
-\overline{\ball[#1][#2]}
-}
+\newcommand{\tand} { \text{ and } }
+\newcommand{\tor} { \text{ or } }
+\newcommand{\twith} { \text{ with } }
 
-\newcommand{\tand} {
-\text{ and }
-}
-\newcommand{\tor} {
-\text{ or }
-}
-\newcommand{\twith} {
-\text{ with }
-}
+\newcommand{\inv}[1] { #1^{-1} }
+\newcommand{\frst}[1] { #1^{(1)} }
+\newcommand{\snd}[1] { #1^{(2)} }
 
-\newcommand{\inv}[1] {
-#1^{-1}
-}
-\newcommand{\frst}[1] {
-#1^{(1)}
-}
-\newcommand{\snd}[1] {
-#1^{(2)}
-}
+\newcommand{\I} { [0, 1] }
+\newcommand{\cyl}[1] { #1 \cross{} \I }
+\newcommand{\cylup}[1] { #1 \cross{} \{1\} }
+\newcommand{\cyldown}[1] { #1 \cross{} \{0\} }
 
-\newcommand{\I} {
-[0, 1]
-}
-\newcommand{\cyl}[1] {
-#1 \cross{} \I
-}
-\newcommand{\cylup}[1] {
-#1 \cross{} \{1\}
-}
-\newcommand{\cyldown}[1] {
-#1 \cross{} \{0\}
-}
+\newcommand{\supp} { \text{supp} }
 
-\newcommand{\supp} {
-\text{supp}
-}
+\newcommand{\half} { \frac{1}{2} }
 
-\newcommand{\half} {
-\frac{1}{2}
-}
+\newcommand{\eps} { \varepsilon{} }
 
-\newcommand{\eps} {
-\varepsilon{}
-}
-
-\newcommand{\case}[3] {
-\begin{cases}
-#1 & \text{if } #3 \\ #2 & \text{else } 
-\end{cases}
-}
-\newcommand{\casenif}[2] {
-\begin{cases}
-#1 \\ #2 
-\end{cases}
-}
+\newcommand{\case}[3] { \begin{cases} #1 & \text{if } #3 \\ #2 & \text{else }  \end{cases} }
+\newcommand{\casenif}[2] { \begin{cases} #1 \\ #2  \end{cases} }

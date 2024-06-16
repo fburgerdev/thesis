@@ -10,7 +10,7 @@
 
 Suppose $v \in \clball[1] - V$. Let $[f(0), v]$ denote the line-segment \[ \set{\lambda f(0) + (1 - \lambda) v}{\lambda \in \I} \sub \R^n. \] The intersection $[f(0), v] \cap V$ is compact since both $[f(0), v]$ and $V$ are compact. Hence, the intersection has a maximum $v'$ when ordered via $\lambda$. Note that the intersection is non-empty since $f(0) \in V$ and that $v' \neq v$ since $v \notin V$ by assumption.
 
-The maximum $v'$ is contained in $\partial V$: \begin{enumerate} \item $v' \in [f(0), v] \cap V \sub V = \overline{V}$ \item $v' \notin \inner{V}$, because otherwise $\ball[\eps][v'] \sub \inner{V}$ for some $\eps > 0$ which contradicts with $v'$ being the maximum in $[f(0), v] \cap V$. \end{enumerate}
+The maximum $v'$ is contained in $\partial V$: \begin{itemize} \item $v' \in [f(0), v] \cap V \sub V = \overline{V}$ \item $v' \notin \inner{V}$, because otherwise $\ball[\eps][v'] \sub \inner{V}$ for some $\eps > 0$ which contradicts with $v'$ being the maximum in $[f(0), v] \cap V$. \end{itemize}
 
 From $\abs{f(0) - 0} < 1$ and $v \in \clball[1]$, it follows that $\abs{v'} < 1$.
 

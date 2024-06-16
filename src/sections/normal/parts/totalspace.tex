@@ -1,19 +1,7 @@
+\begin{mystatement}{lemma}{normal::total} Let $N \sub M$ be a submanifold and let $r: V \sub M \to N$ be a retraction. Then there exists a normal microbundle $\bn$ of $N$ in $E(\ind{r}\bt_N)$.  \end{mystatement}
 
-\begin{mystatement}{lemma}{normal::total}
-Let $N \sub M$ be a submanifold and let $r: V \sub M \to N$ be a retraction.
-Then there exists a normal microbundle $\bn$ of $N$ in $E(\ind{r}\bt_N)$. 
-\end{mystatement}
+\begin{myproof} First, note that the total space $E(\ind{r}\bt_N)$ is a topological manifold. This can be seen with \[ E(\ind{r}\bt_N) = \set{(v, n_1, n_2) \in V \cross (N \cross N)}{r(v) = n_1} \cong V \cross N. \]
 
-\begin{myproof}
-First, note that the total space $E(\ind{r}\bt_N)$ is a topological manifold.
-This can be seen with
-\[ E(\ind{r}\bt_N) = \set{(v, n_1, n_2) \in V \cross (N \cross N)}{r(v) = n_1} \cong V \cross N. \]
+Together with $N \incl V \xto{i_r} E(\ind{r}\bt_N)$, we may assume that $N$ is a submanifold of $E(\ind{r}\bt_N)$. Note that $i_{r}$ is an embedding due to the construction of the induced microbundle.
 
-Together with $N \incl V \xto{i_r} E(\ind{r}\bt_N)$, we may assume that
-$N$ is a submanifold of $E(\ind{r}\bt_N)$.
-Note that $i_{r}$ is an embedding due to the construction of the induced microbundle.
-
-We are given a normal microbundle of $N$ in $E(\ind{r}\bt_N)$ by $\ind{r}\bt_N\restr{N}$.
-Note that the injection of $\ind{r}\bt_N\restr{N}$ matches the above embedding.
-This completes the proof.
-\end{myproof}
+We are given a normal microbundle of $N$ in $E(\ind{r}\bt_N)$ by $\ind{r}\bt_N\restr{N}$. Note that the injection of $\ind{r}\bt_N\restr{N}$ matches the above embedding. This completes the proof. \end{myproof}
