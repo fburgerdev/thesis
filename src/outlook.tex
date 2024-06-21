@@ -1,0 +1,34 @@
+\section{Outlook}\label{chapter::outlook}
+\begin{myparagraph}
+    Now that we have seen that Milnors Theorem holds,
+    one may ask whether we can do better than this.
+    Can we prove the existence of normal microbundles without having to stabilize
+    the ambient manifold? As already mentioned in \myintref{section::motivation},
+    Rourke and Sanderson found a submanifold that does not admit a normal microbundle
+    in its ambient manifold.
+    So in the theory of microbundles, one can not do substantially better.
+
+    When we broaden our view,
+    one can indeed develop a bundle-theory over non-smooth manifolds
+    where the existence of a normal bundle is garantueed.
+    However, this is not free.
+    Rourke and Sanderson developed a theory of so called `block bundles'.
+    They are defined over simplicial complexes:
+    
+    Given a simplicial complex $K$, then a \defterm{q-block bundle} $\xi^q/K$
+    consists of a total space $E(\xi)$ with $\abs{K} \sub E(\xi)$ such that
+    there exists a collection of \defterm{blocks} $\coll{\beta_i}$ satisfying the following:
+    \begin{itemize}
+        \item for each $n$-cell $\sigma \in K$, there exists a block $\beta_i$, such that $(\beta_i, \sigma) \cong (I^{n + q}, I^n)$.
+        \item $E(\xi) = \bigcup_{i} \beta_i$
+        \item $i \neq j \implies \inner{\beta_i} \cap \inner{\beta_j} = \emptyset$
+        \item $\beta_i \cap \beta_j$ is the union of the blocks of the faces for $\sigma_i \cap \sigma_j$.
+    \end{itemize}
+
+    The normal block bundle over a PL-submanifold $M \sub N$ can now be defined to be a block bundle $\eta/K$ such that $E(\eta) = N$.
+    Theorem 4.3a) in \cite{block} then states that every compact PL-submanifold $M \sub N$ admits a normal block bundle.
+    
+    So block bundles do not require a stabilization.
+    However, this comes to the major cost that block bundles are not equipped with a projection map.
+    So if we want the existence of normal bundle, we would have to sacrifice the existence of a projection map.
+\end{myparagraph}

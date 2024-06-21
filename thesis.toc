@@ -3,4 +3,5 @@
 \contentsline {section}{\numberline {3}The Homotopy Theorem}{18}{section.3}%
 \contentsline {section}{\numberline {4}Rooted Microbundles and the Bouquet Lemma}{27}{section.4}%
 \contentsline {section}{\numberline {5}Normal Microbundles and Milnors Theorem}{38}{section.5}%
-\contentsline {section}{References}{43}{section*.12}%
+\contentsline {section}{\numberline {6}Outlook}{43}{section.6}%
+\contentsline {section}{References}{44}{section*.12}%
