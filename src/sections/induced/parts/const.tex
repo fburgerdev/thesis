@@ -1,38 +1,11 @@
-% lemma
-\begin{mystatement}{lemma}{induced::const}
-    Let $\bb$ be a microbundle over $B$.
-    The induced microbundle $\ind{c_{A, b_0}}\bb$ over the constant map
-    $c_{A, b_0}: A \to B$ with $c_{A, b_0}(a) = b_0$
-    is trivial.
-\end{mystatement}
+\begin{mystatement}{lemma}{induced::const} Let $\bb$ be a microbundle over $B$. The induced microbundle $\ind{c_{A, b_0}}\bb$ over the constant map $c_{A, b_0}: A \to B$ with $c_{A, b_0}(a) = b_0$ is trivial. \end{mystatement}
 
-% proof
-\begin{myproof}
-    % homeomorphism
-    The total space $E(\ind{c_{A, b_0}}\bb)$ is defined as
-    \[ \set{(a, e) \in A \cross E(\bb)}{f(a) = b_0 = j(e)} = A \cross \inv{j}(b_0). \]
+\begin{myproof} The total space $E(\ind{c_{A, b_0}}\bb)$ is defined as \[ \set{(a, e) \in A \cross E(\bb)}{f(a) = b_0 = j(e)} = A \cross \inv{j}(b_0). \]
 
-    Let $(U, V, \phi)$ be a local trivialization for $b_0$ in $\bb$.
-    Restricting $\phi$ to the fiber $\inv{j}(b_0)$ yields a homeomorphism
-    \[ \phi\restr{\inv{j}(b_0)}: V \cap \inv{j}(b_0) \isomto b_0 \times \R^n. \]
-    It follows that $\psi: A \cross (V \cap \inv{j}(b_0)) \isomto A \cross \R^n$ with
-    $\psi(a, e) = (a, \snd{\phi}(e))$
-    is a homeomorphism as well.
+Let $(U, V, \phi)$ be a local trivialization for $b_0$ in $\bb$. Restricting $\phi$ to the fiber $\inv{j}(b_0)$ yields a homeomorphism \[ \phi\restr{\inv{j}(b_0)}: V \cap \inv{j}(b_0) \isomto b_0 \times \R^n. \] It follows that $\psi: A \cross (V \cap \inv{j}(b_0)) \isomto A \cross \R^n$ with $\psi(a, e) = (a, \snd{\phi}(e))$ is a homeomorphism as well.
 
-    % neighborhoods
-    The product $A \cross (V \cap \inv{j}(b_0))$ is open in $E(\ind{c_{A, b_0}}\bb)$,
-    since  $V \cap \inv{j}(b_0)$ is open in $\inv{j}(b_0)$ with the subspace topology.
-    Furthermore, from
-    \[ i_{c}(a) = (a, i(c_{A, b_0}(a))) = (a, i(b_0)) \tand \snd{\phi}(i(b_0)) = 0 \]
-    it follows that $\psi(A \cross (V \cap \inv{j}(b_0)))$ is a neighborhood of $\cyldown{A}$.
-    Hence, $\psi$ maps a neighborhood of $i_c(A)$
-    to a neighborhood of $\cyldown{A}$.
-    
-    % commutativity
-    Commutativity with the injection maps is given by
-    \[ \psi(i_c(a)) = \psi(a, i(b_0)) = (a, \snd{\phi}(i(b_0))) = (a, 0) = (id \cross 0)(a) \]
-    and with the projection maps by
-    \[ j_c(a, e) = a = \pi_1(a, \snd{\phi}(e)) = \pi_1(\psi(a, e)). \]
+The product $A \cross (V \cap \inv{j}(b_0))$ is open in $E(\ind{c_{A, b_0}}\bb)$, since $V \cap \inv{j}(b_0)$ is open in $\inv{j}(b_0)$ with the subspace topology. Furthermore, from \[ i_{c}(a) = (a, i(c_{A, b_0}(a))) = (a, i(b_0)) \tand \snd{\phi}(i(b_0)) = 0 \] it follows that $\psi(A \cross (V \cap \inv{j}(b_0)))$ is a neighborhood of $\cyldown{A}$. Hence, $\psi$ maps a neighborhood of $i_c(A)$ to a neighborhood of $\cyldown{A}$.
 
-    We conclude that $\ind{c_{A, b_0}}\bb$ is trivial.
-\end{myproof}
+Commutativity with the injection maps is given by \[ \psi(i_c(a)) = \psi(a, i(b_0)) = (a, \snd{\phi}(i(b_0))) = (a, 0) = (id \cross 0)(a) \] and with the projection maps by \[ j_c(a, e) = a = \pi_1(a, \snd{\phi}(e)) = \pi_1(\psi(a, e)). \]
+
+We conclude that $\ind{c_{A, b_0}}\bb$ is trivial. \end{myproof}

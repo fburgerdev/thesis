@@ -1,33 +1,7 @@
-% lemma
-\begin{mystatement}{lemma}{normal::homeomorphy}
-    Let $N \sub M$ be an embedded submanifold and let $r: V \to N$ be a retraction.
-    Then the following isomorphy holds:
-    \[ \ind{\iota}\bt_V \cong \ind{r}\bt_N\restr{N} \]
-\end{mystatement}
+\begin{mystatement}{lemma}{normal::homeomorphy} Let $N \sub M$ be an embedded submanifold and let $r: V \to N$ be a retraction. Then the following isomorphy holds: \[ \ind{\iota}\bt_V \cong \ind{r}\bt_N\restr{N} \] \end{mystatement}
 
-% proof
-\begin{myproof}
-    The total space
-    \[ E(\ind{\iota}\bt_V) = \set{(n, v_1, v_2) \in N \cross (V \cross V)}{n = v_1} \]
-    is homeomorphic to $N \cross V$ via
-    \[ (n, v_1, v_2) \mapsto (n, v_2) \tand (n, v) \mapsto (n, \iota(n), v). \]
-    Similarly, the total space
-    \[ E(\ind{r}\bt_N\restr{N}) = \set{ (n, v, n_1, n_2) \in N \cross (V \cross (N \cross N))}{n = v \tand r(v) = n_1} \]
-    is homeomorphic to $V \cross N$ via
-    \[ (n, v, n_1, n_2) \mapsto (v, n_2) \tand (v, n) \mapsto (v, v, r(v), n). \]
-    
-    Together with the obvious homeomorphism $N \cross V \cong V \cross N$,
-    this yields a homeomorphism
-    \[ \psi: E(\ind{\iota}\bt_V) \isomto E(\ind{r}\bt_N) \twith \psi(n, v_1, v_2) = (v_2, r(v_2), n). \]
-\end{myproof}
+\begin{myproof} The total space \[ E(\ind{\iota}\bt_V) = \set{(n, v_1, v_2) \in N \cross (V \cross V)}{n = v_1} \] is homeomorphic to $N \cross V$ via \[ (n, v_1, v_2) \mapsto (n, v_2) \tand (n, v) \mapsto (n, \iota(n), v). \] Similarly, the total space \[ E(\ind{r}\bt_N\restr{N}) = \set{ (n, v, n_1, n_2) \in N \cross (V \cross (N \cross N))}{n = v \tand r(v) = n_1} \] is homeomorphic to $V \cross N$ via \[ (n, v, n_1, n_2) \mapsto (v, n_2) \tand (v, n) \mapsto (v, v, r(v), n). \]
 
-% remark
-\begin{mystatement}{remark}{normal::commute}
-    The following diagram commutes:
-    \[
-        \begin{tikzcd}
-            N \ar[r, "i_\iota"] \ar[hookrightarrow, "\iota"']{d} & E(\ind{\iota}\bt_V) \ar[d, "\psi"] \\
-            V \ar[r, "i_r"] & E(\ind{r}\bt_N)
-        \end{tikzcd}
-    \]
-\end{mystatement}
+Together with the obvious homeomorphism $N \cross V \cong V \cross N$, this yields a homeomorphism \[ \psi: E(\ind{\iota}\bt_V) \isomto E(\ind{r}\bt_N) \twith \psi(n, v_1, v_2) = (v_2, r(v_2), n). \] \end{myproof}
+
+\begin{mystatement}{remark}{normal::commute} The following diagram commutes: \[ \begin{tikzcd} N \ar[r, "i_\iota"] \ar[hookrightarrow, "\iota"']{d} & E(\ind{\iota}\bt_V) \ar[d, "\psi"] \\ V \ar[r, "i_r"] & E(\ind{r}\bt_N) \end{tikzcd} \] \end{mystatement}

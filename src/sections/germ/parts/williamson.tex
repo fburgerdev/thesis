@@ -1,99 +1,31 @@
-% proof
-\begin{myproof}[of the proposition]
-    Let $f: U_f \to E(\bb')$ be a representative for $F$.
-    First we assume a special case. Then we use this result show that $f$
-    is open in some neighborhood of every $v \in U_f$, hence $f$ being open.
-    \begin{steps}
-        % special case
-        \item Let $f$ map from $B \cross \R^n$ to $B \cross \R^n$
-        
-        Since $F$ covers the identity, $f$ is of the form
-        \[ f(b, x) = (b, g_b(x)) \]
-        where $g_b: \R^n \to \R^n$ are individual maps.
-        Since the $g_b$ are continuous and injective,
-        it follows from the Invariance of Domain Theorem (see \cite[cor.19.9]{brendon}) that the $g_b$ are open maps.
-        
-        Let $(b_0, x_0) \in B \cross \R^n$ and let $\eps > 0$.
-        Since $g_{b_0}$ is an open map, there exists a $\delta > 0$ such that
-        $\clball[2\delta][x_1] \sub g_{b_0}(\clball[\eps][x_0])$ where $x_1 = g_{b_0}(x_0)$.
+\begin{myproof}[of the proposition] Let $f: U_f \to E(\bb')$ be a representative for $F$. First we assume a special case. Then we use this result show that $f$ is open in some neighborhood of every $v \in U_f$, hence $f$ being open. \begin{steps} \item Let $f$ map from $B \cross \R^n$ to $B \cross \R^n$
 
-        % estimation
-        We claim that there exists a neighborhood $V \sub B$ of $b_0$ such that
-        \[ \abs{g_b(x) - g_{b_0}(x)} < \delta \]
-        for every $b \in V$ and $x \in \clball[\eps][x_0]$.
-        
-        To show that, consider $\phi(b, x) = g_b(x) - g_{b_0}(x)$.
-        The open set $\inv{\phi}(\ball[\delta])$ is a neighborhood of $\{b_0\} \cross \R^n$ since $\phi(b_0, x) = 0$.
-        Hence, there exist open subsets $V_x \sub B$ and $W_x \sub \R^n$ such that
-        \[ \bigcup_{x \in \clball[\eps][x_0]} V_x \cross W_x \sub \inv{\phi}(\clball[\delta]) \]
-        and $x \in W_x$.
-        Since $\clball[\eps][x_0]$ is compact, there exist $x_1, \dots, x_n \in \clball[\eps][x_0]$ with $\clball[\eps][x_0] \sub \bigcup_{i = 1}^{n} V_{x_i}$.
-        The claim follows with $V = V_{x_1} \cap \dots \cap V_{x_n}$
-        which is open by forming the intersection over finitely many open sets.
+Since $F$ covers the identity, $f$ is of the form \[ f(b, x) = (b, g_b(x)) \] where $g_b: \R^n \to \R^n$ are individual maps. Since the $g_b$ are continuous and injective, it follows from the Invariance of Domain Theorem (see \cite[cor.19.9]{brendon}) that the $g_b$ are open maps.
 
-        % apply lemma
-        Now we want to apply the previous lemma.
+Let $(b_0, x_0) \in B \cross \R^n$ and let $\eps > 0$. Since $g_{b_0}$ is an open map, there exists a $\delta > 0$ such that $\clball[2\delta][x_1] \sub g_{b_0}(\clball[\eps][x_0])$ where $x_1 = g_{b_0}(x_0)$.
 
-        Consider the homeomorphism
-        $(g_b \circ \inv{g_{b_0}})\restr{\clball[2\delta][x_1]}$
-        for an arbitrary $b \in V$.
-        Together with
-        \[ \clball[2\delta][x_1] \sub g_{b_0}(\clball[\eps][x_0]) \implies \inv{g_{b_0}}(\clball[2\delta][x_1]) \sub \clball[\eps][x_0], \]
-        we conclude from the above that
-        \[ \abs{(g_b \circ \inv{g_{b_0}})(x) - x} < \delta, \forall x \in \clball[2\delta][x_1]. \]
-        It follows that, by translation and scaling, $g_b \circ \inv{g_{b_0}}\restr{\clball[2\delta][x_1]}$ satisfies the conditions of \myintref{homotopy::ball}.
-        Therefore, $\clball[\delta][x_1] \sub (g_b \circ \inv{g_{b_0}})(\clball[2\delta][x_0])$ and hence $\clball[\delta][x_1] \sub g_b(\clball[\eps][x_0])$.
-        % conclusion
-        From
-        \[ V \cross \clball[\delta][x_1] \sub g(V \cross \clball[\eps][x_0]) \]
-        it follows that $f$ is an open map.
+We claim that there exists a neighborhood $V \sub B$ of $b_0$ such that \[ \abs{g_b(x) - g_{b_0}(x)} < \delta \] for every $b \in V$ and $x \in \clball[\eps][x_0]$.
 
-        % general case
-        \item Gluing together $f: U_f \to E(\bb')$ along local trivializations
+To show this, consider $\phi(b, x) = g_b(x) - g_{b_0}(x)$. The open set $\inv{\phi}(\ball[\delta])$ is a neighborhood of $\{b_0\} \cross \R^n$ since $\phi(b_0, x) = 0$. Hence, there exist open subsets $V_x \sub B$ and $W_x \sub \R^n$ such that \[ \bigcup_{x \in \clball[\eps][x_0]} V_x \cross W_x \sub \inv{\phi}(\clball[\delta]) \] and $x \in W_x$. Since $\clball[\eps][x_0]$ is compact, there exist $x_1, \dots, x_n \in \clball[\eps][x_0]$ with $\clball[\eps][x_0] \sub \bigcup_{i = 1}^{n} V_{x_i}$. The claim follows with $V = V_{x_1} \cap \dots \cap V_{x_n}$ which is open by forming the intersection over finitely many open sets.
 
-        For an arbitrary $b \in B$, choose local trivializations $(U, V, \phi)$ and $(U', V', \phi')$ of $b$ in $\bb$ and $\bb'$.
-        Without loss of generality,
-        we may assume that $U = U'$ by choosing $V = \inv{\phi}(U \cap U')$ and $V' = \inv{\phi'}(U \cap U')$
-        and restricting $\phi$ and $\phi'$ accordingly if necessary.
-        
-        First, we restrict $f$ to $V \cap \inv{f}(V')$.
-        Since $V \cap \inv{f}(V')$ is an open neighborhood of $i(b)$, we can choose
-        an open neighborhood $U_b \sub U$ of $i(b)$ and $\eps_b > 0$ such that $\inv{\phi}(U_b \cross \ball[\eps_b]) \sub V \cap \inv{f}(V')$.
-        
-        We define a map $U_b \cross \R^n \to U_b \cross \R^n$ given by
-        \[ U_b \cross \R^n \cong  U_b \cross \ball[\eps_b] \xto{\phi \circ f \circ \inv{\phi}} U_b \cross \R^n \]
-        that is injective and fiber-preserving, and hence an open map (Step 1).
-        It follows that $f: \inv{\phi}(U_b \cross \ball[\eps_b]) \to V'$
-        must be an open map, as the other composing maps are homeomorphisms.
+Now we want to apply the previous lemma.
 
-        We conclude from
-        \[ f = \bigcup_{b \in B}f\restr{\inv{\phi}(U_b \cross \ball[\eps_b])} \]
-        that $f$ is an open map.
-    \end{steps}
-    This completes the proof.
-\end{myproof}
+Consider the homeomorphism $(g_b \circ \inv{g_{b_0}})\restr{\clball[2\delta][x_1]}$ for an arbitrary $b \in V$. Together with \[ \clball[2\delta][x_1] \sub g_{b_0}(\clball[\eps][x_0]) \implies \inv{g_{b_0}}(\clball[2\delta][x_1]) \sub \clball[\eps][x_0], \] we conclude from the above that \[ \abs{(g_b \circ \inv{g_{b_0}})(x) - x} < \delta, \forall x \in \clball[2\delta][x_1]. \] It follows that, by translation and scaling, $g_b \circ \inv{g_{b_0}}\restr{\clball[2\delta][x_1]}$ satisfies the conditions of \myintref{homotopy::ball}. Therefore, $\clball[\delta][x_1] \sub (g_b \circ \inv{g_{b_0}})(\clball[2\delta][x_0])$ and hence $\clball[\delta][x_1] \sub g_b(\clball[\eps][x_0])$. From \[ V \cross \clball[\delta][x_1] \sub g(V \cross \clball[\eps][x_0]) \] it follows that $f$ is an open map.
 
-% foreword corollary
-\begin{myparagraph}
-    We can easily generalize this result to bundle-germs between microbundles over different base spaces.
-\end{myparagraph}
+\item Gluing together $f: U_f \to E(\bb')$ along local trivializations
 
-% corollary
-\begin{mystatement}{corollary}{homotopy::corollary}[67]
-    If a map $g: B \to B'$ is covered by a bundle-germ $\germdef{F}{\bb}{\bb'}$, then $\bb$ is isomorphic to the induced microbundle $\ind{g}\bb'$.
-\end{mystatement}
+For an arbitrary $b \in B$, choose local trivializations $(U, V, \phi)$ and $(U', V', \phi')$ of $b$ in $\bb$ and $\bb'$. Without loss of generality, we may assume that $U = U'$ by choosing $V = \inv{\phi}(U \cap U')$ and $V' = \inv{\phi'}(U \cap U')$ and restricting $\phi$ and $\phi'$ accordingly if necessary.
 
-% proof corollary
-\begin{myproof}
-    Let $f: U_f \to E'$ be a representative map for $F$.
-    We define $\germdef{F'}{\bb}{\ind{g}\bb'}$ by the representative
-    \[ f': U_f \to E(\ind{g}\bb') \twith f'(e) = (j(e), f(e)). \]
-    Every $f'(e)$ lies in $E(\ind{g}\bb')$ because
-    $g(j(e)) = j'(f(e))$
-    as we can see from the commutative diagram for bundle-germs.
+First, we restrict $f$ to $V \cap \inv{f}(V')$. Since $V \cap \inv{f}(V')$ is an open neighborhood of $i(b)$, we can choose an open neighborhood $U_b \sub U$ of $i(b)$ and $\eps_b > 0$ such that $\inv{\phi}(U_b \cross \ball[\eps_b]) \sub V \cap \inv{f}(V')$.
 
-    The germ $F'$ is a bundle-germ covering the identity because
-    \[ j(e) = j_g'(j(e), f(e)) = j_g'(f'(e)) \]
-    and because $f'$ is injective ($f$ is injective).
-    Applying the previous proposition on $F'$ proves the claim.
-\end{myproof}
+We define a map $U_b \cross \R^n \to U_b \cross \R^n$ given by \[ U_b \cross \R^n \cong U_b \cross \ball[\eps_b] \xto{\phi \circ f \circ \inv{\phi}} U_b \cross \R^n \] that is injective and fiber-preserving, and hence an open map (Step 1). It follows that $f: \inv{\phi}(U_b \cross \ball[\eps_b]) \to V'$ must be an open map, as the other composing maps are homeomorphisms.
+
+We conclude from \[ f = \bigcup_{b \in B}f\restr{\inv{\phi}(U_b \cross \ball[\eps_b])} \] that $f$ is an open map. \end{steps} This completes the proof. \end{myproof}
+
+\begin{myparagraph} We can easily generalize this result to bundle-germs between microbundles over different base spaces. \end{myparagraph}
+
+\begin{mystatement}{corollary}{homotopy::corollary}[67] If a map $g: B \to B'$ is covered by a bundle-germ $\germdef{F}{\bb}{\bb'}$, then $\bb$ is isomorphic to the induced microbundle $\ind{g}\bb'$. \end{mystatement}
+
+\begin{myproof} Let $f: U_f \to E'$ be a representative map for $F$. We define $\germdef{F'}{\bb}{\ind{g}\bb'}$ by the representative \[ f': U_f \to E(\ind{g}\bb') \twith f'(e) = (j(e), f(e)). \] Every $f'(e)$ lies in $E(\ind{g}\bb')$ because $g(j(e)) = j'(f(e))$ as we can see from the commutative diagram for bundle-germs.
+
+The germ $F'$ is a bundle-germ covering the identity because \[ j(e) = j_g'(j(e), f(e)) = j_g'(f'(e)) \] and because $f'$ is injective ($f$ is injective). Applying the previous proposition on $F'$ proves the claim. \end{myproof}

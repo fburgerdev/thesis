@@ -1,37 +1,9 @@
-% definition
-\begin{mystatement}{definition}{suspension::whitney}[70]
-    Given two rooted microbundles $\bb$ and $\bb'$ over $B$,
-    we equip the Whitney sum $\whitney{\bb}{\bb'}$ with the rooting
-    \[ \germdef{\whitney{R}{R'}}{(\whitney{\bb}{\bb'})\restr{b_0}}{\whitney{\be[n_1]{b_0}}{\be[n_2]{b_0}} = \be[n_1 + n_1]{b_0}} \]
-    represented by the direct sum of two representatives for $R$ and $R'$.
-\end{mystatement}
+\begin{mystatement}{definition}{suspension::whitney}[70] Given two rooted microbundles $\bb$ and $\bb'$ over $B$, we equip the Whitney sum $\whitney{\bb}{\bb'}$ with the rooting \[ \germdef{\whitney{R}{R'}}{(\whitney{\bb}{\bb'})\restr{b_0}}{\whitney{\be[n_1]{b_0}}{\be[n_2]{b_0}} = \be[n_1 + n_1]{b_0}} \] represented by the direct sum of two representatives for $R$ and $R'$. \end{mystatement}
 
-% lemma
-\begin{mystatement}{lemma}{suspension::compatability}[70]
-    Let $\ba$ and $\ba'$ be two rooted microbundles over $A$,
-    and let $\bb$ and $\bb'$ be two rooted microbundle over $B$.
-    Then the following (non-rooted) isomorphy holds:
-    \[ \whitney{(\ba \vee \bb)}{(\ba' \vee \bb')} \cong (\whitney{\ba}{\ba'}) \vee (\whitney{\bb}{\bb'}) \]
-\end{mystatement}
+\begin{mystatement}{lemma}{suspension::compatability}[70] Let $\ba$ and $\ba'$ be two rooted microbundles over $A$, and let $\bb$ and $\bb'$ be two rooted microbundle over $B$. Then the following (non-rooted) isomorphy holds: \[ \whitney{(\ba \vee \bb)}{(\ba' \vee \bb')} \cong (\whitney{\ba}{\ba'}) \vee (\whitney{\bb}{\bb'}) \] \end{mystatement}
 
-% proof
-\begin{myproof}
-    % homeomorphy
-    Consider $\psi: E(\whitney{(\ba \vee \bb)}{(\ba' \vee \bb')}) \isomto E((\whitney{\ba}{\ba'}) \vee (\whitney{\bb}{\bb'}))$
-    given by the identity map.
-    Note that $\psi$ is well-defined because
-    \[ (e, e') \in E(\whitney{(\ba \vee \bb)}{(\ba' \vee \bb')}) \]
-    \[ \implies j(e) = j'(e') \implies j(e), j'(e') \in A \tor j(e), j'(e') \in B\]
-    \[ \implies (e, e') \in E(\whitney{\ba}{\ba'}) \tor (e, e') \in E(\whitney{\bb}{\bb'}) \]
-    \[ \implies (e, e') \in E((\whitney{\ba}{\ba'}) \vee (\whitney{\bb}{\bb'})). \]
+\begin{myproof} Consider $\psi: E(\whitney{(\ba \vee \bb)}{(\ba' \vee \bb')}) \isomto E((\whitney{\ba}{\ba'}) \vee (\whitney{\bb}{\bb'}))$ given by the identity map. Note that $\psi$ is well-defined because \[ (e, e') \in E(\whitney{(\ba \vee \bb)}{(\ba' \vee \bb')}) \] \[ \implies j(e) = j'(e') \implies j(e), j'(e') \in A \tor j(e), j'(e') \in B\] \[ \implies (e, e') \in E(\whitney{\ba}{\ba'}) \tor (e, e') \in E(\whitney{\bb}{\bb'}) \] \[ \implies (e, e') \in E((\whitney{\ba}{\ba'}) \vee (\whitney{\bb}{\bb'})). \]
 
-    % injection and projection
-    Furthermore, the injection and projection maps agree.
-    This can be seen with the following equations (symmetrical for $B$):
-    \begin{gather}
-        i_\oplus(a) = (i_a(a), i_a'(a)) = i_\vee(a) \\
-        j_\oplus(e_a, e_a') = j(e_a) = j_a(e_a) =  j_\vee(e_a, e_a')
-    \end{gather}
+Furthermore, the injection and projection maps agree. This can be seen with the following equations (symmetrical for $B$): \begin{gather} i_\oplus(a) = (i_a(a), i_a'(a)) = i_\vee(a) \\ j_\oplus(e_a, e_a') = j(e_a) = j_a(e_a) = j_\vee(e_a, e_a') \end{gather}
 
-    It follows that the two microbundles are isomorphic.
-\end{myproof}
+It follows that the two microbundles are isomorphic. \end{myproof}

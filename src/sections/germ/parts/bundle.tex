@@ -1,31 +1,5 @@
-% generalize
-\begin{myparagraph}
-    We can take this even further by dropping the assumption
-    that the two microbundles have the same base space.
-    Note that in this case no, comparison to isomorphy can be drawn,
-    because we have not defined isomorphy between microbundles over different base spaces.
-\end{myparagraph}
+\begin{myparagraph} We can take this even further by dropping the assumption that the two microbundles have the same base space. Note that in this case, no comparison to isomorphy can be drawn, because we have not defined isomorphy between microbundles over different base spaces. \end{myparagraph}
 
-% definition
-\begin{mystatement}{definition}[bundle-germ]{homotopy::bundle}[66]
-    Let $\bb$ and $\bb'$ be two microbundles over $B$ and $B'$
-    with the same fiber dimension.
-    A \defterm{bundle-germ} $\germdef{F}{\bb}{\bb'}$ is a map-germ
-    \[ \germdef{F}{(E(\bb), B)}{(E(\bb'), B')} \]
-    such that there exists a representative $f: U_f \to E(\bb')$
-    that maps each fiber $\inv{j}(b)$ in an injective manner to a fiber $\inv{j'}(b')$.
-\end{mystatement}
+\begin{mystatement}{definition}[bundle-germ]{homotopy::bundle}[66] Let $\bb$ and $\bb'$ be two microbundles over $B$ and $B'$ with the same fiber dimension. A \defterm{bundle-germ} $\germdef{F}{\bb}{\bb'}$ is a map-germ \[ \germdef{F}{(E(\bb), B)}{(E(\bb'), B')} \] such that there exists a representative $f: U_f \to E(\bb')$ that maps each fiber $\inv{j}(b)$ in an injective manner to a fiber $\inv{j'}(b')$. \end{mystatement}
 
-% diagram
-\begin{myparagraph}
-    For a bundle-germ $\germdef{F}{\bb}{\bb'}$, the following diagram commutes:
-    \begin{center}
-        \begin{tikzcd}
-            (E(\mathfrak{b}), B) \arrow[r, Rightarrow, "F"] \ar[d, "i"] & (E(\mathfrak{b}'), B') \ar[d, "i'"] \\
-            B \ar[r, "F\vert_B"] & B' \\
-        \end{tikzcd}
-    \end{center}
-    We say $F$ \defterm{is covered by} $F\restr{B}$.
-    % intentionally left blank
-    
-\end{myparagraph}
+\begin{myparagraph} For a bundle-germ $\germdef{F}{\bb}{\bb'}$, the following diagram commutes: \begin{center} \begin{tikzcd} (E(\mathfrak{b}), B) \arrow[r, Rightarrow, "F"] \ar[d, "i"] & (E(\mathfrak{b}'), B') \ar[d, "i'"] \\ B \ar[r, "F\vert_B"] & B' \\ \end{tikzcd} \end{center} We say $F$ \defterm{is covered by} $F\restr{B}$. \end{myparagraph}

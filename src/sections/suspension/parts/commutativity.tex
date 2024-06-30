@@ -1,37 +1,11 @@
-% lemma
-\begin{mystatement}{lemma}{suspension::commutativity}[71]
-    The rooted microbundles
-    $\whitney{\bb}{\be{B}}$ and $\whitney{\be{B}}{\bb}$ are rooted isomorphic.
-\end{mystatement}
+\begin{mystatement}{lemma}{suspension::commutativity}[71] The rooted microbundles $\whitney{\bb}{\be{B}}$ and $\whitney{\be{B}}{\bb}$ are rooted isomorphic. \end{mystatement}
 
-% proof
-\begin{myproof}
-    In order to show rooted isomorphy,
-    we need to find an isomorphism-germ
-    \[ \germ{\whitney{\bb}{\be{B}}}{\whitney{\be{B}}{\bb}} \]
-    that extends $(\whitney{I}{R}) \circ \inv{(\whitney{R}{I})} = \whitney{R}{\inv{R}}$.
+\begin{myproof} In order to show rooted isomorphy, we need to find an isomorphism-germ \[ \germ{\whitney{\bb}{\be{B}}}{\whitney{\be{B}}{\bb}} \] that extends $(\whitney{I}{R}) \circ \inv{(\whitney{R}{I})} = \whitney{R}{\inv{R}}$.
 
-    Consider the isomorphism-germ
-    $\germ{\whitney{\bb}{\be{B}}}{\whitney{\be{B}}{\bb}}$ represented by
-    \[ f: E(\bb) \cross \R^n \isomto \R^n \cross E(\bb) \twith f(e, x) = (-x, e). \]
-    The idea is to modify $f$ near $b_0$ in such a way that the resulting
-    isomorphism-germ respects the rooting.
+Consider the isomorphism-germ $\germ{\whitney{\bb}{\be{B}}}{\whitney{\be{B}}{\bb}}$ represented by \[ f: E(\bb) \cross \R^n \isomto \R^n \cross E(\bb) \twith f(e, x) = (-x, e). \] The idea is to modify $f$ near $b_0$ in such a way that the resulting isomorphism-germ respects the rooting.
 
-    By applying the previous lemma,
-    choose a sufficiently small closed neighborhood $U$ of $b_0$
-    such that there exists an isomorphism-germ
-    $\germdef{Q}{\bb[U]}{\be{U}}$ extending $R$
-    and a map $\lambda: B \to [0, \frac{\pi}{2}]$
-    such that $\supp \lambda \sub U$ and $\lambda(b_0) = \frac{\pi}{2}$.
-    
-    Together with the homeomorphism
-    $\psi: U \cross \R^n \cross \R^n \isomto U \cross \R^n \cross \R^n$ given by
-    \[ \psi(b, x, y) = (b, x \sin(\lambda(b)) - y \cos(\lambda(b)), x \cos(\lambda(b)) - y \sin(\lambda(b))), \]
-    we are able to define an isomorphism-germ
-    \[ (\whitney{\bb}{\be{B}})\restr{U} \xRightarrow{Q \oplus I} (\whitney{\be{B}}{\be{B}})\restr{U} \xto{\psi} (\whitney{\be{B}}{\be{B}})\restr{U} \xRightarrow{\inv{Q} \oplus I} (\whitney{\be{B}}{\bb})\restr{U} \]
-    which extends $\whitney{R}{\inv{R}}$ since $\psi(b_0, x, y) = (b_0, x, y)$, and
-    which coincides with $F$ over $U \cap \inv{\lambda}(0)$.
-    
-    Pieced together with $F\restr{\inv{\lambda}(b)}$ using \myintref{homotopy::gluing},
-    we obtain our required isomorphism germ.
-\end{myproof}
+By applying the previous lemma, choose a sufficiently small closed neighborhood $U$ of $b_0$ such that there exists an isomorphism-germ $\germdef{Q}{\bb[U]}{\be{U}}$ extending $R$ and a map $\lambda: B \to [0, \frac{\pi}{2}]$ such that $\supp \lambda \sub U$ and $\lambda(b_0) = \frac{\pi}{2}$.
+
+Together with the homeomorphism $\psi: U \cross \R^n \cross \R^n \isomto U \cross \R^n \cross \R^n$ given by \[ \psi(b, x, y) = (b, x \sin(\lambda(b)) - y \cos(\lambda(b)), x \cos(\lambda(b)) - y \sin(\lambda(b))), \] we are able to define an isomorphism-germ \[ (\whitney{\bb}{\be{B}})\restr{U} \xRightarrow{Q \oplus I} (\whitney{\be{B}}{\be{B}})\restr{U} \xto{\psi} (\whitney{\be{B}}{\be{B}})\restr{U} \xRightarrow{\inv{Q} \oplus I} (\whitney{\be{B}}{\bb})\restr{U} \] which extends $\whitney{R}{\inv{R}}$ since $\psi(b_0, x, y) = (b_0, x, y)$, and which coincides with $F$ over $U \cap \inv{\lambda}(0)$.
+
+Pieced together with $F\restr{\inv{\lambda}(b)}$ using \myintref{homotopy::gluing}, we obtain our required isomorphism germ. \end{myproof}

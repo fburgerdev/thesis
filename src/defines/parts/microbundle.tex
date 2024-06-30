@@ -1,61 +1,18 @@
-% bundle
-\newcommand{\bundledef}[5] {%
-    #1: #2 \xto{#4} #3 \xto{#5} #2{}%
-}
-\newcommand{\bundle}[4] {%
-    #1 \xto{#3} #2 \xto{#4} #1{}%
-}
-% bundle :: generic
-\newcommand{\ba} {%
-    \mathfrak{a}%
-}
-\NewDocumentCommand{\bb}{o}{
-    \IfValueTF{#1}{\mathfrak{b}\restr{#1}}{\mathfrak{b}}
-}
-\newcommand{\bc} {%
-    \mathfrak{c}%
-}
-\newcommand{\bd} {%
-    \mathfrak{d}%
-}
-% bundle :: trivial
-\newcommand{\be}[2][n]{
-    \mathfrak{e}^{#1}_{#2}
-}
-% bundle :: tangent
-\newcommand{\bt} {%
-    \mathfrak{t}%
-}
-% bundle :: normal
-\newcommand{\bn} {%
-    \mathfrak{n}%
-}
+\newcommand{\bundledef}[5] {#1: #2 \xto{#4} #3 \xto{#5} #2{}} \newcommand{\bundle}[4] {#1 \xto{#3} #2 \xto{#4} #1{}} \newcommand{\ba} { \mathfrak{a} }
+\NewDocumentCommand{\bb}{o}{ \IfValueTF{#1}{\mathfrak{b}\restr{#1}}{\mathfrak{b}} }
+\newcommand{\bc} { \mathfrak{c} }
+\newcommand{\bd} { \mathfrak{d} }
+\newcommand{\be}[2][n]{ \mathfrak{e}^{#1}_{#2} }
+\newcommand{\bt} { \mathfrak{t} }
+\newcommand{\bn} { \mathfrak{n} }
 
-% induced
-\newcommand{\ind}[1] {%
-    #1^*%
-}
+\newcommand{\ind}[1] { #1^* }
 
-% germ
-\newcommand{\germdef}[3] {%
-    #1: #2 \Rightarrow{} #3%
-}
-\newcommand{\germ}[2] {%
-    #1 \Rightarrow{} #2%
-}
+\newcommand{\germdef}[3] { #1: #2 \Rightarrow{} #3 }
+\newcommand{\germ}[2] { #1 \Rightarrow{} #2 }
 
-% whitney
-\newcommand{\whitney}[2] {%
-    #1 \oplus{} #2%
-}
+\newcommand{\whitney}[2] { #1 \oplus{} #2 }
 
-% rooted
-\newcommand{\bab} {%
-    \ba\restr{a_0}%
-}
-\newcommand{\bbb} {%
-    \bb[b_0]%
-}
-\newcommand{\bcb} {%
-    \bc\restr{c_0}%
-}
+\newcommand{\bab} { \ba\restr{a_0} }
+\newcommand{\bbb} { \bb[b_0] }
+\newcommand{\bcb} { \bc\restr{c_0} }

@@ -1,24 +1,5 @@
-% germ
-\begin{mystatement}{definition}[map-germ]{homotopy::germ}[65]
-    A \defterm{map-germ} $\germdef{F}{(X, A)}{(Y, B)}$
-    between topological pairs $(X, A)$ and $(Y, B)$
-    is an equivalence class of maps $(X, A) \to (Y, B)$
-    where $f \sim g \iff f\restr{U} = g\restr{U}$
-    for an arbitrary neighborhood $U \sub X$ of $A$.
-\end{mystatement}
+\begin{mystatement}{definition}[map-germ]{homotopy::germ}[65] A \defterm{map-germ} $\germdef{F}{(X, A)}{(Y, B)}$ between topological pairs $(X, A)$ and $(Y, B)$ is an equivalence class of maps $(X, A) \to (Y, B)$ where $f \sim g \iff f\restr{U} = g\restr{U}$ for an arbitrary neighborhood $U \sub X$ of $A$. \end{mystatement}
 
-% composition
-\begin{myparagraph}
-    We can form the composition of two map-germs
-    $\germdef{F}{(X, A)}{(Y, B)}$ and $\germdef{G}{(Y, B)}{(Z, C)}$
-    by choosing representatives $f: U_f \to Y$ and $g: U_g \to Z$
-    and defining $(f \circ g) \restr{\inv{f}(U_g)}$ to be
-    a representative for $G \circ F$.
-\end{myparagraph}
+\begin{myparagraph} We can form the composition of two map-germs $\germdef{F}{(X, A)}{(Y, B)}$ and $\germdef{G}{(Y, B)}{(Z, C)}$ by choosing representatives $f: U_f \to Y$ and $g: U_g \to Z$ and defining $(f \circ g) \restr{\inv{f}(U_g)}$ to be a representative for $G \circ F$. \end{myparagraph}
 
-% homeomorphism
-\begin{mystatement}{definition}[homeomorphism-germ]{homotopy::homeomorphism}[65]
-    A \defterm{homeomorphism-germ} $\germdef{F}{(X, A)}{(Y, B)}$ is a map-germ
-    such that there exists a representative $f: U_f \to Y$
-    that maps $U_f$ homeomorphically to a neighborhood of $B$.
-\end{mystatement}
+\begin{mystatement}{definition}[homeomorphism-germ]{homotopy::homeomorphism}[65] A \defterm{homeomorphism-germ} $\germdef{F}{(X, A)}{(Y, B)}$ is a map-germ such that there exists a representative $f: U_f \to Y$ that maps $U_f$ homeomorphically to a neighborhood of $B$. \end{mystatement}

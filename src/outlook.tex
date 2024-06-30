@@ -1,0 +1,28 @@
+\section{Outlook}\label{chapter::outlook}
+\subsection*{Block bundles}
+\begin{myparagraph}
+    Now that we have seen that Milnors Theorem holds, one may ask whether a stabilization of the surrounding manifold is even necessary. As mentioned in \myintref{section::motivation}, Rourke and Sanderson constructed a submanifold that does not admit a normal microbundle in its surrounding manifold. So within the theory of microbundles, we can not significantly improve the results from Milnors Theorem.
+
+    But what if we look beyond the theory of microbundles. Is there some other approach to define a tangent bundle over topological manifolds without the need for a stabilization in order to guarantee the existence of a normal bundle?
+
+    In 1968, Rourke and Sanderson published a paper introducing so called `block bundles', which are defined over simplicial complexes (see \cite{block}).
+    
+    Let $K$ be a simplicial complex. A \defterm{q-block bundle} $\xi^q/K$ is defined by a total space $E(\xi)$ with $\abs{K} \sub E(\xi)$ such that there exists a collection of \defterm{blocks} $\coll{\beta_i}$ satisfying the following:
+    \begin{itemize}
+        \item Every block $\beta_i$ corresponds to a $n$-cell $\sigma_i \in K$ in a way that
+        \begin{center}
+            $(\beta_i, \sigma_i) \cong (\I^{n + q}, \I^n)$.
+        \end{center}
+        \item The blocks cover the entire total space $E(\xi)$.
+        \item The interior of any two different blocks are disjoint.
+        \item $\beta_i \cap \beta_j$ is the union of the blocks of the faces for $\sigma_i \cap \sigma_j$.
+    \end{itemize}
+
+    A normal block bundle over a PL-submanifold $M \sub N$ is defined to be a block bundle $\eta/K$ such that $E(\eta) = N$. Theorem 4.3a in `block bundles I' \cite{block} then states that every compact PL-submanifold $M \sub N$, with a locally flat and proper embedding, admits a normal block bundle. To prove this, Rourke and Sanderson utilize the regular neighborhood theorem in \cite[p.293]{regular} and the construction of dual complexes.
+
+    So in this theory, the existence of normal block bundles is guaranteed without the need for a stabilization. However, this comes to the major cost that block bundles are not equipped with a projection map. Thus, for block bundles, the existence of a normal bundle is attained at the expense of the projection map.
+\end{myparagraph}
+\subsection*{Fiber bundles}
+\begin{myparagraph}
+    In order to construct the tangent microbundle, we gave up on the requirement that the bundle is a vector bundle or even a fiber bundle. Suprisingly, in 1964 J. Kister could show that every microbundle $\bundledef{\bb}{B}{E}{i}{j}$ has a restriction $\bb[E']$ such that $E' \xto{j\restr{E'}} B$ is a fiber bundle (see \cite{kister}). The fibers are Euclidean and the structural group is the set of all based homeomorphisms $(\R^n, 0) \isomto (\R^n, 0)$. This is an extraordinary result. It makes microbundles a very natural analogue to vector bundles in the topological and piecewise category.
+\end{myparagraph}

@@ -1,84 +1,23 @@
-\begin{scope}
-    % defines
-    \newcommand{\A} {
-        A_\alpha{}
-    }
+\begin{scope} \newcommand{\A} { A_\alpha{} }
 
-    % lemma
-    \begin{mystatement}{lemma}{homotopy::lemma3}[67]
-        Let $\bb$ be a microbundle over $\cyl{B}$ where $B$ is paracompact hausdorff.
-        Then there exists a bundle-germ $\germdef{R}{\bb}{\bb[\cylup{B}]}$
-        covering the retraction $r: \cyl{B} \to \cylup{B}$ with $r(b, t) = (b, 1)$.
-    \end{mystatement}
+\begin{mystatement}{lemma}{homotopy::lemma3}[67] Let $\bb$ be a microbundle over $\cyl{B}$ where $B$ is paracompact hausdorff. Then there exists a bundle-germ $\germdef{R}{\bb}{\bb[\cylup{B}]}$ covering the retraction $r: \cyl{B} \to \cylup{B}$ with $r(b, t) = (b, 1)$. \end{mystatement}
 
-    % proof
-    \begin{myproof}
-        % partition of unity
-        First, we assume a locally finite covering $\{V_\alpha\}$ of open sets
-        where $\bb[\cyl{V_\alpha}]$ is trivial.
-        The existence of such a covering is justified
-        by \myintref{homotopy::lemma2} and paracompactness of $B$.
+\begin{myproof} First, we assume a locally finite covering $\{V_\alpha\}$ of open sets where $\bb[\cyl{V_\alpha}]$ is trivial. The existence of such a covering is justified by \myintref{homotopy::lemma2} and paracompactness of $B$.
 
-        This cover can be equipped with a partition of unity
-        \[ \lambda_\alpha: B \to \I \twith \supp \lambda_\alpha \sub V_\alpha \]
-        since $B$ is paracompact hausdorff, that is rescaled in way that
-        \[ \max_\alpha(\lambda_\alpha(b)) = 1, \forall b \in B. \]
-        Such a rescaling can be achieved by dividing $\lambda_\alpha$ by $\max_\alpha \lambda_\alpha$
-        which is well-defined because $\coll{V_\alpha}$ is locally finite and continuous
-        because the $\max$ function is continuous.
-        Also, $\max_\alpha \lambda_\alpha(b) > 0$ since the initial
-        partition of unity adds up to $1$ in every point.
+This cover can be equipped with a Partition of Unity \[ \lambda_\alpha: B \to \I \twith \supp \lambda_\alpha \sub V_\alpha \] since $B$ is paracompact hausdorff, that is rescaled in way that \[ \max_\alpha(\lambda_\alpha(b)) = 1, \forall b \in B. \] Such a rescaling can be achieved by dividing $\lambda_\alpha$ by $\max_\alpha \lambda_\alpha$ which is well-defined because $\coll{V_\alpha}$ is locally finite and continuous because the $\max$ function is continuous. Also, $\max_\alpha \lambda_\alpha(b) > 0$ since the initial Partition of Unity adds up to $1$ in every point.
 
-        % construction
-        Now we define a retraction $r_\alpha: \cyl{B} \to \cyl{B}$ with
-        \[ r_\alpha(b, t) = (b, \max(t, \lambda_\alpha(b))). \]
+Now we define a retraction $r_\alpha: \cyl{B} \to \cyl{B}$ with \[ r_\alpha(b, t) = (b, \max(t, \lambda_\alpha(b))). \]
 
-        In the remainder of this proof,
-        we construct bundle-germs $\germdef{R_\alpha}{\bb}{\bb}$
-        covering $r_\alpha$ in order to `compose' them to our required bundle-germ.
-        \begin{sectionize}
-            % local bundle-germ
-            \item Constructing bundle-germs $R_\alpha$ covering $r_\alpha$
+In the remainder of this proof, we construct bundle-germs $\germdef{R_\alpha}{\bb}{\bb}$ covering $r_\alpha$ in order to `compose' them to our required bundle-germ. \begin{sectionize} \item Constructing bundle-germs $R_\alpha$ covering $r_\alpha$
 
-            We can divide $B \cross \I$ into two subsets
-            \[
-                A_\alpha = \cyl{\supp{\lambda_\alpha}} \sub \cyl{V_\alpha} \tand
-                A'_\alpha = \set{(b, t)}{t \ge \lambda_\alpha(b)}.
-            \]
-            Since $\bb[A_\alpha]$ is trivial, we can,
-            analogous to the proof of \myintref{homotopy::lemma1},
-            extend the identity bundle-germ on $\bb[\A \cap \A']$ to a bundle-germ
-            \[ \germ{\bb[\A]}{\bb[\A \cap \A']} \]
-            using the bundle-germ $\germ{\be{\A}}{\be{\A \cap \A'}}$ represented by
-            \[ (a, x) \mapsto (r_\alpha(a), x). \]
-            Pieced together with the identity bundle-germ $\bb[\A']$
-            ($\A$ and $\A'$ are both closed),
-            we obtain a bundle-germ $R_\alpha$ covering $r_\alpha$.
-            
-            % glue together
-            \item Constructing a bundle-germ $R$ covering $(b, t) \mapsto (b, 1)$
+We can divide $B \cross \I$ into two subsets \[ A_\alpha = \cyl{\supp{\lambda_\alpha}} \sub \cyl{V_\alpha} \tand A'_\alpha = \set{(b, t)}{t \ge \lambda_\alpha(b)}. \] Since $\bb[A_\alpha]$ is trivial, we can, analogous to the proof of \myintref{homotopy::lemma1}, extend the identity bundle-germ on $\bb[\A \cap \A']$ to a bundle-germ \[ \germ{\bb[\A]}{\bb[\A \cap \A']} \] using the bundle-germ $\germ{\be{\A}}{\be{\A \cap \A'}}$ represented by \[ (a, x) \mapsto (r_\alpha(a), x). \] Pieced together with the identity bundle-germ $\bb[\A']$ ($\A$ and $\A'$ are both closed), we obtain a bundle-germ $R_\alpha$ covering $r_\alpha$.
 
-            Applying the well-ordering theorem,
-            which is equivalent to the axiom of choice (see\cite[p.14]{kuczma}),
-            we may assume an ordering for $\coll{V_\alpha}$.
+\item Constructing a bundle-germ $R$ covering $(b, t) \mapsto (b, 1)$
 
-            Let $\coll{B_\beta}$ be a locally finite closed cover of $B$
-            such that $B_\beta$ intersects only
-            finitely many $V_{\alpha_1} < \cdots < V_{\alpha_k}$
-            obtained by \myintref{homotopy::paracompact}.
+Applying the well-ordering theorem, which is equivalent to the axiom of choice (see\cite[p.14]{kuczma}), we may assume an ordering for $\coll{V_\alpha}$.
 
-            The composition
-            $R_{\alpha_1} \circ \ldots \circ R_{\alpha_k}$ restricts to a bundle-germ
-            \[ \germdef{R(\beta)}{\bb[\cyl{B_\beta}]}{\bb[\cylup{B_\beta}]} \]
-            covering the retraction $(b, t) \mapsto (b, 1)$.
-            That is because for every $b \in B_\beta$,
-            we find an $1 \le i \le k$ with
-            $\lambda_{\alpha_i}(b) = 1$ and hence $r_{\alpha_i}(b, t) = (b, 1)$.
-            
-            Pieced together using \myintref{homotopy::lemma1},
-            we obtain a bundle-germ
-            \[ R: \bb[\cyl{B}] \to \bb[\cylup{B}] \]
-            covering $(b, t) \mapsto (b, 1)$.
-        \end{sectionize}
-    \end{myproof}
-\end{scope}
+Let $\coll{B_\beta}$ be a locally finite closed cover of $B$ such that $B_\beta$ intersects only finitely many $V_{\alpha_1} < \cdots < V_{\alpha_k}$ obtained by \myintref{homotopy::paracompact}.
+
+The composition $R_{\alpha_1} \circ \ldots \circ R_{\alpha_k}$ restricts to a bundle-germ \[ \germdef{R(\beta)}{\bb[\cyl{B_\beta}]}{\bb[\cylup{B_\beta}]} \] covering the retraction $(b, t) \mapsto (b, 1)$. That is because for every $b \in B_\beta$, we find an $1 \le i \le k$ with $\lambda_{\alpha_i}(b) = 1$ and hence $r_{\alpha_i}(b, t) = (b, 1)$.
+
+Pieced together using \myintref{homotopy::lemma1}, we obtain a bundle-germ \[ R: \bb[\cyl{B}] \to \bb[\cylup{B}] \] covering $(b, t) \mapsto (b, 1)$. \end{sectionize} \end{myproof} \end{scope}

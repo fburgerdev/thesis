@@ -1,108 +1,37 @@
-% foreword
-\begin{myparagraph}
-    In the remainder of this section, we show the above-mentioned theorem about the
-    existence of an `inverse' in respect to the Whitney sum.
-    This statement is essential for the proof of Milnors \Cref{normal::milnor}.
+\begin{myparagraph} In the remainder of this section, we show the above-mentioned theorem about the existence of an `inverse' in respect to the Whitney sum. This statement is essential for the proof of Milnors \Cref{normal::milnor}.
 
-    In order to show this, we require the following lemma,
-    whose proof will be deferred until \myintref{chapter::suspension}.
+In order to show this, we require the following lemma, whose proof will be deferred until \myintref{chapter::suspension}.
 
-    % ? rephrase
 \end{myparagraph}
 
-% bouquet lemma
-\begin{mystatement}{lemma}[Bouquet Lemma]{whitney::bouquet}[59]
-    Let $\bb$ be a microbundle over a `bouquet' of spheres $B$, meeting in a single point.
-    Then there exists a map $r: B \to B$ such that $\whitney{\bb}{\ind{r}\bb}$ is trivial.
-\end{mystatement}
+\begin{mystatement}{lemma}[Bouquet Lemma]{whitney::bouquet}[59] Let $\bb$ be a microbundle over a `bouquet' of spheres $B$, meeting in a single point. Then there exists a map $r: B \to B$ such that $\whitney{\bb}{\ind{r}\bb}$ is trivial. \end{mystatement}
 
-% theorem trivialize
-\begin{mystatement}{theorem}{whitney::theorem}[59]
-    Let $\bb$ be a microbundle over a $d$-simplicial complex $B$.
-    Then there exists a microbundle $\bn$ over $B$ such that
-    the Whitney sum $\whitney{\bb}{\bn}$ is trivial.
-\end{mystatement}
+\begin{mystatement}{theorem}{whitney::theorem}[59] Let $\bb$ be a microbundle over a $d$-simplicial complex $B$. Then there exists a microbundle $\bn$ over $B$ such that the Whitney sum $\whitney{\bb}{\bn}$ is trivial. \end{mystatement}
 
-% proof trivialize
-\begin{myproof}
-    We prove the theorem by induction over $d$.
+\begin{myproof} We prove the theorem by induction over $d$.
 
-    % start
-    (Start of induction)
+(Start of induction)
 
-    A $1$-simplicial complex is just a bouquet of circles.
-    Hence, the start of induction follows directly from \myintref{whitney::bouquet}.
+A $1$-simplicial complex is just a bouquet of circles. Hence, the start of induction follows directly from \myintref{whitney::bouquet}.
 
-    % step
-    (Inductive Step)
+(Inductive Step)
 
-    Let $B'$ be the $(d - 1)$-skeleton of $B$ and let $\bn'$ be its corresponding microbundle
-    such that $\whitney{\bb[B']}{\bn'}$ is trivial.
+Let $B'$ be the $(d - 1)$-skeleton of $B$ and let $\bn'$ be its corresponding microbundle such that $\whitney{\bb[B']}{\bn'}$ is trivial.
 
-    \begin{steps}
-        % simplex
-        \item $\whitney{\bn'}{\be{B'}}$ can be extended over any $d$-simplex $\sigma$
+\begin{steps} \item $\whitney{\bn'}{\be{B'}}$ can be extended over any $d$-simplex $\sigma$
 
-        Consider the equation
-        \[
-            (\whitney{\bn'}{\be{B'}})\restr{\partial\sigma}
-            = \whitney{\bn'\restr{\partial\sigma}}{\be{B'}\restr{\partial\sigma}}
-            = \whitney{\bn'\restr{\partial\sigma}}{\bb[\partial\sigma]}
-            = (\whitney{\bn'}{\bb[B']})\restr{\partial\sigma}
-        \]
-        in which we used \myintref{induced::simplex}
-        for $\be{B'}\restr{\partial\sigma} = \bb[\partial\sigma]$.
-        Since $(\whitney{\bn'}{\bb[B']})\restr{\partial\sigma}$ is trivial, the claim follows from \myintref{induced::simplex}.
+Consider the equation \[ (\whitney{\bn'}{\be{B'}})\restr{\partial\sigma} = \whitney{\bn'\restr{\partial\sigma}}{\be{B'}\restr{\partial\sigma}} = \whitney{\bn'\restr{\partial\sigma}}{\bb[\partial\sigma]} = (\whitney{\bn'}{\bb[B']})\restr{\partial\sigma} \] in which we used \myintref{induced::simplex} for $\be{B'}\restr{\partial\sigma} = \bb[\partial\sigma]$. Since $(\whitney{\bn'}{\bb[B']})\restr{\partial\sigma}$ is trivial, the claim follows from \myintref{induced::simplex}.
 
-        % extend
-        \item $\whitney{\bn'}{\be{B'}}$ can be extended over $B$
+\item $\whitney{\bn'}{\be{B'}}$ can be extended over $B$
 
-        One difficulty is that the individual $d$-simplices are not well-separated.
-        To deal with this, we consider $B''$ which is defined to be $B$
-        with small open $d$-cells removed from every $d$-simplex.
-        Since $B'$ is a retract of $B''$, we can extend $\whitney{\bn'}{\be{B'}}$ to a microbundle $\nu$ over $B''$.
+One difficulty is that the individual $d$-simplices are not well-separated. To deal with this, we consider $B''$ which is defined to be $B$ with small open $d$-cells removed from every $d$-simplex. Since $B'$ is a retract of $B''$, we can extend $\whitney{\bn'}{\be{B'}}$ to a microbundle $\nu$ over $B''$.
 
-        Now we extend $\nu$ over $B$ by taking all extensions of $\nu$
-        over every simplex
-        using (Step 1), and identifying its total spaces together along $E(\nu)$.
-        Similarly, injection and projection are obtained
-        by piecing the injection and projection maps of the individual extensions together.
+Now we extend $\nu$ over $B$ by taking all extensions of $\nu$ over every simplex using (Step 1), and identifying its total spaces together along $E(\nu)$. Similarly, injection and projection are obtained by piecing the injection and projection maps of the individual extensions together.
 
-        We denote the resulting microbundle by $\eta$.
+We denote the resulting microbundle by $\eta$.
 
-        % trivial
-        \item \blankbreak{}
-        Consider the mapping cone $B \sqcup_\iota CB'$ over the inclusion $B' \incl B$.
-        The following equation shows that $(\whitney{\bb}{\eta})\restr{B'}$ is trivial:
-        \[
-            (\whitney{\bb}{\eta})\restr{B'}
-            \cong \whitney{\bb[B']}{\eta\restr{B'}}
-            \cong \whitney{\bb[B']}{(\whitney{\bn'}{\be{B'}})}
-            \cong \whitney{(\whitney{\bb[B']}{\bn'})}{\be{B'}}
-            \cong \whitney{\be{B'}}{\be{B'}}
-        \]
-        \myintref{induced::cone} then yields a microbundle $\xi$ over $B \sqcup_\iota CB'$
-        extending $\whitney{\bb}{\eta}$.
+\item \blankbreak{} Consider the mapping cone $B \sqcup_\iota CB'$ over the inclusion $B' \incl B$. The following equation shows that $(\whitney{\bb}{\eta})\restr{B'}$ is trivial: \[ (\whitney{\bb}{\eta})\restr{B'} \cong \whitney{\bb[B']}{\eta\restr{B'}} \cong \whitney{\bb[B']}{(\whitney{\bn'}{\be{B'}})} \cong \whitney{(\whitney{\bb[B']}{\bn'})}{\be{B'}} \cong \whitney{\be{B'}}{\be{B'}} \] \myintref{induced::cone} then yields a microbundle $\xi$ over $B \sqcup_\iota CB'$ extending $\whitney{\bb}{\eta}$.
 
-        The mapping cone $B \sqcup_\iota CB'$ has the homotopy type of a bouquet of spheres,
-        which can be seen as follows:
-        \begin{itemize}
-            \item A $d$-simplex is homotopic to a $d$-disc.
-            \item A $d$-disc whose boundary is collapsed to a single point is a $d$-sphere.
-            \item One can define a homotopy between $\iota(B')$ and the tip of the cone by
-            traveling along $CB'$.
-        \end{itemize}
-        
-        Using \myintref{homotopy::theorem} and \myintref{whitney::bouquet},
-        we conclude that there exists a microbundle $\bn$ such that $(\whitney{\xi}{\bn})\restr{B}$ is trivial.
-        The equation
-        \[
-            \be{B}
-            = (\whitney{\xi}{\bn})\restr{B}
-            = \whitney{\xi\restr{B}}{\bn\restr{B}}
-            = \whitney{(\whitney{\bb}{\eta})}{\bn\restr{B}}
-            = \whitney{\bb}{(\whitney{\eta}{\bn\restr{B}})}
-        \]
-        completes the proof.
-    \end{steps}
-\end{myproof}
+The mapping cone $B \sqcup_\iota CB'$ has the homotopy type of a bouquet of spheres, which can be seen as follows: \begin{itemize} \item A $d$-simplex is homotopic to a $d$-disc. \item A $d$-disc whose boundary is collapsed to a single point is a $d$-sphere. \item One can define a homotopy between $\iota(B')$ and the tip of the cone by traveling along $CB'$. \end{itemize}
+
+Using \myintref{homotopy::theorem} and \myintref{whitney::bouquet}, we conclude that there exists a microbundle $\bn$ such that $(\whitney{\xi}{\bn})\restr{B}$ is trivial. The equation \[ \be{B} = (\whitney{\xi}{\bn})\restr{B} = \whitney{\xi\restr{B}}{\bn\restr{B}} = \whitney{(\whitney{\bb}{\eta})}{\bn\restr{B}} = \whitney{\bb}{(\whitney{\eta}{\bn\restr{B}})} \] completes the proof. \end{steps} \end{myproof}

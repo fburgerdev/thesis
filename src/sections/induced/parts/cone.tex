@@ -1,139 +1,45 @@
-% extend
-\begin{myparagraph}
-    In the remainder of this subsection,
-    we study whether microbundles can be extended
-    over particular base spaces.
+\begin{myparagraph} In the remainder of this subsection, we study whether microbundles can be extended over particular base spaces.
 
-    Here, the term \defterm{extended} means that when restricting
-    such a microbundle
-    to the initial base space, we obtain a microbundle that
-    is isomorphic to the initial microbundle.
+Here, the term \defterm{extended} means that when restricting such a microbundle to the initial base space, we obtain a microbundle that is isomorphic to the initial microbundle. \end{myparagraph}
+
+\begin{myparagraph} For a topological space $X$, we define the \defterm{cone} $CX$ of $X$ by \[ \cyl{X} / X \cross \{1\} \] and the \defterm{mapping cone} $B \sqcup_f CA$ over a map $f: A \to B$ by \[ B \sqcup CA / \sim \] where $(a, 0) \sim b \iff f(a) = b$.
+
+Similarly, we define the \defterm{cylinder} $MX$ of $X$ by \[ \cyl{X} \] and the \defterm{mapping cylinder} $B \sqcup_f MA$ over a map $f: A \to B$ by \[ B \sqcup MA / \sim \] where $(a, 0) \sim b \iff f(a) = b$.
+
 \end{myparagraph}
 
-% foreword cone / cylinder
-\begin{myparagraph}
-    % cone
-    For a topological space $X$, we define the \defterm{cone} $CX$ of $X$ by
-    \[ \cyl{X} / X \cross \{1\} \]
-    and the \defterm{mapping cone} $B \sqcup_f CA$ over a map $f: A \to B$ by
-    \[ B \sqcup CA / \sim \]
-    where $(a, 0) \sim b \iff f(a) = b$.
+\begin{mystatement}{lemma}{induced::cone}[58] Let $A$ be a paracompact hausdorff space. A microbundle $\bb$ over $B$ can be extended over the mapping cone $B \sqcup_f CA$ if and only if $\ind{f}\bb$ is trivial. \end{mystatement}
 
-    % cylinder
-    Similarly, we define the \defterm{cylinder} $MX$ of $X$ by
-    \[ \cyl{X} \]
-    and the \defterm{mapping cylinder} $B \sqcup_f MA$ over a map $f: A \to B$ by
-    \[ B \sqcup MA / \sim \]
-    where $(a, 0) \sim b \iff f(a) = b$.
+\begin{myproof} We show both implications.
 
-    % ? rephrase
-\end{myparagraph}
+`$\implies$'
 
-% lemma cone
-\begin{mystatement}{lemma}{induced::cone}[58]
-    Let $A$ be a paracompact hausdorff space.
-    A microbundle $\bb$ over $B$ can be extended
-    over the mapping cone $B \sqcup_f CA$ if and only if $\ind{f}\bb$ is trivial.
-\end{mystatement}
+Let $\bb'$ be an extension of $\bb$ over $B \sqcup_f CA$.
 
-% proof cone
-\begin{myproof}
-    We show both implications.
+The composition $A \xto{f} B \incl B \sqcup_f CA$ is null-homotopic via the homotopy \[ H(a, t) = [a, t], \] because $H(a, 0) = [a, 0] = [f(a)] = (\iota \circ f)(a)$ and $H(a, 1) = [a, 1] = [\tilde{a}, 1] = H(\tilde{a}, 1)$.
 
-    % =>
-    `$\implies$'
+The Homotopy Theorem, which will be proved in \myintref{chapter::homotopy}, yields that \[ \ind{(\iota \circ f)}\bb' \cong \ind{c_{A, [a, 1]}}\bb' \] since $\iota \circ f$ is homotopic to $c_{A, [a, 1]}$. Together with \myintref{induced::const}, it follows that $\ind{(\iota \circ f)}\bb'$ is trivial.
 
-    Let $\bb'$ be an extension of $\bb$ over $B \sqcup_f CA$.
+Together with $\ind{(\iota \circ f)}\bb' \cong \ind{f}(\ind{\iota}\bb') \cong \ind{f}\bb$, we conclude that $\ind{f}\bb$ is trivial.
 
-    % homotopy
-    The composition $A \xto{f} B \incl B \sqcup_f CA$ is
-    null-homotopic via the homotopy
-    \[ H(a, t) = [a, t], \]
-    because $H(a, 0) = [a, 0] = [f(a)] = (\iota \circ f)(a)$
-    and $H(a, 1) = [a, 1] = [\tilde{a}, 1] = H(\tilde{a}, 1)$.
+`$\impliedby$'
 
-    % theorem
-    The Homotopy Theorem, which will be proved in \myintref{chapter::homotopy},
-    yields that
-    \[ \ind{(\iota \circ f)}\bb' \cong \ind{c_{A, [a, 1]}}\bb' \]
-    since $\iota \circ f$ is homotopic to $c_{A, [a, 1]}$.
-    Together with \myintref{induced::const},
-    it follows that $\ind{(\iota \circ f)}\bb'$ is trivial.
+Let $\ind{f}\bb$ be trivial.
 
-    % conclusion
-    Together with $\ind{(\iota \circ f)}\bb' \cong \ind{f}(\ind{\iota}\bb') \cong \ind{f}\bb$,
-    we conclude that $\ind{f}\bb$ is trivial.
+In contrast to the mapping cone, there exists a natural retraction from the mapping cylinder to its attached space \[ r: B \sqcup_f MA \to B \twith r([a, t]) = f(a). \] The diagram \[ A \cross \{1\} \incl B \sqcup_f MA \xto{r} B \] is equal to $f$ if we consider $A = \cylup{A}$. From $\ind{r}\bb[A \cross \{1\}] = \ind{(r \circ \iota)}\bb = \ind{f}\bb$ it follows that $\ind{r}\bb[A \cross \{1\}]$ is trivial. Furthermore, $\ind{r}\bb[A \cross {(\half, 1]}]$ is trivial as well due to \myintref{induced::trivial} and the retraction $A \cross (\half, 1] \to \cylup{A}$ with $(a, t) \mapsto (a, 1)$.
 
-    % <=
-    `$\impliedby$'
+Since $A$ is paracompact hausdorff, we can apply \myintref{microbundle::paracompact}. Hence, there exists a homeomorphism \[ \psi: W \isomto A \cross (\half, 1] \cross \R^n \] where $W$ is a neighborhood of $i_r(A)$ in $E(\ind{r}\bb[A \cross {(\half, 1]}])$. Without loss of generality, we may assume that $W = E(\ind{r}\bb[A \cross {(\half, 1]}])$ by removing a closed subset of $E(\ind{r}\bb[A \cross {(\half, 1]}])$ if necessary and applying \myintref{microbundle::total}.
 
-    Let $\ind{f}\bb$ be trivial.
+We define an extended microbundle $\bundledef{\bb'}{B \sqcup_f CA}{E'}{i'}{j'}$ by \begin{itemize} \item $E' = E(\ind{r}\bb) / \inv{\psi}(A \cross \{1\} \cross \{x\})$ (for every $x \in \R^n$) \item $i'([a, t]) = [i_r([a, t])]$ \item $j'([[a, t], e]) = [j_r([a, t], e)] = [a, t]$ \end{itemize} The injection $i'$ is well-defined because $i_r$ maps every representative $[a, 1]$ to the same equivalence class of $E'$ due to its construction. Similarly, the projection $j'$ is well-defined because \[ [[a, t], e] = [[a', t'], e'] \implies [a, t] = [a', t']. \]
 
-    % cylinder
-    In contrast to the mapping cone,
-    there exists a natural retraction from the mapping cylinder to its attached space
-    \[ r: B \sqcup_f MA \to B \twith r([a, t]) = f(a). \]
-    The diagram
-    \[ A \cross \{1\} \incl B \sqcup_f MA \xto{r} B \]
-    is equal to $f$ if we consider $A = \cylup{A}$.
-    From $\ind{r}\bb[A \cross \{1\}] = \ind{(r \circ \iota)}\bb = \ind{f}\bb$ it follows that
-    $\ind{r}\bb[A \cross \{1\}]$ is trivial.
-    Furthermore, $\ind{r}\bb[A \cross (\half, 1]]$ is trivial as well
-    due to \myintref{induced::trivial} and the retraction
-    $A \cross (\half, 1] \to \cylup{A}$ with $(a, t) \mapsto (a, 1)$.
+Both $i'$ and $j'$ are continuous due to the definition of the quotient space topology. Also, $j' \circ i' = id_{B \sqcup_f CA}$ because \[ j'(i'([a, t])) = j'([i_r(a, t)]) = [j_r(i_r(a, t))] = [a, t]. \]
 
-    % homeomorpism
-    Since $A$ is paracompact hausdorff, we can apply \myintref{microbundle::paracompact}.
-    Hence, there exists a homeomorphism
-    \[ \psi: W \isomto A \cross (\half, 1] \cross \R^n \]
-    where $W$ is a neighborhood of $i_r(A)$ in $E(\ind{r}\bb[A \cross {(\half, 1]}])$.
-    Without loss of generality,
-    we may assume that $W = E(\ind{r}\bb[A \cross {(\half, 1]}])$
-    by removing a closed subset of $E(\ind{r}\bb[A \cross {(\half, 1]}])$
-    if necessary and applying \myintref{microbundle::total}.
+It remains to be shown that $\bb'$ is locally trivial. Let $[a, t] \in B \sqcup_f CA$ be arbitrary. Note that, by construction, the cone and the cylinder differ only in an arbitrary small neighborhood of $\set{[a, 1]}{a \in A}$.
 
-    % extension
-    We define an extended microbundle $\bundledef{\bb'}{B \sqcup_f CA}{E'}{i'}{j'}$ by
-    \begin{itemize}
-        \item $E' = E(\ind{r}\bb) / \inv{\psi}(A \cross \{1\} \cross \{x\})$ (for every $x \in \R^n$)
-        \item $i'([a, t]) = [i_r([a, t])]$
-        \item $j'([[a, t], e]) = [j_r([a, t], e)] = [a, t]$
-    \end{itemize}
-    The injection $i'$ is well-defined because $i_r$ maps every
-    representative $[a, 1]$ to the same equivalence
-    class of $E'$ due to its construction.
-    Similarly, the projection $j'$ is well-defined because
-    \[ [[a, t], e] = [[a', t'], e'] \implies  [a, t] = [a', t']. \]
+We consider two cases. \begin{caselist} \item $t \le \half$
 
-    % extension :: continuity and commutativity
-    Both $i'$ and $j'$ are continuous
-    due to the definition of the quotient space topology.
-    Also, $j' \circ i' = id_{B \sqcup_f CA}$ because
-    \[ j'(i'([a, t])) = j'([i_r(a, t)]) = [j_r(i_r(a, t))] = [a, t]. \]
+We simply use a local trivialization $(U, V, \phi)$ of $[a, t]$ in $\ind{r}\bb$ by restricting $U$ to $A \times [0, \frac{3}{4})$ if necessary. This is valid since the cone and the cylinder equal when restricted to $A \times [0, \frac{3}{4})$.
 
-    % extension :: local triviality
-    It remains to be shown that $\bb'$ is locally trivial.
-    Let $[a, t] \in B \sqcup_f CA$ be arbitrary.
-    Note that, by construction,
-    the cone and the cylinder differ only
-    in an arbitrary small neighborhood of $\set{[a, 1]}{a \in A}$.
+\item $t > \half$
 
-    We consider two cases.
-    \begin{caselist}
-        % case 1
-        \item $t \le \half$
-
-        We simply use a local trivialization $(U, V, \phi)$ of $[a, t]$ in $\ind{r}\bb$
-        by restricting $U$ to $A \times [0, \frac{3}{4})$ if necessary.
-        This is valid since the cone and the cylinder equal when restricted to $A \times [0, \frac{3}{4})$.
-
-        % case 2
-        \item $t > \half$
-        
-        In this case, we can use $\psi$ to serve as the homeomorphism for our local trivialization.
-        By construction, $\psi$ respects the projection $\pi: E(\ind{r}\bb) \subm E'$.
-        It follows that $(\frst{\psi}(\pi(W)), \pi(W), \psi)$
-        is a local trivialization for $[a, t]$ in $\bb'$.
-    \end{caselist}
-    This completes the proof.
-\end{myproof}
+In this case, we can use $\psi$ to serve as the homeomorphism for our local trivialization. By construction, $\psi$ respects the projection $\pi: E(\ind{r}\bb) \subm E'$. It follows that $(\frst{\psi}(\pi(W)), \pi(W), \psi)$ is a local trivialization for $[a, t]$ in $\bb'$. \end{caselist} This completes the proof. \end{myproof}

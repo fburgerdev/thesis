@@ -1,79 +1,50 @@
 \documentclass{article}
-% Packages
 \input{src/packages}
-% Global Definitions
 \input{src/defines/global}
 
-% Document
 \begin{document}
-% Document :: Titlepage
 \input{src/titlepage}
-% Document :: MAKETITLE
-% \maketitle
-% \clearpage
-% Document :: Abstract
+\input{src/hereby}
+\clearpage
 \input{src/abstract}
-% Document :: Table of Contents
 \tableofcontents
 \clearpage
-% Document :: Introduction
 \section{Introduction}\label{chapter::introduction}
-% Document :: Introduction :: Motivation
-\subsection*{Motivation}\label{section::motivation}{\blankbreak}
+\subsection*{Motivation}\label{section::motivation}
 \input{src/introduction}
-% Document :: Introduction :: Microbundle
-\subsection*{Introduction to Microbundles}\label{section::microbundle}{\blankbreak}
+\subsection*{Conventions}
+Throughout this thesis, we require that every manifold is paracompact and second-countable. Unless explicitly stated, manifolds are not equipped with a differentiable structure. A submanifold $N \sub M$ is required to be an embedded submanifold $N$ in $M$.
+\subsection*{Introduction to Microbundles}\label{section::microbundle}
 \input{src/sections/microbundle/section}
-% Docuement :: Constructions
 \section{Standard Constructions}\label{chapter::constructions}
 \begin{myparagraph}
-    This section introduces two standard constructions for microbundles,
-    the `induced microbundle' and the `Whitney sum'.
-    Both constructions have their vector bundle analogue
-    and many results carry over immediately to microbundles.
+This section introduces two standard constructions for microbundles, the `induced microbundle' and the `Whitney sum'. Both constructions have their vector bundle analogue and many results carry over immediately to microbundles.
 \end{myparagraph}
-% Document :: Constructions :: Induced
-\subsection*{Induced Microbundles}\label{section::induced}{\blankbreak}
+\subsection*{Induced Microbundles}\label{section::induced}
 \input{src/sections/induced/section}
-% Document :: Constructions :: Whitney
 \subsection*{The Whitney Sum}\label{section::whitney}
 \input{src/sections/whitney/section}
-% Document :: Homotopy
 \section{The Homotopy Theorem}\label{chapter::homotopy}
 \begin{myparagraph}
-    In this section, we will prove the Homotopy Theorem,
-    which is a fundamental result over microbundles.
-    It states the following.
+In this section, we will prove the Homotopy Theorem, which is a fundamental result over microbundles. It states the following.
 \end{myparagraph}
 \input{src/sections/homotopy/parts/statement}
 \begin{myparagraph}
-    In order to prove this theorem,
-    we introduce the concept of map-germs
-    over microbundles which provide another way
-    to think about isomorphy besides \myintref{microbundle::isomorphy}.
+In order to prove this theorem, we introduce the concept of map-germs over microbundles which provides another way to think about isomorphy besides \myintref{microbundle::isomorphy}.
 \end{myparagraph}
 \input{src/sections/germ/section}
 \input{src/sections/homotopy/section}
-% Docuemnt :: Suspension
 \section{Rooted Microbundles and the Bouquet Lemma}\label{chapter::suspension}
 \begin{myparagraph}
-    In this section,
-    we provide a proof for the Bouquet Lemma stated in \myintref{section::whitney}.
-    To this end, we introduce the concept of `rooted microbundles',
-    which allows us to define the wedge sum of two microbundles in a precise manner.
-    Additionally, we show a version of the Homotopy Theorem
-    that is compatible with rooted-microbundles.
+In this section, we provide a proof for the Bouquet Lemma stated in \myintref{section::whitney}. To this end, we introduce the concept of `rooted microbundles', which allows us to define the wedge sum of two microbundles in a precise manner. Additionally, we show a version of the Homotopy Theorem that is compatible with rooted-microbundles.
 
-    Throughout this section,
-    we assume that every topological space is equipped with an arbitrary base point
-    which we will denote with subscript $0$.
+Throughout this section, we assume that every topological space is equipped with an arbitrary base point which we will denote with subscript $0$.
 \end{myparagraph}
 \input{src/sections/rooted/section}
 \input{src/sections/suspension/section}
-% Document :: Normal
 \section{Normal Microbundles and Milnors Theorem}\label{chapter::normal}
 \input{src/sections/normal/section}
-% Document :: References
+\input{src/outlook}
 \input{src/references}
 \addcontentsline{toc}{section}{References}
 \end{document}

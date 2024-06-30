@@ -1,45 +1,15 @@
-% lemma
-\begin{mystatement}{lemma}{suspension::triviality}[70]
-    The following (non-rooted) isomorphy holds:
-    \[ \ind{\phi}(\bb \vee \be{B}) \cong \bb \cong \ind{\phi}(\be{B} \vee \bb) \]
-\end{mystatement}
+\begin{mystatement}{lemma}{suspension::triviality}[70] The following (non-rooted) isomorphy holds: \[ \ind{\phi}(\bb \vee \be{B}) \cong \bb \cong \ind{\phi}(\be{B} \vee \bb) \] \end{mystatement}
 
-% proof
-\begin{myproof}
-    We prove the lemma in two steps.
-    \begin{steps}
-        % step 1
-        \item $\ind{c_1}\bb \cong \bb \vee \be{B}$
-        
-        % representative
-        Let $E(\bb \vee \be{B})$ be constructed via
-        the representative $f: V \to b_0 \cross \R^n$ for $R$.
+\begin{myproof} We prove the lemma in two steps. \begin{steps} \item $\ind{c_1}\bb \cong \bb \vee \be{B}$
 
-        Without loss of generality, we may assume that
-        $V = E(\bbb)$ by removing the closed set $E(\bbb) - V$ from $E(\bb)$ if necessary.
+Let $E(\bb \vee \be{B})$ be constructed via the representative $f: V \to b_0 \cross \R^n$ for $R$.
 
-        % homeomorphy
-        Consider $\psi: E(\ind{c_1}\bb) \isomto E(\bb \vee \be{B})$ given by
-        \[ \psi((b, i), e) = \case{e}{(b, \snd{f}(e))}{i = 1}. \]
-        Note that $\psi$ is well-defined, because
-        \[ \psi((b_0, 1), e) = e = f(e) = (b_0, \snd{f}(e)) = \psi((b_0, 2), e). \]
-        Furthermore, $\psi$ is a homeomorphism as both of its summands are homeomorphisms.
+Without loss of generality, we may assume that $V = E(\bbb)$ by removing the closed set $E(\bbb) - V$ from $E(\bb)$ if necessary.
 
-        % commutativity
-        It remains to be shown that $\psi$
-        commutes with the injection and projection maps of $\ind{c_1}\bb$ and $\bb \vee \be{B}$.
-        This can be seen with the following equations:
-        \begin{align}
-            &\psi(i_{c_1}(b, i)) = \casenif{\psi((b, 1), i(b)) = i(b) = i_\vee(b, 1)}{\psi((b, 2), i(b_0)) = f(i(b)) = (b, 0) = (id \cross 0)(b) = i_\vee(b, 2)} \\
-            &j_{c_1}((b, i), e) = \casenif{j(e) = j_\vee(e) = j_\vee(\psi((b, 1), e))}{(b, 2) = \pi_1(\psi((b, 2), e)) = j_\vee(\psi((b, 2), e))}
-        \end{align}
-        
-        % step 2
-        \item $\ind{\phi}(\bb \vee \be{B}) \cong \bb$
+Consider $\psi: E(\ind{c_1}\bb) \isomto E(\bb \vee \be{B})$ given by \[ \psi((b, i), e) = \case{e}{(b, \snd{f}(e))}{i = 1}. \] Note that $\psi$ is well-defined, because \[ \psi((b_0, 1), e) = e = f(e) = (b_0, \snd{f}(e)) = \psi((b_0, 2), e). \] Furthermore, $\psi$ is a homeomorphism as both of its summands are homeomorphisms.
 
-        Using the fact that $c_1 \circ \phi = id_{B \vee B}$, we conclude that
-        \[ \ind{\phi}(\bb \vee \be{B}) \cong \ind{\phi}(\ind{c_1}\bb) \cong \ind{(c_1 \circ \phi)}\bb \cong \bb. \]
-        For reasons of symmetry, it follows that $\bb \cong \ind{\phi}(\be{B} \vee \bb)$.
-    \end{steps}
-    This completes the proof.
-\end{myproof}
+It remains to be shown that $\psi$ commutes with the injection and projection maps of $\ind{c_1}\bb$ and $\bb \vee \be{B}$. This can be seen with the following equations: \begin{align} &\psi(i_{c_1}(b, i)) = \casenif{\psi((b, 1), i(b)) = i(b) = i_\vee(b, 1)}{\psi((b, 2), i(b_0)) = f(i(b)) = (b, 0) = (id \cross 0)(b) = i_\vee(b, 2)} \\ &j_{c_1}((b, i), e) = \casenif{j(e) = j_\vee(e) = j_\vee(\psi((b, 1), e))}{(b, 2) = \pi_1(\psi((b, 2), e)) = j_\vee(\psi((b, 2), e))} \end{align}
+
+\item $\ind{\phi}(\bb \vee \be{B}) \cong \bb$
+
+Using the fact that $c_1 \circ \phi = id_{B \vee B}$, we conclude that \[ \ind{\phi}(\bb \vee \be{B}) \cong \ind{\phi}(\ind{c_1}\bb) \cong \ind{(c_1 \circ \phi)}\bb \cong \bb. \] For reasons of symmetry, it follows that $\bb \cong \ind{\phi}(\be{B} \vee \bb)$. \end{steps} This completes the proof. \end{myproof}

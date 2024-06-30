@@ -1,50 +1,11 @@
-\begin{scope}
-    % defines
-    \newcommand{\bbleft} {
-        \bb[B {\cross} [0, \half]]
-    }
-    \newcommand{\bbright} {
-        \bb[B {\cross} [\half, 1]]
-    }
-    \newcommand{\bbhalf} {
-        \bb[B {\cross} \coll{\half{}}]
-    }
+\begin{scope} \newcommand{\bbleft} { \bb[B {\cross} [0, \half]] } \newcommand{\bbright} { \bb[B {\cross} [\half, 1]] } \newcommand{\bbhalf} { \bb[B {\cross} \coll{\half{}}] }
 
-    % lemma
-    \begin{mystatement}{lemma}{homotopy::lemma1}[67]
-        Let $\bb$ be a microbundle over $\cyl{B}$.
-        If $\bbleft$ and $\bbright$ are both trivial,
-        then $\bb$ itself is trivial.
-    \end{mystatement}
+\begin{mystatement}{lemma}{homotopy::lemma1}[67] Let $\bb$ be a microbundle over $\cyl{B}$. If $\bbleft$ and $\bbright$ are both trivial, then $\bb$ itself is trivial. \end{mystatement}
 
-    % proof
-    \begin{myproof}
-        Consider the identity bundle-germ over $\bbhalf$,
-        which is defined as the bundle-germ represented by the identity map on $E(\bbhalf)$.
-        
-        Since $\bbright$ and $\bbhalf$ are both trivial,
-        there exist isomorphism-germs
-        \[
-            \germdef{R}{\bbright}{\be{B {\cross} [\half, 1]}} \tand
-            \germdef{L}{\bbhalf}{\be{B {\cross} \coll{\half}}}.
-        \]
-        We define a bundle-germ $\germdef{M}{\be{B \cross [\half, 1]}}{\be{B \cross \coll{\half}}}$
-        represented by
-        \[ (b, t, x) \mapsto (b, \half, x). \]
-        The composition $\inv{L} \circ M \circ R$ then yields a bundle-germ $\germ{\bbright}{\bbhalf}$
-        that extends the identity on $\bbhalf$.
+\begin{myproof} Consider the identity bundle-germ over $\bbhalf$, which is defined as the bundle-germ represented by the identity map on $E(\bbhalf)$.
 
-        Using the previous lemma, we can glue this together with the
-        identity over $\bbleft$
-        (note that the bundle-germs agree on $\bbhalf$)
-        resulting in a bundle-germ $\germ{\bb}{\bbleft}$.
+Since $\bbright$ and $\bbhalf$ are both trivial, there exist isomorphism-germs \[ \germdef{R}{\bbright}{\be{B {\cross} [\half, 1]}} \tand \germdef{L}{\bbhalf}{\be{B {\cross} \coll{\half}}}. \] We define a bundle-germ $\germdef{M}{\be{B \cross [\half, 1]}}{\be{B \cross \coll{\half}}}$ represented by \[ (b, t, x) \mapsto (b, \half, x). \] The composition $\inv{L} \circ M \circ R$ then yields a bundle-germ $\germ{\bbright}{\bbhalf}$ that extends the identity on $\bbhalf$.
 
-        \myintref{homotopy::corollary} infers that $\bb$
-        is isomorphic to $\ind{r}\bbleft$
-        where
-        \[ r: \cyl{B} \to B \cross [0, \half] \twith r(b, t) = (b, \min(t, \half)). \]
-        But $\bbleft$ is trivial, hence $\ind{r}\bbleft$ is
-        trivial as well (see \myintref{induced::trivial}).
-        We conclude that $\bb$ is trivial.
-    \end{myproof}
-\end{scope}
+Using the previous lemma, we can glue this together with the identity over $\bbleft$ (note that the bundle-germs agree on $\bbhalf$) resulting in a bundle-germ $\germ{\bb}{\bbleft}$.
+
+\myintref{homotopy::corollary} infers that $\bb$ is isomorphic to $\ind{r}\bbleft$ where \[ r: \cyl{B} \to B \cross [0, \half] \twith r(b, t) = (b, \min(t, \half)). \] But $\bbleft$ is trivial, hence $\ind{r}\bbleft$ is trivial as well (see \myintref{induced::trivial}). We conclude that $\bb$ is trivial. \end{myproof} \end{scope}

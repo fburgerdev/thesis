@@ -1,133 +1,41 @@
-% foreword
-\begin{myparagraph}
-    Now that we introduced rooted-microbundles,
-    we are able to define the wedge sum.
-    As we will see in the subsequent proof,
-    we require rootings for its definition.
-    Particularly, the wedge sum depends on the specific choices of these rootings,
-    justifying the requirement for rooted-microbundles.
+\begin{myparagraph} Now that we introduced rooted-microbundles, we are able to define the wedge sum. As we will see in the subsequent proof, we require rootings for its definition. Particularly, the wedge sum depends on the specific choices of these rootings, justifying the requirement for rooted-microbundles.
 
-    Given a quotient space $A \sqcup B / \sim$ and maps $f: A \to C$ and $g: B \to C$, we define
-    $f \cup g: (A \sqcup B / \sim) \to C$ by
-    \[ x \mapsto \begin{cases} f(x) & \text{if } x \in A \\ g(x) &\text{if } x \in B \end{cases}.\]
-    Clearly, this map is only well-defined if $a \sim b \implies f(a) = g(b)$.
-\end{myparagraph}
+Given a quotient space $A \sqcup B / \sim$ and maps $f: A \to C$ and $g: B \to C$, we define $f \cup g: (A \sqcup B / \sim) \to C$ by \[ x \mapsto \begin{cases} f(x) & \text{if } x \in A \\ g(x) &\text{if } x \in B \end{cases}.\] Clearly, this map is only well-defined if $a \sim b \implies f(a) = g(b)$. \end{myparagraph}
 
-% definition
-\begin{mystatement}{definition}{suspension::wedge}[70] % ? remove citation
-    Let $\ba$ and $\bb$ be two rooted microbundles over $A$ and $B$.
-    % microbundle
-    The \defterm{wedge sum} $\ba \vee \bb$ of $\ba$ and $\bb$ is a microbundle
-    \[ A \vee B \xto{i_a \cup i_b} E(\ba \vee \bb) \xto{j_a \cup j_b} A \vee B \]
-    with the total space defined as
-    \[ (E(\ba) \sqcup E(\bb)) / f(e_a) \sim e_a \]
-    where $f: W_a \isomto W_b$ is a representative for $\inv{R_b} \circ R_a$.
-    
-    % rooting
-    We equip $\ba \vee \bb$ with a rooting
-    \[ \germdef{R}{E((\ba \vee \bb)\restr{a_0})}{\be{a_0}} \]
-    represented by any representative for $R_a$ (or $R_b$).
-\end{mystatement}
+\begin{mystatement}{definition}{suspension::wedge}[70] Let $\ba$ and $\bb$ be two rooted microbundles over $A$ and $B$. The \defterm{wedge sum} $\ba \vee \bb$ of $\ba$ and $\bb$ is a microbundle \[ A \vee B \xto{i_a \cup i_b} E(\ba \vee \bb) \xto{j_a \cup j_b} A \vee B \] with the total space defined as \[ (E(\ba) \sqcup E(\bb)) / f(e_a) \sim e_a \] where $f: W_a \isomto W_b$ is a representative for $\inv{R_b} \circ R_a$.
 
-% proof
-\begin{myproof}[that $\ba \vee \bb$ is a (rooted) microbundle]
-    Let $f: W_a \isomto W_b$ be a representative for $\inv{R_b} \circ R_a$.
+We equip $\ba \vee \bb$ with a rooting \[ \germdef{R}{E((\ba \vee \bb)\restr{a_0})}{\be{a_0}} \] represented by any representative for $R_a$ (or $R_b$). \end{mystatement}
 
-    % rooted microbundle
-    \begin{sectionize}
-        \item $\ba \vee \bb$ is a rooted microbundle
-        \begin{itemize}
-            % injection
-            \item The injection map $i_a \cup i_b$ is well-defined because
-            \[ [i(a_0)] = [i_a(a_0)] = [f(i_a(a_0))] = [i_b(b_0)] = [i(b_0)] \]
-            and continuous, since both $i_a$ and $i_b$ are continuous.
-            % projection
-            \item The projection map $j_a \cup j_b$ is well-defined because
-            \[ \forall e \in W_a: [j(e)] = [j_a(e)] = [a_0] = [b_0] = [j_b(f(e))] = [j(f(e))] \]
-            and continuous, since both $j_a$ and $j_b$ are continuous.
-            % compatibility
-            \item The composition $j \circ i$ is the identity because
-            \[ \forall a \in A: j(i(a)) = j(i_a(a)) = j_a(i_a(a)) = a \]
-            since $j_a \circ i_a = id_A$ (symmetrical for $B$).
-        \end{itemize}
-        % local triviality
-        It remains to be shown that $\ba \vee \bb$ is locally trivial.
+\begin{myproof}[that $\ba \vee \bb$ is a (rooted) microbundle] Let $f: W_a \isomto W_b$ be a representative for $\inv{R_b} \circ R_a$.
 
-        Let $x \in A \vee B$.
-        For reasons of symmetry, we may assume that $x \in A$.
-        \begin{caselist}
-            % trivial case
-            \item $x \neq a_0$
-            
-            % construct
-            Choose a local trivialization $(U, V, \phi)$ for $x$ in $\ba$.
-            Without loss of generality,
-            we may assume that $U \cap B = \emptyset$ by subtracting
-            $\{a_0\}$ from $U$ if necessary.
-            Note that $\{a_0\}$ is closed, since $A$ is hausdorff.
-            
-            % show
-            Now we can simply use this trivialization for $\ba \vee \bb$ because
-            $U \sub A$ is open in $A \vee B$ and
-            $V \sub E(\ba)$ is open in $E(\ba \vee \bb)$.
-            Furthermore, since $i$ and $j$ reduce to $i_a$ and $j_a$,
-            it follows that $\phi$ commutes with $i$ and $id \cross 0$
-            as well as with $j$ and $\pi_1$.
+\begin{sectionize} \item $\ba \vee \bb$ is a rooted microbundle \begin{itemize} \item The injection map $i_a \cup i_b$ is well-defined because \[ [i(a_0)] = [i_a(a_0)] = [f(i_a(a_0))] = [i_b(b_0)] = [i(b_0)] \] and continuous, since both $i_a$ and $i_b$ are continuous. \item The projection map $j_a \cup j_b$ is well-defined because \[ \forall e \in W_a: [j(e)] = [j_a(e)] = [a_0] = [b_0] = [j_b(f(e))] = [j(f(e))] \] and continuous, since both $j_a$ and $j_b$ are continuous. \item The composition $j \circ i$ is the identity because \[ \forall a \in A: j(i(a)) = j(i_a(a)) = j_a(i_a(a)) = a \] since $j_a \circ i_a = id_A$ (symmetrical for $B$). \end{itemize} It remains to be shown that $\ba \vee \bb$ is locally trivial.
 
-            % special case
-            \item $x = a_0$
-            
-            Let $(U_a, V_a, \phi_a)$ and $(U_b, V_b, \phi_b)$ be local trivializations
-            for $a_0 = b_0$ in $\ba$ and $\bb$.
+Let $x \in A \vee B$. For reasons of symmetry, we may assume that $x \in A$. \begin{caselist} \item $x \neq a_0$
 
-            % open
-            Since $W_a \sub E(\bab)$ is open,
-            there exists an open subset
-            $W_a' \sub E(\ba)$ such that $W_a = W_a' \cap E(\bab)$.
+Choose a local trivialization $(U, V, \phi)$ for $x$ in $\ba$. Without loss of generality, we may assume that $U \cap B = \emptyset$ by subtracting $\{a_0\}$ from $U$ if necessary. Note that $\{a_0\}$ is closed, since $A$ is hausdorff.
 
-            Let $U_a' \sub A$ be an open neighborhood of $a_0$ and $\eps > 0$ such that
-            \[ U_a' \cross \ball[\eps] \sub \phi_a(W_a' \cap V_a) \]
-            and define $V_a' = \inv{\phi_a}(U_a' \cross \ball[\eps])$.
-            This allows us to construct a homeomorphism
-            $\phi_a': V_a' \isomto \phi_a'(V_a') \sub A \cross \R^n$ given by
-            \[ \phi_a'(e) = (j_a(e), (\snd{\phi_b} \circ f \circ \inv{\phi_a})(a_0, \snd{\phi_a}(e))). \]
-            We can now show local triviality in $a_0$ using the homeomorphism
-            \[ \phi_a' \cup \phi_b: V_a' \cup V_b \isomto \phi_a'(V_a' \cup V_b) \sub (A \vee B) \cross \R^n. \]
-            This map is well-defined because
-            \[ \phi_a'(e) = (a_0, (\snd{\phi_b} \circ f \circ \inv{\phi_a})(a_0, \snd{\phi_a}(e))) \]
-            \[ = (b_0, \snd{\phi_b}(f(e))) = (j_b(f(e)), \snd{\phi_b}(f(e))) = \phi_b(f(e)). \]
+Now we can simply use this trivialization for $\ba \vee \bb$ because $U \sub A$ is open in $A \vee B$ and $V \sub E(\ba)$ is open in $E(\ba \vee \bb)$. Furthermore, since $i$ and $j$ reduce to $i_a$ and $j_a$, it follows that $\phi$ commutes with $i$ and $id \cross 0$ as well as with $j$ and $\pi_1$.
 
-            Commutativity with $i_a \cup i_b$ and $id \cross 0$
-            as well as between $j_a \cup j_b$ and $\pi_1$
-            are inherited from $\phi_a$ and $\phi_b$.
-            Note that $\phi_a(i_a(a)) = (a, 0) = \phi_a'(i_a(a))$.
+\item $x = a_0$
 
-            Applying \myintref{microbundle::local} yields that $\ba \vee \bb$ is locally trivial.
-        \end{caselist}
-        
-        % well-defined
-        \item $\ba \vee \bb$ is well-defined
+Let $(U_a, V_a, \phi_a)$ and $(U_b, V_b, \phi_b)$ be local trivializations for $a_0 = b_0$ in $\ba$ and $\bb$.
 
-        Let $f'$ be another representative for $\inv{R_b} \circ R_a$ and $(\ba \vee \bb)'$ the resulting wedge sum.
-        We need to find an isomorphism-germ that extends $\inv{R'} \circ R$.
-        
-        In order to do this,
-        choose an open neighborhood $V \sub E(\ba\restr{a_0})$
-        of $i_a(a)$ where $f$ and $f'$ agree.
-        
-        By subtracting the closed set $\inv{j_a}(a_0) - V$
-        from $E(\ba \vee \bb)$ and $E(\ba \vee \bb)'$,
-        the microbundles remain unchanged due to \myintref{microbundle::total}.
-        
-        But now the total spaces $E(\ba \vee \bb)$ and $E((\ba \vee \bb)')$ are the same.
-        That is because $E(\ba \vee \bb)$ and $E((\ba \vee \bb)')$
-        could only possibly differ in $\inv{j_a}(a_0) - V$.
-        
-        Furthermore, since injection and projection are defined the same,
-        it follows that the identity $\germ{(\ba \vee \bb)}{(\ba \vee \bb)'}$
-        is an isomorphism-germ.
-        Together with
-        \[ \inv{R'} \circ R = \inv{R} \circ R = I, \]
-        this completes the proof.
-    \end{sectionize}
-\end{myproof}
+Since $W_a \sub E(\bab)$ is open, there exists an open subset $W_a' \sub E(\ba)$ such that $W_a = W_a' \cap E(\bab)$.
+
+Let $U_a' \sub A$ be an open neighborhood of $a_0$ and $\eps > 0$ such that \[ U_a' \cross \ball[\eps] \sub \phi_a(W_a' \cap V_a) \] and define $V_a' = \inv{\phi_a}(U_a' \cross \ball[\eps])$. This allows us to construct a homeomorphism $\phi_a': V_a' \isomto \phi_a'(V_a') \sub A \cross \R^n$ given by \[ \phi_a'(e) = (j_a(e), (\snd{\phi_b} \circ f \circ \inv{\phi_a})(a_0, \snd{\phi_a}(e))). \] We can now show local triviality in $a_0$ using the homeomorphism \[ \phi_a' \cup \phi_b: V_a' \cup V_b \isomto \phi_a'(V_a' \cup V_b) \sub (A \vee B) \cross \R^n. \] This map is well-defined because \[ \phi_a'(e) = (a_0, (\snd{\phi_b} \circ f \circ \inv{\phi_a})(a_0, \snd{\phi_a}(e))) \] \[ = (b_0, \snd{\phi_b}(f(e))) = (j_b(f(e)), \snd{\phi_b}(f(e))) = \phi_b(f(e)). \]
+
+Commutativity with $i_a \cup i_b$ and $id \cross 0$ as well as between $j_a \cup j_b$ and $\pi_1$ are inherited from $\phi_a$ and $\phi_b$. Note that $\phi_a(i_a(a)) = (a, 0) = \phi_a'(i_a(a))$.
+
+Applying \myintref{microbundle::local} yields that $\ba \vee \bb$ is locally trivial. \end{caselist}
+
+\item $\ba \vee \bb$ is well-defined
+
+Let $f'$ be another representative for $\inv{R_b} \circ R_a$ and $(\ba \vee \bb)'$ the resulting wedge sum. We need to find an isomorphism-germ that extends $\inv{R'} \circ R$.
+
+In order to do this, choose an open neighborhood $V \sub E(\ba\restr{a_0})$ of $i_a(a)$ where $f$ and $f'$ agree.
+
+By subtracting the closed set $\inv{j_a}(a_0) - V$ from $E(\ba \vee \bb)$ and $E(\ba \vee \bb)'$, the microbundles remain unchanged due to \myintref{microbundle::total}.
+
+But now the total spaces $E(\ba \vee \bb)$ and $E((\ba \vee \bb)')$ are the same. That is because $E(\ba \vee \bb)$ and $E((\ba \vee \bb)')$ could only possibly differ in $\inv{j_a}(a_0) - V$.
+
+Furthermore, since injection and projection are defined the same, it follows that the identity $\germ{(\ba \vee \bb)}{(\ba \vee \bb)'}$ is an isomorphism-germ. Together with \[ \inv{R'} \circ R = \inv{R} \circ R = I, \] this completes the proof. \end{sectionize} \end{myproof}

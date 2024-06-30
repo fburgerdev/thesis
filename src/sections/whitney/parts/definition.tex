@@ -1,62 +1,15 @@
-% definition
-\begin{mystatement}{definition}{whitney::definition}[59]
-    Let $\bb_1$ and $\bb_1$ be two microbundles over $B$ with fiber dimensions $n_1$ and $n_2$.
-    The \defterm{Whitney sum} $\whitney{\bb_1}{\bb_2}$ is a microbundle $\bundle{B}{E}{i}{j}$ where
-    \begin{itemize}
-        \item $E = \set{ (e_1, e_2) \in E(\bb_1) \cross E(\bb_2)}{j_1(e_1) = j_2(e_2)}$
-        \item $i(b) = (i_1(b), i_2(b))$
-        \item $j(e_1, e_2) = j_1(e_1) = j_2(e_2)$
-    \end{itemize}
-    with fiber dimension $n_1 + n_2$.
-\end{mystatement}
+\begin{mystatement}{definition}{whitney::definition}[59] Let $\bb_1$ and $\bb_1$ be two microbundles over $B$ with fiber dimensions $n_1$ and $n_2$. The \defterm{Whitney sum} $\whitney{\bb_1}{\bb_2}$ is a microbundle $\bundle{B}{E}{i}{j}$ where \begin{itemize} \item $E = \set{ (e_1, e_2) \in E(\bb_1) \cross E(\bb_2)}{j_1(e_1) = j_2(e_2)}$ \item $i(b) = (i_1(b), i_2(b))$ \item $j(e_1, e_2) = j_1(e_1) = j_2(e_2)$ \end{itemize} with fiber dimension $n_1 + n_2$. \end{mystatement}
 
-% proof
-\begin{myproof}[that $\whitney{\bb_1}{\bb_2}$ is a microbundle]
-    % continuity and compatibility
-    Both $i$ and $j$ are continuous
-    since they are composed by continuous functions.
-    Additionally, $j(i(b)) = j(i_1(b), i_2(b)) = j_1(i_1(b)) = b$ and hence $j \circ i = id_B$.
+\begin{myproof}[that $\whitney{\bb_1}{\bb_2}$ is a microbundle] Both $i$ and $j$ are continuous since they are composed by continuous functions. Additionally, $j(i(b)) = j(i_1(b), i_2(b)) = j_1(i_1(b)) = b$ and hence $j \circ i = id_B$.
 
-    % local triviality
-    It remains to be shown that $\whitney{\bb_1}{\bb_2}$ is locally trivial:
+It remains to be shown that $\whitney{\bb_1}{\bb_2}$ is locally trivial:
 
-    % local triviality :: homeomorphism
-    For an arbitrary $b \in B$,
-    choose local trivializations
-    $(U_1, V_1, \phi_1)$ and $(U_2, V_2, \phi_2)$ of $b$ in $\bb_1$ and $\bb_2$.
-    
-    We construct a local trivialization $(U, V, \phi)$ of $b$ in $\whitney{\bb_1}{\bb_2}$ as follows:
-    \begin{itemize}
-        \item $U = U_1 \cap U_2$, which is an open neighborhood of $b$
-        since both $U_1$ and $U_2$ are open neighborhoods of $b$.
-        \item $V = (V_1 \cross V_2) \cap E$, which is an open neighborhood of $i(U)$
-        since $V_1$ and $V_2$ are open and
-        $i(U) \sub (i_1(U) \times i_2(U)) \cap E \sub (V_1 \cross V_2) \cap E$.
-        \item $\phi: V \isomto U \cross \R^{n_1 + n_2}$ with
-        $\phi(e_1, e_2) = (j_1(e_1), (\snd{\phi_1}(e_1),  \snd{\phi_2}(e_2)))$,
-        which is a homeomorphism with the inverse
-        \[ \inv{\phi}(b, (x_1, x_2)) = (\inv{\phi_1}(b, x_1), \inv{\phi_2}(b, x_2)) \]
-        since both $\phi$ and $\inv{\phi}$ are component-wise continuous.
-    \end{itemize}
-    
-    % local triviality :: commutativity
-    Commutativity with $i$ and $id \times 0$ is given by
-    \[ \phi(i(b)) = \phi(i_1(b), i_2(b)) = (b, (\snd{\phi_1}(i_1(b)), \snd{\phi_2}(i_2(b)))) = (b, (0, 0)) = (id \cross 0)(b) \]
-    and with $j$ and $\pi_1$ by
-    \[ j(e_1, e_2) = j_1(e_1) = \pi_1(j_1(e_1), \snd{\phi}(e_1, e_2)) = \pi_1(\phi(e_1, e_2)), \]
-    which completes the proof.
-\end{myproof}
+For an arbitrary $b \in B$, choose local trivializations $(U_1, V_1, \phi_1)$ and $(U_2, V_2, \phi_2)$ of $b$ in $\bb_1$ and $\bb_2$.
 
-% remark
-\begin{mystatement}{remark}{whitney::remark}
-    The Whitney sum is associative and commutative.
-    % ? proof
-\end{mystatement}
+We construct a local trivialization $(U, V, \phi)$ of $b$ in $\whitney{\bb_1}{\bb_2}$ as follows: \begin{itemize} \item $U = U_1 \cap U_2$, which is an open neighborhood of $b$ since both $U_1$ and $U_2$ are open neighborhoods of $b$. \item $V = (V_1 \cross V_2) \cap E$, which is an open neighborhood of $i(U)$ since $V_1$ and $V_2$ are open and $i(U) \sub (i_1(U) \times i_2(U)) \cap E \sub (V_1 \cross V_2) \cap E$. \item $\phi: V \isomto U \cross \R^{n_1 + n_2}$ with $\phi(e_1, e_2) = (j_1(e_1), (\snd{\phi_1}(e_1), \snd{\phi_2}(e_2)))$, which is a homeomorphism with the inverse \[ \inv{\phi}(b, (x_1, x_2)) = (\inv{\phi_1}(b, x_1), \inv{\phi_2}(b, x_2)) \] since both $\phi$ and $\inv{\phi}$ are component-wise continuous. \end{itemize}
 
-% equivalent definition
-\begin{myparagraph}
-    Alternatively, one could define the Whitney sum between $\bb_1$ and $\bb_2$
-    to be the induced microbundle $\ind{\Delta}(\bb_1 \cross \bb_2)$
-    where $\Delta$ denotes the diagonal map and $\bb_1 \cross \bb_2$
-    denotes the intuitive cross-product between the two microbundles.
-\end{myparagraph}
+Commutativity with $i$ and $id \times 0$ is given by \[ \phi(i(b)) = \phi(i_1(b), i_2(b)) = (b, (\snd{\phi_1}(i_1(b)), \snd{\phi_2}(i_2(b)))) = (b, (0, 0)) = (id \cross 0)(b) \] and with $j$ and $\pi_1$ by \[ j(e_1, e_2) = j_1(e_1) = \pi_1(j_1(e_1), \snd{\phi}(e_1, e_2)) = \pi_1(\phi(e_1, e_2)), \] which completes the proof. \end{myproof}
+
+\begin{mystatement}{remark}{whitney::remark} The Whitney sum is associative and commutative. \end{mystatement}
+
+\begin{myparagraph} Alternatively, one could define the Whitney sum between $\bb_1$ and $\bb_2$ to be the induced microbundle $\ind{\Delta}(\bb_1 \cross \bb_2)$ where $\Delta$ denotes the diagonal map and $\bb_1 \cross \bb_2$ denotes the intuitive cross-product between the two microbundles. \end{myparagraph}
